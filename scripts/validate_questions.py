@@ -54,6 +54,12 @@ SUBPARTS = {
         "count": 30,
         "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
     },
+    "1.2.3": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Storage, Indexing & ER Modeling",
+        "count": 25,
+        "difficulties": {"Easy": 8, "Medium": 12, "Hard": 5},
+    },
 }
 
 

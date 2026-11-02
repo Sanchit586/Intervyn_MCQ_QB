@@ -10,6 +10,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.1.4_storage_disk.json` | Storage Systems, File Systems & Disk Scheduling | 20 | 6 | 10 | 4 |
 | `questions/module_1_core_cs/1.2.1_schema_normalization.json` | Relational Schema Design & Normalization | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.2.2_transactions_concurrency.json` | Transactions, Concurrency & Recovery | 30 | 9 | 15 | 6 |
+| `questions/module_1_core_cs/1.2.3_storage_indexing.json` | Storage, Indexing & ER Modeling | 25 | 8 | 12 | 5 |
 
 ## Question format
 
@@ -55,3 +56,5 @@ Storage questions distinguish file data from indirect metadata and specify block
 Normalization questions treat the listed FDs and their logical consequences as the complete constraints. Normal forms assume atomic values unless a question explicitly examines 1NF. Dependency-preservation checks use full FD projections, including implied dependencies.
 
 Transaction questions define schedule notation and any strict-versus-rigorous locking conventions that affect an answer. Recovery traces specify buffer policies, durable log contents, checkpoint guarantees, and redo/undo rules rather than assuming one database implementation.
+
+Indexing questions state whether height counts edges, define node capacities and split rules, and distinguish internal separators from leaf records. ER mappings state optionality and uniqueness requirements. Integer difficulty quotas are rounded where exact percentages are impossible; Subpart 1.2.3 uses 8 Easy, 12 Medium, and 5 Hard questions.
