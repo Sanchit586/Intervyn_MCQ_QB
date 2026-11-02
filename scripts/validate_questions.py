@@ -60,6 +60,12 @@ SUBPARTS = {
         "count": 25,
         "difficulties": {"Easy": 8, "Medium": 12, "Hard": 5},
     },
+    "1.2.4": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "SQL Queries & Output Prediction",
+        "count": 35,
+        "difficulties": {"Easy": 10, "Medium": 18, "Hard": 7},
+    },
 }
 
 

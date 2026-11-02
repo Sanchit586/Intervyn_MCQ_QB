@@ -11,6 +11,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.2.1_schema_normalization.json` | Relational Schema Design & Normalization | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.2.2_transactions_concurrency.json` | Transactions, Concurrency & Recovery | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.2.3_storage_indexing.json` | Storage, Indexing & ER Modeling | 25 | 8 | 12 | 5 |
+| `questions/module_1_core_cs/1.2.4_sql_queries.json` | SQL Queries & Output Prediction | 35 | 10 | 18 | 7 |
 
 ## Question format
 
@@ -57,4 +58,6 @@ Normalization questions treat the listed FDs and their logical consequences as t
 
 Transaction questions define schedule notation and any strict-versus-rigorous locking conventions that affect an answer. Recovery traces specify buffer policies, durable log contents, checkpoint guarantees, and redo/undo rules rather than assuming one database implementation.
 
-Indexing questions state whether height counts edges, define node capacities and split rules, and distinguish internal separators from leaf records. ER mappings state optionality and uniqueness requirements. Integer difficulty quotas are rounded where exact percentages are impossible; Subpart 1.2.3 uses 8 Easy, 12 Medium, and 5 Hard questions.
+Indexing questions state whether height counts edges, define node capacities and split rules, and distinguish internal separators from leaf records. ER mappings state optionality and uniqueness requirements. Integer difficulty quotas are rounded where exact percentages are impossible: Subpart 1.2.3 uses 8 Easy, 12 Medium, and 5 Hard; Subpart 1.2.4 uses 10 Easy, 18 Medium, and 7 Hard. Together, Subparts 1.2.1 through 1.2.4 have 36 Easy, 60 Medium, and 24 Hard questions out of 120, preserving the exact overall 30%/50%/20% distribution.
+
+SQL questions use SQLite SQL with self-contained CTE input data. Options encode complete ordered results as JSON row arrays, where `null` represents SQL NULL. Queries with multiple output rows specify final ordering; window functions separately specify their own ordering and partitioning. All 35 SQL queries were executed against SQLite 3.45.3 to verify that exactly the keyed option matches the result.
