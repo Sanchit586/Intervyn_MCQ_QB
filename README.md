@@ -8,6 +8,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.1.2_concurrency_deadlocks.json` | Concurrency, Synchronization & Deadlocks | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.1.3_memory_management.json` | Memory Management & Virtual Memory | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.1.4_storage_disk.json` | Storage Systems, File Systems & Disk Scheduling | 20 | 6 | 10 | 4 |
+| `questions/module_1_core_cs/1.2.1_schema_normalization.json` | Relational Schema Design & Normalization | 30 | 9 | 15 | 6 |
 
 ## Question format
 
@@ -40,7 +41,7 @@ To check one file or directory:
 python scripts/validate_questions.py questions/module_1_core_cs/1.1.1_cpu_scheduling.json
 ```
 
-The validator checks strict JSON syntax (including duplicate keys and invalid constants), required fields and types, metadata, unique IDs and question text, four distinct option texts, answer keys, and configured subpart quotas. It exits with a nonzero status on failure. Exact quota checks currently cover Subparts 1.1.1 through 1.1.4; add quota metadata in `SUBPARTS` as further subparts are populated.
+The validator checks strict JSON syntax (including duplicate keys and invalid constants), required fields and types, metadata, unique IDs and question text, four distinct option texts, answer keys, and configured subpart quotas. It exits with a nonzero status on failure. Exact quota checks cover all populated subparts listed above; add quota metadata in `SUBPARTS` as further subparts are populated.
 
 Content review must still establish that options are mutually exclusive, exactly one is correct, and explanations are accurate. Structural validation cannot prove those properties. Scheduling questions state tie-breaking, arrival ordering, I/O behavior, and switch-cost conventions whenever those affect the result. Timeline intervals use `[start,end)` notation.
 
@@ -49,3 +50,5 @@ Concurrency questions state atomicity and memory-order assumptions when tracing 
 Memory-management questions define binary storage units, address bounds, TLB lookup and page-walk costs, and whether fault-service times include retries. Replacement traces specify initial frame contents, hit-update rules, and relevant tie-breaking or dirty-page costs.
 
 Storage questions distinguish file data from indirect metadata and specify block-cache and inode-lifetime assumptions when relevant. Disk-scheduling traces define initial head direction, endpoint and wrap behavior, tie-breaking, arrivals, and when movement measurement stops.
+
+Normalization questions treat the listed FDs and their logical consequences as the complete constraints. Normal forms assume atomic values unless a question explicitly examines 1NF. Dependency-preservation checks use full FD projections, including implied dependencies.

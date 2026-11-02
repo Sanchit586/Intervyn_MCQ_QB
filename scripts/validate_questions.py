@@ -42,6 +42,12 @@ SUBPARTS = {
         "count": 20,
         "difficulties": {"Easy": 6, "Medium": 10, "Hard": 4},
     },
+    "1.2.1": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Relational Schema Design & Normalization",
+        "count": 30,
+        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
+    },
 }
 
 
