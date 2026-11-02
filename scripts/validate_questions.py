@@ -36,6 +36,12 @@ SUBPARTS = {
         "count": 30,
         "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
     },
+    "1.1.4": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Storage Systems, File Systems & Disk Scheduling",
+        "count": 20,
+        "difficulties": {"Easy": 6, "Medium": 10, "Hard": 4},
+    },
 }
 
 
