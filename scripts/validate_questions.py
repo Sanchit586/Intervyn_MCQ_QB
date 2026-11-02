@@ -48,6 +48,12 @@ SUBPARTS = {
         "count": 30,
         "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
     },
+    "1.2.2": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Transactions, Concurrency & Recovery",
+        "count": 30,
+        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
+    },
 }
 
 

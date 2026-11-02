@@ -9,6 +9,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.1.3_memory_management.json` | Memory Management & Virtual Memory | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.1.4_storage_disk.json` | Storage Systems, File Systems & Disk Scheduling | 20 | 6 | 10 | 4 |
 | `questions/module_1_core_cs/1.2.1_schema_normalization.json` | Relational Schema Design & Normalization | 30 | 9 | 15 | 6 |
+| `questions/module_1_core_cs/1.2.2_transactions_concurrency.json` | Transactions, Concurrency & Recovery | 30 | 9 | 15 | 6 |
 
 ## Question format
 
@@ -52,3 +53,5 @@ Memory-management questions define binary storage units, address bounds, TLB loo
 Storage questions distinguish file data from indirect metadata and specify block-cache and inode-lifetime assumptions when relevant. Disk-scheduling traces define initial head direction, endpoint and wrap behavior, tie-breaking, arrivals, and when movement measurement stops.
 
 Normalization questions treat the listed FDs and their logical consequences as the complete constraints. Normal forms assume atomic values unless a question explicitly examines 1NF. Dependency-preservation checks use full FD projections, including implied dependencies.
+
+Transaction questions define schedule notation and any strict-versus-rigorous locking conventions that affect an answer. Recovery traces specify buffer policies, durable log contents, checkpoint guarantees, and redo/undo rules rather than assuming one database implementation.
