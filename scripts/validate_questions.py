@@ -66,6 +66,12 @@ SUBPARTS = {
         "count": 35,
         "difficulties": {"Easy": 10, "Medium": 18, "Hard": 7},
     },
+    "1.3.1": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Network Architecture & Physical/Data Link Layers",
+        "count": 25,
+        "difficulties": {"Easy": 8, "Medium": 12, "Hard": 5},
+    },
 }
 
 

@@ -12,6 +12,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.2.2_transactions_concurrency.json` | Transactions, Concurrency & Recovery | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.2.3_storage_indexing.json` | Storage, Indexing & ER Modeling | 25 | 8 | 12 | 5 |
 | `questions/module_1_core_cs/1.2.4_sql_queries.json` | SQL Queries & Output Prediction | 35 | 10 | 18 | 7 |
+| `questions/module_1_core_cs/1.3.1_network_architecture.json` | Network Architecture & Physical/Data Link Layers | 25 | 8 | 12 | 5 |
 
 ## Question format
 
@@ -61,3 +62,7 @@ Transaction questions define schedule notation and any strict-versus-rigorous lo
 Indexing questions state whether height counts edges, define node capacities and split rules, and distinguish internal separators from leaf records. ER mappings state optionality and uniqueness requirements. Integer difficulty quotas are rounded where exact percentages are impossible: Subpart 1.2.3 uses 8 Easy, 12 Medium, and 5 Hard; Subpart 1.2.4 uses 10 Easy, 18 Medium, and 7 Hard. Together, Subparts 1.2.1 through 1.2.4 have 36 Easy, 60 Medium, and 24 Hard questions out of 120, preserving the exact overall 30%/50%/20% distribution.
 
 SQL questions use SQLite SQL with self-contained CTE input data. Options encode complete ordered results as JSON row arrays, where `null` represents SQL NULL. Queries with multiple output rows specify final ordering; window functions separately specify their own ordering and partitioning. All 35 SQL queries were executed against SQLite 3.45.3 to verify that exactly the keyed option matches the result.
+
+Link-layer questions define ACK numbering, sequence modulus, window bounds, buffering, loss patterns, and timer rules. Timing questions distinguish serialization from propagation and state which overhead counts as useful data. Textbook CRC exercises define their polynomial and bit-order conventions; they do not assume a real Ethernet CRC parameter set. Subpart 1.3.1 uses the rounded 25-question quota of 8 Easy, 12 Medium, and 5 Hard.
+
+The bit/octet transparency rules were checked against [RFC 1662, Sections 4.2 and 5.2](https://www.rfc-editor.org/rfc/rfc1662.html), and one's-complement checksum arithmetic against [RFC 1071, Section 1](https://www.rfc-editor.org/rfc/rfc1071.html). Any simplified framing model is stated explicitly in its question.
