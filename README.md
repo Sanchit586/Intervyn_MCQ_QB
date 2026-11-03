@@ -30,6 +30,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_3_pseudocode/3.1_bitwise_logic.json` | Bitwise Operations & Number Manipulation | 50 | 15 | 25 | 10 |
 | `questions/module_3_pseudocode/3.2_loop_execution.json` | Iterative Loop Execution & Flow Control | 50 | 15 | 25 | 10 |
 | `questions/module_3_pseudocode/3.3_recursion_dry_runs.json` | Recursive Function Dry-Runs | 50 | 15 | 25 | 10 |
+| `questions/module_4_applied_systems/4.1_cloud_computing.json` | Cloud Computing Fundamentals | 30 | 9 | 15 | 6 |
 
 ## Question format
 
@@ -49,6 +50,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Cloud scenarios follow the service/deployment taxonomy in [NIST SP 800-145](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf), the [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/), and [Docker's container/VM explanation](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/). Failure-domain, capacity, quorum, and availability exercises state their own assumptions; their numerical results are derived from those fictional scenarios rather than provider availability guarantees. Multi-cloud means use of multiple providers; hybrid scenarios explicitly describe integrated distinct cloud infrastructures.
 
 Module 3 uses typed pseudocode with braces, `Integer` declarations, `Function Integer` / `Function Void`, and a `Main` block. Each question states its execution rules. Integer arithmetic wraps in signed 32-bit two's-complement, `>>` extends the sign, `^` means XOR, and `div` truncates toward zero. `Print` appends space-separated integer tokens. Expressions evaluate left to right subject to parentheses and normal operator precedence. These are explicit assessment conventions; they do not rely on C/C++ signed-overflow behavior. Verify outputs with `python scripts/verify_pseudocode_examples.py --java-home "PATH_TO_JDK"`. The standard-library verifier translates this restricted notation to Java 17, compiles and executes each snippet, and requires exactly the keyed option to match. Static local declarations are lifted to per-function persistent fields.
 
