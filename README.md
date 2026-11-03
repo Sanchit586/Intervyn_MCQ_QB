@@ -40,8 +40,9 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_5_data_science/5.4_evaluation_regularization.json` | Model Evaluation, Validation & Regularization | 30 | 9 | 15 | 6 |
 | `questions/module_5_data_science/5.5_pandas_numpy.json` | Data Wrangling with Python (Pandas & NumPy) | 25 | 7 | 13 | 5 |
 | `questions/module_6_aptitude/6.1_quantitative_arithmetic.json` | Quantitative Arithmetic | 80 | 24 | 40 | 16 |
+| `questions/module_6_aptitude/6.2_higher_modern_math.json` | Higher & Modern Mathematics | 60 | 18 | 30 | 12 |
 
-The bank contains 1,280 questions across 36 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
+The bank contains 1,340 questions across 37 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
 
 ## Question format
 
@@ -61,6 +62,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Modern-math questions state whether order matters, whether identical objects are distinguishable, whether circular reflections count separately, and whether random draws use replacement. Checks use exact counting, rational probabilities, modular exponentiation, exhaustive small arrangements, and dynamic programming for repeated-letter permutations. No independently selected envelope placements are confused with a uniformly random bijection.
 
 Module 6 follows Prompt-6. Arithmetic questions state rate additivity, working-day timing, percentage bases, compounding frequency, and installment timing when relevant. Answers use exact fractions or terminating decimals; no unstated rounding is required. Run `python scripts/verify_aptitude_examples.py` for exact rational checks, including numerical equivalence checks across all four arithmetic options and a simulation of alternate-worker schedules using rational work totals. The verifier uses only the Python standard library. Conceptual and editorial review is separate from these checks.
 

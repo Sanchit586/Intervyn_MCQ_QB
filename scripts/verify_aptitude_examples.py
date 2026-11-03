@@ -5,14 +5,16 @@ No numerical answer is established using approximate random simulation.
 """
 
 import argparse
+from collections import Counter
 from fractions import Fraction as F
+from functools import lru_cache
 import itertools as it
 import json
 import math
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = {"6.1": "6.1_quantitative_arithmetic.json"}
+FILES = {"6.1": "6.1_quantitative_arithmetic.json", "6.2": "6.2_higher_modern_math.json"}
 QUESTIONS = {}
 CHECKED = set()
 
@@ -101,6 +103,55 @@ def arithmetic():
         number("6.1", index, value)
 
 
+def modern():
+    c, p = math.comb, math.perm
+    v = {
+        1: p(5, 2), 2: c(6, 2), 3: math.factorial(4), 4: c(5, 1),
+        5: sum(d[0] != 0 for d in it.permutations(range(10), 3)), 6: c(5, 3),
+        7: F(3, 6), 8: F(1, 4), 9: F(13, 52), 10: F(3, 5),
+        11: F(2, 5)*F(1, 2), 12: 1-F(1, 2)**3, 13: 29%5, 14: 7**2%10,
+        15: next(x for x in range(10) if (4502+10*x)%9 == 0),
+        16: 3+5*4, 17: sum(range(1, 11)), 18: 18*3,
+        19: len(set(it.permutations("LEVEL"))), 20: 2*math.factorial(5),
+        21: math.factorial(6)-2*math.factorial(5), 22: math.factorial(4),
+        23: c(4, 2)*c(5, 3), 24: math.factorial(5), 25: c(7, 2), 26: p(7, 3),
+        27: F(c(5, 2), c(8, 2)), 28: F(3*2, c(5, 2)),
+        29: F(c(4, 2), c(52, 2)), 32: F(3, 10)*F(3, 5)+F(7, 10)*F(2, 5),
+        33: F(c(4, 2), 2**4), 34: F(2, 5)**3, 35: F(4+13-1, 52),
+        36: F(c(5, 2), c(10, 2)), 37: pow(2, 10, 7), 38: pow(3, 27, 10),
+        39: -17%5, 40: math.lcm(12, 18), 41: math.gcd(84, 126),
+        42: sum((3204+10*x)%6 == 0 for x in range(10)),
+        43: sum(5+3*k for k in range(20)), 44: 31+2*F(31-11, 8-3),
+        45: sum(3*2**k for k in range(6)), 46: 12/(1-F(1, 3)),
+        47: math.isqrt(225), 48: 80*F(1, 2)**4,
+        52: sum(sum(counts) == 8 for counts in it.product(range(1, 5), repeat=3)),
+        53: F(c(4, 2)*c(48, 3), c(52, 5)), 54: F(4*3*2, c(9, 3)),
+        55: F(sum(all(i != val for i, val in enumerate(order)) for order in it.permutations(range(5))), math.factorial(5)),
+        57: next(x for x in range(1, 106) if x%3 == 2 and x%5 == 3 and x%7 == 2),
+        58: pow(7, 100, 13), 59: (3*10**2+2*10)-(3*9**2+2*9), 60: 2,
+    }
+    dice = list(it.product(range(1, 7), repeat=2))
+    v[30] = F(sum(sum(pair) == 9 for pair in dice), len(dice))
+    conditional = [pair for pair in dice if pair[0]%2 == 0]
+    v[31] = F(sum(sum(pair) == 7 for pair in conditional), len(conditional))
+    conditional = [pair for pair in dice if 6 in pair]
+    v[56] = F(sum(sum(pair) == 8 for pair in conditional), len(conditional))
+    @lru_cache(None)
+    def multiset(counts):
+        if not any(counts):
+            return 1
+        return sum(multiset(counts[:i]+(count-1,)+counts[i+1:])
+                   for i, count in enumerate(counts) if count)
+    v[49] = multiset(tuple(Counter("MISSISSIPPI").values()))
+    v[50] = sum(all(abs(order.index(a)-order.index(b)) == 1 for a, b in [(0, 1), (2, 3), (4, 5), (6, 7)])
+                for order in it.permutations(range(8)))
+    # Fix A at index zero to quotient only by rotation.
+    v[51] = sum(order.index(1) not in (1, 5) for order in ((0,)+tail for tail in it.permutations(range(1, 6))))
+    assert sum([3, 6, 12]) == 21 and math.prod([3, 6, 12]) == 216
+    for index, value in v.items():
+        number("6.2", index, value)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--subpart", choices=FILES, action="append")
@@ -108,7 +159,7 @@ def main():
     for sid in args.subpart or FILES:
         path = ROOT / "questions/module_6_aptitude" / FILES[sid]
         QUESTIONS.update({q["id"]: q for q in json.loads(path.read_text(encoding="utf-8"))})
-        {"6.1": arithmetic}[sid]()
+        {"6.1": arithmetic, "6.2": modern}[sid]()
     print(f"PASS: {len(CHECKED)} exact/model-checked keys; editorial review remains separate.")
 
 
