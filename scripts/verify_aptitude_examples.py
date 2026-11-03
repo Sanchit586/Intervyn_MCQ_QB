@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = {"6.1": "6.1_quantitative_arithmetic.json", "6.2": "6.2_higher_modern_math.json",
-         "6.3": "6.3_logical_reasoning.json"}
+         "6.3": "6.3_logical_reasoning.json", "6.4": "6.4_verbal_ability.json"}
 QUESTIONS = {}
 CHECKED = set()
 
@@ -316,6 +316,32 @@ def logic():
     suff(90, range(1,31), lambda x:x%4==0, lambda x:x<=10, lambda x:x%6==0)
 
 
+def verbal():
+    # These authored edges record the dependencies identified in editorial review.
+    # Their presence is not an automated proof of English grammar or comprehension.
+    constraints = json.loads((ROOT / "scripts/verbal_order_constraints.json").read_text(encoding="utf-8"))
+    assert len(constraints) == 14
+    for qid, edges in constraints.items():
+        question = QUESTIONS[qid]
+        labels = {line.split(":", 1)[0] for line in question["code_snippet"].splitlines()}
+        assert len(labels) in (4, 5)
+        assert {label for edge in edges for label in edge} == labels
+        def valid(order):
+            position = {label:i for i,label in enumerate(order)}
+            return all(position[before] < position[after] for before,after in edges)
+        solutions = [order for order in it.permutations(labels) if valid(order)]
+        assert len(solutions) == 1, (qid, solutions)
+        matches = []
+        for key, text in question["options"].items():
+            order = text.split("-")
+            assert set(order) == labels and len(order) == len(labels), (qid, text)
+            if valid(order):
+                matches.append(key)
+        assert matches == [question["correct_answer"]], (qid, matches)
+        CHECKED.add(qid)
+    print("Checked 14 paragraph-order keys against editorial precedence constraints; grammar and passage answers require editorial review.")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--subpart", choices=FILES, action="append")
@@ -323,7 +349,7 @@ def main():
     for sid in args.subpart or FILES:
         path = ROOT / "questions/module_6_aptitude" / FILES[sid]
         QUESTIONS.update({q["id"]: q for q in json.loads(path.read_text(encoding="utf-8"))})
-        {"6.1": arithmetic, "6.2": modern, "6.3": logic}[sid]()
+        {"6.1": arithmetic, "6.2": modern, "6.3": logic, "6.4": verbal}[sid]()
     print(f"PASS: {len(CHECKED)} exact/model-checked keys; editorial review remains separate.")
 
 

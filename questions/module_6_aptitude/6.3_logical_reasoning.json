@@ -1365,7 +1365,7 @@
     "subpart_id": "6.3",
     "subpart_name": "Logical & Analytical Reasoning",
     "difficulty": "Hard",
-    "question": "Six people occupy equally spaced circular seats. A,B,D,F face inward; C,E face outward. Who is immediately to the own right of the person opposite B?",
+    "question": "Six people occupy equally spaced circular seats. A,B,D,F face inward; C,E face outward. Who is immediately to the right of the person opposite B, using that person's own facing direction?",
     "code_snippet": "D is opposite A.\nB is immediately clockwise from A.\nE is opposite B.\nF is immediately counterclockwise from A.",
     "options": {
       "A": "A",
