@@ -2,16 +2,20 @@
 
 import argparse
 import ast
+from concurrent.futures import ThreadPoolExecutor
 from fractions import Fraction as F
 import itertools as it
 import json
 import math
 from pathlib import Path
 import statistics as stats
+import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = {"5.1": "5.1_statistics_probability.json", "5.2": "5.2_distributions_tests.json",
-         "5.3": "5.3_supervised_ml.json", "5.4": "5.4_evaluation_regularization.json"}
+         "5.3": "5.3_supervised_ml.json", "5.4": "5.4_evaluation_regularization.json",
+         "5.5": "5.5_pandas_numpy.json"}
 QUESTIONS = {}
 CHECKED = set()
 
@@ -256,6 +260,30 @@ def evaluation():
     exact(sid, 30, "Ridge uniquely gives (1,1); lasso permits every nonnegative pair with sum 2")
 
 
+def wrangling():
+    import numpy as np
+    import pandas as pd
+    if not pd.__version__.startswith("2.3.") or not np.__version__.startswith("2.2."):
+        raise RuntimeError("Use the pandas 2.3.x / NumPy 2.2.x versions stated in the questions; see scripts/requirements_data_science.txt")
+
+    def run(question):
+        source = question["code_snippet"]
+        ast.parse(source)
+        result = subprocess.run([sys.executable, "-c", source], cwd=ROOT,
+                                capture_output=True, text=True, timeout=30)
+        if result.returncode or result.stderr:
+            raise AssertionError((question["id"], result.returncode, result.stderr[:1500]))
+        actual = result.stdout.rstrip("\r\n")
+        matches = [key for key, text in question["options"].items() if text == actual]
+        assert matches == [question["correct_answer"]], (question["id"], actual, matches)
+        return question["id"]
+
+    questions = [q for q in QUESTIONS.values() if q["subpart_id"] == "5.5"]
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        CHECKED.update(pool.map(run, questions))
+    print(f"Executed {len(questions)} complete Python snippets using pandas {pd.__version__}, NumPy {np.__version__}.")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--subpart", choices=FILES, action="append")
@@ -263,8 +291,9 @@ def main():
     for sid in args.subpart or FILES:
         path = ROOT / "questions/module_5_data_science" / FILES[sid]
         QUESTIONS.update({q["id"]: q for q in json.loads(path.read_text(encoding="utf-8"))})
-        {"5.1": foundations, "5.2": testing, "5.3": supervised, "5.4": evaluation}[sid]()
-    print(f"PASS: {len(CHECKED)} numerical/enumerated answer keys; conceptual answers need separate review.")
+        {"5.1": foundations, "5.2": testing, "5.3": supervised,
+         "5.4": evaluation, "5.5": wrangling}[sid]()
+    print(f"PASS: {len(CHECKED)} answer keys checked by numerical models, enumeration, or program execution; conceptual answers need separate review.")
 
 
 if __name__ == "__main__":
