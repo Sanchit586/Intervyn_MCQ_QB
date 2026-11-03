@@ -18,6 +18,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.3.4_application_security.json` | Application Layer Protocols & Network Security | 25 | 7 | 13 | 5 |
 | `questions/module_1_core_cs/1.4.1_oop_architecture.json` | Core Architecture & Class Mechanics | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.4.2_object_lifecycle.json` | Object Lifecycle & Memory Management | 30 | 9 | 15 | 6 |
+| `questions/module_1_core_cs/1.4.3_runtime_polymorphism.json` | Runtime Polymorphism & Dynamic Dispatch | 30 | 9 | 15 | 6 |
 
 ## Question format
 
@@ -81,3 +82,5 @@ Application examples distinguish SMTP relay from submission, active from passive
 OOP snippets specify C++17 or Java 17. Their class/access rules were checked against the [C++ classes specification](https://eel.is/c++draft/class) and [Java Language Specification, Chapter 8](https://docs.oracle.com/javase/specs/jls/se17/html/jls-8.html). Self-contained examples can be checked with `python scripts/verify_oop_examples.py`, using a C++17 compiler and a JDK supporting `--release 17`. Use `--cxx` and `--java-home` to select toolchains, or pass individual JSON paths. The verifier compares successful output and expected compilation rejection; conceptual questions are reviewed separately. Snippets classified as undefined behavior are compiled but never executed as though they had a predictable output.
 
 Lifecycle examples distinguish construction from assignment, owning from non-owning pointer copies, and complete objects from partially constructed subobjects. Java GC questions use explicit strong-root graphs and ask about eligibility, not nondeterministic collection timing; initialization rules follow [JLS Chapter 12](https://docs.oracle.com/javase/specs/jls/se17/html/jls-12.html). C++17 elision questions use guaranteed prvalue cases rather than optional named-return-value optimization.
+
+Polymorphism questions separate compile-time overload/access/default-argument choices from runtime instance dispatch. Virtual-table slot, vptr-count, and this-adjustment exercises provide explicit fictional ABI layouts; they do not assert that the C++ language mandates those layouts. Diamond examples distinguish shared base identity from the separate requirement for a unique final overrider.

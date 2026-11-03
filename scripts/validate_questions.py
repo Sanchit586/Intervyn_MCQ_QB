@@ -102,6 +102,12 @@ SUBPARTS = {
         "count": 30,
         "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
     },
+    "1.4.3": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Runtime Polymorphism & Dynamic Dispatch",
+        "count": 30,
+        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
+    },
 }
 
 
