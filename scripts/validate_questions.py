@@ -126,6 +126,12 @@ SUBPARTS = {
         "count": 45,
         "difficulties": {"Easy": 13, "Medium": 23, "Hard": 9},
     },
+    "2.3": {
+        "module": "Module 2: Data Structures & Algorithms",
+        "name": "Stacks & Queues",
+        "count": 40,
+        "difficulties": {"Easy": 12, "Medium": 20, "Hard": 8},
+    },
 }
 
 

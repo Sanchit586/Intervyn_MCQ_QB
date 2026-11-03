@@ -22,6 +22,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.4.4_tricky_outputs_exceptions.json` | Language-Specific OOP Outputs & Exception Handling | 30 | 9 | 15 | 6 |
 | `questions/module_2_dsa/2.1_asymptotic_complexity.json` | Asymptotic Complexity & Recurrence Analysis | 35 | 11 | 17 | 7 |
 | `questions/module_2_dsa/2.2_linear_data_structures.json` | Linear Data Structures (Arrays, Strings & Linked Lists) | 45 | 13 | 23 | 9 |
+| `questions/module_2_dsa/2.3_stacks_queues.json` | Stacks & Queues | 40 | 12 | 20 | 8 |
 
 ## Question format
 
