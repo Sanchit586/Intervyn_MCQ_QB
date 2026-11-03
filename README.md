@@ -35,8 +35,9 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_4_applied_systems/4.3_linux_shell.json` | Linux / Unix OS Environment & Shell Commands | 25 | 8 | 12 | 5 |
 | `questions/module_4_applied_systems/4.4_web_rest_apis.json` | Web Fundamentals & REST APIs | 25 | 7 | 13 | 5 |
 | `questions/module_5_data_science/5.1_statistics_probability.json` | Descriptive Statistics & Probability Foundations | 45 | 14 | 22 | 9 |
+| `questions/module_5_data_science/5.2_distributions_tests.json` | Distributions & Statistical Hypothesis Testing | 40 | 12 | 20 | 8 |
 
-The bank contains 1,065 questions across 31 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
+The bank contains 1,105 questions across 32 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
 
 ## Question format
 
@@ -56,6 +57,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Statistical conventions and testing assumptions were checked using NIST's [skewness/kurtosis definitions](https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm), [one-sample mean tests](https://www.itl.nist.gov/div898/handbook/prc/section2/prc.htm), [two-sample t-tests](https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm), and [one-way ANOVA](https://www.itl.nist.gov/div898/handbook/eda/section3/eda354.htm). Questions distinguish exact normal-model results from CLT approximations, state the tail before computing a p-value, and avoid interpreting a p-value as a posterior null probability. Supplied normal-table values define the requested numerical precision. Clustered-sample variance is checked by summing its covariance matrix, and finite-sample probability answers use exact enumeration where practical.
 
 Module 5 follows Prompt-5. Statistical questions specify variance denominators, quartile conventions, conditional sampling/reporting protocols, moment versus excess kurtosis, and needed independence assumptions. Explanations show the calculation steps. Subpart 5.1 uses 14 Easy, 22 Medium, and 9 Hard questions; complementary rounding in Subpart 5.5 will preserve the module-wide 30%/50%/20% mix. Run `python scripts/verify_data_science_examples.py` for independent numerical checks, including exact finite-sample enumeration and rational probability calculations. Conceptual claims and model/test assumptions require separate content review.
 

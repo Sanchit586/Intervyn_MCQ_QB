@@ -10,7 +10,7 @@ from pathlib import Path
 import statistics as stats
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = {"5.1": "5.1_statistics_probability.json"}
+FILES = {"5.1": "5.1_statistics_probability.json", "5.2": "5.2_distributions_tests.json"}
 QUESTIONS = {}
 CHECKED = set()
 
@@ -111,6 +111,41 @@ def foundations():
     numeric(sid, 45, F(sum(map(sum, dice)), len(dice)))
 
 
+def testing():
+    sid = "5.2"
+    calculations = {
+        2: (130-100)/15, 8: 1-.2, 13: 12/math.sqrt(36),
+        14: (103-100)/(12/math.sqrt(36)), 15: (52-50)/(4/math.sqrt(16)),
+        20: 40*30/100, 21: (18-12)**2/12, 22: (3-1)*(4-1),
+        24: 12/3, 25: .8413-.1587, 26: 1-.9750,
+        27: 2*(1-.97725), 28: 1-.0668,
+        35: 1-.95**2, 36: F(90*5, 90*5+10*80),
+        37: (sum(5*(mean-4)**2 for mean in [2, 4, 6])/2)/(24/12),
+    }
+    for index, value in calculations.items():
+        numeric(sid, index, value)
+    exact(sid, 1, "0, 1")
+    exact(sid, 23, f"{4-1}, {20-4}")
+    exact(sid, 31, f"Multiply sample size by {int((1/.5)**2)}")
+    covariance_sum = sum(100 if i == j else 20 if i//10 == j//10 else 0
+                         for i in range(100) for j in range(100))
+    numeric(sid, 34, math.sqrt(covariance_sum/100**2))
+    observed = [[30, 10], [10, 50]]
+    rows = [sum(row) for row in observed]
+    columns = [sum(row[j] for row in observed) for j in range(2)]
+    chi = sum((observed[i][j]-rows[i]*columns[j]/100)**2/(rows[i]*columns[j]/100)
+              for i in range(2) for j in range(2))
+    assert chi > 3.841
+    exact(sid, 38, f"{chi:.4f}; reject independence")
+    cutoff = 50+1.645*10/math.sqrt(100)
+    z_under_alternative = (cutoff-52)/(10/math.sqrt(100))
+    assert math.isclose(z_under_alternative, -.355)
+    assert abs(stats.NormalDist().cdf(z_under_alternative)-.3613) < .00005
+    exact(sid, 39, f"{.3613:.4f}, {1-.3613:.4f}")
+    assert math.isclose(.999**100, .9047921471, abs_tol=1e-10)
+    exact(sid, 40, "No; np=0.1 and P(all zeros)=0.999^100 is about 0.905, so the finite-sample distribution is highly asymmetric")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--subpart", choices=FILES, action="append")
@@ -118,7 +153,7 @@ def main():
     for sid in args.subpart or FILES:
         path = ROOT / "questions/module_5_data_science" / FILES[sid]
         QUESTIONS.update({q["id"]: q for q in json.loads(path.read_text(encoding="utf-8"))})
-        {"5.1": foundations}[sid]()
+        {"5.1": foundations, "5.2": testing}[sid]()
     print(f"PASS: {len(CHECKED)} numerical/enumerated answer keys; conceptual answers need separate review.")
 
 
