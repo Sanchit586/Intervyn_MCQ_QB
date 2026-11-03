@@ -114,6 +114,12 @@ SUBPARTS = {
         "count": 30,
         "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
     },
+    "2.1": {
+        "module": "Module 2: Data Structures & Algorithms",
+        "name": "Asymptotic Complexity & Recurrence Analysis",
+        "count": 35,
+        "difficulties": {"Easy": 11, "Medium": 17, "Hard": 7},
+    },
 }
 
 

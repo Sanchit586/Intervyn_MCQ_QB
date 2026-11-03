@@ -20,6 +20,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.4.2_object_lifecycle.json` | Object Lifecycle & Memory Management | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.4.3_runtime_polymorphism.json` | Runtime Polymorphism & Dynamic Dispatch | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.4.4_tricky_outputs_exceptions.json` | Language-Specific OOP Outputs & Exception Handling | 30 | 9 | 15 | 6 |
+| `questions/module_2_dsa/2.1_asymptotic_complexity.json` | Asymptotic Complexity & Recurrence Analysis | 35 | 11 | 17 | 7 |
 
 ## Question format
 
@@ -39,6 +40,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Module 2 follows Prompt-2. Odd-sized subparts use documented integer rounding; the complete 310-question module targets 93 Easy, 155 Medium, and 62 Hard. Complexity questions request tight bounds where needed, specify recurrence base/domain assumptions, and distinguish peak live space from cumulative allocations. `Python 3 (analysis)` snippets are syntax-checked; their complexity arguments are checked separately. Explicit `Python 3.` output programs and self-contained C++17 programs can be verified with `python scripts/verify_dsa_examples.py`, with optional JSON paths and `--cxx` compiler selection.
 
 Use Python 3.9 or later; no third-party packages are needed. Run before committing:
 
