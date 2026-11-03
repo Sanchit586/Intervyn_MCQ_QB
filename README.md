@@ -32,6 +32,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_3_pseudocode/3.3_recursion_dry_runs.json` | Recursive Function Dry-Runs | 50 | 15 | 25 | 10 |
 | `questions/module_4_applied_systems/4.1_cloud_computing.json` | Cloud Computing Fundamentals | 30 | 9 | 15 | 6 |
 | `questions/module_4_applied_systems/4.2_software_eng_git.json` | Software Engineering & Version Control (Git) | 30 | 9 | 15 | 6 |
+| `questions/module_4_applied_systems/4.3_linux_shell.json` | Linux / Unix OS Environment & Shell Commands | 25 | 8 | 12 | 5 |
 
 ## Question format
 
@@ -51,6 +52,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Linux questions use ordinary mode-bit rules with ACLs/capabilities excluded where relevant. References include the [Filesystem Hierarchy Standard](https://refspecs.linuxfoundation.org/FHS_3.0/fhs-3.0.html), [Linux umask](https://man7.org/linux/man-pages/man2/umask.2.html), [Bash redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html), and [GNU sed](https://www.gnu.org/software/sed/manual/sed.html). Run `python scripts/verify_shell_examples.py --bash "PATH_TO_BASH"` with GNU utilities on its PATH. The verifier executes all 12 self-contained output snippets under `LC_ALL=C` in separate empty directories and checks four permission answer keys by bit arithmetic. MSYS2 Bash can verify these text/pipeline outputs on Windows; Linux ownership and directory-access rules are reviewed conceptually, not inferred from Windows ACL behavior. Subpart 4.3 uses 8 Easy, 12 Medium, and 5 Hard questions because 25 cannot represent 30%/50%/20% exactly.
 
 Software-engineering scenarios use the [Scrum Guide 2020](https://scrumguides.org/scrum-guide.html) and conventional sequential Waterfall phase dependencies. Git behavior follows the official [merge](https://git-scm.com/docs/git-merge), [rebase](https://git-scm.com/docs/git-rebase), [stash](https://git-scm.com/docs/git-stash), and [cherry-pick](https://git-scm.com/docs/git-cherry-pick) documentation. `python scripts/verify_git_examples.py` checks 19 Git answer keys using disposable repositories without remotes, leaving the question-bank history and global configuration alone. These fixtures check real index/worktree contents, parent links, conflict sides, stash retention, rebase selection, and sequence abort behavior; SDLC/Scrum concepts require separate content review.
 
