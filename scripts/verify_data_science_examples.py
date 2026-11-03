@@ -11,7 +11,7 @@ import statistics as stats
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = {"5.1": "5.1_statistics_probability.json", "5.2": "5.2_distributions_tests.json",
-         "5.3": "5.3_supervised_ml.json"}
+         "5.3": "5.3_supervised_ml.json", "5.4": "5.4_evaluation_regularization.json"}
 QUESTIONS = {}
 CHECKED = set()
 
@@ -205,6 +205,57 @@ def supervised():
     exact(sid, 39, f"{best:g}, {q(0)-q(best):g}")
 
 
+def evaluation():
+    import numpy as np
+    sid = "5.4"
+    def auc(positive, negative):
+        comparisons = [float(p > n)+.5*float(p == n) for p in positive for n in negative]
+        return stats.mean(comparisons)
+    calculations = {
+        4: (45+45)/(45+45+5+5), 7: F(1, 2),
+        11: F(8, 8+9), 13: F(2*30, 2*30+10+20),
+        15: auc([.9, .6], [.8, .1]), 17: 1-150/100,
+        18: 1-(1-F(4, 5))*F(20, 18),
+        25: auc([.8, .5], [.5, .2]),
+    }
+    for index, value in calculations.items():
+        numeric(sid, index, value)
+    exact(sid, 10, f"{F(40, 50)}, {F(40, 60)}")
+    exact(sid, 12, f"{90/100:g}, {30/50:g}")
+    exact(sid, 14, f"{990/1000:g}, {0/10:g}")
+    grid = np.linspace(-5, 8, 13001)
+    numeric(sid, 23, grid[np.argmin((6-grid)**2+2*grid**2)])
+    numeric(sid, 24, grid[np.argmin(.5*(grid-3)**2+np.abs(grid))])
+    old_adjusted = 1-F(90, 17)/F(190, 19)
+    new_adjusted = 1-F(86, 16)/F(190, 19)
+    assert 1-F(86, 190) > 1-F(90, 190) and old_adjusted > new_adjusted
+    exact(sid, 26, f"R^2 increases; adjusted R^2 decreases from {old_adjusted} to {new_adjusted}")
+    z = np.array([3, -.5, 2])
+    lasso = np.sign(z)*np.maximum(np.abs(z)-1, 0)
+    ridge = np.linalg.solve(2*np.eye(3), z)
+    vector = lambda a: "["+",".join(f"{0 if v == 0 else v:g}" for v in a)+"]"
+    exact(sid, 27, f"Lasso: {vector(lasso)}; ridge: {vector(ridge)}")
+    # Independently compare the claimed lasso coordinate solution to a fine grid.
+    for target, coefficient in zip(z, lasso):
+        losses = .5*(grid-target)**2+np.abs(grid)
+        assert abs(grid[np.argmin(losses)]-coefficient) < 1e-8
+    beta = np.linalg.solve(np.array([[2, 1], [1, 2]])+np.eye(2), [3, 0])
+    exact(sid, 28, "["+", ".join(str(F(float(v)).limit_denominator(1000)) for v in beta)+"]")
+    lambdas = np.linspace(0, 3, 30001)
+    # Evaluate the exact two-point noise law epsilon in {-1,+1} with probability 1/2.
+    risk = .5*((1/(1+lambdas)-2)**2+(3/(1+lambdas)-2)**2)
+    optimum = int(np.argmin(risk))
+    exact(sid, 29, f"lambda={F(float(lambdas[optimum])).limit_denominator(1000)}; risk={F(float(risk[optimum])).limit_denominator(1000)}")
+    ridge_pair = np.linalg.solve([[2, 1], [1, 2]], [3, 3])
+    assert np.allclose(ridge_pair, [1, 1])
+    lasso_objective = lambda a, b: (3-a-b)**2+2*(abs(a)+abs(b))
+    for a in np.linspace(0, 2, 21):
+        assert math.isclose(lasso_objective(a, 2-a), 5)
+    assert min(lasso_objective(a, b) for a in np.linspace(-1, 3, 41)
+               for b in np.linspace(-1, 3, 41)) >= 5-1e-12
+    exact(sid, 30, "Ridge uniquely gives (1,1); lasso permits every nonnegative pair with sum 2")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--subpart", choices=FILES, action="append")
@@ -212,7 +263,7 @@ def main():
     for sid in args.subpart or FILES:
         path = ROOT / "questions/module_5_data_science" / FILES[sid]
         QUESTIONS.update({q["id"]: q for q in json.loads(path.read_text(encoding="utf-8"))})
-        {"5.1": foundations, "5.2": testing, "5.3": supervised}[sid]()
+        {"5.1": foundations, "5.2": testing, "5.3": supervised, "5.4": evaluation}[sid]()
     print(f"PASS: {len(CHECKED)} numerical/enumerated answer keys; conceptual answers need separate review.")
 
 

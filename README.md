@@ -37,8 +37,9 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_5_data_science/5.1_statistics_probability.json` | Descriptive Statistics & Probability Foundations | 45 | 14 | 22 | 9 |
 | `questions/module_5_data_science/5.2_distributions_tests.json` | Distributions & Statistical Hypothesis Testing | 40 | 12 | 20 | 8 |
 | `questions/module_5_data_science/5.3_supervised_ml.json` | Supervised Machine Learning Algorithms | 40 | 12 | 20 | 8 |
+| `questions/module_5_data_science/5.4_evaluation_regularization.json` | Model Evaluation, Validation & Regularization | 30 | 9 | 15 | 6 |
 
-The bank contains 1,145 questions across 33 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
+The bank contains 1,175 questions across 34 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
 
 ## Question format
 
@@ -58,6 +59,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Evaluation questions define the positive class, matrix orientation, AUC tie credit, evaluation-set SST, and predictor-count conventions when relevant. Regularizer derivations supply the complete objective, including factors of one half, and state intercept treatment. Numerical checks enumerate AUC pairs, solve ridge systems, and compare lasso and scalar-risk optima against independent grids or exact two-point-noise risk. References include the [scikit-learn metrics guide](https://scikit-learn.org/stable/modules/model_evaluation.html), [linear-model objectives](https://scikit-learn.org/stable/modules/linear_model.html), and [ETH lasso lecture notes](https://stat.ethz.ch/Teaching/buhlmann/advanced-comput-statist/slides1.pdf). Validation-fold preprocessing stays inside each training fold.
 
 Supervised-learning questions distinguish OLS estimation assumptions from assumptions needed for exact inference. VIF questions specify their auxiliary regression and intercept conventions; tree questions state impurity definitions, logarithm bases, and child weights. [Statsmodels VIF documentation](https://www.statsmodels.org/v0.13.5/generated/statsmodels.stats.outliers_influence.variance_inflation_factor.html), [random-forest documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), and the [XGBoost objective tutorial](https://xgboost.readthedocs.io/en/stable/tutorials/model.html) support the algorithm conventions. The numerical verifier uses NumPy for OLS fits, matrix-rank/VIF checks, and covariance calculations; finite differences check the logistic-loss derivatives, and bootstrap enumeration checks the OOB probability. XGBoost questions supply the exact objective and penalty normalization being evaluated.
 
