@@ -120,6 +120,12 @@ SUBPARTS = {
         "count": 35,
         "difficulties": {"Easy": 11, "Medium": 17, "Hard": 7},
     },
+    "2.2": {
+        "module": "Module 2: Data Structures & Algorithms",
+        "name": "Linear Data Structures (Arrays, Strings & Linked Lists)",
+        "count": 45,
+        "difficulties": {"Easy": 13, "Medium": 23, "Hard": 9},
+    },
 }
 
 
