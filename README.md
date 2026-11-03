@@ -36,8 +36,9 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_4_applied_systems/4.4_web_rest_apis.json` | Web Fundamentals & REST APIs | 25 | 7 | 13 | 5 |
 | `questions/module_5_data_science/5.1_statistics_probability.json` | Descriptive Statistics & Probability Foundations | 45 | 14 | 22 | 9 |
 | `questions/module_5_data_science/5.2_distributions_tests.json` | Distributions & Statistical Hypothesis Testing | 40 | 12 | 20 | 8 |
+| `questions/module_5_data_science/5.3_supervised_ml.json` | Supervised Machine Learning Algorithms | 40 | 12 | 20 | 8 |
 
-The bank contains 1,105 questions across 32 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
+The bank contains 1,145 questions across 33 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
 
 ## Question format
 
@@ -57,6 +58,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Supervised-learning questions distinguish OLS estimation assumptions from assumptions needed for exact inference. VIF questions specify their auxiliary regression and intercept conventions; tree questions state impurity definitions, logarithm bases, and child weights. [Statsmodels VIF documentation](https://www.statsmodels.org/v0.13.5/generated/statsmodels.stats.outliers_influence.variance_inflation_factor.html), [random-forest documentation](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html), and the [XGBoost objective tutorial](https://xgboost.readthedocs.io/en/stable/tutorials/model.html) support the algorithm conventions. The numerical verifier uses NumPy for OLS fits, matrix-rank/VIF checks, and covariance calculations; finite differences check the logistic-loss derivatives, and bootstrap enumeration checks the OOB probability. XGBoost questions supply the exact objective and penalty normalization being evaluated.
 
 Statistical conventions and testing assumptions were checked using NIST's [skewness/kurtosis definitions](https://www.itl.nist.gov/div898/handbook/eda/section3/eda35b.htm), [one-sample mean tests](https://www.itl.nist.gov/div898/handbook/prc/section2/prc.htm), [two-sample t-tests](https://www.itl.nist.gov/div898/handbook/eda/section3/eda353.htm), and [one-way ANOVA](https://www.itl.nist.gov/div898/handbook/eda/section3/eda354.htm). Questions distinguish exact normal-model results from CLT approximations, state the tail before computing a p-value, and avoid interpreting a p-value as a posterior null probability. Supplied normal-table values define the requested numerical precision. Clustered-sample variance is checked by summing its covariance matrix, and finite-sample probability answers use exact enumeration where practical.
 

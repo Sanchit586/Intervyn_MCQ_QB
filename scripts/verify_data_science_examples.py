@@ -10,7 +10,8 @@ from pathlib import Path
 import statistics as stats
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = {"5.1": "5.1_statistics_probability.json", "5.2": "5.2_distributions_tests.json"}
+FILES = {"5.1": "5.1_statistics_probability.json", "5.2": "5.2_distributions_tests.json",
+         "5.3": "5.3_supervised_ml.json"}
 QUESTIONS = {}
 CHECKED = set()
 
@@ -146,6 +147,64 @@ def testing():
     exact(sid, 40, "No; np=0.1 and P(all zeros)=0.999^100 is about 0.905, so the finite-sample distribution is highly asymmetric")
 
 
+def supervised():
+    import numpy as np
+    sid = "5.3"
+    entropy = -sum(p*math.log2(p) for p in [.75, .25])
+    child_gini = F(6, 10)*(1-F(4, 6)**2-F(2, 6)**2)+F(4, 10)*(1-F(1, 4)**2-F(3, 4)**2)
+    corr = np.array([[1, .6, .6], [.6, 1, 0], [.6, 0, 1]])
+    bootstraps = list(it.product(range(4), repeat=4))
+    calculations = {
+        4: 1/(1-.8), 5: 1/(1+math.exp(0)), 8: -1*math.log2(1),
+        9: 1-.5**2-.5**2, 16: float(f"{1/(1-.9**2):.4f}"),
+        17: math.sqrt(9), 18: 1/(1+math.exp(-math.log(3))),
+        20: 1/(1+math.exp(-(math.log(3)+2*math.log(2)))),
+        22: float(f"{entropy:.4f}"), 23: F(1, 2)-child_gini,
+        24: float(f"{1-entropy:.4f}"), 26: stats.mean([1, 2, 6]),
+        27: F(sum(0 not in draw for draw in bootstraps), len(bootstraps)),
+        28: stats.mean([.9, .6]), 30: 2+.1*5,
+        32: float(f"{-math.log(.8):.4f}"), 34: np.linalg.inv(corr)[0, 0],
+        40: .5*(16/2+4/2-4/4)-1,
+    }
+    for index, value in calculations.items():
+        numeric(sid, index, value)
+    x = np.column_stack([np.ones(3), [0, 1, 2]])
+    coef = np.linalg.lstsq(x, [1, 3, 5], rcond=None)[0]
+    exact(sid, 13, f"{coef[0]:.0f}, {coef[1]:.0f}")
+    y = np.array([1, 4, 4])
+    residual = y-x@np.linalg.lstsq(x, y, rcond=None)[0]
+    numeric(sid, 14, residual.sum(), tolerance=1e-9)
+    assert math.isclose((math.log(.75/.25)+math.log(3))/math.log(3), 2)
+    exact(sid, 21, "x>=2")
+    gini_parent = 1-.5**2-.5**2
+    gini_a = 0
+    gini_b = 1-.75**2-.25**2
+    assert gini_parent-gini_a > gini_parent-gini_b
+    exact(sid, 25, f"Split A, {gini_parent-gini_a:g}")
+    targets = np.array([3, 5])
+    predictions = np.array([2, 2])
+    exact(sid, 29, str((targets-predictions).tolist()))
+    residuals = np.array([0, 4])-np.array([1, 1])
+    exact(sid, 31, str((np.array([1, 1])+int(residuals.mean())).tolist()))
+    duplicate = np.column_stack([[1, 2, 3], [1, 2, 3]])
+    assert np.linalg.matrix_rank(duplicate) == 1
+    assert np.allclose(duplicate@[1, 2], duplicate@[2, 1])
+    exact(sid, 35, "Every pair satisfying beta1+beta2=3 is optimal; coefficients are nonunique but fitted values are unique")
+    loss = lambda w: math.log1p(math.exp(-2*w))
+    h = 1e-4
+    gradient = (loss(h)-loss(-h))/(2*h)
+    curvature = (loss(h)-2*loss(0)+loss(-h))/h**2
+    assert abs(gradient+1) < 1e-6 and abs(curvature-1) < 1e-6
+    exact(sid, 36, "-1, 1")
+    cov = np.full((10, 10), 1.0)
+    np.fill_diagonal(cov, 4)
+    exact(sid, 38, f"{cov.sum()/100:g}, {4*.25:g}")
+    q = lambda w: -6*w+.5*(2+1)*w*w
+    candidates = np.linspace(-3, 5, 8001)
+    best = float(candidates[np.argmin(q(candidates))])
+    exact(sid, 39, f"{best:g}, {q(0)-q(best):g}")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--subpart", choices=FILES, action="append")
@@ -153,7 +212,7 @@ def main():
     for sid in args.subpart or FILES:
         path = ROOT / "questions/module_5_data_science" / FILES[sid]
         QUESTIONS.update({q["id"]: q for q in json.loads(path.read_text(encoding="utf-8"))})
-        {"5.1": foundations, "5.2": testing}[sid]()
+        {"5.1": foundations, "5.2": testing, "5.3": supervised}[sid]()
     print(f"PASS: {len(CHECKED)} numerical/enumerated answer keys; conceptual answers need separate review.")
 
 

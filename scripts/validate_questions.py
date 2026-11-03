@@ -18,6 +18,12 @@ LETTERS = {"A", "B", "C", "D"}
 DIFFICULTIES = {"Easy", "Medium", "Hard"}
 # Add exact quotas here when another subpart is populated.
 SUBPARTS = {
+    "5.3": {
+        "module": "Module 5: Data Science & Analytics Track",
+        "name": "Supervised Machine Learning Algorithms",
+        "count": 40,
+        "difficulties": {"Easy": 12, "Medium": 20, "Hard": 8},
+    },
     "5.2": {
         "module": "Module 5: Data Science & Analytics Track",
         "name": "Distributions & Statistical Hypothesis Testing",
