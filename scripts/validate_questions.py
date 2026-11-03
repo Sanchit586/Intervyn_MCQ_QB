@@ -96,6 +96,12 @@ SUBPARTS = {
         "count": 30,
         "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
     },
+    "1.4.2": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Object Lifecycle & Memory Management",
+        "count": 30,
+        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
+    },
 }
 
 
