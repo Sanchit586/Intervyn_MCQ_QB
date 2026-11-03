@@ -26,6 +26,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_2_dsa/2.4_trees_bst.json` | Trees & Binary Search Trees | 60 | 18 | 30 | 12 |
 | `questions/module_2_dsa/2.5_heaps_hashing.json` | Priority Queues (Heaps) & Hashing | 45 | 14 | 22 | 9 |
 | `questions/module_2_dsa/2.6_graphs.json` | Graph Algorithms & Representations | 45 | 13 | 23 | 9 |
+| `questions/module_2_dsa/2.7_searching_sorting.json` | Searching, Sorting & Algorithmic Paradigms | 40 | 12 | 20 | 8 |
 
 ## Question format
 
@@ -46,7 +47,7 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 
 ## Validation
 
-Module 2 follows Prompt-2. Odd-sized subparts use documented integer rounding; the complete 310-question module targets 93 Easy, 155 Medium, and 62 Hard. Complexity questions request tight bounds where needed, specify recurrence base/domain assumptions, and distinguish peak live space from cumulative allocations. `Python 3 (analysis)` snippets are syntax-checked; their complexity arguments are checked separately. Explicit `Python 3.` output programs and self-contained C++17 programs can be verified with `python scripts/verify_dsa_examples.py`, with optional JSON paths and `--cxx` compiler selection.
+Module 2 follows Prompt-2 and contains 310 questions: 93 Easy, 155 Medium, and 62 Hard, exactly 30%/50%/20% overall. Odd-sized subparts use the documented integer quotas in the table. Complexity questions request tight bounds where needed, specify recurrence base/domain assumptions, and distinguish peak live space from cumulative allocations. `Python 3 (analysis)` snippets are syntax-checked; their complexity arguments are checked separately. Explicit `Python 3.` output programs and self-contained C++17 programs can be verified with `python scripts/verify_dsa_examples.py`, with optional JSON paths and `--cxx` compiler selection. Mathematical and structural answers were additionally checked using recurrence identities, independent traversal/AVL models, exhaustive small-instance enumeration, and brute-force graph/sorting oracles.
 
 Use Python 3.9 or later; no third-party packages are needed. Run before committing:
 
