@@ -84,6 +84,12 @@ SUBPARTS = {
         "count": 25,
         "difficulties": {"Easy": 8, "Medium": 12, "Hard": 5},
     },
+    "1.3.4": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Application Layer Protocols & Network Security",
+        "count": 25,
+        "difficulties": {"Easy": 7, "Medium": 13, "Hard": 5},
+    },
 }
 
 
