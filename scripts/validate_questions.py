@@ -90,6 +90,12 @@ SUBPARTS = {
         "count": 25,
         "difficulties": {"Easy": 7, "Medium": 13, "Hard": 5},
     },
+    "1.4.1": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Core Architecture & Class Mechanics",
+        "count": 30,
+        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
+    },
 }
 
 
