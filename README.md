@@ -31,6 +31,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_3_pseudocode/3.2_loop_execution.json` | Iterative Loop Execution & Flow Control | 50 | 15 | 25 | 10 |
 | `questions/module_3_pseudocode/3.3_recursion_dry_runs.json` | Recursive Function Dry-Runs | 50 | 15 | 25 | 10 |
 | `questions/module_4_applied_systems/4.1_cloud_computing.json` | Cloud Computing Fundamentals | 30 | 9 | 15 | 6 |
+| `questions/module_4_applied_systems/4.2_software_eng_git.json` | Software Engineering & Version Control (Git) | 30 | 9 | 15 | 6 |
 
 ## Question format
 
@@ -50,6 +51,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Software-engineering scenarios use the [Scrum Guide 2020](https://scrumguides.org/scrum-guide.html) and conventional sequential Waterfall phase dependencies. Git behavior follows the official [merge](https://git-scm.com/docs/git-merge), [rebase](https://git-scm.com/docs/git-rebase), [stash](https://git-scm.com/docs/git-stash), and [cherry-pick](https://git-scm.com/docs/git-cherry-pick) documentation. `python scripts/verify_git_examples.py` checks 19 Git answer keys using disposable repositories without remotes, leaving the question-bank history and global configuration alone. These fixtures check real index/worktree contents, parent links, conflict sides, stash retention, rebase selection, and sequence abort behavior; SDLC/Scrum concepts require separate content review.
 
 Cloud scenarios follow the service/deployment taxonomy in [NIST SP 800-145](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf), the [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model/), and [Docker's container/VM explanation](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/). Failure-domain, capacity, quorum, and availability exercises state their own assumptions; their numerical results are derived from those fictional scenarios rather than provider availability guarantees. Multi-cloud means use of multiple providers; hybrid scenarios explicitly describe integrated distinct cloud infrastructures.
 
