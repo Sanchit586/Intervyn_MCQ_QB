@@ -4,3 +4,5 @@ __pycache__/
 venv/
 .oop_verify_*/
 .dsa_verify_*/
+.pseudocode_verify_*/
+.systems_verify_*/

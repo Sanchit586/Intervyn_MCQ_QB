@@ -27,6 +27,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_2_dsa/2.5_heaps_hashing.json` | Priority Queues (Heaps) & Hashing | 45 | 14 | 22 | 9 |
 | `questions/module_2_dsa/2.6_graphs.json` | Graph Algorithms & Representations | 45 | 13 | 23 | 9 |
 | `questions/module_2_dsa/2.7_searching_sorting.json` | Searching, Sorting & Algorithmic Paradigms | 40 | 12 | 20 | 8 |
+| `questions/module_3_pseudocode/3.1_bitwise_logic.json` | Bitwise Operations & Number Manipulation | 50 | 15 | 25 | 10 |
 
 ## Question format
 
@@ -46,6 +47,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Module 3 uses typed pseudocode with braces, `Integer` declarations, `Function Integer` / `Function Void`, and a `Main` block. Each question states its execution rules. Integer arithmetic wraps in signed 32-bit two's-complement, `>>` extends the sign, `^` means XOR, and `div` truncates toward zero. `Print` appends space-separated integer tokens. Expressions evaluate left to right subject to parentheses and normal operator precedence. These are explicit assessment conventions; they do not rely on C/C++ signed-overflow behavior. Verify outputs with `python scripts/verify_pseudocode_examples.py --java-home "PATH_TO_JDK"`. The standard-library verifier translates this restricted notation to Java 17, compiles and executes each snippet, and requires exactly the keyed option to match. Static local declarations are lifted to per-function persistent fields.
 
 Module 2 follows Prompt-2 and contains 310 questions: 93 Easy, 155 Medium, and 62 Hard, exactly 30%/50%/20% overall. Odd-sized subparts use the documented integer quotas in the table. Complexity questions request tight bounds where needed, specify recurrence base/domain assumptions, and distinguish peak live space from cumulative allocations. `Python 3 (analysis)` snippets are syntax-checked; their complexity arguments are checked separately. Explicit `Python 3.` output programs and self-contained C++17 programs can be verified with `python scripts/verify_dsa_examples.py`, with optional JSON paths and `--cxx` compiler selection. Mathematical and structural answers were additionally checked using recurrence identities, independent traversal/AVL models, exhaustive small-instance enumeration, and brute-force graph/sorting oracles.
 
