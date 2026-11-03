@@ -144,6 +144,12 @@ SUBPARTS = {
         "count": 45,
         "difficulties": {"Easy": 14, "Medium": 22, "Hard": 9},
     },
+    "2.6": {
+        "module": "Module 2: Data Structures & Algorithms",
+        "name": "Graph Algorithms & Representations",
+        "count": 45,
+        "difficulties": {"Easy": 13, "Medium": 23, "Hard": 9},
+    },
 }
 
 
