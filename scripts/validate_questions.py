@@ -132,6 +132,12 @@ SUBPARTS = {
         "count": 40,
         "difficulties": {"Easy": 12, "Medium": 20, "Hard": 8},
     },
+    "2.4": {
+        "module": "Module 2: Data Structures & Algorithms",
+        "name": "Trees & Binary Search Trees",
+        "count": 60,
+        "difficulties": {"Easy": 18, "Medium": 30, "Hard": 12},
+    },
 }
 
 
