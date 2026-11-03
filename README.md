@@ -41,8 +41,9 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_5_data_science/5.5_pandas_numpy.json` | Data Wrangling with Python (Pandas & NumPy) | 25 | 7 | 13 | 5 |
 | `questions/module_6_aptitude/6.1_quantitative_arithmetic.json` | Quantitative Arithmetic | 80 | 24 | 40 | 16 |
 | `questions/module_6_aptitude/6.2_higher_modern_math.json` | Higher & Modern Mathematics | 60 | 18 | 30 | 12 |
+| `questions/module_6_aptitude/6.3_logical_reasoning.json` | Logical & Analytical Reasoning | 90 | 27 | 45 | 18 |
 
-The bank contains 1,340 questions across 37 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
+The bank contains 1,430 questions across 38 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
 
 ## Question format
 
@@ -62,6 +63,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Logical-reasoning questions use categorical set semantics without existential import from universal statements. Their verifier checks allowed Venn regions and required witnesses, enumerates seating assignments (including person/role or person/color assignments), and exhausts the stated finite data-sufficiency domains. Circular questions distinguish clockwise order from each person's own left/right. Stated family siblings share both biological parents; the 15 family questions are reviewed by tracing their supplied relations. The 75 remaining keys have computational checks. Data sufficiency concerns the requested quantity or a definite yes/no answer, including a definite "no"; two possible values of an irrelevant intermediate variable need not make a statement insufficient.
 
 Modern-math questions state whether order matters, whether identical objects are distinguishable, whether circular reflections count separately, and whether random draws use replacement. Checks use exact counting, rational probabilities, modular exponentiation, exhaustive small arrangements, and dynamic programming for repeated-letter permutations. No independently selected envelope placements are confused with a uniformly random bijection.
 
