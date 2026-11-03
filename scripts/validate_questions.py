@@ -108,6 +108,12 @@ SUBPARTS = {
         "count": 30,
         "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
     },
+    "1.4.4": {
+        "module": "Module 1: Core Computer Science Fundamentals",
+        "name": "Language-Specific OOP Outputs & Exception Handling",
+        "count": 30,
+        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
+    },
 }
 
 

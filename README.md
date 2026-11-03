@@ -19,6 +19,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.4.1_oop_architecture.json` | Core Architecture & Class Mechanics | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.4.2_object_lifecycle.json` | Object Lifecycle & Memory Management | 30 | 9 | 15 | 6 |
 | `questions/module_1_core_cs/1.4.3_runtime_polymorphism.json` | Runtime Polymorphism & Dynamic Dispatch | 30 | 9 | 15 | 6 |
+| `questions/module_1_core_cs/1.4.4_tricky_outputs_exceptions.json` | Language-Specific OOP Outputs & Exception Handling | 30 | 9 | 15 | 6 |
 
 ## Question format
 
@@ -84,3 +85,5 @@ OOP snippets specify C++17 or Java 17. Their class/access rules were checked aga
 Lifecycle examples distinguish construction from assignment, owning from non-owning pointer copies, and complete objects from partially constructed subobjects. Java GC questions use explicit strong-root graphs and ask about eligibility, not nondeterministic collection timing; initialization rules follow [JLS Chapter 12](https://docs.oracle.com/javase/specs/jls/se17/html/jls-12.html). C++17 elision questions use guaranteed prvalue cases rather than optional named-return-value optimization.
 
 Polymorphism questions separate compile-time overload/access/default-argument choices from runtime instance dispatch. Virtual-table slot, vptr-count, and this-adjustment exercises provide explicit fictional ABI layouts; they do not assert that the C++ language mandates those layouts. Diamond examples distinguish shared base identity from the separate requirement for a unique final overrider.
+
+Exception examples distinguish evaluated return values from later `finally` mutations, Java checked-exception/catch-order rules, reverse resource closing and suppressed exceptions, and C++ slicing versus bare rethrow. Java statement/cleanup semantics follow [JLS Chapter 14](https://docs.oracle.com/javase/specs/jls/se17/html/jls-14.html). C++17 and Java 17 examples were checked using GCC 13.2 and JDK 24.0.2 with Java `--release 17`; compiler warnings alone are not classified as compilation errors.
