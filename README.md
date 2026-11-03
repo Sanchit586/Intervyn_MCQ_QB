@@ -34,8 +34,9 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_4_applied_systems/4.2_software_eng_git.json` | Software Engineering & Version Control (Git) | 30 | 9 | 15 | 6 |
 | `questions/module_4_applied_systems/4.3_linux_shell.json` | Linux / Unix OS Environment & Shell Commands | 25 | 8 | 12 | 5 |
 | `questions/module_4_applied_systems/4.4_web_rest_apis.json` | Web Fundamentals & REST APIs | 25 | 7 | 13 | 5 |
+| `questions/module_5_data_science/5.1_statistics_probability.json` | Descriptive Statistics & Probability Foundations | 45 | 14 | 22 | 9 |
 
-The bank contains 1,020 questions across 30 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
+The bank contains 1,065 questions across 31 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
 
 ## Question format
 
@@ -55,6 +56,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Module 5 follows Prompt-5. Statistical questions specify variance denominators, quartile conventions, conditional sampling/reporting protocols, moment versus excess kurtosis, and needed independence assumptions. Explanations show the calculation steps. Subpart 5.1 uses 14 Easy, 22 Medium, and 9 Hard questions; complementary rounding in Subpart 5.5 will preserve the module-wide 30%/50%/20% mix. Run `python scripts/verify_data_science_examples.py` for independent numerical checks, including exact finite-sample enumeration and rational probability calculations. Conceptual claims and model/test assumptions require separate content review.
 
 Web/API questions distinguish method safety from idempotency, response codes from final server state, and CORS response exposure from whether a request was sent. Primary references are [HTTP semantics (RFC 9110)](https://www.rfc-editor.org/rfc/rfc9110.html), [PATCH (RFC 5789)](https://www.rfc-editor.org/rfc/rfc5789.html), [Fielding's REST constraints](https://roy.gbiv.com/pubs/dissertation/rest_arch_style.htm), [cookies (RFC 6265)](https://www.rfc-editor.org/rfc/rfc6265.html), [WHATWG Web Storage](https://html.spec.whatwg.org/multipage/webstorage.html), and the [WHATWG Fetch CORS protocol](https://fetch.spec.whatwg.org/#http-cors-protocol). These answers were reviewed against the standards; browser behavior was not claimed to have been executed by the shell or Git verifiers. The PATCH retry example defines its own sequential application operations and was independently replayed. Subpart 4.4 uses 7 Easy, 13 Medium, and 5 Hard questions.
 
