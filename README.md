@@ -14,6 +14,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_1_core_cs/1.2.4_sql_queries.json` | SQL Queries & Output Prediction | 35 | 10 | 18 | 7 |
 | `questions/module_1_core_cs/1.3.1_network_architecture.json` | Network Architecture & Physical/Data Link Layers | 25 | 8 | 12 | 5 |
 | `questions/module_1_core_cs/1.3.2_network_layer_routing.json` | Network Layer, IP Addressing & Routing | 25 | 7 | 13 | 5 |
+| `questions/module_1_core_cs/1.3.3_transport_layer.json` | Transport Layer Protocols | 25 | 8 | 12 | 5 |
 
 ## Question format
 
@@ -69,3 +70,5 @@ Link-layer questions define ACK numbering, sequence modulus, window bounds, buff
 The bit/octet transparency rules were checked against [RFC 1662, Sections 4.2 and 5.2](https://www.rfc-editor.org/rfc/rfc1662.html), and one's-complement checksum arithmetic against [RFC 1071, Section 1](https://www.rfc-editor.org/rfc/rfc1071.html). Any simplified framing model is stated explicitly in its question.
 
 Network-layer questions state subnet reservations, route-selection rules, DV update order, and fragmentation units. IPv4 packet sizing and refragmentation were checked against [RFC 791](https://www.rfc-editor.org/rfc/rfc791.html), and source-only IPv6 fragmentation against [RFC 8200, Section 4.5](https://www.rfc-editor.org/rfc/rfc8200.html). ARP examples follow [RFC 826](https://www.rfc-editor.org/rfc/rfc826.html); TTL/DF-related ICMP behavior follows [RFC 1812](https://www.rfc-editor.org/rfc/rfc1812.html). NAPT examples explicitly define their mappings, including related-ICMP embedded-header translation described in [RFC 3022, Section 4.3](https://www.rfc-editor.org/rfc/rfc3022.html).
+
+Transport questions distinguish byte-stream framing, cumulative byte ACKs, SYN/FIN sequence consumption, and accepted resets using [RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html). UDP length/checksum examples follow [RFC 768](https://www.rfc-editor.org/rfc/rfc768.html), and window scaling follows [RFC 7323](https://www.rfc-editor.org/rfc/rfc7323.html). Congestion examples explicitly state their idealized RTT or classic Reno rules, including FlightSize-based thresholds from [RFC 5681](https://www.rfc-editor.org/rfc/rfc5681.html); they do not assume every modern TCP implementation uses that model.
