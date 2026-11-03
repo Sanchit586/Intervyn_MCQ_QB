@@ -138,6 +138,12 @@ SUBPARTS = {
         "count": 60,
         "difficulties": {"Easy": 18, "Medium": 30, "Hard": 12},
     },
+    "2.5": {
+        "module": "Module 2: Data Structures & Algorithms",
+        "name": "Priority Queues (Heaps) & Hashing",
+        "count": 45,
+        "difficulties": {"Easy": 14, "Medium": 22, "Hard": 9},
+    },
 }
 
 

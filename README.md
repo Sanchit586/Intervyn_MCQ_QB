@@ -24,6 +24,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_2_dsa/2.2_linear_data_structures.json` | Linear Data Structures (Arrays, Strings & Linked Lists) | 45 | 13 | 23 | 9 |
 | `questions/module_2_dsa/2.3_stacks_queues.json` | Stacks & Queues | 40 | 12 | 20 | 8 |
 | `questions/module_2_dsa/2.4_trees_bst.json` | Trees & Binary Search Trees | 60 | 18 | 30 | 12 |
+| `questions/module_2_dsa/2.5_heaps_hashing.json` | Priority Queues (Heaps) & Hashing | 45 | 14 | 22 | 9 |
 
 ## Question format
 
