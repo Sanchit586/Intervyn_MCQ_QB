@@ -39,8 +39,9 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_5_data_science/5.3_supervised_ml.json` | Supervised Machine Learning Algorithms | 40 | 12 | 20 | 8 |
 | `questions/module_5_data_science/5.4_evaluation_regularization.json` | Model Evaluation, Validation & Regularization | 30 | 9 | 15 | 6 |
 | `questions/module_5_data_science/5.5_pandas_numpy.json` | Data Wrangling with Python (Pandas & NumPy) | 25 | 7 | 13 | 5 |
+| `questions/module_6_aptitude/6.1_quantitative_arithmetic.json` | Quantitative Arithmetic | 80 | 24 | 40 | 16 |
 
-The bank contains 1,200 questions across 35 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
+The bank contains 1,280 questions across 36 populated subparts. Module 3 has 150 questions (45 Easy, 75 Medium, 30 Hard). Module 4 has 110 questions (33 Easy, 55 Medium, 22 Hard); its 25-question subparts use complementary rounding to preserve exactly 30%/50%/20% across the module.
 
 ## Question format
 
@@ -60,6 +61,8 @@ Each file is a UTF-8 JSON array of objects with exactly these fields:
 | `explanation` | Reasoning, including a timeline or calculation where applicable |
 
 ## Validation
+
+Module 6 follows Prompt-6. Arithmetic questions state rate additivity, working-day timing, percentage bases, compounding frequency, and installment timing when relevant. Answers use exact fractions or terminating decimals; no unstated rounding is required. Run `python scripts/verify_aptitude_examples.py` for exact rational checks, including numerical equivalence checks across all four arithmetic options and a simulation of alternate-worker schedules using rational work totals. The verifier uses only the Python standard library. Conceptual and editorial review is separate from these checks.
 
 Module 5 is complete: 180 questions, comprising 54 Easy, 90 Medium, and 36 Hard (exactly 30%/50%/20%). Subpart 5.5 uses 7/13/5, complementing Subpart 5.1's 14/22/9 rounding. All 25 data-wrangling snippets are self-contained Python programs with explicit output; they were executed using Python 3.12, pandas 2.3.0, and NumPy 2.2.6. The questions specify pandas 2.3.x / NumPy 2.2.x and avoid chained-assignment/view-mutation assumptions. References: [pandas indexing](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/indexing.html), [groupby](https://pandas.pydata.org/pandas-docs/version/2.3/user_guide/groupby.html), [merge](https://pandas.pydata.org/pandas-docs/version/2.3/reference/api/pandas.merge.html), and [NumPy broadcasting](https://numpy.org/doc/2.2/user/basics.broadcasting.html). For the full numerical/output verifier use Python 3.10+ with `python -m pip install -r scripts/requirements_data_science.txt`, then `python scripts/verify_data_science_examples.py`; select individual sets with repeatable `--subpart 5.1` arguments. Structural validation itself still uses only the standard library.
 
