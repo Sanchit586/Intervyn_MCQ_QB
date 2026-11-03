@@ -29,6 +29,7 @@ Questions are grouped by module and subpart under `questions/`, following the ag
 | `questions/module_2_dsa/2.7_searching_sorting.json` | Searching, Sorting & Algorithmic Paradigms | 40 | 12 | 20 | 8 |
 | `questions/module_3_pseudocode/3.1_bitwise_logic.json` | Bitwise Operations & Number Manipulation | 50 | 15 | 25 | 10 |
 | `questions/module_3_pseudocode/3.2_loop_execution.json` | Iterative Loop Execution & Flow Control | 50 | 15 | 25 | 10 |
+| `questions/module_3_pseudocode/3.3_recursion_dry_runs.json` | Recursive Function Dry-Runs | 50 | 15 | 25 | 10 |
 
 ## Question format
 
