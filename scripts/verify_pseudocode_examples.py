@@ -10,6 +10,8 @@ from concurrent.futures import ThreadPoolExecutor
 import json
 import os
 from pathlib import Path
+
+from question_bank import module_question_paths
 import re
 import shutil
 import subprocess
@@ -95,7 +97,7 @@ def main():
     javac = args.java_home / "bin" / f"javac{suffix}" if args.java_home else shutil.which("javac")
     if not java or not javac:
         parser.error("A JDK is required; select one with --java-home")
-    paths = args.paths or sorted((ROOT / "questions/module_3_pseudocode").glob("*.json"))
+    paths = args.paths or module_question_paths(3)
     questions = [q for path in paths for q in json.loads(path.read_text(encoding="utf-8"))]
     base = Path(tempfile.mkdtemp(prefix=".pseudocode_verify_", dir=ROOT)).resolve()
     try:

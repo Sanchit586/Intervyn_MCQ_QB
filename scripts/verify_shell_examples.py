@@ -14,11 +14,13 @@ import subprocess
 import tempfile
 import time
 
+from question_bank import reference_questions
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
 def verify(bash, base):
-    questions = json.loads((ROOT / "questions/module_4_applied_systems/4.3_linux_shell.json").read_text(encoding="utf-8"))
+    questions = list(reference_questions("4.3").values())
     env = {**os.environ, "LC_ALL": "C", "PATH": str(bash.parent) + os.pathsep + os.environ["PATH"]}
     # Do not load user initialization code or allow inherited tracing options.
     for name in ("BASH_ENV", "ENV", "SHELLOPTS", "BASHOPTS"):

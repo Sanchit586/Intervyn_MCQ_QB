@@ -1,0 +1,1702 @@
+[
+  {
+    "id": "3.2-001",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What sum does the inclusive loop print?",
+    "code_snippet": "Main {\n    Integer sum = 0, i;\n    for (i = 1; i <= 5; i++) {\n        sum = sum + i;\n    }\n    Print(sum);\n}",
+    "options": {
+      "A": "16",
+      "B": "20",
+      "C": "10",
+      "D": "15"
+    },
+    "correct_answer": "D",
+    "explanation": "Both endpoints are included: 1+2+3+4+5=15."
+  },
+  {
+    "id": "3.2-002",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What does the descending loop print?",
+    "code_snippet": "Main {\n    Integer sum = 0, i;\n    for (i = 5; i >= 1; i = i - 2) {\n        sum = sum + i;\n    }\n    Print(sum);\n}",
+    "options": {
+      "A": "9",
+      "B": "6",
+      "C": "15",
+      "D": "8"
+    },
+    "correct_answer": "A",
+    "explanation": "The visited values are 5,3,1, whose sum is 9."
+  },
+  {
+    "id": "3.2-003",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What final value and iteration count are printed?",
+    "code_snippet": "Main {\n    Integer x = 3, count = 0;\n    while (x < 20) {\n        x = x * 2;\n        count = count + 1;\n    }\n    Print(x, count);\n}",
+    "options": {
+      "A": "12 2",
+      "B": "24 4",
+      "C": "24 3",
+      "D": "48 4"
+    },
+    "correct_answer": "C",
+    "explanation": "The updates are 3->6->12->24. The condition then fails after three iterations."
+  },
+  {
+    "id": "3.2-004",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What does this do-while loop print?",
+    "code_snippet": "Main {\n    Integer x = 5, count = 0;\n    do {\n        count = count + 1;\n        x = x + 2;\n    } while (x < 5);\n    Print(x, count);\n}",
+    "options": {
+      "A": "7 1",
+      "B": "9 2",
+      "C": "7 0",
+      "D": "5 0"
+    },
+    "correct_answer": "A",
+    "explanation": "A do-while executes once before checking its condition, so x becomes 7 and count becomes 1."
+  },
+  {
+    "id": "3.2-005",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What does the postfix increment print?",
+    "code_snippet": "Main {\n    Integer i = 3;\n    Print(i++);\n    Print(i);\n}",
+    "options": {
+      "A": "3 4",
+      "B": "4 5",
+      "C": "3 3",
+      "D": "4 4"
+    },
+    "correct_answer": "A",
+    "explanation": "Postfix increment supplies the old value 3 to the first Print and leaves i=4."
+  },
+  {
+    "id": "3.2-006",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What does the prefix increment print?",
+    "code_snippet": "Main {\n    Integer i = 3;\n    Print(++i);\n    Print(i);\n}",
+    "options": {
+      "A": "3 3",
+      "B": "4 5",
+      "C": "3 4",
+      "D": "4 4"
+    },
+    "correct_answer": "D",
+    "explanation": "Prefix increment changes i to 4 before its value is passed to Print."
+  },
+  {
+    "id": "3.2-007",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What loop-control value and sum are printed after termination?",
+    "code_snippet": "Main {\n    Integer i, sum = 0;\n    for (i = 0; i < 4; i++) {\n        sum = sum + i;\n    }\n    Print(i, sum);\n}",
+    "options": {
+      "A": "3 3",
+      "B": "4 6",
+      "C": "4 10",
+      "D": "3 6"
+    },
+    "correct_answer": "B",
+    "explanation": "The body visits 0,1,2,3. The final update sets i=4, which fails the condition; the sum is 6."
+  },
+  {
+    "id": "3.2-008",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What sum remains after skipping even values?",
+    "code_snippet": "Main {\n    Integer i, sum = 0;\n    for (i = 1; i <= 5; i++) {\n        if ((i mod 2) == 0) {\n            continue;\n        }\n        sum = sum + i;\n    }\n    Print(sum);\n}",
+    "options": {
+      "A": "6",
+      "B": "8",
+      "C": "9",
+      "D": "15"
+    },
+    "correct_answer": "C",
+    "explanation": "continue skips the addition for 2 and 4. The remaining additions are 1,3,5."
+  },
+  {
+    "id": "3.2-009",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What does the loop print when break precedes the addition?",
+    "code_snippet": "Main {\n    Integer i, sum = 0;\n    for (i = 1; i <= 6; i++) {\n        if (i == 4) {\n            break;\n        }\n        sum = sum + i;\n    }\n    Print(i, sum);\n}",
+    "options": {
+      "A": "7 21",
+      "B": "4 10",
+      "C": "4 6",
+      "D": "3 6"
+    },
+    "correct_answer": "C",
+    "explanation": "At i=4, break exits before adding 4 and before the loop update. Only 1+2+3 have been added."
+  },
+  {
+    "id": "3.2-010",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. How many inner-body executions are printed?",
+    "code_snippet": "Main {\n    Integer i, j, count = 0;\n    for (i = 0; i < 2; i++) {\n        for (j = 0; j < 3; j++) {\n            count = count + 1;\n        }\n    }\n    Print(count);\n}",
+    "options": {
+      "A": "6",
+      "B": "9",
+      "C": "5",
+      "D": "3"
+    },
+    "correct_answer": "A",
+    "explanation": "Two outer iterations each execute three inner iterations, producing 2*3=6."
+  },
+  {
+    "id": "3.2-011",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What digit sum is printed?",
+    "code_snippet": "Main {\n    Integer n = 123, sum = 0;\n    while (n > 0) {\n        sum = sum + (n mod 10);\n        n = n div 10;\n    }\n    Print(sum);\n}",
+    "options": {
+      "A": "3",
+      "B": "6",
+      "C": "123",
+      "D": "5"
+    },
+    "correct_answer": "B",
+    "explanation": "The loop consumes digits 3,2,1 and sums them to 6."
+  },
+  {
+    "id": "3.2-012",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What value results from the three dependent updates?",
+    "code_snippet": "Main {\n    Integer x = 1, i;\n    for (i = 0; i < 3; i++) {\n        x = (2 * x) + 1;\n    }\n    Print(x);\n}",
+    "options": {
+      "A": "9",
+      "B": "8",
+      "C": "15",
+      "D": "7"
+    },
+    "correct_answer": "C",
+    "explanation": "The recurrence updates x from 1 to 3, then 7, then 15."
+  },
+  {
+    "id": "3.2-013",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed by this switch with explicit breaks?",
+    "code_snippet": "Main {\n    Integer x = 2, result = 0;\n    switch (x) {\n        case 1:\n            result = 10;\n            break;\n        case 2:\n            result = 20;\n            break;\n        default:\n            result = 30;\n    }\n    Print(result);\n}",
+    "options": {
+      "A": "50",
+      "B": "30",
+      "C": "0",
+      "D": "20"
+    },
+    "correct_answer": "D",
+    "explanation": "Case 2 is selected and its break prevents execution of the default block."
+  },
+  {
+    "id": "3.2-014",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What iteration count does repeated halving print?",
+    "code_snippet": "Main {\n    Integer n = 20, count = 0;\n    while (n > 0) {\n        count = count + 1;\n        n = n div 2;\n    }\n    Print(count);\n}",
+    "options": {
+      "A": "4",
+      "B": "5",
+      "C": "10",
+      "D": "6"
+    },
+    "correct_answer": "B",
+    "explanation": "The positive values entering the body are 20,10,5,2,1: five iterations."
+  },
+  {
+    "id": "3.2-015",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed when the initial condition fails?",
+    "code_snippet": "Main {\n    Integer i = 7, value = 9;\n    while (i < 7) {\n        value = value + 1;\n        i++;\n    }\n    Print(i, value);\n}",
+    "options": {
+      "A": "8 9",
+      "B": "7 10",
+      "C": "8 10",
+      "D": "7 9"
+    },
+    "correct_answer": "D",
+    "explanation": "The condition is false immediately; neither variable is updated."
+  },
+  {
+    "id": "3.2-016",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What count is printed by this triangular traversal?",
+    "code_snippet": "Main {\n    Integer i, j, count = 0;\n    for (i = 1; i <= 4; i++) {\n        for (j = 1; j <= i; j++) {\n            count = count + 1;\n        }\n    }\n    Print(count);\n}",
+    "options": {
+      "A": "6",
+      "B": "16",
+      "C": "9",
+      "D": "10"
+    },
+    "correct_answer": "D",
+    "explanation": "The inner loop executes 1,2,3,4 times, summing to 10."
+  },
+  {
+    "id": "3.2-017",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What count results when break exits only the inner loop?",
+    "code_snippet": "Main {\n    Integer i, j, count = 0;\n    for (i = 1; i <= 4; i++) {\n        for (j = 1; j <= 4; j++) {\n            if (j == i) {\n                break;\n            }\n            count = count + 1;\n        }\n    }\n    Print(count);\n}",
+    "options": {
+      "A": "10",
+      "B": "12",
+      "C": "0",
+      "D": "6"
+    },
+    "correct_answer": "D",
+    "explanation": "For outer values 1 through 4, successful additions number 0,1,2,3. Each break affects only its inner loop."
+  },
+  {
+    "id": "3.2-018",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What sum is printed when diagonal pairs are skipped?",
+    "code_snippet": "Main {\n    Integer i, j, sum = 0;\n    for (i = 1; i <= 3; i++) {\n        for (j = 1; j <= 3; j++) {\n            if (i == j) {\n                continue;\n            }\n            sum = sum + i + j;\n        }\n    }\n    Print(sum);\n}",
+    "options": {
+      "A": "24",
+      "B": "12",
+      "C": "18",
+      "D": "36"
+    },
+    "correct_answer": "A",
+    "explanation": "All nine pairs sum to 36. The skipped diagonal contributes 2+4+6=12, leaving 24."
+  },
+  {
+    "id": "3.2-019",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What final i and total show that a for-loop update still follows continue?",
+    "code_snippet": "Main {\n    Integer i, total = 0;\n    for (i = 1; i <= 5; i++) {\n        if ((i mod 2) == 0) {\n            continue;\n        }\n        total = total + i;\n    }\n    Print(i, total);\n}",
+    "options": {
+      "A": "5 9",
+      "B": "4 4",
+      "C": "6 9",
+      "D": "6 15"
+    },
+    "correct_answer": "C",
+    "explanation": "Only 1,3,5 are added, but every iteration still performs i++. The failed final condition sees i=6."
+  },
+  {
+    "id": "3.2-020",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed after the while-loop continue paths?",
+    "code_snippet": "Main {\n    Integer i = 0, total = 0;\n    while (i < 6) {\n        i++;\n        if ((i mod 3) == 0) {\n            continue;\n        }\n        total = total + i;\n    }\n    Print(i, total);\n}",
+    "options": {
+      "A": "6 21",
+      "B": "6 15",
+      "C": "6 12",
+      "D": "5 12"
+    },
+    "correct_answer": "C",
+    "explanation": "Increment occurs before the divisibility check. Values 3 and 6 are skipped; 1+2+4+5=12."
+  },
+  {
+    "id": "3.2-021",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What total is printed by these mixed for and while updates?",
+    "code_snippet": "Main {\n    Integer i, total = 0;\n    for (i = 1; i <= 3; i++) {\n        total = total + i;\n        Integer j = 0;\n        while (j < i) {\n            total = total + j;\n            j++;\n        }\n    }\n    Print(total);\n}",
+    "options": {
+      "A": "12",
+      "B": "10",
+      "C": "6",
+      "D": "14"
+    },
+    "correct_answer": "B",
+    "explanation": "The outer additions total 6. The inner additions total 0+(0+1)+(0+1+2)=4, giving 10."
+  },
+  {
+    "id": "3.2-022",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What ordered triple follows the separated postfix and prefix assignments?",
+    "code_snippet": "Main {\n    Integer i = 2;\n    Integer a = i++;\n    Integer b = ++i;\n    Print(a, b, i);\n}",
+    "options": {
+      "A": "2 4 4",
+      "B": "3 3 3",
+      "C": "3 4 4",
+      "D": "2 3 3"
+    },
+    "correct_answer": "A",
+    "explanation": "a receives 2 and i becomes 3. Prefix increment then makes i=4 and supplies 4 to b."
+  },
+  {
+    "id": "3.2-023",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What final values are printed when the condition itself uses postfix increment?",
+    "code_snippet": "Main {\n    Integer i = 0, total = 0;\n    while (i++ < 3) {\n        total = total + i;\n    }\n    Print(i, total);\n}",
+    "options": {
+      "A": "3 3",
+      "B": "4 6",
+      "C": "4 10",
+      "D": "3 6"
+    },
+    "correct_answer": "B",
+    "explanation": "Successful tests use old values 0,1,2, but body values are 1,2,3. The failed old-value-3 test still increments i to 4."
+  },
+  {
+    "id": "3.2-024",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed when short-circuit AND skips a prefix increment?",
+    "code_snippet": "Main {\n    Integer x = 0, y = 0;\n    if ((x > 0) and (++y > 0)) {\n        x = 9;\n    } else {\n        y = y + 2;\n    }\n    Print(x, y);\n}",
+    "options": {
+      "A": "9 1",
+      "B": "0 3",
+      "C": "0 0",
+      "D": "0 2"
+    },
+    "correct_answer": "D",
+    "explanation": "The first condition is false, so ++y is not evaluated. Only the else addition changes y to 2."
+  },
+  {
+    "id": "3.2-025",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed when short-circuit OR suppresses its right operand?",
+    "code_snippet": "Main {\n    Integer x = 0, y = 5;\n    if ((x == 0) or (++y > 5)) {\n        x = x + 2;\n    }\n    Print(x, y);\n}",
+    "options": {
+      "A": "2 5",
+      "B": "0 5",
+      "C": "2 6",
+      "D": "0 6"
+    },
+    "correct_answer": "A",
+    "explanation": "x==0 is true, so the OR expression does not evaluate ++y. The body changes only x."
+  },
+  {
+    "id": "3.2-026",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What does the switch print with fall-through from case 2?",
+    "code_snippet": "Main {\n    Integer x = 2, result = 0;\n    switch (x) {\n        case 1:\n            result = result + 1;\n        case 2:\n            result = result + 2;\n        case 3:\n            result = result + 4;\n            break;\n        default:\n            result = result + 8;\n    }\n    Print(result);\n}",
+    "options": {
+      "A": "14",
+      "B": "2",
+      "C": "6",
+      "D": "7"
+    },
+    "correct_answer": "C",
+    "explanation": "Execution enters at case 2, adds 2, falls into case 3 and adds 4, then breaks."
+  },
+  {
+    "id": "3.2-027",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What result follows default-label fall-through?",
+    "code_snippet": "Main {\n    Integer x = 9, result = 1;\n    switch (x) {\n        case 1:\n            result = 10;\n            break;\n        default:\n            result = result + 3;\n        case 2:\n            result = result * 2;\n    }\n    Print(result);\n}",
+    "options": {
+      "A": "4",
+      "B": "2",
+      "C": "20",
+      "D": "8"
+    },
+    "correct_answer": "D",
+    "explanation": "No case matches, so execution starts at default, making result=4, then falls through case 2 to double it."
+  },
+  {
+    "id": "3.2-028",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What does the loop print when its step doubles each time?",
+    "code_snippet": "Main {\n    Integer i = 1, step = 1, total = 0;\n    while (i <= 15) {\n        total = total + i;\n        i = i + step;\n        step = step * 2;\n    }\n    Print(i, total);\n}",
+    "options": {
+      "A": "8 7",
+      "B": "16 31",
+      "C": "15 15",
+      "D": "16 15"
+    },
+    "correct_answer": "D",
+    "explanation": "Body values are 1,2,4,8. Their sum is 15; the last increment uses step 8 and leaves i=16."
+  },
+  {
+    "id": "3.2-029",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed when the loop variable is also changed inside its body?",
+    "code_snippet": "Main {\n    Integer i, total = 0;\n    for (i = 0; i < 7; i++) {\n        total = total + i;\n        i = i + 1;\n    }\n    Print(i, total);\n}",
+    "options": {
+      "A": "8 16",
+      "B": "8 12",
+      "C": "7 21",
+      "D": "7 12"
+    },
+    "correct_answer": "B",
+    "explanation": "Body entries use i=0,2,4,6, since both body and update increment i. Their sum is 12; termination sees 8."
+  },
+  {
+    "id": "3.2-030",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What count and last j are printed after decreasing inner limits?",
+    "code_snippet": "Main {\n    Integer i, j = 0, count = 0;\n    for (i = 4; i > 0; i--) {\n        for (j = i; j > 1; j--) {\n            count = count + 1;\n        }\n    }\n    Print(count, j);\n}",
+    "options": {
+      "A": "10 0",
+      "B": "6 1",
+      "C": "4 1",
+      "D": "6 0"
+    },
+    "correct_answer": "B",
+    "explanation": "Inner counts are 3,2,1,0. The final outer iteration initializes j=1 and never enters its body."
+  },
+  {
+    "id": "3.2-031",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed by this Euclidean loop?",
+    "code_snippet": "Main {\n    Integer a = 48, b = 18, count = 0;\n    while (b != 0) {\n        Integer r = a mod b;\n        a = b;\n        b = r;\n        count++;\n    }\n    Print(a, count);\n}",
+    "options": {
+      "A": "12 3",
+      "B": "6 3",
+      "C": "3 6",
+      "D": "6 2"
+    },
+    "correct_answer": "B",
+    "explanation": "The (a,b) states become (18,12),(12,6),(6,0). The gcd is 6 after three iterations."
+  },
+  {
+    "id": "3.2-032",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What does the loop print with a condition that observes a growing bound?",
+    "code_snippet": "Main {\n    Integer i = 0, limit = 3, sum = 0;\n    while (i < limit) {\n        sum = sum + i;\n        if (i == 1) {\n            limit = limit + 2;\n        }\n        i++;\n    }\n    Print(i, sum);\n}",
+    "options": {
+      "A": "5 15",
+      "B": "3 3",
+      "C": "4 6",
+      "D": "5 10"
+    },
+    "correct_answer": "D",
+    "explanation": "At i=1, limit grows to 5. Body values are consequently 0 through 4, whose sum is 10."
+  },
+  {
+    "id": "3.2-033",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What sequence is printed by continue followed by a conditional break?",
+    "code_snippet": "Main {\n    Integer i;\n    for (i = 1; i <= 7; i++) {\n        if ((i mod 2) == 0) {\n            continue;\n        }\n        if (i > 4) {\n            break;\n        }\n        Print(i);\n    }\n}",
+    "options": {
+      "A": "1 3",
+      "B": "1 3 5",
+      "C": "1 2 3",
+      "D": "1 3 7"
+    },
+    "correct_answer": "A",
+    "explanation": "Even values are skipped. Values 1 and 3 are printed, while odd value 5 triggers break before printing."
+  },
+  {
+    "id": "3.2-034",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What total results when an inner while reuses a variable without resetting it?",
+    "code_snippet": "Main {\n    Integer i, j = 0, total = 0;\n    for (i = 1; i <= 3; i++) {\n        while (j < i) {\n            total = total + i;\n            j++;\n        }\n    }\n    Print(j, total);\n}",
+    "options": {
+      "A": "0 6",
+      "B": "3 9",
+      "C": "3 6",
+      "D": "3 14"
+    },
+    "correct_answer": "C",
+    "explanation": "j persists between outer iterations, so the inner loop executes once for each i. Additions are 1,2,3."
+  },
+  {
+    "id": "3.2-035",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What result does this nested conditional accumulator print?",
+    "code_snippet": "Main {\n    Integer i, value = 0;\n    for (i = 1; i <= 5; i++) {\n        if ((i mod 2) == 0) {\n            value = value * 2;\n        } else {\n            value = value + i;\n        }\n    }\n    Print(value);\n}",
+    "options": {
+      "A": "18",
+      "B": "15",
+      "C": "10",
+      "D": "13"
+    },
+    "correct_answer": "B",
+    "explanation": "The successive values are 1,2,5,10,15. Even iterations multiply the accumulated value rather than adding i."
+  },
+  {
+    "id": "3.2-036",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed after selecting and consuming decimal digits?",
+    "code_snippet": "Main {\n    Integer n = 4726, value = 0;\n    while (n > 0) {\n        Integer digit = n mod 10;\n        n = n div 10;\n        if ((digit mod 2) != 0) {\n            continue;\n        }\n        value = (value * 10) + digit;\n    }\n    Print(value);\n}",
+    "options": {
+      "A": "426",
+      "B": "642",
+      "C": "624",
+      "D": "62"
+    },
+    "correct_answer": "C",
+    "explanation": "Digits are consumed as 6,2,7,4. Odd digit 7 is skipped, so the constructed value is 624."
+  },
+  {
+    "id": "3.2-037",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What final pair does a break inside the switch leave?",
+    "code_snippet": "Main {\n    Integer i, total = 0;\n    for (i = 1; i <= 3; i++) {\n        switch (i) {\n            case 2:\n                total = total + 10;\n                break;\n            default:\n                total = total + i;\n        }\n        total = total + 1;\n    }\n    Print(i, total);\n}",
+    "options": {
+      "A": "2 11",
+      "B": "4 14",
+      "C": "3 17",
+      "D": "4 17"
+    },
+    "correct_answer": "D",
+    "explanation": "Switch break exits only the switch. Per-iteration contributions, including the trailing +1, are 2,11,4, totaling 17."
+  },
+  {
+    "id": "3.2-038",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What pair is printed after the post-decrement condition fails?",
+    "code_snippet": "Main {\n    Integer n = 3, total = 0;\n    while (n-- > 0) {\n        total = total + n;\n    }\n    Print(n, total);\n}",
+    "options": {
+      "A": "0 3",
+      "B": "-1 3",
+      "C": "0 6",
+      "D": "-1 6"
+    },
+    "correct_answer": "B",
+    "explanation": "Successful tests use old values 3,2,1, while body values are 2,1,0. The failed old-value-0 test decrements n to -1."
+  },
+  {
+    "id": "3.2-039",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What count is printed when each inner loop steps by its outer index?",
+    "code_snippet": "Main {\n    Integer i, j, count = 0;\n    for (i = 1; i <= 3; i++) {\n        for (j = 0; j < 7; j = j + i) {\n            count++;\n        }\n    }\n    Print(count);\n}",
+    "options": {
+      "A": "12",
+      "B": "14",
+      "C": "13",
+      "D": "21"
+    },
+    "correct_answer": "B",
+    "explanation": "The inner loops visit 7 values for step 1, 4 for step 2, and 3 for step 3, giving 14."
+  },
+  {
+    "id": "3.2-040",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed by this two-variable while condition?",
+    "code_snippet": "Main {\n    Integer a = 1, b = 9, count = 0;\n    while (a < b) {\n        a = a + 2;\n        b = b - 1;\n        count++;\n    }\n    Print(a, b, count);\n}",
+    "options": {
+      "A": "7 6 3",
+      "B": "5 7 2",
+      "C": "9 5 4",
+      "D": "7 6 4"
+    },
+    "correct_answer": "A",
+    "explanation": "The states after iterations are (3,8),(5,7),(7,6). The third update makes a<b false."
+  },
+  {
+    "id": "3.2-041",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What final index and sum arise when the step depends on the current index?",
+    "code_snippet": "Main {\n    Integer i = 1, total = 0;\n    while (i < 30) {\n        total = total + i;\n        i = i + (i mod 4) + 1;\n    }\n    Print(i, total);\n}",
+    "options": {
+      "A": "31 106",
+      "B": "31 120",
+      "C": "30 114",
+      "D": "29 85"
+    },
+    "correct_answer": "A",
+    "explanation": "The visited indices are 1,3,7,11,15,19,23,27, summing to 106; the next index is 31."
+  },
+  {
+    "id": "3.2-042",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed when continue inside a switch targets the enclosing for loop?",
+    "code_snippet": "Main {\n    Integer i, total = 0;\n    for (i = 0; i < 5; i++) {\n        switch (i mod 3) {\n            case 0:\n                total = total + 1;\n                continue;\n            case 1:\n                total = total + 2;\n                break;\n            default:\n                total = total + 4;\n        }\n        total = total + 10;\n    }\n    Print(i, total);\n}",
+    "options": {
+      "A": "3 8",
+      "B": "5 40",
+      "C": "5 60",
+      "D": "5 10"
+    },
+    "correct_answer": "B",
+    "explanation": "Iterations 0 and 3 contribute 1 each and skip the trailing addition. Iterations 1,2,4 contribute 12,14,12, totaling 40."
+  },
+  {
+    "id": "3.2-043",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What count and final shared bound are printed?",
+    "code_snippet": "Main {\n    Integer i, j, bound = 6, count = 0;\n    for (i = 1; i < bound; i++) {\n        for (j = 0; j < i; j++) {\n            count++;\n            if ((count mod 3) == 0) {\n                bound--;\n                break;\n            }\n        }\n    }\n    Print(count, bound, i);\n}",
+    "options": {
+      "A": "6 4 4",
+      "B": "10 3 5",
+      "C": "3 5 3",
+      "D": "6 6 6"
+    },
+    "correct_answer": "A",
+    "explanation": "Outer i=1 contributes one count; i=2 reaches count 3 and reduces bound to 5; i=3 reaches 6 and reduces it to 4. The next condition fails at i=4."
+  },
+  {
+    "id": "3.2-044",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What total is printed when the inner step changes after continue?",
+    "code_snippet": "Main {\n    Integer i, j, total = 0;\n    for (i = 1; i <= 3; i++) {\n        for (j = 1; j <= 7; j = j + i) {\n            if (((i + j) mod 3) == 0) {\n                continue;\n            }\n            total = total + j;\n        }\n    }\n    Print(total);\n}",
+    "options": {
+      "A": "52",
+      "B": "58",
+      "C": "41",
+      "D": "40"
+    },
+    "correct_answer": "C",
+    "explanation": "For i=1, retained j values sum to 21; for i=2 they sum to 8; for i=3 they sum to 12. The total is 41."
+  },
+  {
+    "id": "3.2-045",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed after this alternating-step traversal?",
+    "code_snippet": "Main {\n    Integer i = 0, step = 1, sum = 0, count = 0;\n    while (i < 20) {\n        i = i + step;\n        step = 3 - step;\n        if ((i mod 4) == 0) {\n            continue;\n        }\n        sum = sum + i;\n        count++;\n    }\n    Print(i, sum, count);\n}",
+    "options": {
+      "A": "21 122 11",
+      "B": "19 99 10",
+      "C": "21 147 14",
+      "D": "20 100 10"
+    },
+    "correct_answer": "A",
+    "explanation": "Updated positions are 1,3,4,6,7,9,10,12,13,15,16,18,19,21. Skipping 4,12,16 leaves eleven positions totaling 122; the last update overshoots the bound to 21."
+  },
+  {
+    "id": "3.2-046",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed when a side effect in the loop condition changes the stopping point?",
+    "code_snippet": "Main {\n    Integer i = 0, j = 1, total = 0;\n    while ((i++ < 5) and ((j = j + i) < 12)) {\n        total = total + j;\n    }\n    Print(i, j, total);\n}",
+    "options": {
+      "A": "4 11 24",
+      "B": "5 11 24",
+      "C": "5 16 24",
+      "D": "6 16 40"
+    },
+    "correct_answer": "C",
+    "explanation": "Successful iterations produce j=2,4,7,11 and sum 24. The next condition increments i to 5 and j to 16 before its second test fails."
+  },
+  {
+    "id": "3.2-047",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed by this shrinking-bound do-while loop?",
+    "code_snippet": "Main {\n    Integer n = 12, step = 1, sum = 0;\n    do {\n        sum = sum + n;\n        n = n - step;\n        step++;\n        if ((n mod 2) == 0) {\n            n--;\n        }\n    } while (n > step);\n    Print(n, step, sum);\n}",
+    "options": {
+      "A": "1 4 36",
+      "B": "2 5 37",
+      "C": "1 5 37",
+      "D": "5 4 32"
+    },
+    "correct_answer": "C",
+    "explanation": "Body-entry values are 12,11,9,5, so sum=37. The fourth update reduces n to 1 and advances step to 5, stopping the loop."
+  },
+  {
+    "id": "3.2-048",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What is printed when resetting the inner variable is conditional?",
+    "code_snippet": "Main {\n    Integer i, j = 0, sum = 0;\n    for (i = 1; i <= 4; i++) {\n        if ((i mod 2) == 1) {\n            j = i;\n        }\n        while (j < 6) {\n            j = j + 2;\n            if (j == 5) {\n                continue;\n            }\n            sum = sum + j;\n        }\n    }\n    Print(j, sum);\n}",
+    "options": {
+      "A": "7 24",
+      "B": "6 12",
+      "C": "9 26",
+      "D": "7 17"
+    },
+    "correct_answer": "D",
+    "explanation": "For i=1, j becomes 3,5,7 and adds 3+7. At i=3 it resets to 3, then skips 5 and adds 7. Even outer iterations add nothing."
+  },
+  {
+    "id": "3.2-049",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What sequence is printed by the nested break/continue paths?",
+    "code_snippet": "Main {\n    Integer i, j;\n    for (i = 1; i <= 3; i++) {\n        for (j = 1; j <= 4; j++) {\n            if ((i + j) == 5) {\n                break;\n            }\n            if (((i * j) mod 2) == 0) {\n                continue;\n            }\n            Print((10 * i) + j);\n        }\n        Print(i);\n    }\n}",
+    "options": {
+      "A": "11 13 1 2 31 33 3",
+      "B": "11 1 2 31 3",
+      "C": "11 13 1 2 31 3",
+      "D": "11 13 1 21 2 31 3"
+    },
+    "correct_answer": "C",
+    "explanation": "Outer i=1 prints 11 and 13 before its break; i=2 prints no inner values; i=3 prints 31 before breaking at j=2. Each outer iteration then prints i."
+  },
+  {
+    "id": "3.2-050",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer arithmetic, left-to-right evaluation, short-circuit and/or, and div truncating toward zero. Prefix ++ returns the incremented value; postfix ++ returns the old value. Print appends space-separated tokens. What final state results from the changing multiplicative step and early exit?",
+    "code_snippet": "Main {\n    Integer i = 1, factor = 2, total = 0;\n    while (i < 100) {\n        total = total + i;\n        if (total > 30) {\n            break;\n        }\n        i = i * factor;\n        factor = 5 - factor;\n    }\n    Print(i, factor, total);\n}",
+    "options": {
+      "A": "12 3 21",
+      "B": "36 3 57",
+      "C": "108 2 57",
+      "D": "36 2 57"
+    },
+    "correct_answer": "D",
+    "explanation": "Body-entry i values are 1,2,6,12,36. Their running sum reaches 57 at 36, so break prevents either trailing update; factor is then 2."
+  },
+  {
+    "id": "3.2-051",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What factorial value is printed?",
+    "code_snippet": "Function Integer fact(Integer n) {\n    if (n <= 1) {\n        return 1;\n    }\n    return n * fact(n - 1);\n}\nMain {\n    Print(fact(5));\n}",
+    "options": {
+      "A": "120",
+      "B": "24",
+      "C": "60",
+      "D": "720"
+    },
+    "correct_answer": "A",
+    "explanation": "The return chain multiplies 5*4*3*2*1, yielding 120."
+  },
+  {
+    "id": "3.2-052",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What recursive sum is printed?",
+    "code_snippet": "Function Integer sum(Integer n) {\n    if (n == 0) {\n        return 0;\n    }\n    return n + sum(n - 1);\n}\nMain {\n    Print(sum(4));\n}",
+    "options": {
+      "A": "4",
+      "B": "10",
+      "C": "15",
+      "D": "6"
+    },
+    "correct_answer": "B",
+    "explanation": "The calls return 0,1,3,6,10 while unwinding from n=0 through n=4."
+  },
+  {
+    "id": "3.2-053",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What power is printed?",
+    "code_snippet": "Function Integer power(Integer n) {\n    if (n == 0) {\n        return 1;\n    }\n    return 2 * power(n - 1);\n}\nMain {\n    Print(power(5));\n}",
+    "options": {
+      "A": "10",
+      "B": "64",
+      "C": "16",
+      "D": "32"
+    },
+    "correct_answer": "D",
+    "explanation": "Each of five non-base calls doubles the result. Starting from 1 gives 2^5=32."
+  },
+  {
+    "id": "3.2-054",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What order is printed before the recursive calls?",
+    "code_snippet": "Function Void show(Integer n) {\n    if (n == 0) {\n        return;\n    }\n    Print(n);\n    show(n - 1);\n}\nMain {\n    show(3);\n}",
+    "options": {
+      "A": "3 2 1",
+      "B": "3 2 1 0",
+      "C": "1 2 3",
+      "D": "0 1 2 3"
+    },
+    "correct_answer": "A",
+    "explanation": "Each non-base frame prints before descending; the zero frame returns without printing."
+  },
+  {
+    "id": "3.2-055",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What order is printed after the recursive calls?",
+    "code_snippet": "Function Void show(Integer n) {\n    if (n == 0) {\n        return;\n    }\n    show(n - 1);\n    Print(n);\n}\nMain {\n    show(3);\n}",
+    "options": {
+      "A": "0 1 2 3",
+      "B": "1 2 3 0",
+      "C": "3 2 1",
+      "D": "1 2 3"
+    },
+    "correct_answer": "D",
+    "explanation": "Printing occurs while the stack unwinds, from the smallest positive argument to the largest."
+  },
+  {
+    "id": "3.2-056",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What value is returned by the additive recurrence?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 1;\n    }\n    return 2 + f(n - 1);\n}\nMain {\n    Print(f(3));\n}",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "8",
+      "D": "7"
+    },
+    "correct_answer": "D",
+    "explanation": "The base contributes 1 and the three non-base calls contribute 2 each, totaling 7."
+  },
+  {
+    "id": "3.2-057",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What digit sum is printed for a number containing zero?",
+    "code_snippet": "Function Integer digits(Integer n) {\n    if (n == 0) {\n        return 0;\n    }\n    return (n mod 10) + digits(n div 10);\n}\nMain {\n    Print(digits(507));\n}",
+    "options": {
+      "A": "507",
+      "B": "7",
+      "C": "12",
+      "D": "5"
+    },
+    "correct_answer": "C",
+    "explanation": "The extracted digits are 7,0,5, whose sum is 12."
+  },
+  {
+    "id": "3.2-058",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What digit count is printed, including trailing zero digits?",
+    "code_snippet": "Function Integer count(Integer n) {\n    if (n == 0) {\n        return 0;\n    }\n    return 1 + count(n div 10);\n}\nMain {\n    Print(count(1200));\n}",
+    "options": {
+      "A": "5",
+      "B": "4",
+      "C": "3",
+      "D": "2"
+    },
+    "correct_answer": "B",
+    "explanation": "The positive arguments are 1200,120,12,1. Each contributes one before the zero base call."
+  },
+  {
+    "id": "3.2-059",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What does decrementing the argument by two return?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n <= 0) {\n        return 0;\n    }\n    return 1 + f(n - 2);\n}\nMain {\n    Print(f(7));\n}",
+    "options": {
+      "A": "7",
+      "B": "4",
+      "C": "3",
+      "D": "5"
+    },
+    "correct_answer": "B",
+    "explanation": "Non-base arguments are 7,5,3,1. Four contributions are added before the -1 base call."
+  },
+  {
+    "id": "3.2-060",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What count is printed by recursive halving?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 0;\n    }\n    return 1 + f(n div 2);\n}\nMain {\n    Print(f(20));\n}",
+    "options": {
+      "A": "6",
+      "B": "10",
+      "C": "4",
+      "D": "5"
+    },
+    "correct_answer": "D",
+    "explanation": "Arguments 20,10,5,2,1 contribute five ones; argument 0 terminates recursion."
+  },
+  {
+    "id": "3.2-061",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What does the factorial base case print directly?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 1;\n    }\n    return n * f(n - 1);\n}\nMain {\n    Print(f(0));\n}",
+    "options": {
+      "A": "0",
+      "B": "-1",
+      "C": "1",
+      "D": "2"
+    },
+    "correct_answer": "C",
+    "explanation": "The initial argument already matches the base case, so no recursive call or multiplication occurs."
+  },
+  {
+    "id": "3.2-062",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What pair demonstrates pass-by-value argument handling?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return n;\n    }\n    n = n - 1;\n    return f(n);\n}\nMain {\n    Integer n = 4;\n    Print(f(n), n);\n}",
+    "options": {
+      "A": "0 4",
+      "B": "4 4",
+      "C": "1 3",
+      "D": "0 0"
+    },
+    "correct_answer": "A",
+    "explanation": "Each call mutates only its own n. The recursive result is zero, while Main retains n=4."
+  },
+  {
+    "id": "3.2-063",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What sequence is printed on descent and unwinding?",
+    "code_snippet": "Function Void f(Integer n) {\n    if (n == 0) {\n        return;\n    }\n    Print(n);\n    f(n - 1);\n    Print(n);\n}\nMain {\n    f(2);\n}",
+    "options": {
+      "A": "2 2 1 1",
+      "B": "2 1 0 1 2",
+      "C": "2 1 1 2",
+      "D": "1 2 2 1"
+    },
+    "correct_answer": "C",
+    "explanation": "Descent prints 2,1; the base prints nothing; unwinding prints 1,2."
+  },
+  {
+    "id": "3.2-064",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What return value results from subtracting during unwinding?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 10;\n    }\n    return f(n - 1) - 1;\n}\nMain {\n    Print(f(3));\n}",
+    "options": {
+      "A": "9",
+      "B": "7",
+      "C": "3",
+      "D": "13"
+    },
+    "correct_answer": "B",
+    "explanation": "Three non-base frames each subtract one from the base result 10, giving 7."
+  },
+  {
+    "id": "3.2-065",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Easy",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What value does this parity recurrence print?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 1;\n    }\n    return 1 - f(n - 1);\n}\nMain {\n    Print(f(5));\n}",
+    "options": {
+      "A": "5",
+      "B": "-4",
+      "C": "1",
+      "D": "0"
+    },
+    "correct_answer": "D",
+    "explanation": "The result alternates 1,0,1,0,... starting at f(0)=1. Odd argument 5 therefore returns 0."
+  },
+  {
+    "id": "3.2-066",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What Fibonacci value is printed?",
+    "code_snippet": "Function Integer fib(Integer n) {\n    if (n <= 1) {\n        return n;\n    }\n    return fib(n - 1) + fib(n - 2);\n}\nMain {\n    Print(fib(6));\n}",
+    "options": {
+      "A": "13",
+      "B": "5",
+      "C": "12",
+      "D": "8"
+    },
+    "correct_answer": "D",
+    "explanation": "The base values 0 and 1 give f(2)=1,f(3)=2,f(4)=3,f(5)=5,f(6)=8."
+  },
+  {
+    "id": "3.2-067",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is returned by the complete two-branch recursion?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 1;\n    }\n    return f(n - 1) + f(n - 1);\n}\nMain {\n    Print(f(3));\n}",
+    "options": {
+      "A": "8",
+      "B": "15",
+      "C": "7",
+      "D": "4"
+    },
+    "correct_answer": "A",
+    "explanation": "Each level doubles the returned leaf total. There are 2^3=8 base leaves, each returning one."
+  },
+  {
+    "id": "3.2-068",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What result and total function-entry count are printed?",
+    "code_snippet": "Global Integer calls = 0;\nFunction Integer fib(Integer n) {\n    calls++;\n    if (n <= 1) {\n        return n;\n    }\n    return fib(n - 1) + fib(n - 2);\n}\nMain {\n    Integer result = fib(4);\n    Print(result, calls);\n}",
+    "options": {
+      "A": "3 7",
+      "B": "5 9",
+      "C": "3 9",
+      "D": "3 5"
+    },
+    "correct_answer": "C",
+    "explanation": "Entry counts satisfy C(0)=C(1)=1 and C(n)=1+C(n-1)+C(n-2), giving C(4)=9; fib(4)=3."
+  },
+  {
+    "id": "3.2-069",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is printed by preorder traversal of the recursion tree?",
+    "code_snippet": "Function Void f(Integer n) {\n    if (n == 0) {\n        return;\n    }\n    Print(n);\n    f(n - 1);\n    f(n - 1);\n}\nMain {\n    f(2);\n}",
+    "options": {
+      "A": "2 1 0 0 1 0 0",
+      "B": "2 2 1",
+      "C": "2 1 1",
+      "D": "1 1 2"
+    },
+    "correct_answer": "C",
+    "explanation": "The root prints 2, then each of its two n=1 children prints 1. Zero-argument calls print nothing."
+  },
+  {
+    "id": "3.2-070",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is printed by postorder traversal of the recursion tree?",
+    "code_snippet": "Function Void f(Integer n) {\n    if (n == 0) {\n        return;\n    }\n    f(n - 1);\n    f(n - 1);\n    Print(n);\n}\nMain {\n    f(2);\n}",
+    "options": {
+      "A": "2 1 1",
+      "B": "1 2 1",
+      "C": "0 0 1 0 0 1 2",
+      "D": "1 1 2"
+    },
+    "correct_answer": "D",
+    "explanation": "Both n=1 subtrees print before their parent n=2, giving 1,1,2."
+  },
+  {
+    "id": "3.2-071",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is printed when each non-base return adds one extra unit?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n <= 1) {\n        return n;\n    }\n    return f(n - 1) + f(n - 2) + 1;\n}\nMain {\n    Print(f(4));\n}",
+    "options": {
+      "A": "9",
+      "B": "7",
+      "C": "5",
+      "D": "3"
+    },
+    "correct_answer": "B",
+    "explanation": "The successive values are f(0)=0,f(1)=1,f(2)=2,f(3)=4,f(4)=7."
+  },
+  {
+    "id": "3.2-072",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What value is printed by a recurrence with a doubled second branch?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n <= 1) {\n        return n;\n    }\n    return f(n - 1) + (2 * f(n - 2));\n}\nMain {\n    Print(f(4));\n}",
+    "options": {
+      "A": "5",
+      "B": "7",
+      "C": "3",
+      "D": "8"
+    },
+    "correct_answer": "A",
+    "explanation": "Starting from 0,1, the next values are 1,3,5. The coefficient two applies only to the second branch."
+  },
+  {
+    "id": "3.2-073",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What does the alternating subtraction recurrence return?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 0;\n    }\n    return n - f(n - 1);\n}\nMain {\n    Print(f(5));\n}",
+    "options": {
+      "A": "-3",
+      "B": "3",
+      "C": "15",
+      "D": "5"
+    },
+    "correct_answer": "B",
+    "explanation": "Unwinding gives 1,1,2,2,3 for arguments 1 through 5. Recursive subtraction is not subtraction of every prior argument independently."
+  },
+  {
+    "id": "3.2-074",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What reversed decimal value is printed by the accumulator recursion?",
+    "code_snippet": "Function Integer reverse(Integer n, Integer acc) {\n    if (n == 0) {\n        return acc;\n    }\n    return reverse(n div 10, (acc * 10) + (n mod 10));\n}\nMain {\n    Print(reverse(507, 0));\n}",
+    "options": {
+      "A": "507",
+      "B": "705",
+      "C": "75",
+      "D": "750"
+    },
+    "correct_answer": "B",
+    "explanation": "Accumulator values are 7,70,705 as digits 7,0,5 are consumed. The middle zero remains part of the result."
+  },
+  {
+    "id": "3.2-075",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What maximum number of simultaneously active depth calls is printed, including the initial and base calls?",
+    "code_snippet": "Global Integer active = 0;\nGlobal Integer peak = 0;\nFunction Void depth(Integer n) {\n    active++;\n    if (active > peak) {\n        peak = active;\n    }\n    if (n > 1) {\n        depth(n div 2);\n    }\n    active--;\n}\nMain {\n    depth(13);\n    Print(peak);\n}",
+    "options": {
+      "A": "13",
+      "B": "5",
+      "C": "3",
+      "D": "4"
+    },
+    "correct_answer": "D",
+    "explanation": "The deepest active chain has arguments 13,6,3,1. Both the initial and base frames count, so peak is four."
+  },
+  {
+    "id": "3.2-076",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What peak active-frame count is printed for the two-branch Fibonacci traversal?",
+    "code_snippet": "Global Integer active = 0;\nGlobal Integer peak = 0;\nFunction Void visit(Integer n) {\n    active++;\n    if (active > peak) {\n        peak = active;\n    }\n    if (n > 1) {\n        visit(n - 1);\n        visit(n - 2);\n    }\n    active--;\n}\nMain {\n    visit(5);\n    Print(peak, active);\n}",
+    "options": {
+      "A": "5 0",
+      "B": "5 5",
+      "C": "9 0",
+      "D": "6 0"
+    },
+    "correct_answer": "A",
+    "explanation": "The deepest chain is 5,4,3,2,1, with five visit frames. Sibling branches run sequentially; all frames have returned before active is printed."
+  },
+  {
+    "id": "3.2-077",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What sequence is printed when the smaller branch runs first?",
+    "code_snippet": "Function Void f(Integer n) {\n    if (n <= 0) {\n        return;\n    }\n    f(n - 2);\n    Print(n);\n    f(n - 1);\n}\nMain {\n    f(3);\n}",
+    "options": {
+      "A": "1 3 1 2",
+      "B": "1 3 2 1",
+      "C": "1 2 3 1",
+      "D": "3 1 2 1"
+    },
+    "correct_answer": "B",
+    "explanation": "f(3) first runs f(1), which prints 1; then prints 3; f(2) prints 2 followed by its f(1), giving 1,3,2,1."
+  },
+  {
+    "id": "3.2-078",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What value is printed when the second branch consumes the first result?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n <= 1) {\n        return 1;\n    }\n    Integer a = f(n - 1);\n    return a + f(n - 2) + n;\n}\nMain {\n    Print(f(4));\n}",
+    "options": {
+      "A": "16",
+      "B": "11",
+      "C": "14",
+      "D": "18"
+    },
+    "correct_answer": "A",
+    "explanation": "f(2)=1+1+2=4; f(3)=4+1+3=8; f(4)=8+4+4=16."
+  },
+  {
+    "id": "3.2-079",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What does this recursive binary digit construction return?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 0;\n    }\n    return (10 * f(n div 2)) + (n mod 2);\n}\nMain {\n    Print(f(13));\n}",
+    "options": {
+      "A": "1101",
+      "B": "1011",
+      "C": "13",
+      "D": "1110"
+    },
+    "correct_answer": "A",
+    "explanation": "Recursing to the most significant bit and appending remainders builds decimal digits representing binary 1101."
+  },
+  {
+    "id": "3.2-080",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What pair results when a global counts only non-base entries?",
+    "code_snippet": "Global Integer count = 0;\nFunction Integer f(Integer n) {\n    if (n == 0) {\n        return 1;\n    }\n    count++;\n    return n + f(n - 1);\n}\nMain {\n    Integer result = f(3);\n    Print(result, count);\n}",
+    "options": {
+      "A": "6 4",
+      "B": "6 3",
+      "C": "7 3",
+      "D": "7 4"
+    },
+    "correct_answer": "C",
+    "explanation": "The return is 3+2+1+1=7. Only arguments 3,2,1 increment count; the base returns before incrementing."
+  },
+  {
+    "id": "3.2-081",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is printed across two top-level calls sharing a global counter?",
+    "code_snippet": "Global Integer counter = 0;\nFunction Integer f(Integer n) {\n    if (n == 0) {\n        return counter;\n    }\n    counter++;\n    return f(n - 1);\n}\nMain {\n    Print(f(2));\n    Print(f(1));\n}",
+    "options": {
+      "A": "2 1",
+      "B": "3 3",
+      "C": "2 3",
+      "D": "0 0"
+    },
+    "correct_answer": "C",
+    "explanation": "The first call increments the persistent counter twice. The second continues from 2 and increments it to 3."
+  },
+  {
+    "id": "3.2-082",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What does a static local retain between two invocations?",
+    "code_snippet": "Function Integer f(Integer n) {\n    Static Integer s = 0;\n    s++;\n    if (n == 0) {\n        return s;\n    }\n    return f(n - 1);\n}\nMain {\n    Print(f(2));\n    Print(f(1));\n}",
+    "options": {
+      "A": "2 3",
+      "B": "3 2",
+      "C": "1 1",
+      "D": "3 5"
+    },
+    "correct_answer": "D",
+    "explanation": "Each entry, including a base entry, increments the single persistent s. Three entries precede the first result and two more precede the second."
+  },
+  {
+    "id": "3.2-083",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What result follows saving a local before a deeper call changes global state?",
+    "code_snippet": "Global Integer g = 1;\nFunction Integer f(Integer n) {\n    if (n == 0) {\n        return g;\n    }\n    Integer saved = g;\n    g = g + n;\n    return saved + f(n - 1);\n}\nMain {\n    Integer result = f(3);\n    Print(result, g);\n}",
+    "options": {
+      "A": "7 7",
+      "B": "14 7",
+      "C": "18 7",
+      "D": "17 1"
+    },
+    "correct_answer": "C",
+    "explanation": "Saved values are 1,4,6. The base sees g=7, so the sum is 1+4+6+7=18."
+  },
+  {
+    "id": "3.2-084",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is printed when locals survive across a recursive call?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 0;\n    }\n    Integer x = n * 2;\n    Integer y = f(n - 1);\n    return x + y;\n}\nMain {\n    Print(f(4));\n}",
+    "options": {
+      "A": "20",
+      "B": "8",
+      "C": "16",
+      "D": "10"
+    },
+    "correct_answer": "A",
+    "explanation": "Each frame retains its own x. The result is 8+6+4+2+0=20."
+  },
+  {
+    "id": "3.2-085",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What sequence is printed by recursion between two loop iterations?",
+    "code_snippet": "Function Void f(Integer n) {\n    if (n == 0) {\n        return;\n    }\n    Integer i;\n    for (i = 0; i < 2; i++) {\n        Print(n);\n        f(n - 1);\n    }\n}\nMain {\n    f(2);\n}",
+    "options": {
+      "A": "2 1 2 1",
+      "B": "1 1 2 1 1 2",
+      "C": "2 1 1 2 1 1",
+      "D": "2 2 1 1"
+    },
+    "correct_answer": "C",
+    "explanation": "Each n=2 loop iteration prints 2 then runs an n=1 call that prints 1 twice. These groups occur twice."
+  },
+  {
+    "id": "3.2-086",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What return value uses an even/odd recursive branch?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n <= 1) {\n        return n;\n    }\n    if ((n mod 2) == 0) {\n        return f(n div 2) + 1;\n    }\n    return f(n - 1) + 2;\n}\nMain {\n    Print(f(11));\n}",
+    "options": {
+      "A": "11",
+      "B": "8",
+      "C": "6",
+      "D": "7"
+    },
+    "correct_answer": "B",
+    "explanation": "The chain is 11->10->5->4->2->1. Added costs are 2,1,2,1,1 plus base 1, totaling 8."
+  },
+  {
+    "id": "3.2-087",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What return value does this recursive greatest-common-divisor function print?",
+    "code_snippet": "Function Integer gcd(Integer a, Integer b) {\n    if (b == 0) {\n        return a;\n    }\n    return gcd(b, a mod b);\n}\nMain {\n    Print(gcd(84, 30));\n}",
+    "options": {
+      "A": "12",
+      "B": "3",
+      "C": "6",
+      "D": "14"
+    },
+    "correct_answer": "C",
+    "explanation": "The argument pairs are (84,30),(30,24),(24,6),(6,0). The base returns 6."
+  },
+  {
+    "id": "3.2-088",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is printed when a reference-free local is incremented after the recursive return?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n == 0) {\n        return 0;\n    }\n    Integer value = f(n - 1);\n    n++;\n    return value + n;\n}\nMain {\n    Print(f(3));\n}",
+    "options": {
+      "A": "12",
+      "B": "6",
+      "C": "9",
+      "D": "3"
+    },
+    "correct_answer": "C",
+    "explanation": "Unwinding adds the incremented local arguments 2,3,4. Their sum is 9; caller arguments are independent."
+  },
+  {
+    "id": "3.2-089",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is printed when the second recursive branch is skipped by a returned-value test?",
+    "code_snippet": "Function Integer f(Integer n) {\n    if (n <= 1) {\n        return n;\n    }\n    Integer a = f(n - 1);\n    if (a >= 2) {\n        return a + 1;\n    }\n    return a + f(n - 2) + 1;\n}\nMain {\n    Print(f(5));\n}",
+    "options": {
+      "A": "4",
+      "B": "8",
+      "C": "5",
+      "D": "7"
+    },
+    "correct_answer": "C",
+    "explanation": "f(2)=2. Thereafter the a>=2 branch returns a+1, giving f(3)=3,f(4)=4,f(5)=5 without a second call at those levels."
+  },
+  {
+    "id": "3.2-090",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Medium",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What result and base-leaf count are printed for unequal branches?",
+    "code_snippet": "Global Integer leaves = 0;\nFunction Integer f(Integer n) {\n    if (n <= 0) {\n        leaves++;\n        return 1;\n    }\n    return f(n - 1) + f(n - 2);\n}\nMain {\n    Integer result = f(3);\n    Print(result, leaves);\n}",
+    "options": {
+      "A": "4 5",
+      "B": "5 5",
+      "C": "5 9",
+      "D": "3 3"
+    },
+    "correct_answer": "B",
+    "explanation": "Leaf totals satisfy L(n)=L(n-1)+L(n-2) with L(0)=L(-1)=1, yielding L(1)=2,L(2)=3,L(3)=5. Each leaf returns one."
+  },
+  {
+    "id": "3.2-091",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What result and final global value follow the left-to-right branching mutations?",
+    "code_snippet": "Global Integer g = 0;\nFunction Integer f(Integer n) {\n    g++;\n    if (n == 0) {\n        return g;\n    }\n    Integer a = f(n - 1);\n    g = g + n;\n    Integer b = f(n - 1);\n    return a + b + g;\n}\nMain {\n    Integer result = f(2);\n    Print(result, g);\n}",
+    "options": {
+      "A": "46 7",
+      "B": "55 11",
+      "C": "59 7",
+      "D": "51 11"
+    },
+    "correct_answer": "B",
+    "explanation": "The first n=1 subtree returns 13 with g=5. After adding 2, the second subtree returns 31 with g=11. The root adds 13+31+11=55."
+  },
+  {
+    "id": "3.2-092",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What result follows static mutation both before descent and after return?",
+    "code_snippet": "Function Integer f(Integer n) {\n    Static Integer s = 1;\n    if (n == 0) {\n        return s;\n    }\n    s = s + n;\n    Integer a = f(n - 1);\n    s++;\n    return a + s;\n}\nMain {\n    Print(f(3));\n    Print(f(0));\n}",
+    "options": {
+      "A": "34 10",
+      "B": "34 7",
+      "C": "28 7",
+      "D": "31 10"
+    },
+    "correct_answer": "A",
+    "explanation": "Descent raises s to 7. Unwinding increments it to 8,9,10 and accumulates 7+8+9+10=34. The next base call observes 10."
+  },
+  {
+    "id": "3.2-093",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What sequence and final global value follow sibling calls with restoration?",
+    "code_snippet": "Global Integer g = 0;\nFunction Void f(Integer n) {\n    if (n == 0) {\n        Print(g);\n        return;\n    }\n    g = g + n;\n    f(n - 1);\n    g = g - n;\n    f(n - 1);\n}\nMain {\n    f(2);\n    Print(g);\n}",
+    "options": {
+      "A": "3 2 1 0 0",
+      "B": "3 3 1 1 0",
+      "C": "2 1 0 0 0",
+      "D": "3 2 3 2 2"
+    },
+    "correct_answer": "A",
+    "explanation": "The first n=1 subtree prints 3 then 2; restoration removes the root contribution before the second subtree prints 1 then 0. All contributions are restored to zero."
+  },
+  {
+    "id": "3.2-094",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What is printed when a static counter is shared across all tree nodes and a later root call?",
+    "code_snippet": "Function Integer f(Integer n) {\n    Static Integer serial = 0;\n    serial++;\n    Integer mine = serial;\n    if (n == 0) {\n        return mine;\n    }\n    Integer left = f(n - 1);\n    Integer right = f(n - 1);\n    return mine + left + right;\n}\nMain {\n    Print(f(2));\n    Print(f(1));\n}",
+    "options": {
+      "A": "28 30",
+      "B": "28 6",
+      "C": "21 27",
+      "D": "28 27"
+    },
+    "correct_answer": "D",
+    "explanation": "The first tree visits seven nodes with serials 1 through 7, summing to 28. The second visits serials 8,9,10 and returns 27."
+  },
+  {
+    "id": "3.2-095",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What result and global value are printed when one call uses a global-derived argument?",
+    "code_snippet": "Global Integer g = 0;\nFunction Integer f(Integer n) {\n    if (n <= 0) {\n        g++;\n        return g;\n    }\n    g = g + n;\n    Integer a = f(n - 1);\n    g++;\n    Integer b = f(g mod 2);\n    return a + b;\n}\nMain {\n    Integer result = f(2);\n    Print(result, g);\n}",
+    "options": {
+      "A": "31 11",
+      "B": "9 5",
+      "C": "15 7",
+      "D": "16 8"
+    },
+    "correct_answer": "A",
+    "explanation": "The first n=1 frame reaches g=5 before its parity-selected call. That nested n=1 frame returns 16 with g=9, so the first frame returns 20. At the root, g increments to 10, selecting a base call that returns 11. The root returns 31."
+  },
+  {
+    "id": "3.2-096",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What result is printed when the same local snapshot is used around two recursive calls?",
+    "code_snippet": "Global Integer g = 1;\nFunction Integer f(Integer n) {\n    if (n == 0) {\n        g++;\n        return g;\n    }\n    Integer saved = g;\n    Integer a = f(n - 1);\n    Integer b = f(n - 1);\n    return saved + a + b;\n}\nMain {\n    Integer result = f(2);\n    Print(result, g);\n}",
+    "options": {
+      "A": "17 4",
+      "B": "19 5",
+      "C": "20 5",
+      "D": "14 5"
+    },
+    "correct_answer": "B",
+    "explanation": "The left n=1 frame saves 1 and returns 1+2+3=6. The right saves 3 and returns 3+4+5=12. The root adds its saved 1, giving 19."
+  },
+  {
+    "id": "3.2-097",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What maximum frame count and total entries are printed for this mixed decrement recursion?",
+    "code_snippet": "Global Integer active = 0;\nGlobal Integer peak = 0;\nGlobal Integer calls = 0;\nFunction Void f(Integer n) {\n    active++;\n    calls++;\n    if (active > peak) {\n        peak = active;\n    }\n    if (n > 0) {\n        f(n - 2);\n        f(n - 3);\n    }\n    active--;\n}\nMain {\n    f(7);\n    Print(peak, calls);\n}",
+    "options": {
+      "A": "5 17",
+      "B": "4 17",
+      "C": "5 25",
+      "D": "8 17"
+    },
+    "correct_answer": "A",
+    "explanation": "The deepest path is 7,5,3,1,-1, containing five frames. Counting both branches and base entries by C(n)=1+C(n-2)+C(n-3) for positive n gives 17 entries."
+  },
+  {
+    "id": "3.2-098",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What value is printed by this nested recursive return argument?",
+    "code_snippet": "Global Integer calls = 0;\nFunction Integer f(Integer n) {\n    calls++;\n    if (n > 10) {\n        return n - 1;\n    }\n    return f(f(n + 2));\n}\nMain {\n    Integer result = f(9);\n    Print(result, calls);\n}",
+    "options": {
+      "A": "11 5",
+      "B": "10 3",
+      "C": "9 7",
+      "D": "10 5"
+    },
+    "correct_answer": "D",
+    "explanation": "f(9) calls f(11)=10, then f(10), which calls f(12)=11 and f(11)=10. Including the initial call gives five entries."
+  },
+  {
+    "id": "3.2-099",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What sequence is printed when a static value changes between pre- and post-recursion output?",
+    "code_snippet": "Function Void f(Integer n) {\n    Static Integer s = 0;\n    s = s + 1;\n    Integer mine = s;\n    if (n == 0) {\n        Print(mine, s);\n        return;\n    }\n    f(n - 1);\n    s = s + mine;\n    Print(mine, s);\n}\nMain {\n    f(2);\n    f(0);\n}",
+    "options": {
+      "A": "3 3 2 4 1 5 6 6",
+      "B": "1 1 2 2 3 3 4 4",
+      "C": "3 3 2 5 1 6 3 3",
+      "D": "3 3 2 5 1 6 7 7"
+    },
+    "correct_answer": "D",
+    "explanation": "Entries save mine=1,2,3. The base prints 3,3; unwinding adds saved 2 then 1 to the shared s, producing 5 and 6. A later base call increments s to 7."
+  },
+  {
+    "id": "3.2-100",
+    "module": "Module 3: Pseudocode & Code Tracing",
+    "subpart_id": "3.2",
+    "subpart_name": "Code Tracing & Execution",
+    "difficulty": "Hard",
+    "question": "Typed pseudocode uses signed 32-bit Integer values, pass-by-value parameters, left-to-right evaluation, and div truncating toward zero. Globals and Static locals persist across calls; ordinary locals are fresh. Print appends space-separated tokens. What result and final global value follow this three-stage recursive mutation?",
+    "code_snippet": "Global Integer g = 1;\nFunction Integer f(Integer n) {\n    if (n == 0) {\n        g = g + 1;\n        return g;\n    }\n    Integer before = g;\n    g = g + n;\n    Integer left = f(n - 1);\n    g = g - before;\n    Integer right = f(n - 1);\n    return left - right + g;\n}\nMain {\n    Integer result = f(2);\n    Print(result, g);\n}",
+    "options": {
+      "A": "1 5",
+      "B": "-1 1",
+      "C": "4 3",
+      "D": "5 5"
+    },
+    "correct_answer": "C",
+    "explanation": "The left subtree saves before=3 and returns 5 with g=3. The root subtracts its saved 1, leaving g=2; the right subtree returns 4 with g=3. The root then returns 5-4+3=4."
+  }
+]

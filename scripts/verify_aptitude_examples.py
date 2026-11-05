@@ -13,9 +13,9 @@ import json
 import math
 from pathlib import Path
 
+from question_bank import module_parts, reference_questions
+
 ROOT = Path(__file__).resolve().parents[1]
-FILES = {"6.1": "6.1_quantitative_arithmetic.json", "6.2": "6.2_higher_modern_math.json",
-         "6.3": "6.3_logical_reasoning.json", "6.4": "6.4_verbal_ability.json"}
 QUESTIONS = {}
 CHECKED = set()
 
@@ -27,14 +27,14 @@ def number(sid, index, value):
     assert len(set(options.values())) == 4, (qid, "Equivalent numeric options")
     matches = [key for key, result in options.items() if result == value]
     assert matches == [q["correct_answer"]], (qid, value, matches)
-    CHECKED.add(qid)
+    CHECKED.add(q["id"])
 
 
 def exact(sid, index, text):
     qid = f"{sid}-{index:03}"
     q = QUESTIONS[qid]
     assert q["options"][q["correct_answer"]] == text, (qid, text)
-    CHECKED.add(qid)
+    CHECKED.add(q["id"])
 
 
 def alternate(rates):
@@ -321,8 +321,9 @@ def verbal():
     # Their presence is not an automated proof of English grammar or comprehension.
     constraints = json.loads((ROOT / "scripts/verbal_order_constraints.json").read_text(encoding="utf-8"))
     assert len(constraints) == 14
+    current = {q["id"]: q for q in QUESTIONS.values()}
     for qid, edges in constraints.items():
-        question = QUESTIONS[qid]
+        question = current[qid]
         labels = {line.split(":", 1)[0] for line in question["code_snippet"].splitlines()}
         assert len(labels) in (4, 5)
         assert {label for edge in edges for label in edge} == labels
@@ -344,12 +345,17 @@ def verbal():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--subpart", choices=FILES, action="append")
+    parts = module_parts(6)
+    parser.add_argument("--subpart", choices=[part["id"] for part in parts], action="append")
     args = parser.parse_args()
-    for sid in args.subpart or FILES:
-        path = ROOT / "questions/module_6_aptitude" / FILES[sid]
-        QUESTIONS.update({q["id"]: q for q in json.loads(path.read_text(encoding="utf-8"))})
-        {"6.1": arithmetic, "6.2": modern, "6.3": logic, "6.4": verbal}[sid]()
+    checks = {"6.1": arithmetic, "6.2": modern, "6.3": logic, "6.4": verbal}
+    for part in parts:
+        if args.subpart and part["id"] not in args.subpart:
+            continue
+        for source in part["sources"]:
+            original = source["id"]
+            QUESTIONS.update(reference_questions(original))
+            checks[original]()
     print(f"PASS: {len(CHECKED)} exact/model-checked keys; editorial review remains separate.")
 
 

@@ -1,0 +1,979 @@
+{
+  "schema_version": 2,
+  "migration": {
+    "from_commit": "1c6acdb0d20f9cffa6a8d0ca1578ab4b44a5f673",
+    "description": "Original prompt subparts mapped into the reorganized question groups; ranges are one-based inclusive."
+  },
+  "modules": [
+    {
+      "id": "1",
+      "name": "Core Computer Science Fundamentals",
+      "directory": "module_1_core_cs",
+      "groups": [
+        {
+          "id": "1.1",
+          "name": "Operating Systems (OS)",
+          "directory": "1.1_operating_systems"
+        },
+        {
+          "id": "1.2",
+          "name": "Database Management Systems (DBMS)",
+          "directory": "1.2_database_management_systems"
+        },
+        {
+          "id": "1.3",
+          "name": "Computer Networks (CN)",
+          "directory": "1.3_computer_networks"
+        },
+        {
+          "id": "1.4",
+          "name": "Object-Oriented Programming (OOP)",
+          "directory": "1.4_object_oriented_programming"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Data Structures & Algorithms",
+      "directory": "module_2_dsa"
+    },
+    {
+      "id": "3",
+      "name": "Pseudocode & Code Tracing",
+      "directory": "module_3_pseudocode"
+    },
+    {
+      "id": "4",
+      "name": "Applied Systems & Software Engineering",
+      "directory": "module_4_applied_systems"
+    },
+    {
+      "id": "5",
+      "name": "Data Science & Analytics",
+      "directory": "module_5_data_science"
+    },
+    {
+      "id": "6",
+      "name": "Aptitude & Reasoning",
+      "directory": "module_6_aptitude"
+    }
+  ],
+  "subparts": [
+    {
+      "id": "1.1.1",
+      "name": "CPU Scheduling & Process Lifecycle",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.1_operating_systems/1.1.1_cpu_scheduling.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.1.1",
+          "name": "CPU Scheduling & Process Lifecycle",
+          "original_path": "questions/module_1_core_cs/1.1.1_cpu_scheduling.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.1.2",
+      "name": "Concurrency, Synchronization & Deadlocks",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.1_operating_systems/1.1.2_concurrency_deadlocks.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.1.2",
+          "name": "Concurrency, Synchronization & Deadlocks",
+          "original_path": "questions/module_1_core_cs/1.1.2_concurrency_deadlocks.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.1.3",
+      "name": "Memory Management & Virtual Memory",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.1_operating_systems/1.1.3_memory_management.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.1.3",
+          "name": "Memory Management & Virtual Memory",
+          "original_path": "questions/module_1_core_cs/1.1.3_memory_management.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.1.4",
+      "name": "Storage Systems, File Systems & Disk Scheduling",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.1_operating_systems/1.1.4_storage_disk.json",
+      "count": 20,
+      "difficulties": {
+        "Easy": 6,
+        "Medium": 10,
+        "Hard": 4
+      },
+      "sources": [
+        {
+          "id": "1.1.4",
+          "name": "Storage Systems, File Systems & Disk Scheduling",
+          "original_path": "questions/module_1_core_cs/1.1.4_storage_disk.json",
+          "start": 1,
+          "count": 20,
+          "difficulties": {
+            "Easy": 6,
+            "Medium": 10,
+            "Hard": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.2.1",
+      "name": "Relational Schema Design & Normalization",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.2_database_management_systems/1.2.1_schema_normalization.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.2.1",
+          "name": "Relational Schema Design & Normalization",
+          "original_path": "questions/module_1_core_cs/1.2.1_schema_normalization.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.2.2",
+      "name": "Transactions, Concurrency & Recovery",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.2_database_management_systems/1.2.2_transactions_concurrency.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.2.2",
+          "name": "Transactions, Concurrency & Recovery",
+          "original_path": "questions/module_1_core_cs/1.2.2_transactions_concurrency.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.2.3",
+      "name": "Storage, Indexing & ER Modeling",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.2_database_management_systems/1.2.3_storage_indexing.json",
+      "count": 25,
+      "difficulties": {
+        "Easy": 8,
+        "Medium": 12,
+        "Hard": 5
+      },
+      "sources": [
+        {
+          "id": "1.2.3",
+          "name": "Storage, Indexing & ER Modeling",
+          "original_path": "questions/module_1_core_cs/1.2.3_storage_indexing.json",
+          "start": 1,
+          "count": 25,
+          "difficulties": {
+            "Easy": 8,
+            "Medium": 12,
+            "Hard": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.2.4",
+      "name": "SQL Queries & Output Prediction",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.2_database_management_systems/1.2.4_sql_queries.json",
+      "count": 35,
+      "difficulties": {
+        "Easy": 10,
+        "Medium": 18,
+        "Hard": 7
+      },
+      "sources": [
+        {
+          "id": "1.2.4",
+          "name": "SQL Queries & Output Prediction",
+          "original_path": "questions/module_1_core_cs/1.2.4_sql_queries.json",
+          "start": 1,
+          "count": 35,
+          "difficulties": {
+            "Easy": 10,
+            "Medium": 18,
+            "Hard": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.3.1",
+      "name": "Network Architecture & Physical/Data Link Layers",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.3_computer_networks/1.3.1_network_architecture.json",
+      "count": 25,
+      "difficulties": {
+        "Easy": 8,
+        "Medium": 12,
+        "Hard": 5
+      },
+      "sources": [
+        {
+          "id": "1.3.1",
+          "name": "Network Architecture & Physical/Data Link Layers",
+          "original_path": "questions/module_1_core_cs/1.3.1_network_architecture.json",
+          "start": 1,
+          "count": 25,
+          "difficulties": {
+            "Easy": 8,
+            "Medium": 12,
+            "Hard": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.3.2",
+      "name": "Network Layer, IP Addressing & Routing",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.3_computer_networks/1.3.2_network_layer_routing.json",
+      "count": 25,
+      "difficulties": {
+        "Easy": 7,
+        "Medium": 13,
+        "Hard": 5
+      },
+      "sources": [
+        {
+          "id": "1.3.2",
+          "name": "Network Layer, IP Addressing & Routing",
+          "original_path": "questions/module_1_core_cs/1.3.2_network_layer_routing.json",
+          "start": 1,
+          "count": 25,
+          "difficulties": {
+            "Easy": 7,
+            "Medium": 13,
+            "Hard": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.3.3",
+      "name": "Transport Layer Protocols",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.3_computer_networks/1.3.3_transport_layer.json",
+      "count": 25,
+      "difficulties": {
+        "Easy": 8,
+        "Medium": 12,
+        "Hard": 5
+      },
+      "sources": [
+        {
+          "id": "1.3.3",
+          "name": "Transport Layer Protocols",
+          "original_path": "questions/module_1_core_cs/1.3.3_transport_layer.json",
+          "start": 1,
+          "count": 25,
+          "difficulties": {
+            "Easy": 8,
+            "Medium": 12,
+            "Hard": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.3.4",
+      "name": "Application Layer Protocols & Network Security",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.3_computer_networks/1.3.4_application_security.json",
+      "count": 25,
+      "difficulties": {
+        "Easy": 7,
+        "Medium": 13,
+        "Hard": 5
+      },
+      "sources": [
+        {
+          "id": "1.3.4",
+          "name": "Application Layer Protocols & Network Security",
+          "original_path": "questions/module_1_core_cs/1.3.4_application_security.json",
+          "start": 1,
+          "count": 25,
+          "difficulties": {
+            "Easy": 7,
+            "Medium": 13,
+            "Hard": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.4.1",
+      "name": "Core Architecture & Class Mechanics",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.4_object_oriented_programming/1.4.1_oop_architecture.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.4.1",
+          "name": "Core Architecture & Class Mechanics",
+          "original_path": "questions/module_1_core_cs/1.4.1_oop_architecture.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.4.2",
+      "name": "Object Lifecycle & Memory Management",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.4_object_oriented_programming/1.4.2_object_lifecycle.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.4.2",
+          "name": "Object Lifecycle & Memory Management",
+          "original_path": "questions/module_1_core_cs/1.4.2_object_lifecycle.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.4.3",
+      "name": "Runtime Polymorphism & Dynamic Dispatch",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.4_object_oriented_programming/1.4.3_runtime_polymorphism.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.4.3",
+          "name": "Runtime Polymorphism & Dynamic Dispatch",
+          "original_path": "questions/module_1_core_cs/1.4.3_runtime_polymorphism.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "1.4.4",
+      "name": "Language-Specific OOP Outputs & Exception Handling",
+      "module_id": "1",
+      "path": "questions/module_1_core_cs/1.4_object_oriented_programming/1.4.4_tricky_outputs_exceptions.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "1.4.4",
+          "name": "Language-Specific OOP Outputs & Exception Handling",
+          "original_path": "questions/module_1_core_cs/1.4.4_tricky_outputs_exceptions.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "2.1",
+      "name": "Algorithm Analysis",
+      "module_id": "2",
+      "path": "questions/module_2_dsa/2.1_algorithm_analysis.json",
+      "count": 35,
+      "difficulties": {
+        "Easy": 11,
+        "Medium": 17,
+        "Hard": 7
+      },
+      "sources": [
+        {
+          "id": "2.1",
+          "name": "Asymptotic Complexity & Recurrence Analysis",
+          "original_path": "questions/module_2_dsa/2.1_asymptotic_complexity.json",
+          "start": 1,
+          "count": 35,
+          "difficulties": {
+            "Easy": 11,
+            "Medium": 17,
+            "Hard": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "2.2",
+      "name": "Linear Data Structures",
+      "module_id": "2",
+      "path": "questions/module_2_dsa/2.2_linear_data_structures.json",
+      "count": 85,
+      "difficulties": {
+        "Easy": 25,
+        "Medium": 43,
+        "Hard": 17
+      },
+      "sources": [
+        {
+          "id": "2.2",
+          "name": "Linear Data Structures (Arrays, Strings & Linked Lists)",
+          "original_path": "questions/module_2_dsa/2.2_linear_data_structures.json",
+          "start": 1,
+          "count": 45,
+          "difficulties": {
+            "Easy": 13,
+            "Medium": 23,
+            "Hard": 9
+          }
+        },
+        {
+          "id": "2.3",
+          "name": "Stacks & Queues",
+          "original_path": "questions/module_2_dsa/2.3_stacks_queues.json",
+          "start": 46,
+          "count": 40,
+          "difficulties": {
+            "Easy": 12,
+            "Medium": 20,
+            "Hard": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "2.3",
+      "name": "Non-linear Data Structures & Hashing",
+      "module_id": "2",
+      "path": "questions/module_2_dsa/2.3_non_linear_data_structures_hashing.json",
+      "count": 150,
+      "difficulties": {
+        "Easy": 45,
+        "Medium": 75,
+        "Hard": 30
+      },
+      "sources": [
+        {
+          "id": "2.4",
+          "name": "Trees & Binary Search Trees",
+          "original_path": "questions/module_2_dsa/2.4_trees_bst.json",
+          "start": 1,
+          "count": 60,
+          "difficulties": {
+            "Easy": 18,
+            "Medium": 30,
+            "Hard": 12
+          }
+        },
+        {
+          "id": "2.5",
+          "name": "Priority Queues (Heaps) & Hashing",
+          "original_path": "questions/module_2_dsa/2.5_heaps_hashing.json",
+          "start": 61,
+          "count": 45,
+          "difficulties": {
+            "Easy": 14,
+            "Medium": 22,
+            "Hard": 9
+          }
+        },
+        {
+          "id": "2.6",
+          "name": "Graph Algorithms & Representations",
+          "original_path": "questions/module_2_dsa/2.6_graphs.json",
+          "start": 106,
+          "count": 45,
+          "difficulties": {
+            "Easy": 13,
+            "Medium": 23,
+            "Hard": 9
+          }
+        }
+      ]
+    },
+    {
+      "id": "2.4",
+      "name": "Searching, Sorting & Algorithm Design",
+      "module_id": "2",
+      "path": "questions/module_2_dsa/2.4_searching_sorting_algorithm_design.json",
+      "count": 40,
+      "difficulties": {
+        "Easy": 12,
+        "Medium": 20,
+        "Hard": 8
+      },
+      "sources": [
+        {
+          "id": "2.7",
+          "name": "Searching, Sorting & Algorithmic Paradigms",
+          "original_path": "questions/module_2_dsa/2.7_searching_sorting.json",
+          "start": 1,
+          "count": 40,
+          "difficulties": {
+            "Easy": 12,
+            "Medium": 20,
+            "Hard": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "3.1",
+      "name": "Bitwise Operations",
+      "module_id": "3",
+      "path": "questions/module_3_pseudocode/3.1_bitwise_operations.json",
+      "count": 50,
+      "difficulties": {
+        "Easy": 15,
+        "Medium": 25,
+        "Hard": 10
+      },
+      "sources": [
+        {
+          "id": "3.1",
+          "name": "Bitwise Operations & Number Manipulation",
+          "original_path": "questions/module_3_pseudocode/3.1_bitwise_logic.json",
+          "start": 1,
+          "count": 50,
+          "difficulties": {
+            "Easy": 15,
+            "Medium": 25,
+            "Hard": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "3.2",
+      "name": "Code Tracing & Execution",
+      "module_id": "3",
+      "path": "questions/module_3_pseudocode/3.2_code_tracing_execution.json",
+      "count": 100,
+      "difficulties": {
+        "Easy": 30,
+        "Medium": 50,
+        "Hard": 20
+      },
+      "sources": [
+        {
+          "id": "3.2",
+          "name": "Iterative Loop Execution & Flow Control",
+          "original_path": "questions/module_3_pseudocode/3.2_loop_execution.json",
+          "start": 1,
+          "count": 50,
+          "difficulties": {
+            "Easy": 15,
+            "Medium": 25,
+            "Hard": 10
+          }
+        },
+        {
+          "id": "3.3",
+          "name": "Recursive Function Dry-Runs",
+          "original_path": "questions/module_3_pseudocode/3.3_recursion_dry_runs.json",
+          "start": 51,
+          "count": 50,
+          "difficulties": {
+            "Easy": 15,
+            "Medium": 25,
+            "Hard": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "4.1",
+      "name": "Cloud Computing",
+      "module_id": "4",
+      "path": "questions/module_4_applied_systems/4.1_cloud_computing.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "4.1",
+          "name": "Cloud Computing Fundamentals",
+          "original_path": "questions/module_4_applied_systems/4.1_cloud_computing.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "4.2",
+      "name": "Software Engineering & Git",
+      "module_id": "4",
+      "path": "questions/module_4_applied_systems/4.2_software_engineering_git.json",
+      "count": 30,
+      "difficulties": {
+        "Easy": 9,
+        "Medium": 15,
+        "Hard": 6
+      },
+      "sources": [
+        {
+          "id": "4.2",
+          "name": "Software Engineering & Version Control (Git)",
+          "original_path": "questions/module_4_applied_systems/4.2_software_eng_git.json",
+          "start": 1,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "4.3",
+      "name": "Linux & Shell",
+      "module_id": "4",
+      "path": "questions/module_4_applied_systems/4.3_linux_shell.json",
+      "count": 25,
+      "difficulties": {
+        "Easy": 8,
+        "Medium": 12,
+        "Hard": 5
+      },
+      "sources": [
+        {
+          "id": "4.3",
+          "name": "Linux / Unix OS Environment & Shell Commands",
+          "original_path": "questions/module_4_applied_systems/4.3_linux_shell.json",
+          "start": 1,
+          "count": 25,
+          "difficulties": {
+            "Easy": 8,
+            "Medium": 12,
+            "Hard": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "4.4",
+      "name": "Web Technologies & APIs",
+      "module_id": "4",
+      "path": "questions/module_4_applied_systems/4.4_web_technologies_apis.json",
+      "count": 25,
+      "difficulties": {
+        "Easy": 7,
+        "Medium": 13,
+        "Hard": 5
+      },
+      "sources": [
+        {
+          "id": "4.4",
+          "name": "Web Fundamentals & REST APIs",
+          "original_path": "questions/module_4_applied_systems/4.4_web_rest_apis.json",
+          "start": 1,
+          "count": 25,
+          "difficulties": {
+            "Easy": 7,
+            "Medium": 13,
+            "Hard": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "5.1",
+      "name": "Statistics & Probability",
+      "module_id": "5",
+      "path": "questions/module_5_data_science/5.1_statistics_probability.json",
+      "count": 85,
+      "difficulties": {
+        "Easy": 26,
+        "Medium": 42,
+        "Hard": 17
+      },
+      "sources": [
+        {
+          "id": "5.1",
+          "name": "Descriptive Statistics & Probability Foundations",
+          "original_path": "questions/module_5_data_science/5.1_statistics_probability.json",
+          "start": 1,
+          "count": 45,
+          "difficulties": {
+            "Easy": 14,
+            "Medium": 22,
+            "Hard": 9
+          }
+        },
+        {
+          "id": "5.2",
+          "name": "Distributions & Statistical Hypothesis Testing",
+          "original_path": "questions/module_5_data_science/5.2_distributions_tests.json",
+          "start": 46,
+          "count": 40,
+          "difficulties": {
+            "Easy": 12,
+            "Medium": 20,
+            "Hard": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "5.2",
+      "name": "Machine Learning",
+      "module_id": "5",
+      "path": "questions/module_5_data_science/5.2_machine_learning.json",
+      "count": 70,
+      "difficulties": {
+        "Easy": 21,
+        "Medium": 35,
+        "Hard": 14
+      },
+      "sources": [
+        {
+          "id": "5.3",
+          "name": "Supervised Machine Learning Algorithms",
+          "original_path": "questions/module_5_data_science/5.3_supervised_ml.json",
+          "start": 1,
+          "count": 40,
+          "difficulties": {
+            "Easy": 12,
+            "Medium": 20,
+            "Hard": 8
+          }
+        },
+        {
+          "id": "5.4",
+          "name": "Model Evaluation, Validation & Regularization",
+          "original_path": "questions/module_5_data_science/5.4_evaluation_regularization.json",
+          "start": 41,
+          "count": 30,
+          "difficulties": {
+            "Easy": 9,
+            "Medium": 15,
+            "Hard": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "5.3",
+      "name": "Python Data Analysis",
+      "module_id": "5",
+      "path": "questions/module_5_data_science/5.3_python_data_analysis.json",
+      "count": 25,
+      "difficulties": {
+        "Easy": 7,
+        "Medium": 13,
+        "Hard": 5
+      },
+      "sources": [
+        {
+          "id": "5.5",
+          "name": "Data Wrangling with Python (Pandas & NumPy)",
+          "original_path": "questions/module_5_data_science/5.5_pandas_numpy.json",
+          "start": 1,
+          "count": 25,
+          "difficulties": {
+            "Easy": 7,
+            "Medium": 13,
+            "Hard": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "6.1",
+      "name": "Quantitative Aptitude",
+      "module_id": "6",
+      "path": "questions/module_6_aptitude/6.1_quantitative_aptitude.json",
+      "count": 140,
+      "difficulties": {
+        "Easy": 42,
+        "Medium": 70,
+        "Hard": 28
+      },
+      "sources": [
+        {
+          "id": "6.1",
+          "name": "Quantitative Arithmetic",
+          "original_path": "questions/module_6_aptitude/6.1_quantitative_arithmetic.json",
+          "start": 1,
+          "count": 80,
+          "difficulties": {
+            "Easy": 24,
+            "Medium": 40,
+            "Hard": 16
+          }
+        },
+        {
+          "id": "6.2",
+          "name": "Higher & Modern Mathematics",
+          "original_path": "questions/module_6_aptitude/6.2_higher_modern_math.json",
+          "start": 81,
+          "count": 60,
+          "difficulties": {
+            "Easy": 18,
+            "Medium": 30,
+            "Hard": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "6.2",
+      "name": "Logical Reasoning",
+      "module_id": "6",
+      "path": "questions/module_6_aptitude/6.2_logical_reasoning.json",
+      "count": 90,
+      "difficulties": {
+        "Easy": 27,
+        "Medium": 45,
+        "Hard": 18
+      },
+      "sources": [
+        {
+          "id": "6.3",
+          "name": "Logical & Analytical Reasoning",
+          "original_path": "questions/module_6_aptitude/6.3_logical_reasoning.json",
+          "start": 1,
+          "count": 90,
+          "difficulties": {
+            "Easy": 27,
+            "Medium": 45,
+            "Hard": 18
+          }
+        }
+      ]
+    },
+    {
+      "id": "6.3",
+      "name": "Verbal Ability",
+      "module_id": "6",
+      "path": "questions/module_6_aptitude/6.3_verbal_ability.json",
+      "count": 70,
+      "difficulties": {
+        "Easy": 21,
+        "Medium": 35,
+        "Hard": 14
+      },
+      "sources": [
+        {
+          "id": "6.4",
+          "name": "Verbal Ability & Technical English",
+          "original_path": "questions/module_6_aptitude/6.4_verbal_ability.json",
+          "start": 1,
+          "count": 70,
+          "difficulties": {
+            "Easy": 21,
+            "Medium": 35,
+            "Hard": 14
+          }
+        }
+      ]
+    }
+  ]
+}

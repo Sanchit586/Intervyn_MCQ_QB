@@ -11,6 +11,8 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from question_bank import module_question_paths
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -58,7 +60,7 @@ def main():
     parser.add_argument("--java-home", type=Path)
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
-    paths = args.paths or sorted((ROOT / "questions/module_1_core_cs").glob("1.4.*.json"))
+    paths = args.paths or [path for path in module_question_paths(1) if path.name.startswith("1.4.")]
     assert paths, "No OOP question files found"
     questions = [question for path in paths for question in json.loads(path.read_text(encoding="utf-8"))]
     assert len({q["id"] for q in questions}) == len(questions), "Duplicate question IDs"

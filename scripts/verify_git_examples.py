@@ -13,12 +13,11 @@ import subprocess
 import tempfile
 import time
 
+from question_bank import reference_questions
+
 ROOT = Path(__file__).resolve().parents[1]
-QUESTIONS = {
-    q["id"]: q for q in json.loads(
-        (ROOT / "questions/module_4_applied_systems/4.2_software_eng_git.json").read_text(encoding="utf-8")
-    )
-}
+QUESTIONS = reference_questions("4.2")
+
 ENV = {**os.environ, "GIT_CONFIG_NOSYSTEM": "1", "GIT_CONFIG_GLOBAL": os.devnull,
        "GIT_EDITOR": "true", "GIT_SEQUENCE_EDITOR": "true", "GIT_TERMINAL_PROMPT": "0"}
 

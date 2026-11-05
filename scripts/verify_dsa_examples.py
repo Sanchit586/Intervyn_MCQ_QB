@@ -12,6 +12,8 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
+from question_bank import module_question_paths
+
 from verify_oop_examples import verify as verify_compiled
 
 
@@ -40,7 +42,7 @@ def main():
     parser.add_argument("--cxx", default="g++")
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
-    paths = args.paths or sorted((ROOT / "questions/module_2_dsa").glob("*.json"))
+    paths = args.paths or module_question_paths(2)
     assert paths, "No DSA question files found"
     questions = [q for path in paths for q in json.loads(path.read_text(encoding="utf-8"))]
     assert len({q["id"] for q in questions}) == len(questions), "Duplicate question IDs"

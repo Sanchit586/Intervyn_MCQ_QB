@@ -8,14 +8,13 @@ import itertools as it
 import json
 import math
 from pathlib import Path
+
+from question_bank import module_parts, reference_questions
 import statistics as stats
 import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = {"5.1": "5.1_statistics_probability.json", "5.2": "5.2_distributions_tests.json",
-         "5.3": "5.3_supervised_ml.json", "5.4": "5.4_evaluation_regularization.json",
-         "5.5": "5.5_pandas_numpy.json"}
 QUESTIONS = {}
 CHECKED = set()
 
@@ -52,14 +51,14 @@ def numeric(sid, index, value, tolerance=1e-10):
         if math.isclose(float(result), float(value), rel_tol=tolerance, abs_tol=tolerance):
             matches.append(key)
     assert matches == [q["correct_answer"]], (qid, value, matches)
-    CHECKED.add(qid)
+    CHECKED.add(q["id"])
 
 
 def exact(sid, index, text):
     qid = f"{sid}-{index:03}"
     q = QUESTIONS[qid]
     assert q["options"][q["correct_answer"]] == text, (qid, text)
-    CHECKED.add(qid)
+    CHECKED.add(q["id"])
 
 
 def foundations():
@@ -278,7 +277,7 @@ def wrangling():
         assert matches == [question["correct_answer"]], (question["id"], actual, matches)
         return question["id"]
 
-    questions = [q for q in QUESTIONS.values() if q["subpart_id"] == "5.5"]
+    questions = list(reference_questions("5.5").values())
     with ThreadPoolExecutor(max_workers=4) as pool:
         CHECKED.update(pool.map(run, questions))
     print(f"Executed {len(questions)} complete Python snippets using pandas {pd.__version__}, NumPy {np.__version__}.")
@@ -286,13 +285,17 @@ def wrangling():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--subpart", choices=FILES, action="append")
+    parts = module_parts(5)
+    parser.add_argument("--subpart", choices=[part["id"] for part in parts], action="append")
     args = parser.parse_args()
-    for sid in args.subpart or FILES:
-        path = ROOT / "questions/module_5_data_science" / FILES[sid]
-        QUESTIONS.update({q["id"]: q for q in json.loads(path.read_text(encoding="utf-8"))})
-        {"5.1": foundations, "5.2": testing, "5.3": supervised,
-         "5.4": evaluation, "5.5": wrangling}[sid]()
+    checks = {"5.1": foundations, "5.2": testing, "5.3": supervised, "5.4": evaluation, "5.5": wrangling}
+    for part in parts:
+        if args.subpart and part["id"] not in args.subpart:
+            continue
+        for source in part["sources"]:
+            original = source["id"]
+            QUESTIONS.update(reference_questions(original))
+            checks[original]()
     print(f"PASS: {len(CHECKED)} answer keys checked by numerical models, enumeration, or program execution; conceptual answers need separate review.")
 
 

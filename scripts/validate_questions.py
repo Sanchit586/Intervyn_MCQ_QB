@@ -7,6 +7,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
+from question_bank import CATALOG, validate_catalog
+
 
 ROOT = Path(__file__).resolve().parents[1]
 FIELDS = {
@@ -16,242 +18,17 @@ FIELDS = {
 TEXT_FIELDS = FIELDS - {"code_snippet", "options"}
 LETTERS = {"A", "B", "C", "D"}
 DIFFICULTIES = {"Easy", "Medium", "Hard"}
-# Add exact quotas here when another subpart is populated.
+# Canonical paths, names, and quotas are maintained in question_bank_catalog.json.
 SUBPARTS = {
-    "6.4": {
-        "module": "Module 6: Cognitive Aptitude & Logical Reasoning",
-        "name": "Verbal Ability & Technical English",
-        "count": 70,
-        "difficulties": {"Easy": 21, "Medium": 35, "Hard": 14},
-    },
-    "6.3": {
-        "module": "Module 6: Cognitive Aptitude & Logical Reasoning",
-        "name": "Logical & Analytical Reasoning",
-        "count": 90,
-        "difficulties": {"Easy": 27, "Medium": 45, "Hard": 18},
-    },
-    "6.2": {
-        "module": "Module 6: Cognitive Aptitude & Logical Reasoning",
-        "name": "Higher & Modern Mathematics",
-        "count": 60,
-        "difficulties": {"Easy": 18, "Medium": 30, "Hard": 12},
-    },
-    "6.1": {
-        "module": "Module 6: Cognitive Aptitude & Logical Reasoning",
-        "name": "Quantitative Arithmetic",
-        "count": 80,
-        "difficulties": {"Easy": 24, "Medium": 40, "Hard": 16},
-    },
-    "5.5": {
-        "module": "Module 5: Data Science & Analytics Track",
-        "name": "Data Wrangling with Python (Pandas & NumPy)",
-        "count": 25,
-        "difficulties": {"Easy": 7, "Medium": 13, "Hard": 5},
-    },
-    "5.4": {
-        "module": "Module 5: Data Science & Analytics Track",
-        "name": "Model Evaluation, Validation & Regularization",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "5.3": {
-        "module": "Module 5: Data Science & Analytics Track",
-        "name": "Supervised Machine Learning Algorithms",
-        "count": 40,
-        "difficulties": {"Easy": 12, "Medium": 20, "Hard": 8},
-    },
-    "5.2": {
-        "module": "Module 5: Data Science & Analytics Track",
-        "name": "Distributions & Statistical Hypothesis Testing",
-        "count": 40,
-        "difficulties": {"Easy": 12, "Medium": 20, "Hard": 8},
-    },
-    "5.1": {
-        "module": "Module 5: Data Science & Analytics Track",
-        "name": "Descriptive Statistics & Probability Foundations",
-        "count": 45,
-        "difficulties": {"Easy": 14, "Medium": 22, "Hard": 9},
-    },
-    "4.4": {
-        "module": "Module 4: Applied Systems, Cloud & Software Engineering",
-        "name": "Web Fundamentals & REST APIs",
-        "count": 25,
-        "difficulties": {"Easy": 7, "Medium": 13, "Hard": 5},
-    },
-    "4.3": {
-        "module": "Module 4: Applied Systems, Cloud & Software Engineering",
-        "name": "Linux / Unix OS Environment & Shell Commands",
-        "count": 25,
-        "difficulties": {"Easy": 8, "Medium": 12, "Hard": 5},
-    },
-    "4.2": {
-        "module": "Module 4: Applied Systems, Cloud & Software Engineering",
-        "name": "Software Engineering & Version Control (Git)",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "4.1": {
-        "module": "Module 4: Applied Systems, Cloud & Software Engineering",
-        "name": "Cloud Computing Fundamentals",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "3.3": {
-        "module": "Module 3: Pseudocode, Bitwise & Code Tracing",
-        "name": "Recursive Function Dry-Runs",
-        "count": 50,
-        "difficulties": {"Easy": 15, "Medium": 25, "Hard": 10},
-    },
-    "3.2": {
-        "module": "Module 3: Pseudocode, Bitwise & Code Tracing",
-        "name": "Iterative Loop Execution & Flow Control",
-        "count": 50,
-        "difficulties": {"Easy": 15, "Medium": 25, "Hard": 10},
-    },
-    "3.1": {
-        "module": "Module 3: Pseudocode, Bitwise & Code Tracing",
-        "name": "Bitwise Operations & Number Manipulation",
-        "count": 50,
-        "difficulties": {"Easy": 15, "Medium": 25, "Hard": 10},
-    },
-    "1.1.1": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "CPU Scheduling & Process Lifecycle",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "1.1.2": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Concurrency, Synchronization & Deadlocks",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "1.1.3": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Memory Management & Virtual Memory",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "1.1.4": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Storage Systems, File Systems & Disk Scheduling",
-        "count": 20,
-        "difficulties": {"Easy": 6, "Medium": 10, "Hard": 4},
-    },
-    "1.2.1": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Relational Schema Design & Normalization",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "1.2.2": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Transactions, Concurrency & Recovery",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "1.2.3": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Storage, Indexing & ER Modeling",
-        "count": 25,
-        "difficulties": {"Easy": 8, "Medium": 12, "Hard": 5},
-    },
-    "1.2.4": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "SQL Queries & Output Prediction",
-        "count": 35,
-        "difficulties": {"Easy": 10, "Medium": 18, "Hard": 7},
-    },
-    "1.3.1": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Network Architecture & Physical/Data Link Layers",
-        "count": 25,
-        "difficulties": {"Easy": 8, "Medium": 12, "Hard": 5},
-    },
-    "1.3.2": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Network Layer, IP Addressing & Routing",
-        "count": 25,
-        "difficulties": {"Easy": 7, "Medium": 13, "Hard": 5},
-    },
-    "1.3.3": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Transport Layer Protocols",
-        "count": 25,
-        "difficulties": {"Easy": 8, "Medium": 12, "Hard": 5},
-    },
-    "1.3.4": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Application Layer Protocols & Network Security",
-        "count": 25,
-        "difficulties": {"Easy": 7, "Medium": 13, "Hard": 5},
-    },
-    "1.4.1": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Core Architecture & Class Mechanics",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "1.4.2": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Object Lifecycle & Memory Management",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "1.4.3": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Runtime Polymorphism & Dynamic Dispatch",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "1.4.4": {
-        "module": "Module 1: Core Computer Science Fundamentals",
-        "name": "Language-Specific OOP Outputs & Exception Handling",
-        "count": 30,
-        "difficulties": {"Easy": 9, "Medium": 15, "Hard": 6},
-    },
-    "2.1": {
-        "module": "Module 2: Data Structures & Algorithms",
-        "name": "Asymptotic Complexity & Recurrence Analysis",
-        "count": 35,
-        "difficulties": {"Easy": 11, "Medium": 17, "Hard": 7},
-    },
-    "2.2": {
-        "module": "Module 2: Data Structures & Algorithms",
-        "name": "Linear Data Structures (Arrays, Strings & Linked Lists)",
-        "count": 45,
-        "difficulties": {"Easy": 13, "Medium": 23, "Hard": 9},
-    },
-    "2.3": {
-        "module": "Module 2: Data Structures & Algorithms",
-        "name": "Stacks & Queues",
-        "count": 40,
-        "difficulties": {"Easy": 12, "Medium": 20, "Hard": 8},
-    },
-    "2.4": {
-        "module": "Module 2: Data Structures & Algorithms",
-        "name": "Trees & Binary Search Trees",
-        "count": 60,
-        "difficulties": {"Easy": 18, "Medium": 30, "Hard": 12},
-    },
-    "2.5": {
-        "module": "Module 2: Data Structures & Algorithms",
-        "name": "Priority Queues (Heaps) & Hashing",
-        "count": 45,
-        "difficulties": {"Easy": 14, "Medium": 22, "Hard": 9},
-    },
-    "2.6": {
-        "module": "Module 2: Data Structures & Algorithms",
-        "name": "Graph Algorithms & Representations",
-        "count": 45,
-        "difficulties": {"Easy": 13, "Medium": 23, "Hard": 9},
-    },
-    "2.7": {
-        "module": "Module 2: Data Structures & Algorithms",
-        "name": "Searching, Sorting & Algorithmic Paradigms",
-        "count": 40,
-        "difficulties": {"Easy": 12, "Medium": 20, "Hard": 8},
-    },
+    part["id"]: {
+        "module": f"Module {part['module_id']}: " + next(
+            module["name"] for module in CATALOG["modules"] if module["id"] == part["module_id"]
+        ),
+        "name": part["name"], "count": part["count"],
+        "difficulties": part["difficulties"], "path": part["path"],
+        "sources": part["sources"],
+    }
+    for part in CATALOG["subparts"]
 }
 
 
@@ -294,10 +71,15 @@ def validate_file(path, seen_ids, seen_questions):
     subpart = path.stem.split("_", 1)[0]
     if not re.fullmatch(r"\d+(?:\.\d+)+", subpart):
         fail("filename must begin with a numeric subpart ID followed by '_' ")
-    module_match = re.match(r"module_(\d+)_", path.parent.name)
+    module_match = next((match for parent in path.parents
+                         if (match := re.match(r"module_(\d+)_", parent.name))), None)
     if not module_match or module_match[1] != subpart.split(".")[0]:
-        fail("parent directory must be module_<number>_<name> matching the subpart")
+        fail("a module_<number>_<name> ancestor must match the subpart")
     quota = SUBPARTS.get(subpart)
+    if quota is None:
+        fail("subpart is not registered in question_bank_catalog.json")
+    elif path.resolve() != (ROOT / quota["path"]).resolve():
+        fail(f"expected canonical path {quota['path']}")
     counts = Counter()
 
     for index, entry in enumerate(data, 1):
@@ -320,6 +102,8 @@ def validate_file(path, seen_ids, seen_questions):
         if isinstance(question_id, str):
             if not re.fullmatch(re.escape(subpart) + r"-\d{3}", question_id):
                 fail(f"{label}: id must use {subpart}-NNN format")
+            elif question_id != f"{subpart}-{index:03}":
+                fail(f"{label}: expected consecutive id {subpart}-{index:03}")
             if question_id in seen_ids:
                 fail(f"{label}: duplicate id {question_id!r}; first at {seen_ids[question_id]}")
             else:
@@ -366,6 +150,12 @@ def validate_file(path, seen_ids, seen_questions):
             fail(f"expected {quota['count']} questions, found {len(data)}")
         if counts != Counter(quota["difficulties"]):
             fail(f"expected difficulty counts {quota['difficulties']}, found {dict(counts)}")
+        for source in quota["sources"]:
+            start = source["start"] - 1
+            rows = data[start:start+source["count"]]
+            actual = Counter(row.get("difficulty") for row in rows if isinstance(row, dict))
+            if actual != Counter(source["difficulties"]):
+                fail(f"source {source['id']} range has incorrect difficulty counts")
     return errors, len(data)
 
 
@@ -375,9 +165,18 @@ def main():
     args = parser.parse_args()
     files = set()
     errors = []
+    try:
+        validate_catalog()
+    except (KeyError, StopIteration, TypeError, ValueError) as exc:
+        print(f"Invalid question catalog: {exc}", file=sys.stderr)
+        return 1
     for path in args.paths or [ROOT / "questions"]:
         if path.is_dir():
             files.update(path.rglob("*.json"))
+            for quota in SUBPARTS.values():
+                expected = (ROOT / quota["path"]).resolve()
+                if expected.is_relative_to(path.resolve()) and not expected.is_file():
+                    errors.append(f"{expected}: catalog question file is missing")
         elif path.is_file() and path.suffix == ".json":
             files.add(path)
         else:
