@@ -179,7 +179,7 @@ To audit this reorganization against its recorded original Git commit:
 python scripts/verify_question_migration.py
 ```
 
-This migration-specific audit compares the question, code, difficulty, options, correct answer, and explanation for every original question with its current source range. It also checks that the current file set matches the catalog.
+This migration-specific audit compares the question, code, difficulty, options, correct answer, and explanation for every original question with its current source range. It permits the documented mathematical typography and whitespace changes: Python programs retain the same AST, and other programs retain their syntax tokens and string literals. It also checks that the current file set matches the catalog.
 
 Domain checks use the current folders automatically:
 
@@ -190,6 +190,7 @@ Domain checks use the current folders automatically:
 | Pseudocode | `python scripts/verify_pseudocode_examples.py --java-home PATH_TO_JDK` | Translates and executes all 150 typed pseudocode programs using Java 17 conventions |
 | Git | `python scripts/verify_git_examples.py` | Checks 19 answer keys in disposable repositories without remotes or global configuration changes |
 | Linux | `python scripts/verify_shell_examples.py --bash PATH_TO_BASH` | GNU Bash/utilities; 12 exact outputs and four permission-bit checks |
+| SQL | `python scripts/verify_sql_examples.py` | Standard-library SQLite; executes all 35 output queries and checks that only the keyed option matches |
 | Data science | `python scripts/verify_data_science_examples.py` | 137 numerical/model/output checks, including all 25 pandas/NumPy programs |
 | Aptitude | `python scripts/verify_aptitude_examples.py` | 229 exact/model checks, including the 14 authored paragraph-order constraint sets |
 
@@ -201,6 +202,28 @@ python scripts/verify_aptitude_examples.py --subpart 6.1
 ```
 
 These examples select Machine Learning and Quantitative Aptitude respectively, including every original source merged into each group. Structural and numerical checks complement editorial review; they do not establish all conceptual, grammar, passage, or difficulty judgments.
+
+## Display formatting
+
+Question text, options, and explanations use UTF-8 mathematical symbols directly, including Θ, Ω, α, β, μ, √, ≤, and ≥. Powers and subscripts use Unicode where available. Explicit inline code and quoted literals retain their original syntax. Executable snippets keep programming operators such as `^`, `<<`, `>=`, and `!=`.
+
+Code snippets contain real LF newlines and spaces for indentation. C++ and Java use the root `.clang-format` configuration; Python uses Black with an 88-character target width; SQL uses `sql-formatter` with four-space indentation. Shell pipelines, reference tables, and reading passages are laid out for readable display. These changes preserve question IDs, difficulty labels, option keys, and answer keys.
+
+To check or apply the formatting on Windows, install the development tools into the ignored local environment:
+
+```powershell
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r scripts/requirements_formatting.txt
+npm install --prefix .venv/sql-formatter --ignore-scripts sql-formatter@15.9.0
+.venv\Scripts\python.exe scripts/format_question_bank.py --check
+# Apply changes by omitting --check:
+.venv\Scripts\python.exe scripts/format_question_bank.py
+python -m unittest discover -s tests -v
+```
+
+The formatter verifies content equivalence before writing any question files. The ordinary schema validator also checks mathematical typography, invisible characters, line endings, and trailing whitespace without requiring the development formatters.
+
+Applications importing this bank should decode JSON as UTF-8, render question text as text, and preserve snippet whitespace in a monospace `pre`/`code` block. Use wrapping or horizontal scrolling for narrow screens. Refresh imported or cached question data after updating the bank so the corrected symbols and indentation appear.
 
 ## Assessment conventions
 

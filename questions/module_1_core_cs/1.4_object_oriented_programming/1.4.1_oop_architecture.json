@@ -6,7 +6,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { Box a=new Box(); Box b=a; b.v=7; System.out.print(a.v); }\n}\nclass Box { int v=0; }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        Box a = new Box();\n        Box b = a;\n        b.v = 7;\n        System.out.print(a.v);\n    }\n}\nclass Box {\n    int v = 0;\n}",
     "options": {
       "A": "0",
       "B": "14",
@@ -23,7 +23,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\nstruct A { inline static int n=0; int x=0; };\nint main() { A a,b; A::n=3; a.x=2; b.x=5; std::cout<<a.n<<\" \"<<b.n<<\" \"<<a.x<<\" \"<<b.x; }\n",
+    "code_snippet": "#include <iostream>\nstruct A {\n    inline static int n = 0;\n    int x = 0;\n};\nint main() {\n    A a, b;\n    A::n = 3;\n    a.x = 2;\n    b.x = 5;\n    std::cout << a.n << \" \" << b.n << \" \" << a.x << \" \" << b.x;\n}",
     "options": {
       "A": "3 0 2 5",
       "B": "0 0 2 5",
@@ -40,7 +40,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\nclass A { int x=4; };\nint main() { A a; std::cout<<a.x; }\n",
+    "code_snippet": "#include <iostream>\nclass A {\n    int x = 4;\n};\nint main() {\n    A a;\n    std::cout << a.x;\n}",
     "options": {
       "A": "4",
       "B": "Compilation error",
@@ -57,7 +57,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\nstruct A { int x=4; };\nint main() { A a; std::cout<<a.x; }\n",
+    "code_snippet": "#include <iostream>\nstruct A {\n    int x = 4;\n};\nint main() {\n    A a;\n    std::cout << a.x;\n}",
     "options": {
       "A": "4",
       "B": "0",
@@ -74,7 +74,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { System.out.print(A.read()); }\n}\nclass A { int x=3; static int read(){return x;} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        System.out.print(A.read());\n    }\n}\nclass A {\n    int x = 3;\n    static int read() {\n        return x;\n    }\n}",
     "options": {
       "A": "0",
       "B": "NullPointerException",
@@ -91,7 +91,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { A a=new A(); System.out.print(a!=null); }\n}\nabstract class A { }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        A a = new A();\n        System.out.print(a != null);\n    }\n}\nabstract class A {}",
     "options": {
       "A": "InstantiationException",
       "B": "true",
@@ -108,7 +108,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { I x=new C(); System.out.print(x.f()); }\n}\ninterface I { int f(); } class C implements I { public int f(){return 5;} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        I x = new C();\n        System.out.print(x.f());\n    }\n}\ninterface I {\n    int f();\n}\nclass C implements I {\n    public int f() {\n        return 5;\n    }\n}",
     "options": {
       "A": "0",
       "B": "5",
@@ -142,7 +142,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { Account a=new Account(); a.add(5); a.add(-2); System.out.print(a.balance()); }\n}\nclass Account { private int balance; void add(int x){if(x>0)balance+=x;} int balance(){return balance;} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        Account a = new Account();\n        a.add(5);\n        a.add(-2);\n        System.out.print(a.balance());\n    }\n}\nclass Account {\n    private int balance;\n    void add(int x) {\n        if (x > 0)\n            balance += x;\n    }\n    int balance() {\n        return balance;\n    }\n}",
     "options": {
       "A": "5",
       "B": "-2",
@@ -159,7 +159,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\nstruct B { protected: int x=5; }; struct D:B { int read(){return x;} };\nint main() { D d; std::cout<<d.x; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\nprotected:\n    int x = 5;\n};\nstruct D : B {\n    int read() {\n        return x;\n    }\n};\nint main() {\n    D d;\n    std::cout << d.x;\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "0",
@@ -176,7 +176,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { System.out.print(new Box().x); }\n}\nclass Box { private int x=4; }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        System.out.print(new Box().x);\n    }\n}\nclass Box {\n    private int x = 4;\n}",
     "options": {
       "A": "NullPointerException",
       "B": "Compilation error",
@@ -193,7 +193,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { A a=new A(); A b=a; A c=new A(); System.out.print(A.n); }\n}\nclass A { static int n; A(){n++;} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        A a = new A();\n        A b = a;\n        A c = new A();\n        System.out.print(A.n);\n    }\n}\nclass A {\n    static int n;\n    A() {\n        n++;\n    }\n}",
     "options": {
       "A": "1",
       "B": "3",
@@ -210,7 +210,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\nstruct B {}; class D:private B {};\nint main() { D d; B* p=&d; std::cout<<(p!=nullptr); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {};\nclass D : private B {};\nint main() {\n    D d;\n    B *p = &d;\n    std::cout << (p != nullptr);\n}",
     "options": {
       "A": "1",
       "B": "Undefined behavior",
@@ -227,7 +227,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\nstruct Engine { int power=10; }; struct Car { Engine e; void tune(){e.power+=5;} };\nint main() { Car a; Car b=a; a.tune(); std::cout<<a.e.power<<\" \"<<b.e.power; }\n",
+    "code_snippet": "#include <iostream>\nstruct Engine {\n    int power = 10;\n};\nstruct Car {\n    Engine e;\n    void tune() {\n        e.power += 5;\n    }\n};\nint main() {\n    Car a;\n    Car b = a;\n    a.tune();\n    std::cout << a.e.power << \" \" << b.e.power;\n}",
     "options": {
       "A": "15 10",
       "B": "Compilation error",
@@ -244,7 +244,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { final Box b=new Box(); b.x=9; System.out.print(b.x); }\n}\nclass Box { int x=1; }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        final Box b = new Box();\n        b.x = 9;\n        System.out.print(b.x);\n    }\n}\nclass Box {\n    int x = 1;\n}",
     "options": {
       "A": "1",
       "B": "Compilation error",
@@ -261,7 +261,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { Limits.MAX=9; System.out.print(Limits.MAX); }\n}\ninterface Limits { int MAX=7; }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        Limits.MAX = 9;\n        System.out.print(Limits.MAX);\n    }\n}\ninterface Limits {\n    int MAX = 7;\n}",
     "options": {
       "A": "7",
       "B": "Compilation error",
@@ -278,7 +278,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { System.out.print(new C().f()); }\n}\nabstract class A { int x; A(int v){x=v;} int twice(){return 2*x;} abstract int f(); } class C extends A { C(){super(3);} int f(){return twice()+1;} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        System.out.print(new C().f());\n    }\n}\nabstract class A {\n    int x;\n    A(int v) {\n        x = v;\n    }\n    int twice() {\n        return 2 * x;\n    }\n    abstract int f();\n}\nclass C extends A {\n    C() {\n        super(3);\n    }\n    int f() {\n        return twice() + 1;\n    }\n}",
     "options": {
       "A": "6",
       "B": "3",
@@ -295,7 +295,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { A a=null; System.out.print(a.f()); }\n}\nclass A { static int f(){return 8;} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        A a = null;\n        System.out.print(a.f());\n    }\n}\nclass A {\n    static int f() {\n        return 8;\n    }\n}",
     "options": {
       "A": "8",
       "B": "Compilation error",
@@ -312,7 +312,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { B x=new D(); System.out.print(x.n+\" \"+D.n); }\n}\nclass B { static int n=1; } class D extends B { static int n=2; }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        B x = new D();\n        System.out.print(x.n + \" \" + D.n);\n    }\n}\nclass B {\n    static int n = 1;\n}\nclass D extends B {\n    static int n = 2;\n}",
     "options": {
       "A": "Compilation error",
       "B": "1 2",
@@ -346,7 +346,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\nclass Vault { int x=9; friend int read(const Vault&); }; int read(const Vault& v){return v.x;}\nint main() { Vault v; std::cout<<read(v); }\n",
+    "code_snippet": "#include <iostream>\nclass Vault {\n    int x = 9;\n    friend int read(const Vault &);\n};\nint read(const Vault &v) {\n    return v.x;\n}\nint main() {\n    Vault v;\n    std::cout << read(v);\n}",
     "options": {
       "A": "Compilation error",
       "B": "Undefined behavior",
@@ -363,7 +363,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { System.out.print(new C().f()); }\n}\ninterface I { default int f(){return 1;} } interface J { default int f(){return 2;} } class C implements I,J {}\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        System.out.print(new C().f());\n    }\n}\ninterface I {\n    default int f() {\n        return 1;\n    }\n}\ninterface J {\n    default int f() {\n        return 2;\n    }\n}\nclass C implements I, J {}",
     "options": {
       "A": "3",
       "B": "1",
@@ -380,7 +380,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { System.out.print(C.f()); }\n}\ninterface I { static int f(){return 4;} } class C implements I {}\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        System.out.print(C.f());\n    }\n}\ninterface I {\n    static int f() {\n        return 4;\n    }\n}\nclass C implements I {}",
     "options": {
       "A": "4",
       "B": "AbstractMethodError",
@@ -414,7 +414,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Hard",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\nstruct B { protected: int x=3; }; struct D:B { int read(B& b){return b.x;} };\nint main() { D d; B b; std::cout<<d.read(b); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\nprotected:\n    int x = 3;\n};\nstruct D : B {\n    int read(B &b) {\n        return b.x;\n    }\n};\nint main() {\n    D d;\n    B b;\n    std::cout << d.read(b);\n}",
     "options": {
       "A": "0",
       "B": "3",
@@ -431,7 +431,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Hard",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\nstatic class Box { private int x=6; }\n public static void main(String[] args) { System.out.print(new Box().x); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static class Box {\n        private int x = 6;\n    }\n    public static void main(String[] args) {\n        System.out.print(new Box().x);\n    }\n}",
     "options": {
       "A": "0",
       "B": "6",
@@ -448,7 +448,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Hard",
     "question": "C++17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "#include <iostream>\n#include <type_traits>\nstruct B { int f(){return 3;} }; class D:private B { public: using B::f; };\nint main() { D d; std::cout<<d.f()<<\" \"<<std::is_convertible_v<D*,B*>; }\n",
+    "code_snippet": "#include <iostream>\n#include <type_traits>\nstruct B {\n    int f() {\n        return 3;\n    }\n};\nclass D : private B {\npublic:\n    using B::f;\n};\nint main() {\n    D d;\n    std::cout << d.f() << \" \" << std::is_convertible_v<D *, B *>;\n}",
     "options": {
       "A": "Compilation error",
       "B": "0 0",
@@ -465,7 +465,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Hard",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { System.out.print(Config.K+\" \"); System.out.print(Config.N); }\n}\nclass Config { static {System.out.print(\"init \");} static final int K=7; static int N=9; }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        System.out.print(Config.K + \" \");\n        System.out.print(Config.N);\n    }\n}\nclass Config {\n    static {\n        System.out.print(\"init \");\n    }\n    static final int K = 7;\n    static int N = 9;\n}",
     "options": {
       "A": "7 init 9",
       "B": "Compilation error",
@@ -482,7 +482,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Hard",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\nstatic class Outer { int x=4; class Inner { int value(){return x;} } static class Nested { int v=9; } }\n public static void main(String[] args) { Outer o=new Outer(); Outer.Inner i=o.new Inner(); Outer.Nested n=new Outer.Nested(); System.out.print(i.value()+\" \"+n.v); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static class Outer {\n        int x = 4;\n        class Inner {\n            int value() {\n                return x;\n            }\n        }\n        static class Nested {\n            int v = 9;\n        }\n    }\n    public static void main(String[] args) {\n        Outer o = new Outer();\n        Outer.Inner i = o.new Inner();\n        Outer.Nested n = new Outer.Nested();\n        System.out.print(i.value() + \" \" + n.v);\n    }\n}",
     "options": {
       "A": "4 9",
       "B": "4 4",
@@ -499,7 +499,7 @@
     "subpart_name": "Core Architecture & Class Mechanics",
     "difficulty": "Hard",
     "question": "Java 17. What is printed, or does compilation fail? Whitespace separates output tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { System.out.print(new C().f()); }\n}\ninterface I { private int helper(){return 3;} default int f(){return helper()+1;} } class C implements I {}\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        System.out.print(new C().f());\n    }\n}\ninterface I {\n    private int helper() {\n        return 3;\n    }\n    default int f() {\n        return helper() + 1;\n    }\n}\nclass C implements I {}",
     "options": {
       "A": "4",
       "B": "AbstractMethodError",

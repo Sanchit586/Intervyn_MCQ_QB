@@ -6,7 +6,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic int f(){int x=1; try{return x;} finally{x=9;}}\n public static void main(String[] args) { System.out.print(f()); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static int f() {\n        int x = 1;\n        try {\n            return x;\n        } finally {\n            x = 9;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.print(f());\n    }\n}",
     "options": {
       "A": "9",
       "B": "Compilation error",
@@ -23,7 +23,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic int f(){try{return 1;} finally{return 2;}}\n public static void main(String[] args) { System.out.print(f()); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static int f() {\n        try {\n            return 1;\n        } finally {\n            return 2;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.print(f());\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "2",
@@ -40,7 +40,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { try {int z=0; System.out.print(1/z);} catch(ArithmeticException e){System.out.print(\"A \");} finally{System.out.print(\"F\");} }\n}\n\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        try {\n            int z = 0;\n            System.out.print(1 / z);\n        } catch (ArithmeticException e) {\n            System.out.print(\"A \");\n        } finally {\n            System.out.print(\"F\");\n        }\n    }\n}",
     "options": {
       "A": "A F",
       "B": "F A",
@@ -57,7 +57,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\n\nint main() { try {throw 7;} catch(int){std::cout<<\"I\";} catch(...){std::cout<<\"X\";} }\n",
+    "code_snippet": "#include <iostream>\n\nint main() {\n    try {\n        throw 7;\n    } catch (int) {\n        std::cout << \"I\";\n    } catch (...) {\n        std::cout << \"X\";\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "I",
@@ -74,7 +74,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual ~B()=default; }; struct D:B {};\nint main() { try {throw D{};} catch(const D&){std::cout<<\"D\";} catch(const B&){std::cout<<\"B\";} }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual ~B() = default;\n};\nstruct D : B {};\nint main() {\n    try {\n        throw D{};\n    } catch (const D &) {\n        std::cout << \"D\";\n    } catch (const B &) {\n        std::cout << \"B\";\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "B",
@@ -91,7 +91,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual char f() const{return 'B';} }; struct D:B { char f() const override{return 'D';} }; char byValue(B x){return x.f();}\nint main() { D d; std::cout<<byValue(d); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual char f() const {\n        return 'B';\n    }\n};\nstruct D : B {\n    char f() const override {\n        return 'D';\n    }\n};\nchar byValue(B x) {\n    return x.f();\n}\nint main() {\n    D d;\n    std::cout << byValue(d);\n}",
     "options": {
       "A": "B",
       "B": "Undefined behavior",
@@ -108,7 +108,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { B b=new D(); System.out.print(b.f()+\" \"+(b instanceof D)); }\n}\nclass B { String f(){return \"B\";} } class D extends B { @Override String f(){return \"D\";} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        B b = new D();\n        System.out.print(b.f() + \" \" + (b instanceof D));\n    }\n}\nclass B {\n    String f() {\n        return \"B\";\n    }\n}\nclass D extends B {\n    @Override\n    String f() {\n        return \"D\";\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "B false",
@@ -125,7 +125,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nint x=1; struct A { static int x; int sum(){int x=3; return x+A::x+::x;} }; int A::x=2;\nint main() { std::cout<<A{}.sum(); }\n",
+    "code_snippet": "#include <iostream>\nint x = 1;\nstruct A {\n    static int x;\n    int sum() {\n        int x = 3;\n        return x + A::x + ::x;\n    }\n};\nint A::x = 2;\nint main() {\n    std::cout << A{}.sum();\n}",
     "options": {
       "A": "Compilation error",
       "B": "3",
@@ -142,7 +142,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Easy",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { try {throw new Problem();} catch(Problem e){System.out.print(e.getMessage());} }\n}\nclass Problem extends Exception { Problem(){super(\"bad\");} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        try {\n            throw new Problem();\n        } catch (Problem e) {\n            System.out.print(e.getMessage());\n        }\n    }\n}\nclass Problem extends Exception {\n    Problem() {\n        super(\"bad\");\n    }\n}",
     "options": {
       "A": "bad",
       "B": "null",
@@ -159,7 +159,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { try {int z=0; System.out.print(1/z);} catch(Exception e){System.out.print(\"E\");} catch(ArithmeticException e){System.out.print(\"A\");} }\n}\n\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        try {\n            int z = 0;\n            System.out.print(1 / z);\n        } catch (Exception e) {\n            System.out.print(\"E\");\n        } catch (ArithmeticException e) {\n            System.out.print(\"A\");\n        }\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "EA",
@@ -176,7 +176,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { try {B b=new B(); D d=(D)b; System.out.print(\"D\");} catch(ClassCastException e){System.out.print(\"C \");} finally{System.out.print(\"F\");} }\n}\nclass B {} class D extends B {}\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        try {\n            B b = new B();\n            D d = (D)b;\n            System.out.print(\"D\");\n        } catch (ClassCastException e) {\n            System.out.print(\"C \");\n        } finally {\n            System.out.print(\"F\");\n        }\n    }\n}\nclass B {}\nclass D extends B {}",
     "options": {
       "A": "D F",
       "B": "C F",
@@ -193,7 +193,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic String f(Object x){return \"O\";} static String f(String x){return \"S\";}\n public static void main(String[] args) { System.out.print(f(null)); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static String f(Object x) {\n        return \"O\";\n    }\n    static String f(String x) {\n        return \"S\";\n    }\n    public static void main(String[] args) {\n        System.out.print(f(null));\n    }\n}",
     "options": {
       "A": "O",
       "B": "S",
@@ -210,7 +210,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic String f(String x){return \"S\";} static String f(Integer x){return \"I\";}\n public static void main(String[] args) { System.out.print(f(null)); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static String f(String x) {\n        return \"S\";\n    }\n    static String f(Integer x) {\n        return \"I\";\n    }\n    public static void main(String[] args) {\n        System.out.print(f(null));\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "I",
@@ -227,7 +227,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic int[] f(){int[] a={1}; try{return a;} finally{a[0]=9;}}\n public static void main(String[] args) { System.out.print(f()[0]); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static int[] f() {\n        int[] a = {1};\n        try {\n            return a;\n        } finally {\n            a[0] = 9;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.print(f()[0]);\n    }\n}",
     "options": {
       "A": "1",
       "B": "Compilation error",
@@ -244,7 +244,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual char name() const{return 'B';} virtual ~B()=default; }; struct D:B { char name() const override{return 'D';} }; void value(){try{throw D{};}catch(B e){std::cout<<e.name()<<\" \";}} void reference(){try{throw D{};}catch(const B& e){std::cout<<e.name();}}\nint main() { value(); reference(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual char name() const {\n        return 'B';\n    }\n    virtual ~B() = default;\n};\nstruct D : B {\n    char name() const override {\n        return 'D';\n    }\n};\nvoid value() {\n    try {\n        throw D{};\n    } catch (B e) {\n        std::cout << e.name() << \" \";\n    }\n}\nvoid reference() {\n    try {\n        throw D{};\n    } catch (const B &e) {\n        std::cout << e.name();\n    }\n}\nint main() {\n    value();\n    reference();\n}",
     "options": {
       "A": "Compilation error",
       "B": "B B",
@@ -261,7 +261,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual ~B()=default; }; struct D:B {};\nint main() { try {throw D{};} catch(const B&){std::cout<<\"B\";} catch(const D&){std::cout<<\"D\";} }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual ~B() = default;\n};\nstruct D : B {};\nint main() {\n    try {\n        throw D{};\n    } catch (const B &) {\n        std::cout << \"B\";\n    } catch (const D &) {\n        std::cout << \"D\";\n    }\n}",
     "options": {
       "A": "B",
       "B": "D",
@@ -278,7 +278,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\n#include <exception>\nstruct Problem:std::exception { const char* what() const noexcept override{return \"E\";} };\nint main() { try{throw Problem{};}catch(const std::exception& e){std::cout<<e.what();} }\n",
+    "code_snippet": "#include <iostream>\n#include <exception>\nstruct Problem : std::exception {\n    const char *what() const noexcept override {\n        return \"E\";\n    }\n};\nint main() {\n    try {\n        throw Problem{};\n    } catch (const std::exception &e) {\n        std::cout << e.what();\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "Problem",
@@ -295,7 +295,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic void f(){throw new Exception(\"x\");}\n public static void main(String[] args) { try{f();}catch(Exception e){System.out.print(\"C\");} }\n}\n\n",
+    "code_snippet": "public class Main {\n    static void f() {\n        throw new Exception(\"x\");\n    }\n    public static void main(String[] args) {\n        try {\n            f();\n        } catch (Exception e) {\n            System.out.print(\"C\");\n        }\n    }\n}",
     "options": {
       "A": "C",
       "B": "x",
@@ -312,7 +312,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { try {try {throw new IllegalArgumentException();} catch(IllegalArgumentException e){System.out.print(\"I \"); throw e;} finally{System.out.print(\"F \");}} catch(RuntimeException e){System.out.print(\"R\");} }\n}\n\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        try {\n            try {\n                throw new IllegalArgumentException();\n            } catch (IllegalArgumentException e) {\n                System.out.print(\"I \");\n                throw e;\n            } finally {\n                System.out.print(\"F \");\n            }\n        } catch (RuntimeException e) {\n            System.out.print(\"R\");\n        }\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "I R F",
@@ -329,7 +329,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic int x=1; static int f(){try{return x++;} finally{x+=10;}}\n public static void main(String[] args) { System.out.print(f()+\" \"+x); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static int x = 1;\n    static int f() {\n        try {\n            return x++;\n        } finally {\n            x += 10;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.print(f() + \" \" + x);\n    }\n}",
     "options": {
       "A": "2 12",
       "B": "1 11",
@@ -346,7 +346,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic int f(){try{return 7;} finally{throw new IllegalStateException(\"F\");}}\n public static void main(String[] args) { try{System.out.print(f());}catch(IllegalStateException e){System.out.print(e.getMessage());} }\n}\n\n",
+    "code_snippet": "public class Main {\n    static int f() {\n        try {\n            return 7;\n        } finally {\n            throw new IllegalStateException(\"F\");\n        }\n    }\n    public static void main(String[] args) {\n        try {\n            System.out.print(f());\n        } catch (IllegalStateException e) {\n            System.out.print(e.getMessage());\n        }\n    }\n}",
     "options": {
       "A": "7",
       "B": "F",
@@ -363,7 +363,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nvoid f(int){std::cout<<\"I \";} void f(int*){std::cout<<\"P\";}\nint main() { f(0); f(nullptr); }\n",
+    "code_snippet": "#include <iostream>\nvoid f(int) {\n    std::cout << \"I \";\n}\nvoid f(int *) {\n    std::cout << \"P\";\n}\nint main() {\n    f(0);\n    f(nullptr);\n}",
     "options": {
       "A": "I I",
       "B": "I P",
@@ -380,7 +380,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nstruct B { int x=1; }; struct D:B { int x=2; };\nint main() { D d; std::cout<<d.x<<\" \"<<d.B::x; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    int x = 1;\n};\nstruct D : B {\n    int x = 2;\n};\nint main() {\n    D d;\n    std::cout << d.x << \" \" << d.B::x;\n}",
     "options": {
       "A": "2 2",
       "B": "1 1",
@@ -397,7 +397,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Medium",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { B b=new D(); System.out.print(b.x+\" \"+((D)b).x); }\n}\nclass B { int x=1; } class D extends B { int x=2; }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        B b = new D();\n        System.out.print(b.x + \" \" + ((D)b).x);\n    }\n}\nclass B {\n    int x = 1;\n}\nclass D extends B {\n    int x = 2;\n}",
     "options": {
       "A": "1 2",
       "B": "2 2",
@@ -414,7 +414,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Hard",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual char name() const{return 'B';} virtual ~B()=default; }; struct D:B { char name() const override{return 'D';} }; void preserve(){try{throw D{};}catch(const B&){throw;}} void slice(){try{throw D{};}catch(const B& e){throw e;}}\nint main() { try{preserve();}catch(const B& e){std::cout<<e.name()<<\" \";} try{slice();}catch(const B& e){std::cout<<e.name();} }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual char name() const {\n        return 'B';\n    }\n    virtual ~B() = default;\n};\nstruct D : B {\n    char name() const override {\n        return 'D';\n    }\n};\nvoid preserve() {\n    try {\n        throw D{};\n    } catch (const B &) {\n        throw;\n    }\n}\nvoid slice() {\n    try {\n        throw D{};\n    } catch (const B &e) {\n        throw e;\n    }\n}\nint main() {\n    try {\n        preserve();\n    } catch (const B &e) {\n        std::cout << e.name() << \" \";\n    }\n    try {\n        slice();\n    } catch (const B &e) {\n        std::cout << e.name();\n    }\n}",
     "options": {
       "A": "B B",
       "B": "D B",
@@ -431,7 +431,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Hard",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic int f(){try {try{return 1;} finally{System.out.print(\"A \");return 2;}} finally{System.out.print(\"B \");return 3;}}\n public static void main(String[] args) { System.out.print(f()); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static int f() {\n        try {\n            try {\n                return 1;\n            } finally {\n                System.out.print(\"A \");\n                return 2;\n            }\n        } finally {\n            System.out.print(\"B \");\n            return 3;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.print(f());\n    }\n}",
     "options": {
       "A": "B A 1",
       "B": "A B 2",
@@ -448,7 +448,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Hard",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic Box f(){Box b=new Box(1); Box alias=b; try{return b;} finally{b=new Box(2); alias.x=9; b.x=3;}}\n public static void main(String[] args) { System.out.print(f().x); }\n}\nclass Box { int x; Box(int v){x=v;} }\n",
+    "code_snippet": "public class Main {\n    static Box f() {\n        Box b = new Box(1);\n        Box alias = b;\n        try {\n            return b;\n        } finally {\n            b = new Box(2);\n            alias.x = 9;\n            b.x = 3;\n        }\n    }\n    public static void main(String[] args) {\n        System.out.print(f().x);\n    }\n}\nclass Box {\n    int x;\n    Box(int v) {\n        x = v;\n    }\n}",
     "options": {
       "A": "1",
       "B": "3",
@@ -465,7 +465,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Hard",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\nstatic int f() throws Exception {try(R r=new R()){return 7;}}\n public static void main(String[] args) { try{System.out.print(f());}catch(Exception e){System.out.print(e.getMessage());} }\n}\nclass R implements AutoCloseable { public void close() throws Exception {throw new Exception(\"C\");} }\n",
+    "code_snippet": "public class Main {\n    static int f() throws Exception {\n        try (R r = new R()) {\n            return 7;\n        }\n    }\n    public static void main(String[] args) {\n        try {\n            System.out.print(f());\n        } catch (Exception e) {\n            System.out.print(e.getMessage());\n        }\n    }\n}\nclass R implements AutoCloseable {\n    public void close() throws Exception {\n        throw new Exception(\"C\");\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "7",
@@ -482,7 +482,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Hard",
     "question": "Java 17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { try(R a=new R(\"A\"); R b=new R(\"B\")){throw new Exception(\"P\");}catch(Exception e){System.out.print(e.getMessage()+\" \"+e.getSuppressed()[0].getMessage()+\" \"+e.getSuppressed()[1].getMessage());} }\n}\nclass R implements AutoCloseable { final String name; R(String n){name=n;} public void close() throws Exception {throw new Exception(name);} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        try (R a = new R(\"A\"); R b = new R(\"B\")) {\n            throw new Exception(\"P\");\n        } catch (Exception e) {\n            System.out.print(e.getMessage() + \" \" + e.getSuppressed()[0].getMessage() +\n                             \" \" + e.getSuppressed()[1].getMessage());\n        }\n    }\n}\nclass R implements AutoCloseable {\n    final String name;\n    R(String n) {\n        name = n;\n    }\n    public void close() throws Exception {\n        throw new Exception(name);\n    }\n}",
     "options": {
       "A": "B A P",
       "B": "P B A",
@@ -499,7 +499,7 @@
     "subpart_name": "Language-Specific OOP Outputs & Exception Handling",
     "difficulty": "Hard",
     "question": "C++17. What is the complete output, or does compilation fail? Assume allocations and output operations succeed; whitespace separates tokens.",
-    "code_snippet": "#include <iostream>\nstruct G { char id; G(char x):id(x){std::cout<<id<<\" \";} ~G(){std::cout<<\"~\"<<id<<\" \";} }; void f(){G a('A'); try{G b('B');throw 1;}catch(int){std::cout<<\"C \";throw;}}\nint main() { try{f();}catch(int){std::cout<<\"H\";} }\n",
+    "code_snippet": "#include <iostream>\nstruct G {\n    char id;\n    G(char x) : id(x) {\n        std::cout << id << \" \";\n    }\n    ~G() {\n        std::cout << \"~\" << id << \" \";\n    }\n};\nvoid f() {\n    G a('A');\n    try {\n        G b('B');\n        throw 1;\n    } catch (int) {\n        std::cout << \"C \";\n        throw;\n    }\n}\nint main() {\n    try {\n        f();\n    } catch (int) {\n        std::cout << \"H\";\n    }\n}",
     "options": {
       "A": "A B ~B ~A C H",
       "B": "A B C ~B ~A H",

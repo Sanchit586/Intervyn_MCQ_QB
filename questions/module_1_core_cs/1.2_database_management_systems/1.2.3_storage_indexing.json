@@ -150,7 +150,7 @@
       "D": "(252,251)"
     },
     "correct_answer": "D",
-    "explanation": "The size constraint is 64 + 8m + 8(m-1) <= 4,096, or 16m <= 4,040. Thus m <= 252.5, so the largest integer m is 252 and the separator count is 251."
+    "explanation": "The size constraint is 64 + 8m + 8(m-1) ≤ 4,096, or 16m ≤ 4,040. Thus m ≤ 252.5, so the largest integer m is 252 and the separator count is 251."
   },
   {
     "id": "1.2.3-010",
@@ -184,7 +184,7 @@
       "D": "800,000"
     },
     "correct_answer": "B",
-    "explanation": "Three internal branching steps can produce 100^3 = 1,000,000 leaves. At 80 records per leaf, the maximum is 80 * 100^3 = 80,000,000 records. Counting only two branching steps would confuse edges with levels."
+    "explanation": "Three internal branching steps can produce 100³ = 1,000,000 leaves. At 80 records per leaf, the maximum is 80 * 100³ = 80,000,000 records. Counting only two branching steps would confuse edges with levels."
   },
   {
     "id": "1.2.3-012",
@@ -320,7 +320,7 @@
       "D": "SupplierID alone"
     },
     "correct_answer": "A",
-    "explanation": "The cardinality rule is (SupplierID,PartID)->ProjectID, and Quantity describes that current association. A primary key on the supplier-part pair enforces it. The three-identifier key would permit repeated supplier-part pairs with different projects, while the other smaller determinants are not implied."
+    "explanation": "The cardinality rule is (SupplierID,PartID) → ProjectID, and Quantity describes that current association. A primary key on the supplier-part pair enforces it. The three-identifier key would permit repeated supplier-part pairs with different projects, while the other smaller determinants are not implied."
   },
   {
     "id": "1.2.3-020",
@@ -354,7 +354,7 @@
       "D": "(36,1080)"
     },
     "correct_answer": "D",
-    "explanation": "The minimum number of leaves is 2 * 3 * 3 = 18, giving 18 * 2 = 36 records. Maximum branching gives 6^3 = 216 leaves, each with five records, or 1,080. The root has a different minimum fanout from non-root internal nodes."
+    "explanation": "The minimum number of leaves is 2 * 3 * 3 = 18, giving 18 * 2 = 36 records. Maximum branching gives 6³ = 216 leaves, each with five records, or 1,080. The root has a different minimum fanout from non-root internal nodes."
   },
   {
     "id": "1.2.3-022",
@@ -397,7 +397,7 @@
     "subpart_name": "Storage, Indexing & ER Modeling",
     "difficulty": "Hard",
     "question": "A covering B+ index is lexicographically ordered by (a,b,c) and contains exactly one entry for each combination a=5, b in 10 through 20 inclusive, and c in 0 through 99 inclusive, with no duplicates. For the query below, the specified plan performs one contiguous leaf-entry scan from (5,10,0) through (5,20,99), filters c=7 within that scan, and returns values from the index. There are no heap visibility checks or base-table fetches. What is the tuple (entries examined, rows returned, base-table data-page fetches)?",
-    "code_snippet": "SELECT a,b,c FROM T WHERE a=5 AND b BETWEEN 10 AND 20 AND c=7;",
+    "code_snippet": "SELECT\n    a,\n    b,\n    c\nFROM\n    T\nWHERE\n    a = 5\n    AND b BETWEEN 10 AND 20\n    AND c = 7;",
     "options": {
       "A": "(1100,11,0)",
       "B": "(1100,1100,0)",
@@ -422,6 +422,6 @@
       "D": "PRIMARY KEY (Slot) with no additional uniqueness"
     },
     "correct_answer": "B",
-    "explanation": "The identifying dependencies are (DoctorID,Slot)->PatientID and (PatientID,Slot)->DoctorID. The primary key enforces the first, and the second UNIQUE constraint enforces the other. A three-column key alone permits double-booking, while uniqueness on Slot disallows simultaneous independent appointments."
+    "explanation": "The identifying dependencies are (DoctorID,Slot) → PatientID and (PatientID,Slot) → DoctorID. The primary key enforces the first, and the second UNIQUE constraint enforces the other. A three-column key alone permits double-booking, while uniqueness on Slot disallows simultaneous independent appointments."
   }
 ]

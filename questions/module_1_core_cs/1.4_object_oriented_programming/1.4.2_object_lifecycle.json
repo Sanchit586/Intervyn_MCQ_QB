@@ -6,7 +6,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Easy",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct A { int x; A():x(2){} explicit A(int v):x(v){} };\nint main() { A a; A b(7); std::cout<<a.x<<\" \"<<b.x; }\n",
+    "code_snippet": "#include <iostream>\nstruct A {\n    int x;\n    A() : x(2) {\n    }\n    explicit A(int v) : x(v) {\n    }\n};\nint main() {\n    A a;\n    A b(7);\n    std::cout << a.x << \" \" << b.x;\n}",
     "options": {
       "A": "Compilation error",
       "B": "0 7",
@@ -23,7 +23,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Easy",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct A { explicit A(int x){} };\nint main() { A a; std::cout<<1; }\n",
+    "code_snippet": "#include <iostream>\nstruct A {\n    explicit A(int x) {\n    }\n};\nint main() {\n    A a;\n    std::cout << 1;\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "1",
@@ -40,7 +40,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Easy",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct A { int x; A(int v):x(v){std::cout<<\"P \";} A(const A& a):x(a.x){std::cout<<\"C \";} };\nint main() { A a(3); A b=a; std::cout<<b.x; }\n",
+    "code_snippet": "#include <iostream>\nstruct A {\n    int x;\n    A(int v) : x(v) {\n        std::cout << \"P \";\n    }\n    A(const A &a) : x(a.x) {\n        std::cout << \"C \";\n    }\n};\nint main() {\n    A a(3);\n    A b = a;\n    std::cout << b.x;\n}",
     "options": {
       "A": "P 3",
       "B": "P P 3",
@@ -57,7 +57,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Easy",
     "question": "Java 17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { int[] a={1}; int[] b=a; b[0]=9; System.out.print(a[0]); }\n}\n\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        int[] a = {1};\n        int[] b = a;\n        b[0] = 9;\n        System.out.print(a[0]);\n    }\n}",
     "options": {
       "A": "9",
       "B": "1",
@@ -74,7 +74,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Easy",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct T { char c; T(char x):c(x){std::cout<<c<<\" \";} ~T(){std::cout<<\"~\"<<c<<\" \";} };\nint main() { T a('A'); { T b('B'); } }\n",
+    "code_snippet": "#include <iostream>\nstruct T {\n    char c;\n    T(char x) : c(x) {\n        std::cout << c << \" \";\n    }\n    ~T() {\n        std::cout << \"~\" << c << \" \";\n    }\n};\nint main() {\n    T a('A');\n    {\n        T b('B');\n    }\n}",
     "options": {
       "A": "A B",
       "B": "A ~A B ~B",
@@ -91,7 +91,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Easy",
     "question": "Java 17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { Box x=new Box(); System.out.print(x.n+\" \"+x.b+\" \"+(x.ref==null)); }\n}\nclass Box { int n; boolean b; Object ref; }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        Box x = new Box();\n        System.out.print(x.n + \" \" + x.b + \" \" + (x.ref == null));\n    }\n}\nclass Box {\n    int n;\n    boolean b;\n    Object ref;\n}",
     "options": {
       "A": "0 false false",
       "B": "0 true true",
@@ -125,7 +125,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Easy",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nint* f(){int x=5; return &x;}\nint main() { int* p=f(); std::cout<<*p; }\n",
+    "code_snippet": "#include <iostream>\nint *f() {\n    int x = 5;\n    return &x;\n}\nint main() {\n    int *p = f();\n    std::cout << *p;\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "5",
@@ -159,7 +159,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct B { B(){std::cout<<\"B \";} ~B(){std::cout<<\"~B \";} }; struct D:B { D(){std::cout<<\"D \";} ~D(){std::cout<<\"~D \";} };\nint main() { D d; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    B() {\n        std::cout << \"B \";\n    }\n    ~B() {\n        std::cout << \"~B \";\n    }\n};\nstruct D : B {\n    D() {\n        std::cout << \"D \";\n    }\n    ~D() {\n        std::cout << \"~D \";\n    }\n};\nint main() {\n    D d;\n}",
     "options": {
       "A": "B D ~D ~B",
       "B": "B D ~B ~D",
@@ -176,7 +176,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct M { M(int x){std::cout<<x<<\" \";} }; struct C { M first; M second; C():second(2),first(1){std::cout<<\"C \";} };\nint main() { C c; }\n",
+    "code_snippet": "#include <iostream>\nstruct M {\n    M(int x) {\n        std::cout << x << \" \";\n    }\n};\nstruct C {\n    M first;\n    M second;\n    C() : second(2), first(1) {\n        std::cout << \"C \";\n    }\n};\nint main() {\n    C c;\n}",
     "options": {
       "A": "C 1 2",
       "B": "1 2 C",
@@ -193,7 +193,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct B1 { B1(){std::cout<<\"1 \";} ~B1(){std::cout<<\"~1 \";} }; struct B2 { B2(){std::cout<<\"2 \";} ~B2(){std::cout<<\"~2 \";} }; struct D:B1,B2 { D():B2(),B1(){std::cout<<\"D \";} ~D(){std::cout<<\"~D \";} };\nint main() { D d; }\n",
+    "code_snippet": "#include <iostream>\nstruct B1 {\n    B1() {\n        std::cout << \"1 \";\n    }\n    ~B1() {\n        std::cout << \"~1 \";\n    }\n};\nstruct B2 {\n    B2() {\n        std::cout << \"2 \";\n    }\n    ~B2() {\n        std::cout << \"~2 \";\n    }\n};\nstruct D : B1, B2 {\n    D() : B2(), B1() {\n        std::cout << \"D \";\n    }\n    ~D() {\n        std::cout << \"~D \";\n    }\n};\nint main() {\n    D d;\n}",
     "options": {
       "A": "Compilation error",
       "B": "2 1 D ~D ~1 ~2",
@@ -210,7 +210,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct View { int* p; explicit View(int* x):p(x){} };\nint main() { int* p=new int(5); View a(p); View b=a; *b.p=9; std::cout<<*a.p; delete p; }\n",
+    "code_snippet": "#include <iostream>\nstruct View {\n    int *p;\n    explicit View(int *x) : p(x) {\n    }\n};\nint main() {\n    int *p = new int(5);\n    View a(p);\n    View b = a;\n    *b.p = 9;\n    std::cout << *a.p;\n    delete p;\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "9",
@@ -227,7 +227,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct Owner { int* p; explicit Owner(int x):p(new int(x)){} Owner(const Owner& o):p(new int(*o.p)){} ~Owner(){delete p;} };\nint main() { Owner a(5); Owner b=a; *b.p=8; std::cout<<*a.p<<\" \"<<*b.p; }\n",
+    "code_snippet": "#include <iostream>\nstruct Owner {\n    int *p;\n    explicit Owner(int x) : p(new int(x)) {\n    }\n    Owner(const Owner &o) : p(new int(*o.p)) {\n    }\n    ~Owner() {\n        delete p;\n    }\n};\nint main() {\n    Owner a(5);\n    Owner b = a;\n    *b.p = 8;\n    std::cout << *a.p << \" \" << *b.p;\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "5 5",
@@ -244,7 +244,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct X { X(){} X(const X&){std::cout<<\"C \";} X& operator=(const X&){std::cout<<\"A \";return *this;} };\nint main() { X x; X y=x; X z; z=x; }\n",
+    "code_snippet": "#include <iostream>\nstruct X {\n    X() {\n    }\n    X(const X &) {\n        std::cout << \"C \";\n    }\n    X &operator=(const X &) {\n        std::cout << \"A \";\n        return *this;\n    }\n};\nint main() {\n    X x;\n    X y = x;\n    X z;\n    z = x;\n}",
     "options": {
       "A": "C A",
       "B": "A A",
@@ -261,7 +261,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct T { inline static int destroyed=0; ~T(){++destroyed;} }; void f(){T* p=new T; (void)p;}\nint main() { f(); std::cout<<T::destroyed; }\n",
+    "code_snippet": "#include <iostream>\nstruct T {\n    inline static int destroyed = 0;\n    ~T() {\n        ++destroyed;\n    }\n};\nvoid f() {\n    T *p = new T;\n    (void)p;\n}\nint main() {\n    f();\n    std::cout << T::destroyed;\n}",
     "options": {
       "A": "0",
       "B": "Compilation error",
@@ -278,7 +278,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\n#include <memory>\nstruct T { int id; T(int x):id(x){std::cout<<id<<\" \";} ~T(){std::cout<<\"~\"<<id<<\" \";} };\nint main() { std::unique_ptr<T> p(new T(1)); p.reset(new T(2)); }\n",
+    "code_snippet": "#include <iostream>\n#include <memory>\nstruct T {\n    int id;\n    T(int x) : id(x) {\n        std::cout << id << \" \";\n    }\n    ~T() {\n        std::cout << \"~\" << id << \" \";\n    }\n};\nint main() {\n    std::unique_ptr<T> p(new T(1));\n    p.reset(new T(2));\n}",
     "options": {
       "A": "1 2 ~2 ~1",
       "B": "1 2 ~1 ~2",
@@ -295,7 +295,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "Java 17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "public class Main {\nstatic void f(Box b){b.x=2; b=new Box(); b.x=3;}\n public static void main(String[] args) { Box a=new Box(); f(a); System.out.print(a.x); }\n}\nclass Box { int x=1; }\n",
+    "code_snippet": "public class Main {\n    static void f(Box b) {\n        b.x = 2;\n        b = new Box();\n        b.x = 3;\n    }\n    public static void main(String[] args) {\n        Box a = new Box();\n        f(a);\n        System.out.print(a.x);\n    }\n}\nclass Box {\n    int x = 1;\n}",
     "options": {
       "A": "Compilation error",
       "B": "3",
@@ -346,7 +346,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct X { X(){} X(X&){std::cout<<\"N \";} X(const X&){std::cout<<\"C \";} };\nint main() { X a; const X ca; X b(a); X c(ca); }\n",
+    "code_snippet": "#include <iostream>\nstruct X {\n    X() {\n    }\n    X(X &) {\n        std::cout << \"N \";\n    }\n    X(const X &) {\n        std::cout << \"C \";\n    }\n};\nint main() {\n    X a;\n    const X ca;\n    X b(a);\n    X c(ca);\n}",
     "options": {
       "A": "Compilation error",
       "B": "N N",
@@ -363,7 +363,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct M { M(){std::cout<<\"M \";} ~M(){std::cout<<\"~M \";} }; struct C { M m; C(){std::cout<<\"C \";throw 1;} ~C(){std::cout<<\"~C \";} };\nint main() { try {C c;} catch(int){std::cout<<\"E \";} }\n",
+    "code_snippet": "#include <iostream>\nstruct M {\n    M() {\n        std::cout << \"M \";\n    }\n    ~M() {\n        std::cout << \"~M \";\n    }\n};\nstruct C {\n    M m;\n    C() {\n        std::cout << \"C \";\n        throw 1;\n    }\n    ~C() {\n        std::cout << \"~C \";\n    }\n};\nint main() {\n    try {\n        C c;\n    } catch (int) {\n        std::cout << \"E \";\n    }\n}",
     "options": {
       "A": "M C E",
       "B": "Compilation error",
@@ -380,7 +380,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct T { inline static int next=0; int id; T():id(++next){std::cout<<id<<\" \";} ~T(){std::cout<<\"~\"<<id<<\" \";} };\nint main() { T* a=new T[3]; delete[] a; }\n",
+    "code_snippet": "#include <iostream>\nstruct T {\n    inline static int next = 0;\n    int id;\n    T() : id(++next) {\n        std::cout << id << \" \";\n    }\n    ~T() {\n        std::cout << \"~\" << id << \" \";\n    }\n};\nint main() {\n    T *a = new T[3];\n    delete[] a;\n}",
     "options": {
       "A": "1 2 3",
       "B": "1 2 3 ~3 ~2 ~1",
@@ -397,7 +397,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Medium",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct T { int n; T(int x):n(x){std::cout<<n<<\" \";} ~T(){std::cout<<\"~\"<<n<<\" \";} };\nint main() { const T& r=T(7); (void)r; std::cout<<\"M \"; }\n",
+    "code_snippet": "#include <iostream>\nstruct T {\n    int n;\n    T(int x) : n(x) {\n        std::cout << n << \" \";\n    }\n    ~T() {\n        std::cout << \"~\" << n << \" \";\n    }\n};\nint main() {\n    const T &r = T(7);\n    (void)r;\n    std::cout << \"M \";\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "7 M ~7",
@@ -414,7 +414,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Hard",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct V { explicit V(int x){std::cout<<x<<\" \";} }; struct L:virtual V { L():V(1){std::cout<<\"L \";} }; struct R:virtual V { R():V(2){std::cout<<\"R \";} }; struct D:L,R { D():V(9),L(),R(){std::cout<<\"D \";} };\nint main() { D d; }\n",
+    "code_snippet": "#include <iostream>\nstruct V {\n    explicit V(int x) {\n        std::cout << x << \" \";\n    }\n};\nstruct L : virtual V {\n    L() : V(1) {\n        std::cout << \"L \";\n    }\n};\nstruct R : virtual V {\n    R() : V(2) {\n        std::cout << \"R \";\n    }\n};\nstruct D : L, R {\n    D() : V(9), L(), R() {\n        std::cout << \"D \";\n    }\n};\nint main() {\n    D d;\n}",
     "options": {
       "A": "Compilation error",
       "B": "9 L R D",
@@ -431,7 +431,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Hard",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct M { M(int x){std::cout<<\"M\"<<x<<\" \";} ~M(){std::cout<<\"~M \";} }; struct X { M m; X():X(5){std::cout<<\"D \";} X(int x):m(x){std::cout<<\"X\"<<x<<\" \";} ~X(){std::cout<<\"~X \";} };\nint main() { X x; }\n",
+    "code_snippet": "#include <iostream>\nstruct M {\n    M(int x) {\n        std::cout << \"M\" << x << \" \";\n    }\n    ~M() {\n        std::cout << \"~M \";\n    }\n};\nstruct X {\n    M m;\n    X() : X(5) {\n        std::cout << \"D \";\n    }\n    X(int x) : m(x) {\n        std::cout << \"X\" << x << \" \";\n    }\n    ~X() {\n        std::cout << \"~X \";\n    }\n};\nint main() {\n    X x;\n}",
     "options": {
       "A": "M5 X5 D ~M ~X",
       "B": "M5 X5 M5 D ~X ~M",
@@ -448,7 +448,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Hard",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct X { X(){std::cout<<\"C \";} X(const X&)=delete; X(X&&)=delete; ~X(){std::cout<<\"D \";} }; X make(){return X();}\nint main() { X x=make(); std::cout<<\"M \"; }\n",
+    "code_snippet": "#include <iostream>\nstruct X {\n    X() {\n        std::cout << \"C \";\n    }\n    X(const X &) = delete;\n    X(X &&) = delete;\n    ~X() {\n        std::cout << \"D \";\n    }\n};\nX make() {\n    return X();\n}\nint main() {\n    X x = make();\n    std::cout << \"M \";\n}",
     "options": {
       "A": "C M D",
       "B": "C C M D D",
@@ -465,7 +465,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Hard",
     "question": "Java 17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { new D(); }\n}\nclass B { B(){f();} void f(){} } class D extends B { int x=7; void f(){System.out.print(x+\" \");} D(){System.out.print(x);} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        new D();\n    }\n}\nclass B {\n    B() {\n        f();\n    }\n    void f() {\n    }\n}\nclass D extends B {\n    int x = 7;\n    void f() {\n        System.out.print(x + \" \");\n    }\n    D() {\n        System.out.print(x);\n    }\n}",
     "options": {
       "A": "7 7",
       "B": "0 7",
@@ -482,7 +482,7 @@
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Hard",
     "question": "C++17. What is printed or which listed language-level outcome applies? Assume allocations succeed; output is compared through program termination.",
-    "code_snippet": "#include <iostream>\nstruct Owner { int* p; Owner(int v):p(new int(v)){} Owner(const Owner& o):p(new int(*o.p)){} ~Owner(){delete p;} };\nint main() { Owner a(1),b(2); b=a; }\n",
+    "code_snippet": "#include <iostream>\nstruct Owner {\n    int *p;\n    Owner(int v) : p(new int(v)) {\n    }\n    Owner(const Owner &o) : p(new int(*o.p)) {\n    }\n    ~Owner() {\n        delete p;\n    }\n};\nint main() {\n    Owner a(1), b(2);\n    b = a;\n}",
     "options": {
       "A": "1 2",
       "B": "Compilation error",
@@ -498,7 +498,7 @@
     "subpart_id": "1.4.2",
     "subpart_name": "Object Lifecycle & Memory Management",
     "difficulty": "Hard",
-    "question": "Java 17 reachability model: four objects A,B,C,D exist, with strong roots r->A and s->D. Edges are A->B, B->C, C->B, and D->C. No other roots/references exist, and no collector runs during the steps. First set r=null, then s=null. What is the pair (newly unreachable objects after the first step, total unreachable original objects after both steps)?",
+    "question": "Java 17 reachability model: four objects A,B,C,D exist, with strong roots r->A and s->D. Edges are A → B, B → C, C → B, and D → C. No other roots/references exist, and no collector runs during the steps. First set r=null, then s=null. What is the pair (newly unreachable objects after the first step, total unreachable original objects after both steps)?",
     "code_snippet": null,
     "options": {
       "A": "(3,4)",

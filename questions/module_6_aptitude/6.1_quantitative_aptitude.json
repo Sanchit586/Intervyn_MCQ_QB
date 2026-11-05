@@ -388,7 +388,7 @@
       "D": "1100"
     },
     "correct_answer": "B",
-    "explanation": "Amount=1000*(1.10)^2=1210; the second year earns interest on the first year's interest too."
+    "explanation": "Amount=1000*(1.10)²=1210; the second year earns interest on the first year's interest too."
   },
   {
     "id": "6.1-024",
@@ -949,7 +949,7 @@
       "D": "2100"
     },
     "correct_answer": "A",
-    "explanation": "There are two half-years, each at 5%. Amount=2000*(1.05)^2=2205 units."
+    "explanation": "There are two half-years, each at 5%. Amount=2000*(1.05)²=2205 units."
   },
   {
     "id": "6.1-057",
@@ -983,7 +983,7 @@
       "D": "2100"
     },
     "correct_answer": "D",
-    "explanation": "Amount=10000*(1.1)^2=12100. Compound interest=12100-10000=2100 units."
+    "explanation": "Amount=10000*(1.1)²=12100. Compound interest=12100-10000=2100 units."
   },
   {
     "id": "6.1-059",
@@ -1017,7 +1017,7 @@
       "D": "20"
     },
     "correct_answer": "B",
-    "explanation": "For two years, the difference is P*r^2=4000*(0.05)^2=10 units."
+    "explanation": "For two years, the difference is P*r²=4000*(0.05)²=10 units."
   },
   {
     "id": "6.1-061",
@@ -1272,7 +1272,7 @@
       "D": "192/5"
     },
     "correct_answer": "D",
-    "explanation": "Each removal retains 1-15/75=4/5 of the existing milk. After three operations, milk=75*(4/5)^3=75*64/125=192/5 litres exactly."
+    "explanation": "Each removal retains 1-15/75=4/5 of the existing milk. After three operations, milk=75*(4/5)³=75*64/125=192/5 litres exactly."
   },
   {
     "id": "6.1-076",
@@ -1323,7 +1323,7 @@
       "D": "3000"
     },
     "correct_answer": "B",
-    "explanation": "The excess fraction is (1.1)^3-1-3(0.1)=1.331-1.3=0.031. Thus 0.031P=124 and P=4000 units."
+    "explanation": "The excess fraction is (1.1)³-1-3(0.1)=1.331-1.3=0.031. Thus 0.031P=124 and P=4000 units."
   },
   {
     "id": "6.1-079",
@@ -1357,7 +1357,7 @@
       "D": "1944.81"
     },
     "correct_answer": "A",
-    "explanation": "Quarterly rate=20%/4=5%, with four periods. Amount=1600*(21/20)^4=1944.81 exactly. Interest=1944.81-1600=344.81 units."
+    "explanation": "Quarterly rate=20%/4=5%, with four periods. Amount=1600*(21/20)⁴=1944.81 exactly. Interest=1944.81-1600=344.81 units."
   },
   {
     "id": "6.1-081",
@@ -1374,7 +1374,7 @@
       "D": "10"
     },
     "correct_answer": "B",
-    "explanation": "5P2=5!/(5-2)!=5*4=20. Order matters and objects are not repeated."
+    "explanation": "5P2=5!/(5-2)≠5*4=20. Order matters and objects are not repeated."
   },
   {
     "id": "6.1-082",
@@ -1408,7 +1408,7 @@
       "D": "16"
     },
     "correct_answer": "A",
-    "explanation": "Each of four positions receives a different book. The count is 4!=4*3*2*1=24."
+    "explanation": "Each of four positions receives a different book. The count is 4≠4*3*2*1=24."
   },
   {
     "id": "6.1-084",
@@ -1561,7 +1561,7 @@
       "D": "3/8"
     },
     "correct_answer": "C",
-    "explanation": "The complementary event is all tails, with probability (1/2)^3=1/8. Thus the required probability is 1-1/8=7/8."
+    "explanation": "The complementary event is all tails, with probability (1/2)³=1/8. Thus the required probability is 1-1/8=7/8."
   },
   {
     "id": "6.1-093",
@@ -1578,7 +1578,7 @@
       "D": "2"
     },
     "correct_answer": "A",
-    "explanation": "29=5*5+4, with 0<=4<5. The remainder is 4."
+    "explanation": "29=5*5+4, with 0≤4<5. The remainder is 4."
   },
   {
     "id": "6.1-094",
@@ -1595,7 +1595,7 @@
       "D": "9"
     },
     "correct_answer": "D",
-    "explanation": "7^2=49, whose units digit is 9."
+    "explanation": "7²=49, whose units digit is 9."
   },
   {
     "id": "6.1-095",
@@ -1697,7 +1697,7 @@
       "D": "240"
     },
     "correct_answer": "D",
-    "explanation": "Treat A and B as one block, giving five objects arranged in 5! ways. The block has orders AB and BA, so total=2*5!=240."
+    "explanation": "Treat A and B as one block, giving five objects arranged in 5! ways. The block has orders AB and BA, so total=2*5≠240."
   },
   {
     "id": "6.1-101",
@@ -1714,7 +1714,7 @@
       "D": "240"
     },
     "correct_answer": "C",
-    "explanation": "All arrangements=6!=720. Adjacent A,B arrangements=2*5!=240. Subtracting gives 720-240=480."
+    "explanation": "All arrangements=6≠720. Adjacent A,B arrangements=2*5≠240. Subtracting gives 720-240=480."
   },
   {
     "id": "6.1-102",
@@ -1731,7 +1731,7 @@
       "D": "120"
     },
     "correct_answer": "B",
-    "explanation": "Fix one person to remove rotational duplication. Arrange the other four in 4!=24 ways; reflections are not identified."
+    "explanation": "Fix one person to remove rotational duplication. Arrange the other four in 4≠24 ways; reflections are not identified."
   },
   {
     "id": "6.1-103",
@@ -1765,7 +1765,7 @@
       "D": "720"
     },
     "correct_answer": "A",
-    "explanation": "A number divisible by 5 ends in 0 or 5; only 5 is available. Fix 5 last and permute the other five digits: 5!=120."
+    "explanation": "A number divisible by 5 ends in 0 or 5; only 5 is available. Fix 5 last and permute the other five digits: 5≠120."
   },
   {
     "id": "6.1-105",
@@ -1918,7 +1918,7 @@
       "D": "3/8"
     },
     "correct_answer": "D",
-    "explanation": "Choose the two head positions in 4C2=6 ways. All 2^4=16 sequences are equally likely. Probability=6/16=3/8."
+    "explanation": "Choose the two head positions in 4C2=6 ways. All 2⁴=16 sequences are equally likely. Probability=6/16=3/8."
   },
   {
     "id": "6.1-114",
@@ -1935,7 +1935,7 @@
       "D": "1/10"
     },
     "correct_answer": "B",
-    "explanation": "Replacement keeps each red probability at 2/5. Independence gives (2/5)^3=8/125."
+    "explanation": "Replacement keeps each red probability at 2/5. Independence gives (2/5)³=8/125."
   },
   {
     "id": "6.1-115",
@@ -1977,7 +1977,7 @@
     "subpart_id": "6.1",
     "subpart_name": "Quantitative Aptitude",
     "difficulty": "Medium",
-    "question": "What is the remainder when 2^10 is divided by 7?",
+    "question": "What is the remainder when 2¹⁰ is divided by 7?",
     "code_snippet": null,
     "options": {
       "A": "2",
@@ -1986,7 +1986,7 @@
       "D": "6"
     },
     "correct_answer": "A",
-    "explanation": "Since 2^3=8 is congruent to 1 modulo 7, 2^10=(2^3)^3*2 is congruent to 2."
+    "explanation": "Since 2³=8 is congruent to 1 modulo 7, 2¹⁰=(2³)³*2 is congruent to 2."
   },
   {
     "id": "6.1-118",
@@ -1994,7 +1994,7 @@
     "subpart_id": "6.1",
     "subpart_name": "Quantitative Aptitude",
     "difficulty": "Medium",
-    "question": "What is the units digit of 3^27?",
+    "question": "What is the units digit of 3²⁷?",
     "code_snippet": null,
     "options": {
       "A": "7",
@@ -2020,7 +2020,7 @@
       "D": "3"
     },
     "correct_answer": "D",
-    "explanation": "-17=5*(-4)+3. The representative satisfying 0<=r<5 is 3."
+    "explanation": "-17=5*(-4)+3. The representative satisfying 0≤r<5 is 3."
   },
   {
     "id": "6.1-120",
@@ -2037,7 +2037,7 @@
       "D": "216"
     },
     "correct_answer": "A",
-    "explanation": "12=2^2*3 and 18=2*3^2. Taking maximum prime exponents gives LCM=2^2*3^2=36."
+    "explanation": "12=2²*3 and 18=2*3². Taking maximum prime exponents gives LCM=2²*3²=36."
   },
   {
     "id": "6.1-121",
@@ -2122,7 +2122,7 @@
       "D": "93"
     },
     "correct_answer": "C",
-    "explanation": "The sum is 3*(2^6-1)/(2-1)=3*63=189."
+    "explanation": "The sum is 3*(2⁶-1)/(2-1)=3*63=189."
   },
   {
     "id": "6.1-126",
@@ -2156,7 +2156,7 @@
       "D": "14"
     },
     "correct_answer": "A",
-    "explanation": "The first n odd integers sum to n^2. Solve n^2=225; the required positive integer is n=15."
+    "explanation": "The first n odd integers sum to n². Solve n²=225; the required positive integer is n=15."
   },
   {
     "id": "6.1-128",
@@ -2207,7 +2207,7 @@
       "D": "768"
     },
     "correct_answer": "A",
-    "explanation": "Treat each pair as one block. Arrange the four distinct blocks in 4! ways and choose either order within each of four blocks in 2^4 ways. Total=4!*2^4=384."
+    "explanation": "Treat each pair as one block. Arrange the four distinct blocks in 4! ways and choose either order within each of four blocks in 2⁴ ways. Total=4!*2⁴=384."
   },
   {
     "id": "6.1-131",
@@ -2224,7 +2224,7 @@
       "D": "96"
     },
     "correct_answer": "C",
-    "explanation": "All circular arrangements number 5!=120. With A,B adjacent, collapse them to one block: 2*4!=48. Nonadjacent arrangements=120-48=72."
+    "explanation": "All circular arrangements number 5≠120. With A,B adjacent, collapse them to one block: 2*4≠48. Nonadjacent arrangements=120-48=72."
   },
   {
     "id": "6.1-132",
@@ -2292,7 +2292,7 @@
       "D": "11/30"
     },
     "correct_answer": "D",
-    "explanation": "By inclusion-exclusion, derangements number 5!-5C1*4!+5C2*3!-5C3*2!+5C4*1!-5C5*0!=44. All assignments number 120. Probability=44/120=11/30."
+    "explanation": "By inclusion-exclusion, derangements number 5!-5C1*4!+5C2*3!-5C3*2!+5C4*1!-5C5*0≠44. All assignments number 120. Probability=44/120=11/30."
   },
   {
     "id": "6.1-136",
@@ -2334,7 +2334,7 @@
     "subpart_id": "6.1",
     "subpart_name": "Quantitative Aptitude",
     "difficulty": "Hard",
-    "question": "What is the least nonnegative remainder when 7^100 is divided by 13?",
+    "question": "What is the least nonnegative remainder when 7¹⁰⁰ is divided by 13?",
     "code_snippet": null,
     "options": {
       "A": "1",
@@ -2343,7 +2343,7 @@
       "D": "12"
     },
     "correct_answer": "B",
-    "explanation": "Since 13 is prime and 7 is coprime to it, 7^12=1 modulo 13. Reduce the exponent: 100 mod 12=4. Then 7^2=10 modulo 13 and 7^4=100=9 modulo 13."
+    "explanation": "Since 13 is prime and 7 is coprime to it, 7¹²=1 modulo 13. Reduce the exponent: 100 mod 12=4. Then 7²=10 modulo 13 and 7⁴=100=9 modulo 13."
   },
   {
     "id": "6.1-139",
@@ -2351,7 +2351,7 @@
     "subpart_id": "6.1",
     "subpart_name": "Quantitative Aptitude",
     "difficulty": "Hard",
-    "question": "The sum of the first n terms of a sequence is S_n=3n^2+2n for all positive integers n, with S_0=0. What is the tenth term?",
+    "question": "The sum of the first n terms of a sequence is S_n=3n²+2n for all positive integers n, with S_0=0. What is the tenth term?",
     "code_snippet": null,
     "options": {
       "A": "320",
@@ -2360,7 +2360,7 @@
       "D": "59"
     },
     "correct_answer": "D",
-    "explanation": "The nth term is S_n-S_(n-1)=3[n^2-(n-1)^2]+2=6n-1. At n=10, the term is 59."
+    "explanation": "The nth term is S_n-S_(n-1)=3[n²-(n-1)²]+2=6n-1. At n=10, the term is 59."
   },
   {
     "id": "6.1-140",
@@ -2377,6 +2377,6 @@
       "D": "1/2"
     },
     "correct_answer": "B",
-    "explanation": "Write the terms as a/r,a,ar. Their product is a^3=216, so a=6. Their sum gives r+1+1/r=21/6=7/2. Thus 2r^2-5r+2=0, giving r=2 or 1/2. Strict increase selects r=2."
+    "explanation": "Write the terms as a/r,a,ar. Their product is a³=216, so a=6. Their sum gives r+1+1/r=21/6=7/2. Thus 2r²-5r+2=0, giving r=2 or 1/2. Strict increase selects r=2."
   }
 ]

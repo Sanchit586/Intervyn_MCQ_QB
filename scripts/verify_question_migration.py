@@ -2,6 +2,8 @@
 
 This migration-specific check compares every question's assessment content and
 source order; the schema validator separately checks the current metadata.
+Documented math typography and code whitespace changes are allowed; Python ASTs
+and other program tokens/literals must remain equivalent.
 """
 
 import argparse
@@ -9,6 +11,7 @@ import json
 import subprocess
 
 from question_bank import CATALOG, ROOT, question_path, validate_catalog
+from question_display import presentation_content
 
 
 def main():
@@ -16,7 +19,6 @@ def main():
     parser.add_argument("--base", default=CATALOG["migration"]["from_commit"])
     args = parser.parse_args()
     validate_catalog()
-    metadata = {"id", "module", "subpart_id", "subpart_name"}
     count, sources = 0, 0
     for part in CATALOG["subparts"]:
         current = json.loads(question_path(part).read_text(encoding="utf-8"))
@@ -30,8 +32,8 @@ def main():
             selected = current[start:start+source["count"]]
             assert len(original) == len(selected) == source["count"], source["id"]
             for old, new in zip(original, selected):
-                old_content = {k:v for k,v in old.items() if k not in metadata}
-                new_content = {k:v for k,v in new.items() if k not in metadata}
+                old_content = presentation_content(old)
+                new_content = presentation_content(new)
                 assert old_content == new_content, (old["id"], new["id"], "Assessment content changed")
                 count += 1
             sources += 1

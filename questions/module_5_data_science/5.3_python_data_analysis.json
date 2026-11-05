@@ -6,7 +6,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Easy",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What scalar is printed by positional indexing?",
-    "code_snippet": "import pandas as pd\ndf = pd.DataFrame({\"v\": [5, 6, 7]}, index=[10, 20, 30])\nprint(df.iloc[1, 0])",
+    "code_snippet": "import pandas as pd\n\ndf = pd.DataFrame({\"v\": [5, 6, 7]}, index=[10, 20, 30])\nprint(df.iloc[1, 0])",
     "options": {
       "A": "20",
       "B": "5",
@@ -23,7 +23,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Easy",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What scalar is printed by label indexing?",
-    "code_snippet": "import pandas as pd\ndf = pd.DataFrame({\"v\": [12, 24, 36]}, index=[10, 20, 30])\nprint(df.loc[20, \"v\"])",
+    "code_snippet": "import pandas as pd\n\ndf = pd.DataFrame({\"v\": [12, 24, 36]}, index=[10, 20, 30])\nprint(df.loc[20, \"v\"])",
     "options": {
       "A": "24",
       "B": "36",
@@ -40,7 +40,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Easy",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. How many rows remain after the default missing-row removal?",
-    "code_snippet": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({\"a\": [1, np.nan, 3]})\nprint(len(df.dropna()))",
+    "code_snippet": "import pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\"a\": [1, np.nan, 3]})\nprint(len(df.dropna()))",
     "options": {
       "A": "1",
       "B": "0",
@@ -57,7 +57,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Easy",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What list is printed after filling missing entries?",
-    "code_snippet": "import pandas as pd\nimport numpy as np\ns = pd.Series([1, np.nan, 3])\nprint(s.fillna(0).astype(int).tolist())",
+    "code_snippet": "import pandas as pd\nimport numpy as np\n\ns = pd.Series([1, np.nan, 3])\nprint(s.fillna(0).astype(int).tolist())",
     "options": {
       "A": "[1, 0, 3]",
       "B": "[0, 0, 0]",
@@ -74,7 +74,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Easy",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What list results from summing over axis 0?",
-    "code_snippet": "import numpy as np\na = np.array([[1, 2], [3, 4]])\nprint(a.sum(axis=0).tolist())",
+    "code_snippet": "import numpy as np\n\na = np.array([[1, 2], [3, 4]])\nprint(a.sum(axis=0).tolist())",
     "options": {
       "A": "[4, 6]",
       "B": "[3, 7]",
@@ -91,7 +91,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Easy",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What scalar does the one-dimensional dot product print?",
-    "code_snippet": "import numpy as np\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nprint(np.dot(a, b))",
+    "code_snippet": "import numpy as np\n\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\nprint(np.dot(a, b))",
     "options": {
       "A": "21",
       "B": "15",
@@ -108,7 +108,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Easy",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What ordered list of group sums is printed?",
-    "code_snippet": "import pandas as pd\ndf = pd.DataFrame({\"g\": [\"b\", \"a\", \"b\"], \"v\": [2, 3, 4]})\nprint(df.groupby(\"g\", sort=True)[\"v\"].sum().tolist())",
+    "code_snippet": "import pandas as pd\n\ndf = pd.DataFrame({\"g\": [\"b\", \"a\", \"b\"], \"v\": [2, 3, 4]})\nprint(df.groupby(\"g\", sort=True)[\"v\"].sum().tolist())",
     "options": {
       "A": "[9]",
       "B": "[2, 3, 4]",
@@ -125,7 +125,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What list is printed by the inclusive label slice?",
-    "code_snippet": "import pandas as pd\ns = pd.Series([10, 20, 30, 40], index=[\"a\", \"b\", \"c\", \"d\"])\nprint(s.loc[\"b\":\"d\"].tolist())",
+    "code_snippet": "import pandas as pd\n\ns = pd.Series([10, 20, 30, 40], index=[\"a\", \"b\", \"c\", \"d\"])\nprint(s.loc[\"b\":\"d\"].tolist())",
     "options": {
       "A": "[10, 20, 30]",
       "B": "[20, 30, 40]",
@@ -142,7 +142,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What list is printed by the negative-step positional slice?",
-    "code_snippet": "import pandas as pd\ns = pd.Series([10, 20, 30, 40, 50], index=[9, 7, 5, 3, 1])\nprint(s.iloc[::-2].tolist())",
+    "code_snippet": "import pandas as pd\n\ns = pd.Series([10, 20, 30, 40, 50], index=[9, 7, 5, 3, 1])\nprint(s.iloc[::-2].tolist())",
     "options": {
       "A": "[10, 30, 50]",
       "B": "[40, 20]",
@@ -159,7 +159,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What two lines compare label-aligned and positional boolean selection?",
-    "code_snippet": "import pandas as pd\ndf = pd.DataFrame({\"v\": [10, 20, 30]}, index=[\"a\", \"b\", \"c\"])\nmask = pd.Series([True, False, True], index=[\"c\", \"a\", \"b\"])\nprint(df.loc[mask, \"v\"].tolist())\nprint(df.iloc[mask.to_numpy(), 0].tolist())",
+    "code_snippet": "import pandas as pd\n\ndf = pd.DataFrame({\"v\": [10, 20, 30]}, index=[\"a\", \"b\", \"c\"])\nmask = pd.Series([True, False, True], index=[\"c\", \"a\", \"b\"])\nprint(df.loc[mask, \"v\"].tolist())\nprint(df.iloc[mask.to_numpy(), 0].tolist())",
     "options": {
       "A": "[10, 30]\n[20, 30]",
       "B": "[20, 30]\n[10, 30]",
@@ -176,7 +176,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What nested list is printed by the named group aggregations?",
-    "code_snippet": "import pandas as pd\ndf = pd.DataFrame({\"g\": [\"a\", \"b\", \"a\"], \"v\": [2, 5, 6]})\nout = df.groupby(\"g\", sort=True).agg(total=(\"v\", \"sum\"), n=(\"v\", \"count\"))\nprint(out[[\"total\", \"n\"]].to_numpy().tolist())",
+    "code_snippet": "import pandas as pd\n\ndf = pd.DataFrame({\"g\": [\"a\", \"b\", \"a\"], \"v\": [2, 5, 6]})\nout = df.groupby(\"g\", sort=True).agg(total=(\"v\", \"sum\"), n=(\"v\", \"count\"))\nprint(out[[\"total\", \"n\"]].to_numpy().tolist())",
     "options": {
       "A": "[[8, 2], [5, 1]]",
       "B": "[[2, 2], [5, 1], [6, 2]]",
@@ -193,7 +193,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What list is printed by transform rather than aggregation?",
-    "code_snippet": "import pandas as pd\ndf = pd.DataFrame({\"g\": [\"b\", \"a\", \"b\"], \"v\": [2, 10, 6]})\nprint(df.groupby(\"g\")[\"v\"].transform(\"mean\").tolist())",
+    "code_snippet": "import pandas as pd\n\ndf = pd.DataFrame({\"g\": [\"b\", \"a\", \"b\"], \"v\": [2, 10, 6]})\nprint(df.groupby(\"g\")[\"v\"].transform(\"mean\").tolist())",
     "options": {
       "A": "[4.0, 10.0]",
       "B": "[2.0, 10.0, 6.0]",
@@ -210,7 +210,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What nested list results from the inner merge and explicit sort?",
-    "code_snippet": "import pandas as pd\nleft = pd.DataFrame({\"k\": [1, 1, 2], \"v\": [\"a\", \"b\", \"c\"]})\nright = pd.DataFrame({\"k\": [1, 1, 3], \"w\": [10, 20, 30]})\nout = left.merge(right, on=\"k\", how=\"inner\").sort_values([\"v\", \"w\"])\nprint(out[[\"v\", \"w\"]].to_numpy().tolist())",
+    "code_snippet": "import pandas as pd\n\nleft = pd.DataFrame({\"k\": [1, 1, 2], \"v\": [\"a\", \"b\", \"c\"]})\nright = pd.DataFrame({\"k\": [1, 1, 3], \"w\": [10, 20, 30]})\nout = left.merge(right, on=\"k\", how=\"inner\").sort_values([\"v\", \"w\"])\nprint(out[[\"v\", \"w\"]].to_numpy().tolist())",
     "options": {
       "A": "[['a', 10], ['b', 20]]",
       "B": "[['a', 10], ['b', 20], ['c', 30]]",
@@ -227,7 +227,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What index list and value list are printed after row concatenation?",
-    "code_snippet": "import pandas as pd\na = pd.DataFrame({\"v\": [1, 2]}, index=[0, 1])\nb = pd.DataFrame({\"v\": [3]}, index=[0])\nout = pd.concat([a, b], axis=0)\nprint(out.index.tolist())\nprint(out[\"v\"].tolist())",
+    "code_snippet": "import pandas as pd\n\na = pd.DataFrame({\"v\": [1, 2]}, index=[0, 1])\nb = pd.DataFrame({\"v\": [3]}, index=[0])\nout = pd.concat([a, b], axis=0)\nprint(out.index.tolist())\nprint(out[\"v\"].tolist())",
     "options": {
       "A": "[0, 0, 1]\n[1, 3, 2]",
       "B": "[0, 1, 0]\n[1, 2, 3]",
@@ -244,7 +244,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What nested list follows column concatenation with index alignment?",
-    "code_snippet": "import pandas as pd\na = pd.DataFrame({\"x\": [1, 2]}, index=[\"a\", \"b\"])\nb = pd.DataFrame({\"y\": [10, 20]}, index=[\"b\", \"c\"])\nout = pd.concat([a, b], axis=1).sort_index().fillna(0).astype(int)\nprint(out[[\"x\", \"y\"]].to_numpy().tolist())",
+    "code_snippet": "import pandas as pd\n\na = pd.DataFrame({\"x\": [1, 2]}, index=[\"a\", \"b\"])\nb = pd.DataFrame({\"y\": [10, 20]}, index=[\"b\", \"c\"])\nout = pd.concat([a, b], axis=1).sort_index().fillna(0).astype(int)\nprint(out[[\"x\", \"y\"]].to_numpy().tolist())",
     "options": {
       "A": "[[1, 10], [2, 20]]",
       "B": "[[2, 10]]",
@@ -261,7 +261,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What original row labels survive this all-missing subset rule?",
-    "code_snippet": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({\"a\": [1, np.nan, np.nan], \"b\": [np.nan, 2, np.nan]})\nprint(df.dropna(subset=[\"a\", \"b\"], how=\"all\").index.tolist())",
+    "code_snippet": "import pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\"a\": [1, np.nan, np.nan], \"b\": [np.nan, 2, np.nan]})\nprint(df.dropna(subset=[\"a\", \"b\"], how=\"all\").index.tolist())",
     "options": {
       "A": "[]",
       "B": "[0, 1]",
@@ -278,7 +278,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What missing-count list is printed after a column-specific fill?",
-    "code_snippet": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({\"a\": [1, np.nan], \"b\": [np.nan, 4]})\nout = df.fillna({\"a\": 0})\nprint(out[[\"a\", \"b\"]].isna().sum().tolist())",
+    "code_snippet": "import pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\"a\": [1, np.nan], \"b\": [np.nan, 4]})\nout = df.fillna({\"a\": 0})\nprint(out[[\"a\", \"b\"]].isna().sum().tolist())",
     "options": {
       "A": "[1, 1]",
       "B": "[0, 0]",
@@ -295,7 +295,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What nested list is printed by broadcasting a row vector?",
-    "code_snippet": "import numpy as np\na = np.array([[1, 2, 3], [4, 5, 6]])\nb = np.array([10, 20, 30])\nprint((a + b).tolist())",
+    "code_snippet": "import numpy as np\n\na = np.array([[1, 2, 3], [4, 5, 6]])\nb = np.array([10, 20, 30])\nprint((a + b).tolist())",
     "options": {
       "A": "[[11, 12, 13], [24, 25, 26]]",
       "B": "[[11, 22, 33], [14, 25, 36]]",
@@ -312,7 +312,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What nested list follows explicit column-vector expansion?",
-    "code_snippet": "import numpy as np\na = np.array([10, 20, 30])[:, None]\nb = np.array([1, 2])\nprint((a - b).tolist())",
+    "code_snippet": "import numpy as np\n\na = np.array([10, 20, 30])[:, None]\nb = np.array([1, 2])\nprint((a - b).tolist())",
     "options": {
       "A": "[[9, 19, 29], [8, 18, 28]]",
       "B": "[[9, 18, 29]]",
@@ -329,7 +329,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Medium",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What two lines distinguish matrix dot product from elementwise multiplication?",
-    "code_snippet": "import numpy as np\na = np.array([[1, 2], [3, 4]])\nb = np.array([[2, 0], [1, 2]])\nprint(np.dot(a, b).tolist())\nprint((a * b).tolist())",
+    "code_snippet": "import numpy as np\n\na = np.array([[1, 2], [3, 4]])\nb = np.array([[2, 0], [1, 2]])\nprint(np.dot(a, b).tolist())\nprint((a * b).tolist())",
     "options": {
       "A": "[[2, 0], [3, 8]]\n[[4, 4], [10, 8]]",
       "B": "[[2, 4], [6, 8]]\n[[2, 0], [3, 8]]",
@@ -346,7 +346,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Hard",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What centered list results after groupwise missing-value imputation and the all-missing-group fallback?",
-    "code_snippet": "import pandas as pd\nimport numpy as np\ndf = pd.DataFrame({\"g\": [\"b\", \"a\", \"b\", \"a\", \"c\"], \"v\": [2, np.nan, 6, 10, np.nan]})\nmeans = df.groupby(\"g\")[\"v\"].transform(\"mean\")\nfilled = df[\"v\"].fillna(means).fillna(0)\ncentered = filled - filled.groupby(df[\"g\"]).transform(\"mean\")\nprint(centered.tolist())",
+    "code_snippet": "import pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\"g\": [\"b\", \"a\", \"b\", \"a\", \"c\"], \"v\": [2, np.nan, 6, 10, np.nan]})\nmeans = df.groupby(\"g\")[\"v\"].transform(\"mean\")\nfilled = df[\"v\"].fillna(means).fillna(0)\ncentered = filled - filled.groupby(df[\"g\"]).transform(\"mean\")\nprint(centered.tolist())",
     "options": {
       "A": "[0.0, 0.0, 0.0, 0.0, 0.0]",
       "B": "[2.0, 10.0, 6.0, 10.0, 0.0]",
@@ -363,7 +363,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Hard",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What total row count and null-key row count are printed by this pandas merge?",
-    "code_snippet": "import pandas as pd\nimport numpy as np\nleft = pd.DataFrame({\"k\": [1, np.nan, np.nan]})\nright = pd.DataFrame({\"k\": [np.nan, np.nan, 1]})\nout = left.merge(right, on=\"k\", how=\"inner\")\nprint(len(out), out[\"k\"].isna().sum())",
+    "code_snippet": "import pandas as pd\nimport numpy as np\n\nleft = pd.DataFrame({\"k\": [1, np.nan, np.nan]})\nright = pd.DataFrame({\"k\": [np.nan, np.nan, 1]})\nout = left.merge(right, on=\"k\", how=\"inner\")\nprint(len(out), out[\"k\"].isna().sum())",
     "options": {
       "A": "1 0",
       "B": "9 8",
@@ -380,7 +380,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Hard",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What shape and reduced nested list are printed after three-dimensional broadcasting?",
-    "code_snippet": "import numpy as np\na = np.arange(6).reshape(2, 1, 3)\nb = np.arange(4).reshape(1, 4, 1)\nc = a + b\nprint(c.shape)\nprint(c.sum(axis=1).tolist())",
+    "code_snippet": "import numpy as np\n\na = np.arange(6).reshape(2, 1, 3)\nb = np.arange(4).reshape(1, 4, 1)\nc = a + b\nprint(c.shape)\nprint(c.sum(axis=1).tolist())",
     "options": {
       "A": "(2, 4, 3)\n[[6, 7, 8], [9, 10, 11]]",
       "B": "(2, 4, 3)\n[[6, 10, 14], [18, 22, 26]]",
@@ -397,7 +397,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Hard",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What shapes and selected scalar values distinguish high-dimensional dot from batched matrix multiplication?",
-    "code_snippet": "import numpy as np\na = np.arange(12).reshape(2, 2, 3)\nb = np.ones((2, 3, 4), dtype=int)\nd = np.dot(a, b)\nm = a @ b\nprint(d.shape, m.shape, int(d[1, 0, 0, 0]), int(m[1, 0, 0]))",
+    "code_snippet": "import numpy as np\n\na = np.arange(12).reshape(2, 2, 3)\nb = np.ones((2, 3, 4), dtype=int)\nd = np.dot(a, b)\nm = a @ b\nprint(d.shape, m.shape, int(d[1, 0, 0, 0]), int(m[1, 0, 0]))",
     "options": {
       "A": "(2, 2, 2, 4) (2, 2, 4) 21 21",
       "B": "(2, 2, 2, 4) (2, 2, 2, 4) 21 21",
@@ -414,7 +414,7 @@
     "subpart_name": "Python Data Analysis",
     "difficulty": "Hard",
     "question": "Python 3 with pandas 2.3.x and NumPy 2.2.x. What two lists are printed after label-aligned assignment followed by positional assignment?",
-    "code_snippet": "import pandas as pd\ndf = pd.DataFrame({\"v\": [1, 2, 3]}, index=[\"a\", \"b\", \"c\"])\ndf.loc[[\"c\", \"a\"], \"v\"] = pd.Series([100, 200], index=[\"a\", \"c\"])\nprint(df[\"v\"].tolist())\ndf.iloc[[2, 0], 0] = [7, 9]\nprint(df[\"v\"].tolist())",
+    "code_snippet": "import pandas as pd\n\ndf = pd.DataFrame({\"v\": [1, 2, 3]}, index=[\"a\", \"b\", \"c\"])\ndf.loc[[\"c\", \"a\"], \"v\"] = pd.Series([100, 200], index=[\"a\", \"c\"])\nprint(df[\"v\"].tolist())\ndf.iloc[[2, 0], 0] = [7, 9]\nprint(df[\"v\"].tolist())",
     "options": {
       "A": "[100, 2, 200]\n[9, 2, 7]",
       "B": "[200, 2, 100]\n[9, 2, 7]",

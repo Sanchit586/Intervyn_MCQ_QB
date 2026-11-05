@@ -99,7 +99,7 @@
       "D": "4"
     },
     "correct_answer": "B",
-    "explanation": "Generator 1011 represents x^3+x+1 and has degree 3. A remainder has degree below 3 and is represented with exactly three bits, including leading zeros if needed. The four generator bits do not imply a four-bit CRC."
+    "explanation": "Generator 1011 represents x³+x+1 and has degree 3. A remainder has degree below 3 and is represented with exactly three bits, including leading zeros if needed. The four generator bits do not imply a four-bit CRC."
   },
   {
     "id": "1.3.1-007",
@@ -269,7 +269,7 @@
       "D": "(4,5)"
     },
     "correct_answer": "D",
-    "explanation": "Go-Back-N needs 2^m >= 11, so four bits suffice. Selective Repeat needs 2^m >= 20 to separate the old and current windows, so five bits are necessary. Both algorithms must represent more states than just the ten currently outstanding frames."
+    "explanation": "Go-Back-N needs 2^m ≥ 11, so four bits suffice. Selective Repeat needs 2^m ≥ 20 to separate the old and current windows, so five bits are necessary. Both algorithms must represent more states than just the ten currently outstanding frames."
   },
   {
     "id": "1.3.1-017",
@@ -337,7 +337,7 @@
       "D": "22 frames"
     },
     "correct_answer": "B",
-    "explanation": "Frame serialization takes 0.1 ms, and the first ACK returns 0.1+2*1=2.1 ms after the first send begins. The sender must cover that interval with W*0.1 ms of serial transmission. W >= 2.1/0.1 = 21, including the frame currently being serialized."
+    "explanation": "Frame serialization takes 0.1 ms, and the first ACK returns 0.1+2*1=2.1 ms after the first send begins. The sender must cover that interval with W*0.1 ms of serial transmission. W ≥ 2.1/0.1 = 21, including the frame currently being serialized."
   },
   {
     "id": "1.3.1-021",

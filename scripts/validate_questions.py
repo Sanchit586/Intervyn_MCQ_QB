@@ -8,6 +8,7 @@ from collections import Counter
 from pathlib import Path
 
 from question_bank import CATALOG, validate_catalog
+from question_display import display_issues
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -138,6 +139,8 @@ def validate_file(path, seen_ids, seen_questions):
             fail(f"{label}: correct_answer must be one of A, B, C, D")
 
         question = entry.get("question")
+        for issue in display_issues(entry):
+            fail(f"{label}: {issue}")
         if isinstance(question, str) and (snippet is None or isinstance(snippet, str)):
             fingerprint = (normalized(question), normalized(snippet or ""))
             if fingerprint in seen_questions:

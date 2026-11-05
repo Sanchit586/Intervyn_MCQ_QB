@@ -235,7 +235,7 @@
       "D": "2147483648"
     },
     "correct_answer": "A",
-    "explanation": "In a signed 32-bit value, bit 31 alone represents the minimum Integer, -2^31."
+    "explanation": "In a signed 32-bit value, bit 31 alone represents the minimum Integer, -2³¹."
   },
   {
     "id": "3.1-015",

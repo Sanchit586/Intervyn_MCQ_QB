@@ -48,7 +48,7 @@
       "D": "48 4"
     },
     "correct_answer": "C",
-    "explanation": "The updates are 3->6->12->24. The condition then fails after three iterations."
+    "explanation": "The updates are 3 → 6 → 12 → 24. The condition then fails after three iterations."
   },
   {
     "id": "3.2-004",
@@ -898,7 +898,7 @@
       "D": "32"
     },
     "correct_answer": "D",
-    "explanation": "Each of five non-base calls doubles the result. Starting from 1 gives 2^5=32."
+    "explanation": "Each of five non-base calls doubles the result. Starting from 1 gives 2⁵=32."
   },
   {
     "id": "3.2-054",
@@ -1136,7 +1136,7 @@
       "D": "4"
     },
     "correct_answer": "A",
-    "explanation": "Each level doubles the returned leaf total. There are 2^3=8 base leaves, each returning one."
+    "explanation": "Each level doubles the returned leaf total. There are 2³=8 base leaves, each returning one."
   },
   {
     "id": "3.2-068",
@@ -1459,7 +1459,7 @@
       "D": "7"
     },
     "correct_answer": "B",
-    "explanation": "The chain is 11->10->5->4->2->1. Added costs are 2,1,2,1,1 plus base 1, totaling 8."
+    "explanation": "The chain is 11 → 10 → 5 → 4 → 2 → 1. Added costs are 2,1,2,1,1 plus base 1, totaling 8."
   },
   {
     "id": "3.2-087",
@@ -1510,7 +1510,7 @@
       "D": "7"
     },
     "correct_answer": "C",
-    "explanation": "f(2)=2. Thereafter the a>=2 branch returns a+1, giving f(3)=3,f(4)=4,f(5)=5 without a second call at those levels."
+    "explanation": "f(2)=2. Thereafter the a≥2 branch returns a+1, giving f(3)=3,f(4)=4,f(5)=5 without a second call at those levels."
   },
   {
     "id": "3.2-090",

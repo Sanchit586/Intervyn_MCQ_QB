@@ -40,7 +40,7 @@
     "subpart_name": "Concurrency, Synchronization & Deadlocks",
     "difficulty": "Easy",
     "question": "Two threads use strict alternation as shown. The shared atomic variable turn initially equals 0, and memory is sequentially consistent. T0 stays in its remainder section forever without requesting entry. T1 wants to enter and keeps taking execution steps. The critical section is empty, but T1 spins forever. Which requirement is directly violated because a thread that does not want entry prevents admission?",
-    "code_snippet": "Thread Ti, where j = 1 - i:\nwhile true:\n    while turn != i: pass\n    critical_section()\n    turn = j\n    remainder_section()",
+    "code_snippet": "Thread Ti, where j = 1 - i:\nwhile true:\n    while turn ≠ i:\n        pass\n    critical_section()\n    turn = j\n    remainder_section()",
     "options": {
       "A": "Mutual exclusion, because both threads enter simultaneously",
       "B": "Atomicity of reads, because T1 must observe a torn turn value",
@@ -201,7 +201,7 @@
       "D": "S = -1; only D blocked"
     },
     "correct_answer": "D",
-    "explanation": "The counter follows 1 -> 0 -> -1 -> -2 -> -1 -> -2 -> -1. A's signal wakes B, leaving C queued. D then queues behind C. B's signal wakes C, leaving only D blocked. A resumed wait consumes no second permit."
+    "explanation": "The counter follows 1 → 0 -> -1 -> -2 -> -1 -> -2 -> -1. A's signal wakes B, leaving C queued. D then queues behind C. B's signal wakes C, leaving only D blocked. A resumed wait consumes no second permit."
   },
   {
     "id": "1.1.2-013",
@@ -278,7 +278,7 @@
     "subpart_name": "Concurrency, Synchronization & Deadlocks",
     "difficulty": "Medium",
     "question": "The correct reader-preference protocol below uses initially available binary semaphores count_mutex and resource. Two readers R1 and R2 have completed entry and are reading, so reader_count is 2. R1 completes its entire exit, then writer W calls wait(resource) and blocks, then R2 completes its entire exit. A signal to a waiting thread directly transfers the permit; the available semaphore count stays 0. Immediately after R2's exit, W's wait has returned, but W has not released resource. What is (reader_count, available resource permits, available count_mutex permits)?",
-    "code_snippet": "Reader entry:\n    wait(count_mutex)\n    reader_count += 1\n    if reader_count == 1: wait(resource)\n    signal(count_mutex)\nReader exit:\n    wait(count_mutex)\n    reader_count -= 1\n    if reader_count == 0: signal(resource)\n    signal(count_mutex)\nWriter: wait(resource); write_data(); signal(resource)",
+    "code_snippet": "Reader entry:\n    wait(count_mutex)\n    reader_count += 1\n    if reader_count == 1:\n        wait(resource)\n    signal(count_mutex)\nReader exit:\n    wait(count_mutex)\n    reader_count -= 1\n    if reader_count == 0:\n        signal(resource)\n    signal(count_mutex)\nWriter:\n    wait(resource);\n    write_data();\n    signal(resource)",
     "options": {
       "A": "(1, 0, 1)",
       "B": "(0, 0, 1)",
@@ -465,7 +465,7 @@
     "subpart_name": "Concurrency, Synchronization & Deadlocks",
     "difficulty": "Hard",
     "question": "Consider the flawed reader entry below. count_mutex protects reader_count, which starts at 0, and resource excludes a writer from readers. Writer W already holds resource and is writing. R1 increments reader_count to 1, records first = true, releases count_mutex, and blocks at wait(resource). Before W releases resource, R2 executes its entire entry. Memory is sequentially consistent. What happens?",
-    "code_snippet": "Reader entry (first is thread-local):\n    wait(count_mutex)\n    reader_count += 1\n    first = (reader_count == 1)\n    signal(count_mutex)\n    if first:\n        wait(resource)\n    read_shared_data()\n\nWriter: wait(resource); write_shared_data(); signal(resource)",
+    "code_snippet": "Reader entry (first is thread-local):\n    wait(count_mutex)\n    reader_count += 1\n    first = (reader_count == 1)\n    signal(count_mutex)\n    if first:\n        wait(resource)\n    read_shared_data()\n\nWriter:\n    wait(resource);\n    write_shared_data();\n    signal(resource)",
     "options": {
       "A": "R2 starts reading while W writes, violating reader-writer exclusion",
       "B": "R2 blocks on resource because every reader executes wait(resource)",
@@ -482,7 +482,7 @@
     "subpart_name": "Concurrency, Synchronization & Deadlocks",
     "difficulty": "Hard",
     "question": "A correct capacity-5 bounded buffer initially contains 2 items, with available semaphore counts empty = 3, full = 2, mutex = 1. Each producer executes wait(empty), wait(mutex), insert, signal(mutex), signal(full). Each consumer executes wait(full), wait(mutex), remove, signal(mutex), signal(empty). The exact successful operations below occur; all threads then pause with no other operations. P1 has not yet signaled full, C1 has not yet signaled empty, and P2 has not inserted. What is the tuple (available empty permits, available full permits, physical items in the buffer)?",
-    "code_snippet": "P1: wait(empty)\nP2: wait(empty)\nC1: wait(full)\nP1: wait(mutex); insert one item; signal(mutex)\nC1: wait(mutex); remove one item; signal(mutex)",
+    "code_snippet": "P1: wait(empty)\nP2: wait(empty)\nC1: wait(full)\nP1:\n    wait(mutex);\n    insert one item;\n    signal(mutex)\nC1:\n    wait(mutex);\n    remove one item;\n    signal(mutex)",
     "options": {
       "A": "(3, 2, 2)",
       "B": "(2, 3, 3)",

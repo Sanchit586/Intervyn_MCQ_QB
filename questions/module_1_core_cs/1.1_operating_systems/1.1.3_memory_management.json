@@ -14,7 +14,7 @@
       "D": "16 bits"
     },
     "correct_answer": "B",
-    "explanation": "A 4 KiB page contains 4,096 = 2^12 individually addressable bytes, so the low 12 address bits select a byte within the page."
+    "explanation": "A 4 KiB page contains 4,096 = 2¹² individually addressable bytes, so the low 12 address bits select a byte within the page."
   },
   {
     "id": "1.1.3-002",
@@ -73,7 +73,7 @@
     "subpart_id": "1.1.3",
     "subpart_name": "Memory Management & Virtual Memory",
     "difficulty": "Easy",
-    "question": "In a byte-addressable segmentation system, segment S has physical base 8,000 and length 1,200 bytes. Legal offsets satisfy 0 <= offset < length, and the requested access is permitted. What is the decimal physical address of (S, offset 1,199)?",
+    "question": "In a byte-addressable segmentation system, segment S has physical base 8,000 and length 1,200 bytes. Legal offsets satisfy 0 ≤ offset < length, and the requested access is permitted. What is the decimal physical address of (S, offset 1,199)?",
     "code_snippet": null,
     "options": {
       "A": "9,200",
@@ -158,7 +158,7 @@
     "subpart_id": "1.1.3",
     "subpart_name": "Memory Management & Virtual Memory",
     "difficulty": "Medium",
-    "question": "A byte-addressable system has a 32-bit virtual address space and 4 KiB pages. A process uses a flat page table with one 8-byte entry for every virtual page, including unmapped pages. Ignoring other metadata, what is the page table's size? Here 1 KiB = 2^10 bytes and 1 MiB = 2^20 bytes.",
+    "question": "A byte-addressable system has a 32-bit virtual address space and 4 KiB pages. A process uses a flat page table with one 8-byte entry for every virtual page, including unmapped pages. Ignoring other metadata, what is the page table's size? Here 1 KiB = 2¹⁰ bytes and 1 MiB = 2²⁰ bytes.",
     "code_snippet": null,
     "options": {
       "A": "1 MiB",
@@ -167,7 +167,7 @@
       "D": "32 MiB"
     },
     "correct_answer": "C",
-    "explanation": "The 12-bit offset leaves 32 - 12 = 20 virtual-page-number bits. The flat table therefore has 2^20 entries, each 8 bytes, for 2^23 bytes = 8 MiB. The process's actual resident-page count does not shrink this stipulated flat table."
+    "explanation": "The 12-bit offset leaves 32 - 12 = 20 virtual-page-number bits. The flat table therefore has 2²⁰ entries, each 8 bytes, for 2²³ bytes = 8 MiB. The process's actual resident-page count does not shrink this stipulated flat table."
   },
   {
     "id": "1.1.3-011",
@@ -184,7 +184,7 @@
       "D": "(10, 12, 10)"
     },
     "correct_answer": "A",
-    "explanation": "The page offset uses 12 bits. A second-level table has 4,096/4 = 1,024 = 2^10 entries, requiring a 10-bit second-level index. The remaining 32 - 12 - 10 = 10 bits form the first-level index."
+    "explanation": "The page offset uses 12 bits. A second-level table has 4,096/4 = 1,024 = 2¹⁰ entries, requiring a 10-bit second-level index. The remaining 32 - 12 - 10 = 10 bits form the first-level index."
   },
   {
     "id": "1.1.3-012",
@@ -269,7 +269,7 @@
       "D": "90%"
     },
     "correct_answer": "D",
-    "explanation": "Let h be the hit rate. Mean time = 110h + 210(1 - h) = 210 - 100h ns. Requiring 210 - 100h <= 120 gives h >= 0.90, so the minimum is 90%."
+    "explanation": "Let h be the hit rate. Mean time = 110h + 210(1 - h) = 210 - 100h ns. Requiring 210 - 100h ≤ 120 gives h ≥ 0.90, so the minimum is 90%."
   },
   {
     "id": "1.1.3-017",
@@ -430,7 +430,7 @@
     "subpart_id": "1.1.3",
     "subpart_name": "Memory Management & Virtual Memory",
     "difficulty": "Hard",
-    "question": "A byte-addressable system has a four-level page table. Its 48-bit virtual address uses four 9-bit indices followed by a 12-bit offset. Every table at every level occupies one 4 KiB page and contains 512 entries. The root always exists; other tables are allocated only along paths to mapped 4 KiB pages. There are no huge pages or shared page-table pages. Exactly the ranges below are mapped. How much page-table memory is allocated, excluding data frames? Here 1 KiB = 2^10 bytes, 1 MiB = 2^20 bytes, and 1 GiB = 2^30 bytes.",
+    "question": "A byte-addressable system has a four-level page table. Its 48-bit virtual address uses four 9-bit indices followed by a 12-bit offset. Every table at every level occupies one 4 KiB page and contains 512 entries. The root always exists; other tables are allocated only along paths to mapped 4 KiB pages. There are no huge pages or shared page-table pages. Exactly the ranges below are mapped. How much page-table memory is allocated, excluding data frames? Here 1 KiB = 2¹⁰ bytes, 1 MiB = 2²⁰ bytes, and 1 GiB = 2³⁰ bytes.",
     "code_snippet": "Mapped virtual byte ranges, end-exclusive:\n[0, 4 MiB)\n[1 GiB, 1 GiB + 4 KiB)\n[512 GiB, 512 GiB + 4 KiB)",
     "options": {
       "A": "40 KiB",

@@ -99,7 +99,7 @@
       "D": "Both transaction orders are conflict-equivalent"
     },
     "correct_answer": "A",
-    "explanation": "The write by T1 precedes the conflicting read by T2, giving the precedence edge T1->T2. The graph is acyclic and permits only the serial order T1 then T2."
+    "explanation": "The write by T1 precedes the conflicting read by T2, giving the precedence edge T1 → T2. The graph is acyclic and permits only the serial order T1 then T2."
   },
   {
     "id": "1.2.2-007",
@@ -167,7 +167,7 @@
       "D": "T3, T2, T1"
     },
     "correct_answer": "B",
-    "explanation": "The conflicts on X require T1->T2, and the conflict on Y requires T2->T3. These edges form the chain T1->T2->T3, which admits only that serial order."
+    "explanation": "The conflicts on X require T1 → T2, and the conflict on Y requires T2 → T3. These edges form the chain T1 → T2 → T3, which admits only that serial order."
   },
   {
     "id": "1.2.2-011",
@@ -180,11 +180,11 @@
     "options": {
       "A": "Yes; its only serial order is T2,T1",
       "B": "Yes; both serial orders are possible because X and Y are different items",
-      "C": "No; the graph contains T1->T2 and T2->T1",
+      "C": "No; the graph contains T1 → T2 and T2 → T1",
       "D": "Yes; its only serial order is T1,T2"
     },
     "correct_answer": "C",
-    "explanation": "The write/read conflict on X gives T1->T2. The write/read conflict on Y gives T2->T1. A cycle across different items is still a precedence-graph cycle, so no conflict-equivalent serial schedule exists."
+    "explanation": "The write/read conflict on X gives T1 → T2. The write/read conflict on Y gives T2 → T1. A cycle across different items is still a precedence-graph cycle, so no conflict-equivalent serial schedule exists."
   },
   {
     "id": "1.2.2-012",
@@ -201,7 +201,7 @@
       "D": "3"
     },
     "correct_answer": "A",
-    "explanation": "The graph has T1->T3 and T2->T3, with no edge between T1 and T2. T3 must be last, while T1 and T2 can occur in either order: T1,T2,T3 or T2,T1,T3."
+    "explanation": "The graph has T1 → T3 and T2 → T3, with no edge between T1 and T2. T3 must be last, while T1 and T2 can occur in either order: T1,T2,T3 or T2,T1,T3."
   },
   {
     "id": "1.2.2-013",
@@ -213,12 +213,12 @@
     "code_snippet": "w1(A); r2(A); w2(B); r3(B); w3(C); r1(C)",
     "options": {
       "A": "It is serializable because no single item is accessed by all three transactions",
-      "B": "It is not conflict-serializable because T1->T2->T3->T1 is a cycle",
+      "B": "It is not conflict-serializable because T1 → T2 → T3 → T1 is a cycle",
       "C": "It is serializable because the graph has no two-vertex cycle",
       "D": "It is serializable in order T1,T2,T3"
     },
     "correct_answer": "B",
-    "explanation": "The three items create edges T1->T2, T2->T3, and T3->T1. A cycle of length three suffices to rule out conflict serializability; a two-vertex cycle is not necessary."
+    "explanation": "The three items create edges T1 → T2, T2 → T3, and T3 → T1. A cycle of length three suffices to rule out conflict serializability; a two-vertex cycle is not necessary."
   },
   {
     "id": "1.2.2-014",
@@ -405,7 +405,7 @@
       "D": "View-serializable but not conflict-serializable"
     },
     "correct_answer": "D",
-    "explanation": "The writes create edges T1->T2 and T2->T1, so conflict serializability fails. With no reads, only the final writer matters; serial order T2,T1 ends with T1 writing X and is view-equivalent. Blind writes make this separation possible."
+    "explanation": "The writes create edges T1 → T2 and T2 → T1, so conflict serializability fails. With no reads, only the final writer matters; serial order T2,T1 ends with T1 writing X and is view-equivalent. Blind writes make this separation possible."
   },
   {
     "id": "1.2.2-025",
@@ -422,7 +422,7 @@
       "D": "Neither conflict-serializable nor view-serializable"
     },
     "correct_answer": "D",
-    "explanation": "The read/write conflict gives T1->T2, while the later write/write conflict gives T2->T1. For view equivalence, T1's initial-value read requires T1 before T2, but final writer T1 requires T2 before T1. Neither serial order satisfies both constraints."
+    "explanation": "The read/write conflict gives T1 → T2, while the later write/write conflict gives T2 → T1. For view equivalence, T1's initial-value read requires T1 before T2, but final writer T1 requires T2 before T1. Neither serial order satisfies both constraints."
   },
   {
     "id": "1.2.2-026",
@@ -456,7 +456,7 @@
       "D": "Yes; T1 may release A and subsequently acquire B under basic 2PL"
     },
     "correct_answer": "B",
-    "explanation": "Conflicts impose T3->T1->T2, so the schedule is conflict-serializable. But T1 must release its A lock before w2(A), starting its shrinking phase. It must acquire its B lock before that release to satisfy 2PL, then retain it until r1(B). Such a held B lock prevents the intervening w3(B). Therefore this exact schedule cannot arise under basic 2PL."
+    "explanation": "Conflicts impose T3 → T1 → T2, so the schedule is conflict-serializable. But T1 must release its A lock before w2(A), starting its shrinking phase. It must acquire its B lock before that release to satisfy 2PL, then retain it until r1(B). Such a held B lock prevents the intervening w3(B). Therefore this exact schedule cannot arise under basic 2PL."
   },
   {
     "id": "1.2.2-028",

@@ -269,7 +269,7 @@
       "D": "5 km"
     },
     "correct_answer": "D",
-    "explanation": "The displacement components are 3 and 4 km at right angles. Distance=sqrt(3^2+4^2)=5 km."
+    "explanation": "The displacement components are 3 and 4 km at right angles. Distance=√(3²+4²)=5 km."
   },
   {
     "id": "6.2-017",
@@ -379,7 +379,7 @@
     "subpart_id": "6.2",
     "subpart_name": "Logical Reasoning",
     "difficulty": "Easy",
-    "question": "A code substitutes opposite alphabet letters: A<->Z, B<->Y, and so on. How is CODE coded?",
+    "question": "A code substitutes opposite alphabet letters: A↔Z, B↔Y, and so on. How is CODE coded?",
     "code_snippet": null,
     "options": {
       "A": "XOWV",
@@ -414,7 +414,7 @@
     "subpart_name": "Logical Reasoning",
     "difficulty": "Easy",
     "question": "Data sufficiency: a statement is sufficient only if it determines the requested value or a definite yes/no answer for every case consistent with it and the stated domain. For integer x in {-3,-2,-1,0,1,2,3}, is x positive?",
-    "code_snippet": "Statement 1: x=3.\nStatement 2: x^2=9.",
+    "code_snippet": "Statement 1: x=3.\nStatement 2: x²=9.",
     "options": {
       "A": "Statement 2 alone is sufficient; Statement 1 alone is not.",
       "B": "Both statements together are sufficient, but neither alone is.",
@@ -966,7 +966,7 @@
       "D": "10 km"
     },
     "correct_answer": "D",
-    "explanation": "The two perpendicular components give distance sqrt(6^2+8^2)=sqrt(100)=10 km."
+    "explanation": "The two perpendicular components give distance √(6²+8²)=√(100)=10 km."
   },
   {
     "id": "6.2-058",
@@ -1051,7 +1051,7 @@
       "D": "DNFE"
     },
     "correct_answer": "C",
-    "explanation": "Positions 1 and 3 give C->D and D->E. Positions 2 and 4 give O->N and E->D. Combining them gives DNED."
+    "explanation": "Positions 1 and 3 give C → D and D → E. Positions 2 and 4 give O → N and E → D. Combining them gives DNED."
   },
   {
     "id": "6.2-063",
@@ -1178,7 +1178,7 @@
     "subpart_id": "6.2",
     "subpart_name": "Logical Reasoning",
     "difficulty": "Medium",
-    "question": "Data sufficiency: a statement is sufficient only if it determines the requested value or a definite yes/no answer for every case consistent with it and the stated domain. For integer x in {-3,-2,-1,0,1,2,3}, what is x^2?",
+    "question": "Data sufficiency: a statement is sufficient only if it determines the requested value or a definite yes/no answer for every case consistent with it and the stated domain. For integer x in {-3,-2,-1,0,1,2,3}, what is x²?",
     "code_snippet": "Statement 1: x is either 2 or -2.\nStatement 2: x is positive.",
     "options": {
       "A": "Statement 2 alone is sufficient; Statement 1 alone is not.",
@@ -1187,7 +1187,7 @@
       "D": "Both statements together are sufficient, but neither alone is."
     },
     "correct_answer": "C",
-    "explanation": "Statement 1 gives x^2=4 despite not identifying the sign of x. Statement 2 permits squares 1,4,9. Sufficiency concerns the requested square, not every unknown."
+    "explanation": "Statement 1 gives x²=4 despite not identifying the sign of x. Statement 2 permits squares 1,4,9. Sufficiency concerns the requested square, not every unknown."
   },
   {
     "id": "6.2-071",
@@ -1459,7 +1459,7 @@
       "D": "20 km"
     },
     "correct_answer": "B",
-    "explanation": "Coordinates are A=(12,5),B=(6,13). The difference has components 6 and -8, so distance=sqrt(6^2+8^2)=10 km."
+    "explanation": "Coordinates are A=(12,5),B=(6,13). The difference has components 6 and -8, so distance=√(6²+8²)=10 km."
   },
   {
     "id": "6.2-087",
@@ -1510,7 +1510,7 @@
       "D": "Statement 1 alone is sufficient; Statement 2 alone is not."
     },
     "correct_answer": "C",
-    "explanation": "Each statement alone permits either A>B or A<B within the domain. Together, C<=80 implies A>=60; Statement 1 then gives B<=60. Equality A=B=60 is excluded by distinctness, so A>B. Both statements together suffice."
+    "explanation": "Each statement alone permits either A>B or A<B within the domain. Together, C≤80 implies A≥60; Statement 1 then gives B≤60. Equality A=B=60 is excluded by distinctness, so A>B. Both statements together suffice."
   },
   {
     "id": "6.2-090",
@@ -1519,7 +1519,7 @@
     "subpart_name": "Logical Reasoning",
     "difficulty": "Hard",
     "question": "Data sufficiency: a statement is sufficient only if it determines the requested value or a definite yes/no answer for every case consistent with it and the stated domain. For an integer x from 1 through 30, is x divisible by 6?",
-    "code_snippet": "Statement 1: x is divisible by 4.\nStatement 2: x<=10.",
+    "code_snippet": "Statement 1: x is divisible by 4.\nStatement 2: x≤10.",
     "options": {
       "A": "Even both statements together are insufficient.",
       "B": "Both statements together are sufficient, but neither alone is.",

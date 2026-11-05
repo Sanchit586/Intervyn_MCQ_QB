@@ -354,7 +354,7 @@
       "D": "21 ms"
     },
     "correct_answer": "B",
-    "explanation": "The overhead fraction is 1/(q + 1). Requiring 1/(q + 1) <= 0.05 gives q + 1 >= 20, or q >= 19 ms. Using q rather than q + 1 as the denominator would incorrectly require 20 ms."
+    "explanation": "The overhead fraction is 1/(q + 1). Requiring 1/(q + 1) ≤ 0.05 gives q + 1 ≥ 20, or q ≥ 19 ms. Using q rather than q + 1 as the denominator would incorrectly require 20 ms."
   },
   {
     "id": "1.1.1-022",
@@ -362,7 +362,7 @@
     "subpart_id": "1.1.1",
     "subpart_name": "CPU Scheduling & Process Lifecycle",
     "difficulty": "Medium",
-    "question": "An SJF scheduler estimates future CPU bursts by exponential averaging: new_estimate = alpha * most_recent_actual_burst + (1 - alpha) * old_estimate. Initially the estimate is 8 ms and alpha = 0.25. Two actual bursts of 12 ms and then 5 ms are observed, with an update after each. What is the estimate for the next burst?",
+    "question": "An SJF scheduler estimates future CPU bursts by exponential averaging: new_estimate = α * most_recent_actual_burst + (1 - α) * old_estimate. Initially the estimate is 8 ms and α = 0.25. Two actual bursts of 12 ms and then 5 ms are observed, with an update after each. What is the estimate for the next burst?",
     "code_snippet": null,
     "options": {
       "A": "7.25 ms",

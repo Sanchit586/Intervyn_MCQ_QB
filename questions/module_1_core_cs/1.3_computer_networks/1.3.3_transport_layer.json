@@ -158,7 +158,7 @@
     "subpart_id": "1.3.3",
     "subpart_name": "Transport Layer Protocols",
     "difficulty": "Medium",
-    "question": "A TCP data-only segment starts at sequence number 4,294,967,290 and carries 12 new contiguous bytes. Sequence arithmetic is modulo 2^32, and there is no SYN or FIN. What next-byte ACK covers that segment completely?",
+    "question": "A TCP data-only segment starts at sequence number 4,294,967,290 and carries 12 new contiguous bytes. Sequence arithmetic is modulo 2³², and there is no SYN or FIN. What next-byte ACK covers that segment completely?",
     "code_snippet": null,
     "options": {
       "A": "4294967302",
@@ -235,7 +235,7 @@
       "D": "32 MSS"
     },
     "correct_answer": "A",
-    "explanation": "Three doublings produce 2->4->8->16 MSS. The threshold is not reached, so congestion avoidance does not replace the specified slow-start growth."
+    "explanation": "Three doublings produce 2 → 4 → 8 → 16 MSS. The threshold is not reached, so congestion avoidance does not replace the specified slow-start growth."
   },
   {
     "id": "1.3.3-015",

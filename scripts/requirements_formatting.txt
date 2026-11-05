@@ -1,0 +1,4 @@
+# Development-only formatters; not needed to load or validate question JSON.
+black==26.10.1
+clang-format==23.1.5
+# SQL: npm install --prefix .venv/sql-formatter --ignore-scripts sql-formatter@15.9.0

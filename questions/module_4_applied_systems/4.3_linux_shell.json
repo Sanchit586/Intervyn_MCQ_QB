@@ -210,7 +210,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Medium",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What exact lines are printed by the quoted find pattern?",
-    "code_snippet": "mkdir nested\ntouch app.log error.txt nested/old.log nested/note.md\nfind . -type f -name '*.log' | sort",
+    "code_snippet": "mkdir nested\ntouch app.log error.txt nested/old.log nested/note.md\nfind . -type f -name '*.log' |\n    sort",
     "options": {
       "A": "./app.log\n./nested/old.log",
       "B": "./app.log\n./error.txt\n./nested/old.log",
@@ -227,7 +227,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Medium",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What exact lines does case-insensitive, numbered grep print?",
-    "code_snippet": "printf 'Error: disk\\nerror: cpu\\nOK\\n' | grep -in '^error:'",
+    "code_snippet": "printf 'Error: disk\\nerror: cpu\\nOK\\n' |\n    grep -in '^error:'",
     "options": {
       "A": "2:error: cpu",
       "B": "Error: disk\nerror: cpu",
@@ -244,7 +244,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Medium",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What total does this awk filter print?",
-    "code_snippet": "printf 'api 3\\nweb 5\\napi 7\\n' | awk '$1 == \"api\" {sum += $2} END {print sum}'",
+    "code_snippet": "printf 'api 3\\nweb 5\\napi 7\\n' |\n    awk '$1 == \"api\" {sum += $2} END {print sum}'",
     "options": {
       "A": "3",
       "B": "7",
@@ -261,7 +261,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Medium",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What exact lines are printed by this substitution without a g flag?",
-    "code_snippet": "printf 'red red\\nblue red\\n' | sed 's/red/green/'",
+    "code_snippet": "printf 'red red\\nblue red\\n' |\n    sed 's/red/green/'",
     "options": {
       "A": "green red\nblue green",
       "B": "red green\nblue green",
@@ -278,7 +278,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Medium",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What exact service-count lines are printed?",
-    "code_snippet": "printf '200 api\\n500 db\\n503 api\\n404 web\\n' | awk '$1 >= 500 {print $2}' | sort | uniq -c | awk '{print $2, $1}'",
+    "code_snippet": "printf '200 api\\n500 db\\n503 api\\n404 web\\n' |\n    awk '$1 >= 500 {print $2}' |\n    sort |\n    uniq -c |\n    awk '{print $2, $1}'",
     "options": {
       "A": "api 1\ndb 1",
       "B": "api 503\ndb 500",
@@ -329,7 +329,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Medium",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. With pipefail disabled, what line count and pipeline exit status are printed? The grep intentionally finds no match.",
-    "code_snippet": "set +o pipefail\nprintf 'alpha\\nbeta\\n' | grep '^z' | wc -l\nprintf '%s\\n' \"$?\"",
+    "code_snippet": "set +o pipefail\nprintf 'alpha\\nbeta\\n' |\n    grep '^z' |\n    wc -l\nprintf '%s\\n' \"$?\"",
     "options": {
       "A": "0\n0",
       "B": "0\n1",
@@ -346,7 +346,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Hard",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What exact per-service successful-duration totals are printed?",
-    "code_snippet": "printf 'api,200,12\\nweb,500,8\\napi,503,7\\napi,200,3\\nweb,200,11\\n' | awk -F, '$2 >= 200 && $2 < 300 {sum[$1] += $3} END {for (key in sum) print key, sum[key]}' | sort",
+    "code_snippet": "printf 'api,200,12\\nweb,500,8\\napi,503,7\\napi,200,3\\nweb,200,11\\n' |\n    awk -F, '\n        $2 >= 200 && $2 < 300 {\n            sum[$1] += $3\n        }\n        END {\n            for (key in sum)\n                print key, sum[key]\n        }\n    ' |\n    sort",
     "options": {
       "A": "api 12\nweb 11",
       "B": "api 15\nweb 11",
@@ -363,7 +363,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Hard",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What sum and record count remain after selecting every BEGIN-to-END block?",
-    "code_snippet": "printf 'BEGIN\\nx=2\\nx=5\\nEND\\nx=9\\nBEGIN\\nx=4\\nEND\\n' | sed -n '/^BEGIN$/,/^END$/p' | awk -F= '/^x=/ {sum += $2; count++} END {print sum, count}'",
+    "code_snippet": "printf 'BEGIN\\nx=2\\nx=5\\nEND\\nx=9\\nBEGIN\\nx=4\\nEND\\n' |\n    sed -n '/^BEGIN$/,/^END$/p' |\n    awk -F= '/^x=/ {sum += $2; count++} END {print sum, count}'",
     "options": {
       "A": "20 4",
       "B": "11 3",
@@ -380,7 +380,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Hard",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What exact lines are printed when stderr is duplicated before stdout is redirected into saved.txt?",
-    "code_snippet": "{\n    printf 'O\\n'\n    printf 'E\\n' >&2\n} 2>&1 > saved.txt | sed 's/^/pipe:/'\nprintf 'file:'\ncat saved.txt",
+    "code_snippet": "{\n    printf 'O\\n'\n    printf 'E\\n' >&2\n} 2>&1 > saved.txt |\n    sed 's/^/pipe:/'\nprintf 'file:'\ncat saved.txt",
     "options": {
       "A": "pipe:E\npipe:O\nfile:",
       "B": "file:O\nE",
@@ -397,7 +397,7 @@
     "subpart_name": "Linux & Shell",
     "difficulty": "Hard",
     "question": "Bash with GNU utilities, LC_ALL=C, and an initially empty writable working directory. All shown commands run successfully unless their exit status is explicitly examined. What line is selected after aggregating consecutive groups and sorting by their totals?",
-    "code_snippet": "printf 'A 3\\nA 5\\nB 4\\nB 8\\nA 2\\n' | awk '$1 != previous {if (NR > 1) print previous, sum; previous = $1; sum = 0} {sum += $2} END {print previous, sum}' | sort -k2,2n | sed -n '2p'",
+    "code_snippet": "printf 'A 3\\nA 5\\nB 4\\nB 8\\nA 2\\n' |\n    awk '\n        $1 != previous {\n            if (NR > 1) print previous, sum;\n            previous = $1;\n            sum = 0\n        }\n        {\n            sum += $2\n        }\n        END {\n            print previous, sum\n        }\n    ' |\n    sort -k2,2n |\n    sed -n '2p'",
     "options": {
       "A": "A 2",
       "B": "B 12",

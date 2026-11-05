@@ -6,7 +6,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f(){return 1;} }; struct D:B { int f() override{return 2;} };\nint main() { D d; B* p=&d; std::cout<<p->f(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f() {\n        return 1;\n    }\n};\nstruct D : B {\n    int f() override {\n        return 2;\n    }\n};\nint main() {\n    D d;\n    B *p = &d;\n    std::cout << p->f();\n}",
     "options": {
       "A": "1",
       "B": "Undefined behavior",
@@ -23,7 +23,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { int f(){return 1;} }; struct D:B { int f(){return 2;} };\nint main() { D d; B& b=d; std::cout<<b.f(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    int f() {\n        return 1;\n    }\n};\nstruct D : B {\n    int f() {\n        return 2;\n    }\n};\nint main() {\n    D d;\n    B &b = d;\n    std::cout << b.f();\n}",
     "options": {
       "A": "Compilation error",
       "B": "1",
@@ -40,7 +40,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { B b=new D(); System.out.print(b.f()); }\n}\nclass B { String f(){return \"B\";} } class D extends B { @Override String f(){return \"D\";} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        B b = new D();\n        System.out.print(b.f());\n    }\n}\nclass B {\n    String f() {\n        return \"B\";\n    }\n}\nclass D extends B {\n    @Override\n    String f() {\n        return \"D\";\n    }\n}",
     "options": {
       "A": "B",
       "B": "Compilation error",
@@ -57,7 +57,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\nstatic String f(int x){return \"I\";} static String f(String x){return \"S\";}\n public static void main(String[] args) { System.out.print(f(3)); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static String f(int x) {\n        return \"I\";\n    }\n    static String f(String x) {\n        return \"S\";\n    }\n    public static void main(String[] args) {\n        System.out.print(f(3));\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "S",
@@ -74,7 +74,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f()=0; };\nint main() { B b; std::cout<<1; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f() = 0;\n};\nint main() {\n    B b;\n    std::cout << 1;\n}",
     "options": {
       "A": "Compilation error",
       "B": "1",
@@ -91,7 +91,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { new D(); }\n}\nclass B { void f(int x){} } class D extends B { @Override void f(long x){} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        new D();\n    }\n}\nclass B {\n    void f(int x) {\n    }\n}\nclass D extends B {\n    @Override\n    void f(long x) {\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "0",
@@ -108,7 +108,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f() const {return 1;} }; struct D:B { int f() override {return 2;} };\nint main() { D d; std::cout<<d.f(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f() const {\n        return 1;\n    }\n};\nstruct D : B {\n    int f() override {\n        return 2;\n    }\n};\nint main() {\n    D d;\n    std::cout << d.f();\n}",
     "options": {
       "A": "Compilation error",
       "B": "2",
@@ -142,7 +142,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Easy",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\nstatic String f(Object x){return \"O\";} static String f(String x){return \"S\";}\n public static void main(String[] args) { Object x=\"hi\"; System.out.print(f(x)); }\n}\n\n",
+    "code_snippet": "public class Main {\n    static String f(Object x) {\n        return \"O\";\n    }\n    static String f(String x) {\n        return \"S\";\n    }\n    public static void main(String[] args) {\n        Object x = \"hi\";\n        System.out.print(f(x));\n    }\n}",
     "options": {
       "A": "Compilation error",
       "B": "OS",
@@ -159,7 +159,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f(int x=1){return x+10;} }; struct D:B { int f(int x=2) override{return x+20;} };\nint main() { D d; B* p=&d; std::cout<<p->f()<<\" \"<<d.f(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f(int x = 1) {\n        return x + 10;\n    }\n};\nstruct D : B {\n    int f(int x = 2) override {\n        return x + 20;\n    }\n};\nint main() {\n    D d;\n    B *p = &d;\n    std::cout << p->f() << \" \" << d.f();\n}",
     "options": {
       "A": "22 22",
       "B": "Compilation error",
@@ -176,7 +176,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { B b=new D(); b.f(\"x\"); ((D)b).f(\"x\"); }\n}\nclass B { void f(Object x){System.out.print(\"B \");} } class D extends B { @Override void f(Object x){System.out.print(\"D \");} void f(String x){System.out.print(\"S \");} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        B b = new D();\n        b.f(\"x\");\n        ((D)b).f(\"x\");\n    }\n}\nclass B {\n    void f(Object x) {\n        System.out.print(\"B \");\n    }\n}\nclass D extends B {\n    @Override\n    void f(Object x) {\n        System.out.print(\"D \");\n    }\n    void f(String x) {\n        System.out.print(\"S \");\n    }\n}",
     "options": {
       "A": "B S",
       "B": "S S",
@@ -193,7 +193,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f(int){return 10;} int f(double){return 20;} }; struct D:B { using B::f; int f(int) override{return 30;} };\nint main() { D d; std::cout<<d.f(1.5); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f(int) {\n        return 10;\n    }\n    int f(double) {\n        return 20;\n    }\n};\nstruct D : B {\n    using B::f;\n    int f(int) override {\n        return 30;\n    }\n};\nint main() {\n    D d;\n    std::cout << d.f(1.5);\n}",
     "options": {
       "A": "Compilation error",
       "B": "20",
@@ -210,7 +210,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f(int){return 10;} int f(double){return 20;} }; struct D:B { int f(int) override{return 30;} };\nint main() { D d; std::cout<<d.f(1.5); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f(int) {\n        return 10;\n    }\n    int f(double) {\n        return 20;\n    }\n};\nstruct D : B {\n    int f(int) override {\n        return 30;\n    }\n};\nint main() {\n    D d;\n    std::cout << d.f(1.5);\n}",
     "options": {
       "A": "10",
       "B": "20",
@@ -227,7 +227,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f() final {return 1;} }; struct D:B { int f() override{return 2;} };\nint main() { D d; std::cout<<d.f(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f() final {\n        return 1;\n    }\n};\nstruct D : B {\n    int f() override {\n        return 2;\n    }\n};\nint main() {\n    D d;\n    std::cout << d.f();\n}",
     "options": {
       "A": "2",
       "B": "Undefined behavior",
@@ -244,7 +244,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { B b=new D(); System.out.print(b.label()+\" \"+b.id()); }\n}\nclass B { static String label(){return \"B\";} String id(){return \"B\";} } class D extends B { static String label(){return \"D\";} @Override String id(){return \"D\";} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        B b = new D();\n        System.out.print(b.label() + \" \" + b.id());\n    }\n}\nclass B {\n    static String label() {\n        return \"B\";\n    }\n    String id() {\n        return \"B\";\n    }\n}\nclass D extends B {\n    static String label() {\n        return \"D\";\n    }\n    @Override\n    String id() {\n        return \"D\";\n    }\n}",
     "options": {
       "A": "B D",
       "B": "Compilation error",
@@ -261,7 +261,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual ~B(){std::cout<<\"B \";} }; struct D:B { ~D() override{std::cout<<\"D \";} };\nint main() { B* p=new D; delete p; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual ~B() {\n        std::cout << \"B \";\n    }\n};\nstruct D : B {\n    ~D() override {\n        std::cout << \"D \";\n    }\n};\nint main() {\n    B *p = new D;\n    delete p;\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "D B",
@@ -278,7 +278,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual void f(){} ~B(){} }; struct D:B { ~D(){} };\nint main() { B* p=new D; delete p; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual void f() {\n    }\n    ~B() {\n    }\n};\nstruct D : B {\n    ~D() {\n    }\n};\nint main() {\n    B *p = new D;\n    delete p;\n}",
     "options": {
       "A": "Compilation error",
       "B": "Undefined behavior",
@@ -295,7 +295,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { int x=1; }; struct L:B {}; struct R:B {}; struct D:L,R {};\nint main() { D d; B* p=&d; std::cout<<p->x; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    int x = 1;\n};\nstruct L : B {};\nstruct R : B {};\nstruct D : L, R {};\nint main() {\n    D d;\n    B *p = &d;\n    std::cout << p->x;\n}",
     "options": {
       "A": "1",
       "B": "2",
@@ -312,7 +312,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { int x=1; }; struct L:virtual B {}; struct R:virtual B {}; struct D:L,R {};\nint main() { D d; L& l=d; R& r=d; l.x=7; std::cout<<r.x; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    int x = 1;\n};\nstruct L : virtual B {};\nstruct R : virtual B {};\nstruct D : L, R {};\nint main() {\n    D d;\n    L &l = d;\n    R &r = d;\n    l.x = 7;\n    std::cout << r.x;\n}",
     "options": {
       "A": "Compilation error",
       "B": "2",
@@ -329,7 +329,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { System.out.print(new C().f()); }\n}\ninterface I { default String f(){return \"I\";} } interface J extends I { @Override default String f(){return \"J\";} } class C implements I,J {}\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        System.out.print(new C().f());\n    }\n}\ninterface I {\n    default String f() {\n        return \"I\";\n    }\n}\ninterface J extends I {\n    @Override\n    default String f() {\n        return \"J\";\n    }\n}\nclass C implements I, J {}",
     "options": {
       "A": "Compilation error",
       "B": "I",
@@ -346,7 +346,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual ~B()=default; }; struct D:B {}; struct E:B {};\nint main() { D d; B* p=&d; std::cout<<(dynamic_cast<D*>(p)!=nullptr)<<\" \"<<(dynamic_cast<E*>(p)==nullptr); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual ~B() = default;\n};\nstruct D : B {};\nstruct E : B {};\nint main() {\n    D d;\n    B *p = &d;\n    std::cout << (dynamic_cast<D *>(p) != nullptr) << \" \"\n              << (dynamic_cast<E *>(p) == nullptr);\n}",
     "options": {
       "A": "Compilation error",
       "B": "1 1",
@@ -363,7 +363,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { B b=new D(); B made=b.make(); System.out.print(made instanceof D); }\n}\nclass B { B make(){return new B();} } class D extends B { @Override D make(){return new D();} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        B b = new D();\n        B made = b.make();\n        System.out.print(made instanceof D);\n    }\n}\nclass B {\n    B make() {\n        return new B();\n    }\n}\nclass D extends B {\n    @Override\n    D make() {\n        return new D();\n    }\n}",
     "options": {
       "A": "ClassCastException",
       "B": "false",
@@ -380,7 +380,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f(){return 1;} }; struct D:B { int f() override{return 2;} };\nint main() { D d; B* p=&d; std::cout<<p->B::f()<<\" \"<<p->f(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f() {\n        return 1;\n    }\n};\nstruct D : B {\n    int f() override {\n        return 2;\n    }\n};\nint main() {\n    D d;\n    B *p = &d;\n    std::cout << p->B::f() << \" \" << p->f();\n}",
     "options": {
       "A": "1 2",
       "B": "2 2",
@@ -414,7 +414,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Hard",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { B(){f();} virtual void f(){std::cout<<\"B \";} virtual ~B(){f();} }; struct D:B { D(){f();} void f() override{std::cout<<\"D \";} ~D() override{f();} };\nint main() { D d; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    B() {\n        f();\n    }\n    virtual void f() {\n        std::cout << \"B \";\n    }\n    virtual ~B() {\n        f();\n    }\n};\nstruct D : B {\n    D() {\n        f();\n    }\n    void f() override {\n        std::cout << \"D \";\n    }\n    ~D() override {\n        f();\n    }\n};\nint main() {\n    D d;\n}",
     "options": {
       "A": "Compilation error",
       "B": "B D B D",
@@ -431,7 +431,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Hard",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f(){return 1;} }; struct D:B { private: int f() override{return 2;} };\nint main() { D d; B& b=d; std::cout<<b.f(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f() {\n        return 1;\n    }\n};\nstruct D : B {\nprivate:\n    int f() override {\n        return 2;\n    }\n};\nint main() {\n    D d;\n    B &b = d;\n    std::cout << b.f();\n}",
     "options": {
       "A": "2",
       "B": "Compilation error",
@@ -448,7 +448,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Hard",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f(){return 0;} }; struct L:virtual B { int f() override{return 1;} }; struct R:virtual B { int f() override{return 2;} }; struct D:L,R {};\nint main() { D d; std::cout<<d.f(); }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f() {\n        return 0;\n    }\n};\nstruct L : virtual B {\n    int f() override {\n        return 1;\n    }\n};\nstruct R : virtual B {\n    int f() override {\n        return 2;\n    }\n};\nstruct D : L, R {};\nint main() {\n    D d;\n    std::cout << d.f();\n}",
     "options": {
       "A": "1",
       "B": "Compilation error",
@@ -465,7 +465,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Hard",
     "question": "Java 17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "public class Main {\n\n public static void main(String[] args) { Visitor v=new Special(); Animal a=new Dog(); v.visit(a); v.visit(new Dog()); }\n}\nclass Animal {} class Dog extends Animal {} class Visitor { void visit(Animal x){System.out.print(\"VA \");} void visit(Dog x){System.out.print(\"VD \");} } class Special extends Visitor { @Override void visit(Animal x){System.out.print(\"SA \");} }\n",
+    "code_snippet": "public class Main {\n\n    public static void main(String[] args) {\n        Visitor v = new Special();\n        Animal a = new Dog();\n        v.visit(a);\n        v.visit(new Dog());\n    }\n}\nclass Animal {}\nclass Dog extends Animal {}\nclass Visitor {\n    void visit(Animal x) {\n        System.out.print(\"VA \");\n    }\n    void visit(Dog x) {\n        System.out.print(\"VD \");\n    }\n}\nclass Special extends Visitor {\n    @Override\n    void visit(Animal x) {\n        System.out.print(\"SA \");\n    }\n}",
     "options": {
       "A": "VA VD",
       "B": "SA SA",
@@ -499,7 +499,7 @@
     "subpart_name": "Runtime Polymorphism & Dynamic Dispatch",
     "difficulty": "Hard",
     "question": "C++17. What is printed, or which listed compilation/language outcome applies? Assume allocations succeed.",
-    "code_snippet": "#include <iostream>\nstruct B { virtual int f() const{return 1;} virtual B* clone() const{return new B(*this);} virtual ~B()=default; }; struct D:B { int f() const override{return 2;} D* clone() const override{return new D(*this);} };\nint main() { D d; B* p=d.clone(); B value=*p; std::cout<<p->f()<<\" \"<<value.f(); delete p; }\n",
+    "code_snippet": "#include <iostream>\nstruct B {\n    virtual int f() const {\n        return 1;\n    }\n    virtual B *clone() const {\n        return new B(*this);\n    }\n    virtual ~B() = default;\n};\nstruct D : B {\n    int f() const override {\n        return 2;\n    }\n    D *clone() const override {\n        return new D(*this);\n    }\n};\nint main() {\n    D d;\n    B *p = d.clone();\n    B value = *p;\n    std::cout << p->f() << \" \" << value.f();\n    delete p;\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "2 2",

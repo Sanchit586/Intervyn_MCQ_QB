@@ -57,7 +57,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\nint main(){int a[]={10,20,30,40}; int* p=a+1; std::cout<<p[1]<<\" \"<<*(p-1);}",
+    "code_snippet": "#include <iostream>\nint main() {\n    int a[] = {10, 20, 30, 40};\n    int *p = a + 1;\n    std::cout << p[1] << \" \" << *(p - 1);\n}",
     "options": {
       "A": "30 20",
       "B": "30 10",
@@ -74,7 +74,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\n#include <cstring>\nint main(){char s[]=\"abc\"; std::cout<<sizeof(s)<<\" \"<<std::strlen(s);}",
+    "code_snippet": "#include <iostream>\n#include <cstring>\nint main() {\n    char s[] = \"abc\";\n    std::cout << sizeof(s) << \" \" << std::strlen(s);\n}",
     "options": {
       "A": "4 3",
       "B": "4 4",
@@ -91,7 +91,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:None}\nhead=1\nnxt[0]=head\nhead=0\nprint(walk(nxt,head))",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: None}\nhead = 1\nnxt[0] = head\nhead = 0\nprint(walk(nxt, head))",
     "options": {
       "A": "[0]",
       "B": "[0, 1, 2, 3]",
@@ -108,7 +108,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:None}\nnxt[4]=None\nnxt[3]=4\nprint(walk(nxt,1))",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: None}\nnxt[4] = None\nnxt[3] = 4\nprint(walk(nxt, 1))",
     "options": {
       "A": "[4, 1, 2, 3]",
       "B": "[1, 2, 3]",
@@ -125,7 +125,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:None}\nhead=1\nhead=nxt[head]\nprint(walk(nxt,head))",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: None}\nhead = 1\nhead = nxt[head]\nprint(walk(nxt, head))",
     "options": {
       "A": "[]",
       "B": "[2, 3]",
@@ -142,7 +142,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={1:2,2:3,3:None}\nprv={1:None,2:1,3:2}\nnxt[1]=nxt[2]\nprv[3]=prv[2]\nprint(nxt[1],prv[3])",
+    "code_snippet": "nxt = {1: 2, 2: 3, 3: None}\nprv = {1: None, 2: 1, 3: 2}\nnxt[1] = nxt[2]\nprv[3] = prv[2]\nprint(nxt[1], prv[3])",
     "options": {
       "A": "3 1",
       "B": "2 2",
@@ -159,7 +159,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={}\nhead=8\nnxt[8]=8\nprint(nxt[head]==head)",
+    "code_snippet": "nxt = {}\nhead = 8\nnxt[8] = 8\nprint(nxt[head] == head)",
     "options": {
       "A": "8",
       "B": "False",
@@ -176,7 +176,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "s=\"abcd\"\nprint(s[::-1])",
+    "code_snippet": "s = \"abcd\"\nprint(s[::-1])",
     "options": {
       "A": "badc",
       "B": "abcd",
@@ -198,7 +198,7 @@
       "A": "n-1",
       "B": "n",
       "C": "1",
-      "D": "n^2"
+      "D": "n²"
     },
     "correct_answer": "B",
     "explanation": "Every node must be inspected once to establish absence. Null-pointer termination checks are not counted as node-value comparisons."
@@ -278,7 +278,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\nbool f(int a[5]){return sizeof(a)==sizeof(int*);}\nint main(){int a[5]={}; std::cout<<f(a)<<\" \"<<sizeof(a)/sizeof(a[0]);}",
+    "code_snippet": "#include <iostream>\nbool f(int a[5]) {\n    return sizeof(a) == sizeof(int *);\n}\nint main() {\n    int a[5] = {};\n    std::cout << f(a) << \" \" << sizeof(a) / sizeof(a[0]);\n}",
     "options": {
       "A": "0 5",
       "B": "1 5",
@@ -295,7 +295,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\nint main(){int a[2][3]={{1,2,3},{4,5,6}}; int (*p)[3]=a; std::cout<<(*p)[2]<<\" \"<<p[1][1];}",
+    "code_snippet": "#include <iostream>\nint main() {\n    int a[2][3] = {{1, 2, 3}, {4, 5, 6}};\n    int (*p)[3] = a;\n    std::cout << (*p)[2] << \" \" << p[1][1];\n}",
     "options": {
       "A": "Compilation error",
       "B": "3 4",
@@ -312,7 +312,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\nint main(){int a[]={2,4,6}; int* p=a; (*p)++; p++; std::cout<<a[0]<<\" \"<<*p;}",
+    "code_snippet": "#include <iostream>\nint main() {\n    int a[] = {2, 4, 6};\n    int *p = a;\n    (*p)++;\n    p++;\n    std::cout << a[0] << \" \" << *p;\n}",
     "options": {
       "A": "Compilation error",
       "B": "3 4",
@@ -329,7 +329,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:None}\nnxt[9]=nxt[2]\nnxt[2]=9\nprint(walk(nxt,1))",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: None}\nnxt[9] = nxt[2]\nnxt[2] = 9\nprint(walk(nxt, 1))",
     "options": {
       "A": "[1, 2, 9, 3]",
       "B": "[1, 2, 9]",
@@ -346,7 +346,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:4,4:None}\nnxt[2]=nxt[nxt[2]]\nprint(walk(nxt,1))",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: 4, 4: None}\nnxt[2] = nxt[nxt[2]]\nprint(walk(nxt, 1))",
     "options": {
       "A": "[1, 3, 4]",
       "B": "[1, 2, 4]",
@@ -363,7 +363,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:4,4:None}\nprev=None\ncur=1\nwhile cur is not None:\n    after=nxt[cur]\n    nxt[cur]=prev\n    prev,cur=cur,after\nprint(walk(nxt,prev))",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: 4, 4: None}\nprev = None\ncur = 1\nwhile cur is not None:\n    after = nxt[cur]\n    nxt[cur] = prev\n    prev, cur = cur, after\nprint(walk(nxt, prev))",
     "options": {
       "A": "[1, 2, 3, 4]",
       "B": "[4, 2, 3, 1]",
@@ -380,7 +380,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={0:1,1:2,2:3,3:4,4:None}\nprev=0\nwhile nxt[prev] is not None and nxt[nxt[prev]] is not None:\n    a=nxt[prev]\n    b=nxt[a]\n    nxt[a]=nxt[b]\n    nxt[b]=a\n    nxt[prev]=b\n    prev=a\nprint(walk(nxt,nxt[0]))",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {0: 1, 1: 2, 2: 3, 3: 4, 4: None}\nprev = 0\nwhile nxt[prev] is not None and nxt[nxt[prev]] is not None:\n    a = nxt[prev]\n    b = nxt[a]\n    nxt[a] = nxt[b]\n    nxt[b] = a\n    nxt[prev] = b\n    prev = a\nprint(walk(nxt, nxt[0]))",
     "options": {
       "A": "[1, 2, 3, 4]",
       "B": "[4, 3, 2, 1]",
@@ -397,7 +397,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={10:20,20:30,30:40,40:50,50:None}\nslow=fast=10\nfor _ in range(2):\n    fast=nxt[fast]\nwhile fast is not None:\n    slow=nxt[slow]\n    fast=nxt[fast]\nprint(slow)",
+    "code_snippet": "nxt = {10: 20, 20: 30, 30: 40, 40: 50, 50: None}\nslow = fast = 10\nfor _ in range(2):\n    fast = nxt[fast]\nwhile fast is not None:\n    slow = nxt[slow]\n    fast = nxt[fast]\nprint(slow)",
     "options": {
       "A": "50",
       "B": "30",
@@ -414,7 +414,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={1:2,2:3,3:4,4:None}\nslow=fast=1\nwhile fast is not None and nxt[fast] is not None:\n    slow=nxt[slow]\n    fast=nxt[nxt[fast]]\nprint(slow)",
+    "code_snippet": "nxt = {1: 2, 2: 3, 3: 4, 4: None}\nslow = fast = 1\nwhile fast is not None and nxt[fast] is not None:\n    slow = nxt[slow]\n    fast = nxt[nxt[fast]]\nprint(slow)",
     "options": {
       "A": "3",
       "B": "2",
@@ -431,7 +431,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={1:2,2:3,3:4,4:5,5:3}\nslow=fast=1\nsteps=0\nwhile True:\n    slow=nxt[slow]\n    fast=nxt[nxt[fast]]\n    steps+=1\n    if slow==fast:\n        break\nprint(slow,steps)",
+    "code_snippet": "nxt = {1: 2, 2: 3, 3: 4, 4: 5, 5: 3}\nslow = fast = 1\nsteps = 0\nwhile True:\n    slow = nxt[slow]\n    fast = nxt[nxt[fast]]\n    steps += 1\n    if slow == fast:\n        break\nprint(slow, steps)",
     "options": {
       "A": "3 2",
       "B": "3 3",
@@ -448,7 +448,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={1:2,2:3,3:4,4:5,5:3}\np=1\nq=4\nwhile p!=q:\n    p=nxt[p]\n    q=nxt[q]\nprint(p)",
+    "code_snippet": "nxt = {1: 2, 2: 3, 3: 4, 4: 5, 5: 3}\np = 1\nq = 4\nwhile p != q:\n    p = nxt[p]\n    q = nxt[q]\nprint(p)",
     "options": {
       "A": "4",
       "B": "1",
@@ -465,7 +465,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={1:2,2:3,3:4,4:None}\nslow=fast=1\ncycle=False\nwhile fast is not None and nxt[fast] is not None:\n    slow=nxt[slow]\n    fast=nxt[nxt[fast]]\n    if slow==fast:\n        cycle=True\n        break\nprint(cycle)",
+    "code_snippet": "nxt = {1: 2, 2: 3, 3: 4, 4: None}\nslow = fast = 1\ncycle = False\nwhile fast is not None and nxt[fast] is not None:\n    slow = nxt[slow]\n    fast = nxt[nxt[fast]]\n    if slow == fast:\n        cycle = True\n        break\nprint(cycle)",
     "options": {
       "A": "4",
       "B": "True",
@@ -482,7 +482,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:None}\nprv={1:None,2:1,3:2}\ncur=head=1\nwhile cur is not None:\n    nxt[cur],prv[cur]=prv[cur],nxt[cur]\n    head=cur\n    cur=prv[cur]\nprint(walk(nxt,head),prv[head])",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: None}\nprv = {1: None, 2: 1, 3: 2}\ncur = head = 1\nwhile cur is not None:\n    nxt[cur], prv[cur] = prv[cur], nxt[cur]\n    head = cur\n    cur = prv[cur]\nprint(walk(nxt, head), prv[head])",
     "options": {
       "A": "[3, 2, 1] None",
       "B": "[3, 2, 1] 2",
@@ -499,7 +499,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def take(nxt, head, count):\n    out = []\n    for _ in range(count):\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:1}\nhead,tail=1,3\nnxt[4]=head\nnxt[tail]=4\ntail=4\nprint(take(nxt,head,4),nxt[tail])",
+    "code_snippet": "def take(nxt, head, count):\n    out = []\n    for _ in range(count):\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: 1}\nhead, tail = 1, 3\nnxt[4] = head\nnxt[tail] = 4\ntail = 4\nprint(take(nxt, head, 4), nxt[tail])",
     "options": {
       "A": "[1, 2, 4, 3] 1",
       "B": "[1, 2, 3, 4] None",
@@ -516,7 +516,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def take(nxt, head, count):\n    out = []\n    for _ in range(count):\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={1:2,2:3,3:1}\nhead,tail=1,3\nhead=nxt[head]\nnxt[tail]=head\nprint(take(nxt,head,2),nxt[tail])",
+    "code_snippet": "def take(nxt, head, count):\n    out = []\n    for _ in range(count):\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {1: 2, 2: 3, 3: 1}\nhead, tail = 1, 3\nhead = nxt[head]\nnxt[tail] = head\nprint(take(nxt, head, 2), nxt[tail])",
     "options": {
       "A": "[1, 2] 1",
       "B": "[3, 2] 2",
@@ -533,7 +533,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={7:7}\nhead=tail=7\nif head==tail:\n    head=tail=None\nprint(head,tail)",
+    "code_snippet": "nxt = {7: 7}\nhead = tail = 7\nif head == tail:\n    head = tail = None\nprint(head, tail)",
     "options": {
       "A": "7 None",
       "B": "None 7",
@@ -550,7 +550,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "s=list(\"abcdef\")\nl,r=1,3\nwhile l<r:\n    s[l],s[r]=s[r],s[l]\n    l+=1\n    r-=1\nprint(\"\".join(s))",
+    "code_snippet": "s = list(\"abcdef\")\nl, r = 1, 3\nwhile l < r:\n    s[l], s[r] = s[r], s[l]\n    l += 1\n    r -= 1\nprint(\"\".join(s))",
     "options": {
       "A": "adcbef",
       "B": "aedcbf",
@@ -567,7 +567,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "a=[1,2,3,4,5]\nk=2\na[:k]=reversed(a[:k])\na[k:]=reversed(a[k:])\na.reverse()\nprint(a)",
+    "code_snippet": "a = [1, 2, 3, 4, 5]\nk = 2\na[:k] = reversed(a[:k])\na[k:] = reversed(a[k:])\na.reverse()\nprint(a)",
     "options": {
       "A": "[2, 1, 5, 4, 3]",
       "B": "[4, 5, 1, 2, 3]",
@@ -584,7 +584,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\n#include <cstddef>\ntemplate<std::size_t N> std::size_t length(int (&)[N]){return N;}\nint main(){int a[7]={}; std::cout<<length(a);}",
+    "code_snippet": "#include <iostream>\n#include <cstddef>\ntemplate <std::size_t N> std::size_t length(int (&)[N]) {\n    return N;\n}\nint main() {\n    int a[7] = {};\n    std::cout << length(a);\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "Compilation error",
@@ -601,7 +601,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\nint main(){int a[8]={}; int* p=a+5; int* q=a+1; std::cout<<(p-q);}",
+    "code_snippet": "#include <iostream>\nint main() {\n    int a[8] = {};\n    int *p = a + 5;\n    int *q = a + 1;\n    std::cout << (p - q);\n}",
     "options": {
       "A": "4",
       "B": "5",
@@ -634,7 +634,7 @@
     "subpart_id": "2.2",
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
-    "question": "Standard Floyd detection starts both pointers at the head, then advances slow one and fast two links before comparing them. The noncyclic prefix length is mu=7 links and cycle length lambda=5. What is the pair (iterations to first meeting, one-step iterations in the head-reset phase to the entry)?",
+    "question": "Standard Floyd detection starts both pointers at the head, then advances slow one and fast two links before comparing them. The noncyclic prefix length is μ=7 links and cycle length λ=5. What is the pair (iterations to first meeting, one-step iterations in the head-reset phase to the entry)?",
     "code_snippet": null,
     "options": {
       "A": "(5,7)",
@@ -643,7 +643,7 @@
       "D": "(10,7)"
     },
     "correct_answer": "D",
-    "explanation": "A meeting requires t>=mu and t divisible by lambda; the first such positive t is 10. The standard reset phase reaches the entry after exactly mu=7 steps."
+    "explanation": "A meeting requires t≥μ and t divisible by λ; the first such positive t is 10. The standard reset phase reaches the entry after exactly μ=7 steps."
   },
   {
     "id": "2.2-039",
@@ -669,7 +669,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={\"A\":\"B\",\"B\":\"C\",\"C\":\"D\",\"D\":None}\nvalue={\"A\":10,\"B\":20,\"C\":30,\"D\":40}\np=\"B\"\nvictim=nxt[p]\nvalue[p]=value[victim]\nnxt[p]=nxt[victim]\ndel nxt[victim]\ndel value[victim]\nprint([value[x] for x in walk(nxt,\"A\")],victim)",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {\"A\": \"B\", \"B\": \"C\", \"C\": \"D\", \"D\": None}\nvalue = {\"A\": 10, \"B\": 20, \"C\": 30, \"D\": 40}\np = \"B\"\nvictim = nxt[p]\nvalue[p] = value[victim]\nnxt[p] = nxt[victim]\ndel nxt[victim]\ndel value[victim]\nprint([value[x] for x in walk(nxt, \"A\")], victim)",
     "options": {
       "A": "[10, 30, 40] C",
       "B": "[10, 30, 40] B",
@@ -686,7 +686,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\nnxt={i:i+1 for i in range(1,8)}\nnxt[8]=None\nnxt[0]=1\nprev=0\nk=3\nwhile True:\n    end=prev\n    for _ in range(k):\n        end=nxt.get(end)\n        if end is None:\n            break\n    if end is None:\n        break\n    after=nxt[end]\n    cur=nxt[prev]\n    old_first=cur\n    back=after\n    while cur!=after:\n        forward=nxt[cur]\n        nxt[cur]=back\n        back,cur=cur,forward\n    nxt[prev]=end\n    prev=old_first\nprint(walk(nxt,nxt[0]))",
+    "code_snippet": "def walk(nxt, head):\n    out = []\n    while head is not None:\n        out.append(head)\n        head = nxt[head]\n    return out\n\n\nnxt = {i: i + 1 for i in range(1, 8)}\nnxt[8] = None\nnxt[0] = 1\nprev = 0\nk = 3\nwhile True:\n    end = prev\n    for _ in range(k):\n        end = nxt.get(end)\n        if end is None:\n            break\n    if end is None:\n        break\n    after = nxt[end]\n    cur = nxt[prev]\n    old_first = cur\n    back = after\n    while cur != after:\n        forward = nxt[cur]\n        nxt[cur] = back\n        back, cur = cur, forward\n    nxt[prev] = end\n    prev = old_first\nprint(walk(nxt, nxt[0]))",
     "options": {
       "A": "[3, 2, 1, 6, 5, 4, 7, 8]",
       "B": "[1, 2, 3, 4, 5, 6, 7, 8]",
@@ -703,7 +703,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={1:2,2:5,3:4,4:5,5:6,6:None}\na,b=1,3\np,q=a,b\nwhile p!=q:\n    p=nxt[p] if p is not None else b\n    q=nxt[q] if q is not None else a\nprint(p)",
+    "code_snippet": "nxt = {1: 2, 2: 5, 3: 4, 4: 5, 5: 6, 6: None}\na, b = 1, 3\np, q = a, b\nwhile p != q:\n    p = nxt[p] if p is not None else b\n    q = nxt[q] if q is not None else a\nprint(p)",
     "options": {
       "A": "4",
       "B": "6",
@@ -720,7 +720,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? Dictionaries named nxt/prv represent node next/previous pointers; None is a null pointer. Node labels identify nodes, not implicit array positions.",
-    "code_snippet": "nxt={0:1,1:2,2:3,3:4,4:1}\nslow=fast=0\nwhile True:\n    slow=nxt[slow]\n    for _ in range(3):\n        fast=nxt[fast]\n    if slow==fast:\n        break\nmeeting=slow\np,q=0,meeting\nfound=(p==q)\nfor _ in range(8):\n    if found:\n        break\n    p,q=nxt[p],nxt[q]\n    found=(p==q)\nprint(meeting,found)",
+    "code_snippet": "nxt = {0: 1, 1: 2, 2: 3, 3: 4, 4: 1}\nslow = fast = 0\nwhile True:\n    slow = nxt[slow]\n    for _ in range(3):\n        fast = nxt[fast]\n    if slow == fast:\n        break\nmeeting = slow\np, q = 0, meeting\nfound = p == q\nfor _ in range(8):\n    if found:\n        break\n    p, q = nxt[p], nxt[q]\n    found = p == q\nprint(meeting, found)",
     "options": {
       "A": "4 False",
       "B": "1 True",
@@ -737,7 +737,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\nvoid f(int*){std::cout<<\"P \";} void f(int (*)[4]){std::cout<<\"A\";}\nint main(){int a[4]={}; f(a); f(&a);}",
+    "code_snippet": "#include <iostream>\nvoid f(int *) {\n    std::cout << \"P \";\n}\nvoid f(int (*)[4]) {\n    std::cout << \"A\";\n}\nint main() {\n    int a[4] = {};\n    f(a);\n    f(&a);\n}",
     "options": {
       "A": "Compilation error",
       "B": "P A",
@@ -754,7 +754,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "C++17. What is printed, or which listed language outcome applies? Do not assume a particular pointer size.",
-    "code_snippet": "#include <iostream>\nint main(){int a[3]={1,2,3}; int* p=a+3; std::cout<<*p;}",
+    "code_snippet": "#include <iostream>\nint main() {\n    int a[3] = {1, 2, 3};\n    int *p = a + 3;\n    std::cout << *p;\n}",
     "options": {
       "A": "Undefined behavior",
       "B": "3",
@@ -771,7 +771,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "s=[]\ns.append(1)\ns.append(2)\na=s.pop()\ns.append(3)\nb=s.pop()\nprint(a,b,s[-1])",
+    "code_snippet": "s = []\ns.append(1)\ns.append(2)\na = s.pop()\ns.append(3)\nb = s.pop()\nprint(a, b, s[-1])",
     "options": {
       "A": "1 3 2",
       "B": "3 2 1",
@@ -788,7 +788,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "from collections import deque\nq=deque([1,2])\na=q.popleft()\nq.append(3)\nb=q.popleft()\nprint(a,b,list(q))",
+    "code_snippet": "from collections import deque\n\nq = deque([1, 2])\na = q.popleft()\nq.append(3)\nb = q.popleft()\nprint(a, b, list(q))",
     "options": {
       "A": "1 2 [3]",
       "B": "2 1 [3]",
@@ -805,7 +805,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "def evaluate(tokens):\n    stack=[]\n    for token in tokens.split():\n        if token.lstrip(\"-\").isdigit():\n            stack.append(int(token))\n        else:\n            b=stack.pop()\n            a=stack.pop()\n            stack.append(a+b if token==\"+\" else a-b if token==\"-\" else a*b)\n    return stack[-1]\nprint(evaluate(\"2 3 + 4 *\"))",
+    "code_snippet": "def evaluate(tokens):\n    stack = []\n    for token in tokens.split():\n        if token.lstrip(\"-\").isdigit():\n            stack.append(int(token))\n        else:\n            b = stack.pop()\n            a = stack.pop()\n            stack.append(a + b if token == \"+\" else a - b if token == \"-\" else a * b)\n    return stack[-1]\n\n\nprint(evaluate(\"2 3 + 4 *\"))",
     "options": {
       "A": "14",
       "B": "9",
@@ -856,7 +856,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "s=[]\npairs={\")\":\"(\",\"]\":\"[\",\"}\":\"{\"}\nvalid=True\nfor c in \"([)]\":\n    if c in \"([{\":\n        s.append(c)\n    elif not s or s.pop()!=pairs[c]:\n        valid=False\n        break\nprint(valid and not s)",
+    "code_snippet": "s = []\npairs = {\")\": \"(\", \"]\": \"[\", \"}\": \"{\"}\nvalid = True\nfor c in \"([)]\":\n    if c in \"([{\":\n        s.append(c)\n    elif not s or s.pop() != pairs[c]:\n        valid = False\n        break\nprint(valid and not s)",
     "options": {
       "A": "None",
       "B": "Compilation error",
@@ -924,7 +924,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "incoming=[1,2,3]\noutgoing=[]\nwhile incoming:\n    outgoing.append(incoming.pop())\nprint(outgoing.pop())",
+    "code_snippet": "incoming = [1, 2, 3]\noutgoing = []\nwhile incoming:\n    outgoing.append(incoming.pop())\nprint(outgoing.pop())",
     "options": {
       "A": "None",
       "B": "1",
@@ -941,7 +941,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "a=[2,1,3]\nanswer=[]\nfor i,x in enumerate(a):\n    answer.append(next((y for y in a[i+1:] if y>x),-1))\nprint(answer)",
+    "code_snippet": "a = [2, 1, 3]\nanswer = []\nfor i, x in enumerate(a):\n    answer.append(next((y for y in a[i + 1 :] if y > x), -1))\nprint(answer)",
     "options": {
       "A": "[1, 3, -1]",
       "B": "[-1, 2, 2]",
@@ -958,7 +958,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "s=[]\nfor x in [5,2,4]:\n    s.append((x,min(x,s[-1][1]) if s else x))\ns.pop()\nprint(s[-1][1])",
+    "code_snippet": "s = []\nfor x in [5, 2, 4]:\n    s.append((x, min(x, s[-1][1]) if s else x))\ns.pop()\nprint(s[-1][1])",
     "options": {
       "A": "2",
       "B": "0",
@@ -1026,7 +1026,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "def evaluate(tokens):\n    stack=[]\n    for token in tokens.split():\n        if token.lstrip(\"-\").isdigit():\n            stack.append(int(token))\n        else:\n            b=stack.pop()\n            a=stack.pop()\n            stack.append(a+b if token==\"+\" else a-b if token==\"-\" else a*b)\n    return stack[-1]\nprint(evaluate(\"5 1 2 + 4 * + 3 -\"))",
+    "code_snippet": "def evaluate(tokens):\n    stack = []\n    for token in tokens.split():\n        if token.lstrip(\"-\").isdigit():\n            stack.append(int(token))\n        else:\n            b = stack.pop()\n            a = stack.pop()\n            stack.append(a + b if token == \"+\" else a - b if token == \"-\" else a * b)\n    return stack[-1]\n\n\nprint(evaluate(\"5 1 2 + 4 * + 3 -\"))",
     "options": {
       "A": "-14",
       "B": "14",
@@ -1043,7 +1043,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "def evaluate(tokens):\n    stack=[]\n    for token in tokens.split():\n        if token.lstrip(\"-\").isdigit():\n            stack.append(int(token))\n        else:\n            b=stack.pop()\n            a=stack.pop()\n            stack.append(a+b if token==\"+\" else a-b if token==\"-\" else a*b)\n    return stack[-1]\nprint(evaluate(\"8 3 2 * - 4 +\"))",
+    "code_snippet": "def evaluate(tokens):\n    stack = []\n    for token in tokens.split():\n        if token.lstrip(\"-\").isdigit():\n            stack.append(int(token))\n        else:\n            b = stack.pop()\n            a = stack.pop()\n            stack.append(a + b if token == \"+\" else a - b if token == \"-\" else a * b)\n    return stack[-1]\n\n\nprint(evaluate(\"8 3 2 * - 4 +\"))",
     "options": {
       "A": "-6",
       "B": "18",
@@ -1060,7 +1060,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "precedence={\"+\":1,\"-\":1,\"*\":2}\nops=[]\nfor token in \"a+b*(c-\":\n    if token.isalpha():\n        continue\n    if token==\"(\":\n        ops.append(token)\n    else:\n        while ops and ops[-1]!=\"(\" and precedence[ops[-1]]>=precedence[token]:\n            ops.pop()\n        ops.append(token)\nprint(ops)",
+    "code_snippet": "precedence = {\"+\": 1, \"-\": 1, \"*\": 2}\nops = []\nfor token in \"a+b*(c-\":\n    if token.isalpha():\n        continue\n    if token == \"(\":\n        ops.append(token)\n    else:\n        while ops and ops[-1] != \"(\" and precedence[ops[-1]] >= precedence[token]:\n            ops.pop()\n        ops.append(token)\nprint(ops)",
     "options": {
       "A": "['*', '(', '-']",
       "B": "['+', '-']",
@@ -1077,7 +1077,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "size=5\nfront,rear=3,1\nassert (rear+1)%size!=front\nrear=(rear+1)%size\nprint(rear,(rear+1)%size==front)",
+    "code_snippet": "size = 5\nfront, rear = 3, 1\nassert (rear + 1) % size != front\nrear = (rear + 1) % size\nprint(rear, (rear + 1) % size == front)",
     "options": {
       "A": "2 True",
       "B": "1 True",
@@ -1094,7 +1094,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "q=[9,None,None,7,8]\nfront,rear=3,1\nremoved=q[front]\nfront=(front+1)%5\nq[rear]=10\nrear=(rear+1)%5\nprint(removed,[q[(front+i)%5] for i in range((rear-front)%5)])",
+    "code_snippet": "q = [9, None, None, 7, 8]\nfront, rear = 3, 1\nremoved = q[front]\nfront = (front + 1) % 5\nq[rear] = 10\nrear = (rear + 1) % 5\nprint(removed, [q[(front + i) % 5] for i in range((rear - front) % 5)])",
     "options": {
       "A": "8 [7, 9, 10]",
       "B": "7 [8, 9, 10]",
@@ -1111,7 +1111,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "q=[None]*4\nfront=rear=0\nfor x in [1,2,3]:\n    assert (rear+1)%4!=front\n    q[rear]=x\n    rear=(rear+1)%4\nfront=(front+1)%4\nq[rear]=4\nrear=(rear+1)%4\nprint(front,rear,(rear+1)%4==front)",
+    "code_snippet": "q = [None] * 4\nfront = rear = 0\nfor x in [1, 2, 3]:\n    assert (rear + 1) % 4 != front\n    q[rear] = x\n    rear = (rear + 1) % 4\nfront = (front + 1) % 4\nq[rear] = 4\nrear = (rear + 1) % 4\nprint(front, rear, (rear + 1) % 4 == front)",
     "options": {
       "A": "1 0 True",
       "B": "1 3 False",
@@ -1128,7 +1128,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "from collections import deque\nq=deque()\ndef push(x):\n    q.append(x)\n    for _ in range(len(q)-1):\n        q.append(q.popleft())\npush(10)\npush(20)\na=q.popleft()\npush(30)\nprint(a,q[0],list(q))",
+    "code_snippet": "from collections import deque\n\nq = deque()\n\n\ndef push(x):\n    q.append(x)\n    for _ in range(len(q) - 1):\n        q.append(q.popleft())\n\n\npush(10)\npush(20)\na = q.popleft()\npush(30)\nprint(a, q[0], list(q))",
     "options": {
       "A": "20 30 [10, 30]",
       "B": "10 30 [30, 20]",
@@ -1145,7 +1145,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "incoming=[]\noutgoing=[]\ndef enqueue(x):\n    incoming.append(x)\ndef dequeue():\n    if not outgoing:\n        while incoming:\n            outgoing.append(incoming.pop())\n    return outgoing.pop()\nenqueue(1)\nenqueue(2)\na=dequeue()\nenqueue(3)\nb=dequeue()\nc=dequeue()\nprint(a,b,c)",
+    "code_snippet": "incoming = []\noutgoing = []\n\n\ndef enqueue(x):\n    incoming.append(x)\n\n\ndef dequeue():\n    if not outgoing:\n        while incoming:\n            outgoing.append(incoming.pop())\n    return outgoing.pop()\n\n\nenqueue(1)\nenqueue(2)\na = dequeue()\nenqueue(3)\nb = dequeue()\nc = dequeue()\nprint(a, b, c)",
     "options": {
       "A": "1 3 2",
       "B": "3 2 1",
@@ -1166,7 +1166,7 @@
     "options": {
       "A": "3n",
       "B": "4n",
-      "C": "n^2",
+      "C": "n²",
       "D": "2n"
     },
     "correct_answer": "B",
@@ -1179,7 +1179,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "a=[4,5,2,10,8]\ns=[]\nans=[-1]*len(a)\nfor i in range(len(a)-1,-1,-1):\n    while s and s[-1]<=a[i]:\n        s.pop()\n    if s:\n        ans[i]=s[-1]\n    s.append(a[i])\nprint(ans)",
+    "code_snippet": "a = [4, 5, 2, 10, 8]\ns = []\nans = [-1] * len(a)\nfor i in range(len(a) - 1, -1, -1):\n    while s and s[-1] <= a[i]:\n        s.pop()\n    if s:\n        ans[i] = s[-1]\n    s.append(a[i])\nprint(ans)",
     "options": {
       "A": "[10, 10, 10, -1, -1]",
       "B": "[5, 10, 10, -1, -1]",
@@ -1196,7 +1196,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "a=[4,2,5,1,3]\ns=[]\nans=[]\nfor x in a:\n    while s and s[-1]>=x:\n        s.pop()\n    ans.append(s[-1] if s else -1)\n    s.append(x)\nprint(ans)",
+    "code_snippet": "a = [4, 2, 5, 1, 3]\ns = []\nans = []\nfor x in a:\n    while s and s[-1] >= x:\n        s.pop()\n    ans.append(s[-1] if s else -1)\n    s.append(x)\nprint(ans)",
     "options": {
       "A": "[-1, -1, 2, -1, 1]",
       "B": "[-1, -1, 4, -1, 2]",
@@ -1213,7 +1213,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "a=[2,2,3]\ns=[]\nans=[-1]*len(a)\nfor i in range(len(a)-1,-1,-1):\n    while s and s[-1]<=a[i]:\n        s.pop()\n    ans[i]=s[-1] if s else -1\n    s.append(a[i])\nprint(ans)",
+    "code_snippet": "a = [2, 2, 3]\ns = []\nans = [-1] * len(a)\nfor i in range(len(a) - 1, -1, -1):\n    while s and s[-1] <= a[i]:\n        s.pop()\n    ans[i] = s[-1] if s else -1\n    s.append(a[i])\nprint(ans)",
     "options": {
       "A": "[3, 3, -1]",
       "B": "[-1, 3, -1]",
@@ -1221,7 +1221,7 @@
       "D": "[3, 2, -1]"
     },
     "correct_answer": "A",
-    "explanation": "Using <= in the pop condition discards equal values, which cannot answer a strictly-greater query. Both occurrences of 2 therefore point to 3."
+    "explanation": "Using ≤ in the pop condition discards equal values, which cannot answer a strictly-greater query. Both occurrences of 2 therefore point to 3."
   },
   {
     "id": "2.2-073",
@@ -1230,7 +1230,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "prices=[100,80,60,70,60,75,85]\ns=[]\nspan=[]\nfor i,x in enumerate(prices):\n    while s and prices[s[-1]]<=x:\n        s.pop()\n    span.append(i-s[-1] if s else i+1)\n    s.append(i)\nprint(span)",
+    "code_snippet": "prices = [100, 80, 60, 70, 60, 75, 85]\ns = []\nspan = []\nfor i, x in enumerate(prices):\n    while s and prices[s[-1]] <= x:\n        s.pop()\n    span.append(i - s[-1] if s else i + 1)\n    s.append(i)\nprint(span)",
     "options": {
       "A": "[1, 1, 1, 1, 1, 1, 1]",
       "B": "[1, 1, 1, 2, 1, 3, 5]",
@@ -1247,7 +1247,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "from collections import deque\na=[1,3,-1,-3,5,3,6,7]\nk=3\nd=deque()\nans=[]\nfor i,x in enumerate(a):\n    while d and d[0]<=i-k:\n        d.popleft()\n    while d and a[d[-1]]<=x:\n        d.pop()\n    d.append(i)\n    if i>=k-1:\n        ans.append(a[d[0]])\nprint(ans)",
+    "code_snippet": "from collections import deque\n\na = [1, 3, -1, -3, 5, 3, 6, 7]\nk = 3\nd = deque()\nans = []\nfor i, x in enumerate(a):\n    while d and d[0] <= i - k:\n        d.popleft()\n    while d and a[d[-1]] <= x:\n        d.pop()\n    d.append(i)\n    if i >= k - 1:\n        ans.append(a[d[0]])\nprint(ans)",
     "options": {
       "A": "[3, 5, 5, 6, 7]",
       "B": "[1, 3, -1, -3, 5, 3]",
@@ -1281,7 +1281,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "s=[-1]\nbest=0\nfor i,c in enumerate(\"())(())\"):\n    if c==\"(\":\n        s.append(i)\n    else:\n        s.pop()\n        if not s:\n            s.append(i)\n        else:\n            best=max(best,i-s[-1])\nprint(best)",
+    "code_snippet": "s = [-1]\nbest = 0\nfor i, c in enumerate(\"())(())\"):\n    if c == \"(\":\n        s.append(i)\n    else:\n        s.pop()\n        if not s:\n            s.append(i)\n        else:\n            best = max(best, i - s[-1])\nprint(best)",
     "options": {
       "A": "2",
       "B": "6",
@@ -1298,7 +1298,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "s=[]\ntry:\n    for token in \"2 +\".split():\n        if token.isdigit():\n            s.append(int(token))\n        else:\n            b=s.pop()\n            a=s.pop()\n            s.append(a+b)\n    print(s[-1])\nexcept IndexError:\n    print(\"invalid\")",
+    "code_snippet": "s = []\ntry:\n    for token in \"2 +\".split():\n        if token.isdigit():\n            s.append(int(token))\n        else:\n            b = s.pop()\n            a = s.pop()\n            s.append(a + b)\n    print(s[-1])\nexcept IndexError:\n    print(\"invalid\")",
     "options": {
       "A": "0",
       "B": "invalid",
@@ -1332,7 +1332,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "h=[2,1,5,6,2,3,0]\ns=[]\nbest=0\nfor i,x in enumerate(h):\n    while s and h[s[-1]]>x:\n        height=h[s.pop()]\n        left=s[-1] if s else -1\n        best=max(best,height*(i-left-1))\n    s.append(i)\nprint(best)",
+    "code_snippet": "h = [2, 1, 5, 6, 2, 3, 0]\ns = []\nbest = 0\nfor i, x in enumerate(h):\n    while s and h[s[-1]] > x:\n        height = h[s.pop()]\n        left = s[-1] if s else -1\n        best = max(best, height * (i - left - 1))\n    s.append(i)\nprint(best)",
     "options": {
       "A": "8",
       "B": "6",
@@ -1349,7 +1349,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "a=[2,2,1]\nn=len(a)\nleft=[-1]*n\nright=[n]*n\ns=[]\nfor i in range(n):\n    while s and a[s[-1]]>=a[i]:\n        s.pop()\n    left[i]=s[-1] if s else -1\n    s.append(i)\ns=[]\nfor i in range(n-1,-1,-1):\n    while s and a[s[-1]]>a[i]:\n        s.pop()\n    right[i]=s[-1] if s else n\n    s.append(i)\nprint(sum(a[i]*(i-left[i])*(right[i]-i) for i in range(n)))",
+    "code_snippet": "a = [2, 2, 1]\nn = len(a)\nleft = [-1] * n\nright = [n] * n\ns = []\nfor i in range(n):\n    while s and a[s[-1]] >= a[i]:\n        s.pop()\n    left[i] = s[-1] if s else -1\n    s.append(i)\ns = []\nfor i in range(n - 1, -1, -1):\n    while s and a[s[-1]] > a[i]:\n        s.pop()\n    right[i] = s[-1] if s else n\n    s.append(i)\nprint(sum(a[i] * (i - left[i]) * (right[i] - i) for i in range(n)))",
     "options": {
       "A": "9",
       "B": "10",
@@ -1366,7 +1366,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "a=[1,2,1]\nn=len(a)\ns=[]\nans=[-1]*n\nfor j in range(2*n-1,-1,-1):\n    i=j%n\n    while s and s[-1]<=a[i]:\n        s.pop()\n    if j<n:\n        ans[i]=s[-1] if s else -1\n    s.append(a[i])\nprint(ans)",
+    "code_snippet": "a = [1, 2, 1]\nn = len(a)\ns = []\nans = [-1] * n\nfor j in range(2 * n - 1, -1, -1):\n    i = j % n\n    while s and s[-1] <= a[i]:\n        s.pop()\n    if j < n:\n        ans[i] = s[-1] if s else -1\n    s.append(a[i])\nprint(ans)",
     "options": {
       "A": "[2, -1, -1]",
       "B": "[2, -1, 2]",
@@ -1382,7 +1382,7 @@
     "subpart_id": "2.2",
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
-    "question": "A two-stack queue charges one unit per individual push/pop. Use potential Phi=2 times the number of items in incoming. Enqueue pushes once to incoming. A dequeue from empty outgoing transfers k incoming items using two operations per item, then pops outgoing once. What are the amortized costs (enqueue, that dequeue), using actual cost plus potential change?",
+    "question": "A two-stack queue charges one unit per individual push/pop. Use potential Φ=2 times the number of items in incoming. Enqueue pushes once to incoming. A dequeue from empty outgoing transfers k incoming items using two operations per item, then pops outgoing once. What are the amortized costs (enqueue, that dequeue), using actual cost plus potential change?",
     "code_snippet": null,
     "options": {
       "A": "(1,1)",
@@ -1402,10 +1402,10 @@
     "question": "An initially empty stack receives n Push operations and n MultiPop operations in any legal order. MultiPop(k) removes up to k existing elements, with constant overhead even if empty. Each individual push/pop costs one. What is the tight worst-case total time over these 2n operations?",
     "code_snippet": null,
     "options": {
-      "A": "Theta(1)",
-      "B": "Theta(n^2)",
-      "C": "Theta(n log n)",
-      "D": "Theta(n)"
+      "A": "Θ(1)",
+      "B": "Θ(n²)",
+      "C": "Θ(n log n)",
+      "D": "Θ(n)"
     },
     "correct_answer": "D",
     "explanation": "At most n items were ever pushed, so at most n individual pops occur across all MultiPop calls. The 2n operation overheads and n pushes give a matching linear lower bound."
@@ -1417,7 +1417,7 @@
     "subpart_name": "Linear Data Structures",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? A list used as a stack has its top at the right; any different queue convention is shown explicitly.",
-    "code_snippet": "size=8\nfront=rear=6\ncount=8\nfor _ in range(2):\n    assert count>0\n    front=(front+1)%size\n    count-=1\nfor _ in range(2):\n    assert count<size\n    rear=(rear+1)%size\n    count+=1\nprint(front,rear,count)",
+    "code_snippet": "size = 8\nfront = rear = 6\ncount = 8\nfor _ in range(2):\n    assert count > 0\n    front = (front + 1) % size\n    count -= 1\nfor _ in range(2):\n    assert count < size\n    rear = (rear + 1) % size\n    count += 1\nprint(front, rear, count)",
     "options": {
       "A": "0 6 6",
       "B": "6 6 8",
@@ -1436,10 +1436,10 @@
     "question": "A stack is implemented with one queue: Push appends once and then rotates the previous elements behind the new element; Pop removes the queue front in constant time. Starting empty, perform n Push operations followed by n Pops. How many single-element rotations occur during the pushes?",
     "code_snippet": null,
     "options": {
-      "A": "n log2 n",
+      "A": "n log₂ n",
       "B": "n(n-1)/2",
       "C": "n",
-      "D": "n^2"
+      "D": "n²"
     },
     "correct_answer": "B",
     "explanation": "The jth push rotates j-1 older elements, so the total is 0+1+...+(n-1). Older elements are repeatedly moved, unlike a two-stack queue where each item transfers only once."

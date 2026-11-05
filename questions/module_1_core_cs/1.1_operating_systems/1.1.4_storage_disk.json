@@ -56,7 +56,7 @@
     "subpart_id": "1.1.4",
     "subpart_name": "Storage Systems, File Systems & Disk Scheduling",
     "difficulty": "Easy",
-    "question": "A file uses one single-level index block of size 4 KiB, containing only 4-byte addresses of data blocks. Every data block is also 4 KiB. There are no direct pointers, extra index levels, reserved index entries, or other file-size limits. What is the maximum file-data capacity addressed by this index block? Here 1 KiB = 2^10 bytes and 1 MiB = 2^20 bytes.",
+    "question": "A file uses one single-level index block of size 4 KiB, containing only 4-byte addresses of data blocks. Every data block is also 4 KiB. There are no direct pointers, extra index levels, reserved index entries, or other file-size limits. What is the maximum file-data capacity addressed by this index block? Here 1 KiB = 2¹⁰ bytes and 1 MiB = 2²⁰ bytes.",
     "code_snippet": null,
     "options": {
       "A": "1 MiB",
@@ -82,7 +82,7 @@
       "D": "90 cylinders"
     },
     "correct_answer": "C",
-    "explanation": "FCFS follows 50 -> 60 -> 20 -> 40. Movement = |60 - 50| + |20 - 60| + |40 - 20| = 10 + 40 + 20 = 70 cylinders. Net displacement does not measure total head travel."
+    "explanation": "FCFS follows 50 → 60 → 20 → 40. Movement = |60 - 50| + |20 - 60| + |40 - 20| = 10 + 40 + 20 = 70 cylinders. Net displacement does not measure total head travel."
   },
   {
     "id": "1.1.4-006",
@@ -116,7 +116,7 @@
       "D": "1,049,600"
     },
     "correct_answer": "A",
-    "explanation": "Each indirect block contains 4,096/4 = 1,024 pointers. The direct, single-indirect, and double-indirect ranges address 12, 1,024, and 1,024^2 data blocks. Their sum is 12 + 1,024 + 1,048,576 = 1,049,612."
+    "explanation": "Each indirect block contains 4,096/4 = 1,024 pointers. The direct, single-indirect, and double-indirect ranges address 12, 1,024, and 1,024² data blocks. Their sum is 12 + 1,024 + 1,048,576 = 1,049,612."
   },
   {
     "id": "1.1.4-008",
@@ -201,7 +201,7 @@
       "D": "(338, 338)"
     },
     "correct_answer": "B",
-    "explanation": "SCAN travels 50 -> 199 -> 10, covering (199 - 50) + (199 - 10) = 338 cylinders. LOOK travels 50 -> 90 -> 10, covering (90 - 50) + (90 - 10) = 120. Neither run continues toward cylinder 0 after servicing the final request at 10."
+    "explanation": "SCAN travels 50 → 199 → 10, covering (199 - 50) + (199 - 10) = 338 cylinders. LOOK travels 50 → 90 → 10, covering (90 - 50) + (90 - 10) = 120. Neither run continues toward cylinder 0 after servicing the final request at 10."
   },
   {
     "id": "1.1.4-013",
@@ -218,7 +218,7 @@
       "D": "120 cylinders"
     },
     "correct_answer": "A",
-    "explanation": "The path is 50 -> 70 -> 90 -> 199 -> 0 -> 10 -> 20. Total movement = (199 - 50) + (199 - 0) + (20 - 0) = 149 + 199 + 20 = 368 cylinders. The return is charged even though it services no requests, and the run ends at 20 rather than continuing to an endpoint."
+    "explanation": "The path is 50 → 70 → 90 → 199 → 0 → 10 → 20. Total movement = (199 - 50) + (199 - 0) + (20 - 0) = 149 + 199 + 20 = 368 cylinders. The return is charged even though it services no requests, and the run ends at 20 rather than continuing to an endpoint."
   },
   {
     "id": "1.1.4-014",

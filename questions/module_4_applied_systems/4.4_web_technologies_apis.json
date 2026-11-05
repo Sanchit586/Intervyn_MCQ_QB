@@ -388,7 +388,7 @@
       "D": "Both are non-idempotent merely because the HTTP method is PATCH"
     },
     "correct_answer": "A",
-    "explanation": "A resets to 5 before incrementing, so each complete application ends at 6. B increments the existing state by two each time, producing 3->5->7. PATCH can be designed idempotently but is not generally guaranteed to be."
+    "explanation": "A resets to 5 before incrementing, so each complete application ends at 6. B increments the existing state by two each time, producing 3 → 5 → 7. PATCH can be designed idempotently but is not generally guaranteed to be."
   },
   {
     "id": "4.4-024",

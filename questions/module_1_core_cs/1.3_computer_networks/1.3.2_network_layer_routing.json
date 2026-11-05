@@ -82,7 +82,7 @@
       "D": "30"
     },
     "correct_answer": "D",
-    "explanation": "A /27 leaves five host bits, giving 2^5=32 total addresses. Reserving network and broadcast leaves 32-2=30 usable host addresses."
+    "explanation": "A /27 leaves five host bits, giving 2⁵=32 total addresses. Reserving network and broadcast leaves 32-2=30 usable host addresses."
   },
   {
     "id": "1.3.2-006",
@@ -176,7 +176,7 @@
     "subpart_name": "Network Layer, IP Addressing & Routing",
     "difficulty": "Medium",
     "question": "A router uses longest-prefix matching on the active table below, with no policy-routing overrides or equal-prefix ties. Which next hop is selected for destination 10.4.11.9?",
-    "code_snippet": "Prefix          | Next hop\n0.0.0.0/0       | R0\n10.0.0.0/8      | R1\n10.4.0.0/16     | R2\n10.4.8.0/21     | R3\n10.4.10.0/24    | R4",
+    "code_snippet": "Prefix       | Next hop\n0.0.0.0/0    | R0\n10.0.0.0/8   | R1\n10.4.0.0/16  | R2\n10.4.8.0/21  | R3\n10.4.10.0/24 | R4",
     "options": {
       "A": "R2",
       "B": "R4",
@@ -312,7 +312,7 @@
     "subpart_name": "Network Layer, IP Addressing & Routing",
     "difficulty": "Medium",
     "question": "A stateful NAPT device owns public IPv4 address 203.0.113.5 and has the established TCP mappings below. An inbound packet from 198.51.100.20:443 to 203.0.113.5:41001 passes all admission checks. Which destination IP and port does translation produce? No other translation changes the source.",
-    "code_snippet": "Public TCP port | Private endpoint       | Remote endpoint\n41000           | 10.0.0.2:51000          | 198.51.100.20:443\n41001           | 10.0.0.3:51000          | 198.51.100.20:443",
+    "code_snippet": "Public TCP port | Private endpoint | Remote endpoint\n41000           | 10.0.0.2:51000   | 198.51.100.20:443\n41001           | 10.0.0.3:51000   | 198.51.100.20:443",
     "options": {
       "A": "203.0.113.5:51000",
       "B": "10.0.0.3:51000",
@@ -337,7 +337,7 @@
       "D": "(65536,2001:db8:1235::/64)"
     },
     "correct_answer": "B",
-    "explanation": "Extending /48 to /64 creates 16 subnet bits, so there are 2^16=65,536 distinct prefixes. The varying fourth hextet runs from 0000 through ffff, making 2001:db8:1234:ffff::/64 the last. Prefix 2001:db8:1235:: lies outside the assigned /48."
+    "explanation": "Extending /48 to /64 creates 16 subnet bits, so there are 2¹⁶=65,536 distinct prefixes. The varying fourth hextet runs from 0000 through ffff, making 2001:db8:1234:ffff::/64 the last. Prefix 2001:db8:1235:: lies outside the assigned /48."
   },
   {
     "id": "1.3.2-021",
@@ -380,7 +380,7 @@
     "subpart_name": "Network Layer, IP Addressing & Routing",
     "difficulty": "Hard",
     "question": "A router applies longest-prefix matching to the active table below. A discard route is an intentional forwarding decision: matching it drops the packet rather than falling back to a less-specific route. There are no policy overrides or inactive entries. Which actions are selected for destinations 198.51.100.130, 198.51.100.200, and 198.51.100.70, in that order?",
-    "code_snippet": "Prefix             | Action\n0.0.0.0/0          | R0\n198.51.100.0/24    | R1\n198.51.100.128/25  | discard\n198.51.100.192/26  | R2",
+    "code_snippet": "Prefix            | Action\n0.0.0.0/0         | R0\n198.51.100.0/24   | R1\n198.51.100.128/25 | discard\n198.51.100.192/26 | R2",
     "options": {
       "A": "(R0,R2,R1)",
       "B": "(R1,R2,R1)",
@@ -405,7 +405,7 @@
       "D": "A,B,C all mark D unreachable because poisoned reverse prevents every loop"
     },
     "correct_answer": "A",
-    "explanation": "A adds its A-C cost to C's 3, obtaining 4 via C. Its finite advertisement to B permits B to choose 5 via A. B's finite advertisement to C then permits C to choose 6 via B. Each router poisons its own next hop, but the finite advertisements circulate around the other direction, producing the three-router loop A->C->B->A."
+    "explanation": "A adds its A-C cost to C's 3, obtaining 4 via C. Its finite advertisement to B permits B to choose 5 via A. B's finite advertisement to C then permits C to choose 6 via B. Each router poisons its own next hop, but the finite advertisements circulate around the other direction, producing the three-router loop A → C → B → A."
   },
   {
     "id": "1.3.2-025",
@@ -414,7 +414,7 @@
     "subpart_name": "Network Layer, IP Addressing & Routing",
     "difficulty": "Hard",
     "question": "A NAPT device supports translation of ICMP errors associated with established outbound UDP mappings. The mapping below is valid. It receives an admitted ICMP Destination Unreachable error from router 198.51.100.1, addressed to 203.0.113.9. The error quotes enough of the offending external IP/UDP packet to identify the mapping. No other translation applies, and required checksum updates succeed. Which outer destination and quoted source endpoint should be presented to the private host?",
-    "code_snippet": "Outbound mapping:\n10.0.0.2:50000 -> public 203.0.113.9:40000\nRemote UDP endpoint: 198.51.100.7:33434\nQuoted offending packet:\n203.0.113.9:40000 -> 198.51.100.7:33434",
+    "code_snippet": "Outbound mapping:\n10.0.0.2:50000 -> public 203.0.113.9:40000\nRemote UDP endpoint: 198.51.100.7:33434\nQuoted offending packet:\n203.0.113.9:40000 → 198.51.100.7:33434",
     "options": {
       "A": "Outer destination 10.0.0.2; quoted source 203.0.113.9:40000",
       "B": "Outer destination 10.0.0.2; quoted source 10.0.0.2:50000",

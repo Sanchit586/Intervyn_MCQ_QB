@@ -10,6 +10,7 @@ import math
 from pathlib import Path
 
 from question_bank import module_parts, reference_questions
+from question_display import display_text, numeric_ascii
 import statistics as stats
 import subprocess
 import sys
@@ -36,7 +37,7 @@ def number_expression(text):
                 and node.func.id == "sqrt" and len(node.args) == 1 and not node.keywords):
             return math.sqrt(visit(node.args[0]))
         raise ValueError("Unsupported numeric expression")
-    return visit(ast.parse(text, mode="eval").body)
+    return visit(ast.parse(numeric_ascii(text), mode="eval").body)
 
 
 def numeric(sid, index, value, tolerance=1e-10):
@@ -57,7 +58,7 @@ def numeric(sid, index, value, tolerance=1e-10):
 def exact(sid, index, text):
     qid = f"{sid}-{index:03}"
     q = QUESTIONS[qid]
-    assert q["options"][q["correct_answer"]] == text, (qid, text)
+    assert q["options"][q["correct_answer"]] == display_text(text), (qid, text)
     CHECKED.add(q["id"])
 
 

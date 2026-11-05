@@ -14,7 +14,7 @@
       "D": "The sum of absolute residuals"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: For observation i, residual r_i=y_i-x_i^T beta. Step 2: OLS chooses beta to minimize sum_i r_i^2. Absolute residuals define a different optimization problem."
+    "explanation": "Step 1: For observation i, residual r_i=y_i-x_iᵀ β. Step 2: OLS chooses β to minimize Σᵢ r_i². Absolute residuals define a different optimization problem."
   },
   {
     "id": "5.2-002",
@@ -22,16 +22,16 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Easy",
-    "question": "In y=X beta+epsilon with full-column-rank fixed X, which error-mean assumption yields conditional unbiasedness of OLS?",
+    "question": "In y=X β+ε with full-column-rank fixed X, which error-mean assumption yields conditional unbiasedness of OLS?",
     "code_snippet": null,
     "options": {
-      "A": "E[epsilon|X]=0",
+      "A": "E[ε|X]=0",
       "B": "Every predictor must have population mean zero",
       "C": "The response must be binary",
       "D": "Every observed residual must be zero"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: beta_hat=beta+(X^T X)^(-1)X^T epsilon. Step 2: Taking the conditional expectation gives beta plus a term involving E[epsilon|X]. Step 3: If that conditional mean is zero, E[beta_hat|X]=beta."
+    "explanation": "Step 1: β̂=β+(Xᵀ X)⁻¹Xᵀ ε. Step 2: Taking the conditional expectation gives β plus a term involving E[ε|X]. Step 3: If that conditional mean is zero, E[β̂|X]=β."
   },
   {
     "id": "5.2-003",
@@ -48,7 +48,7 @@
       "D": "All regression coefficients have the same value"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: Write Var(epsilon_i|X)=sigma_i^2. Step 2: Homoscedasticity imposes sigma_i^2=sigma^2 for each i. It concerns error variance, not equality of coefficients or fitted values."
+    "explanation": "Step 1: Write Var(εᵢ|X)=σᵢ². Step 2: Homoscedasticity imposes σᵢ²=σ² for each i. It concerns error variance, not equality of coefficients or fitted values."
   },
   {
     "id": "5.2-004",
@@ -56,7 +56,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Easy",
-    "question": "A predictor has auxiliary regression R_j^2=0.8 when regressed on all the other predictors with an intercept. What is VIF_j=1/(1-R_j^2)?",
+    "question": "A predictor has auxiliary regression R_j²=0.8 when regressed on all the other predictors with an intercept. What is VIF_j=1/(1-R_j²)?",
     "code_snippet": null,
     "options": {
       "A": "0.2",
@@ -94,12 +94,12 @@
     "code_snippet": null,
     "options": {
       "A": "ln(p+1)",
-      "B": "p^2",
+      "B": "p²",
       "C": "The population variance of every input feature",
       "D": "ln(p/(1-p))"
     },
     "correct_answer": "D",
-    "explanation": "Step 1: Odds are p/(1-p). Step 2: Their natural logarithm, the log-odds or logit, equals beta0+beta^T x. Solving for p gives the sigmoid."
+    "explanation": "Step 1: Odds are p/(1-p). Step 2: Their natural logarithm, the log-odds or logit, equals β₀+βᵀ x. Solving for p gives the sigmoid."
   },
   {
     "id": "5.2-007",
@@ -133,7 +133,7 @@
       "D": "1"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: The class probabilities are 1 for the present class and 0 for the others. Step 2: Using 0 log2(0)=0 by continuity, entropy=-1 log2(1)=0."
+    "explanation": "Step 1: The class probabilities are 1 for the present class and 0 for the others. Step 2: Using 0 log₂(0)=0 by continuity, entropy=-1 log₂(1)=0."
   },
   {
     "id": "5.2-009",
@@ -141,7 +141,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Easy",
-    "question": "A binary classification node has class probabilities 0.5 and 0.5. What is its Gini impurity 1-sum_k p_k^2?",
+    "question": "A binary classification node has class probabilities 0.5 and 0.5. What is its Gini impurity 1-sum_k p_k²?",
     "code_snippet": null,
     "options": {
       "A": "0.25",
@@ -150,7 +150,7 @@
       "D": "1"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: Sum the squared probabilities: 0.5^2+0.5^2=0.5. Step 2: Gini=1-0.5=0.5."
+    "explanation": "Step 1: Sum the squared probabilities: 0.5²+0.5²=0.5. Step 2: Gini=1-0.5=0.5."
   },
   {
     "id": "5.2-010",
@@ -218,7 +218,7 @@
       "D": "1, 3"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: x_bar=1 and y_bar=3. Step 2: b1=sum((x-x_bar)(y-y_bar))/sum((x-x_bar)^2)=4/2=2. Step 3: b0=y_bar-b1*x_bar=3-2=1; all residuals are zero."
+    "explanation": "Step 1: x_bar=1 and y_bar=3. Step 2: b1=sum((x-x_bar)(y-y_bar))/sum((x-x_bar)²)=4/2=2. Step 3: b0=y_bar-b1*x_bar=3-2=1; all residuals are zero."
   },
   {
     "id": "5.2-014",
@@ -235,7 +235,7 @@
       "D": "0"
     },
     "correct_answer": "D",
-    "explanation": "Step 1: Differentiate RSS=sum(y_i-b0-x_i^T b)^2 with respect to b0. Step 2: At an OLS optimum, -2 sum(r_i)=0. Step 3: Therefore the residual sum is zero, assuming an unconstrained intercept."
+    "explanation": "Step 1: Differentiate RSS=sum(y_i-b0-x_iᵀ b)² with respect to b0. Step 2: At an OLS optimum, -2 sum(r_i)=0. Step 3: Therefore the residual sum is zero, assuming an unconstrained intercept."
   },
   {
     "id": "5.2-015",
@@ -243,7 +243,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "A full-rank fixed-design linear model has E[epsilon|X]=0 and constant finite error variance, but its errors are not normal. Which statement about OLS is correct?",
+    "question": "A full-rank fixed-design linear model has E[ε|X]=0 and constant finite error variance, but its errors are not normal. Which statement about OLS is correct?",
     "code_snippet": null,
     "options": {
       "A": "OLS cannot be calculated unless the observed response is normal",
@@ -252,7 +252,7 @@
       "D": "OLS remains conditionally unbiased; normal errors are not required for that property"
     },
     "correct_answer": "D",
-    "explanation": "Step 1: Conditional unbiasedness follows from E[beta_hat|X]=beta+(X^T X)^(-1)X^T E[epsilon|X]. Step 2: The final term is zero without a normality assumption. Exact finite-sample distributional inference is a separate issue."
+    "explanation": "Step 1: Conditional unbiasedness follows from E[β̂|X]=β+(Xᵀ X)⁻¹Xᵀ E[ε|X]. Step 2: The final term is zero without a normality assumption. Exact finite-sample distributional inference is a separate issue."
   },
   {
     "id": "5.2-016",
@@ -269,7 +269,7 @@
       "D": "1.9000"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: In the auxiliary regression on one other predictor with an intercept, R^2=r^2=0.81. Step 2: VIF=1/(1-0.81)=1/0.19=5.2632."
+    "explanation": "Step 1: In the auxiliary regression on one other predictor with an intercept, R²=r²=0.81. Step 2: VIF=1/(1-0.81)=1/0.19=5.2632."
   },
   {
     "id": "5.2-017",
@@ -286,7 +286,7 @@
       "D": "9"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: VIF multiplies the coefficient variance, here by 9. Step 2: Standard error is the square root of variance, so its inflation factor is sqrt(9)=3."
+    "explanation": "Step 1: VIF multiplies the coefficient variance, here by 9. Step 2: Standard error is the square root of variance, so its inflation factor is √(9)=3."
   },
   {
     "id": "5.2-018",
@@ -345,16 +345,16 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "A logistic classifier uses logit(p)=-ln(3)+x*ln(3) and predicts positive when p>=0.75. For real x, which boundary exactly describes a positive prediction?",
+    "question": "A logistic classifier uses logit(p)=-ln(3)+x*ln(3) and predicts positive when p≥0.75. For real x, which boundary exactly describes a positive prediction?",
     "code_snippet": null,
     "options": {
-      "A": "x>=0.75",
-      "B": "x<=2",
-      "C": "x>=2",
-      "D": "x>=1"
+      "A": "x≥0.75",
+      "B": "x≤2",
+      "C": "x≥2",
+      "D": "x≥1"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: p>=0.75 is equivalent to logit(p)>=ln(3). Step 2: -ln(3)+x ln(3)>=ln(3). Step 3: Divide by positive ln(3) to obtain x>=2, including equality."
+    "explanation": "Step 1: p≥0.75 is equivalent to logit(p)≥ln(3). Step 2: -ln(3)+x ln(3)≥ln(3). Step 3: Divide by positive ln(3) to obtain x≥2, including equality."
   },
   {
     "id": "5.2-022",
@@ -371,7 +371,7 @@
       "D": "0.1887"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: Class proportions are 3/4 and 1/4. Step 2: H=-(3/4)log2(3/4)-(1/4)log2(1/4)=0.811278... Step 3: Round to 0.8113; 0.375 is the Gini impurity, not entropy."
+    "explanation": "Step 1: Class proportions are 3/4 and 1/4. Step 2: H=-(3/4)log₂(3/4)-(1/4)log₂(1/4)=0.811278... Step 3: Round to 0.8113; 0.375 is the Gini impurity, not entropy."
   },
   {
     "id": "5.2-023",
@@ -388,7 +388,7 @@
       "D": "1/8"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: Parent Gini=1-0.5^2-0.5^2=1/2. Step 2: Child Ginies are 1-(4/6)^2-(2/6)^2=4/9 and 1-(1/4)^2-(3/4)^2=3/8. Step 3: Weighted child impurity=(6/10)(4/9)+(4/10)(3/8)=5/12. Gain=1/2-5/12=1/12."
+    "explanation": "Step 1: Parent Gini=1-0.5²-0.5²=1/2. Step 2: Child Ginies are 1-(4/6)²-(2/6)²=4/9 and 1-(1/4)²-(3/4)²=3/8. Step 3: Weighted child impurity=(6/10)(4/9)+(4/10)(3/8)=5/12. Gain=1/2-5/12=1/12."
   },
   {
     "id": "5.2-024",
@@ -422,7 +422,7 @@
       "D": "Split A, 0.5"
     },
     "correct_answer": "D",
-    "explanation": "Step 1: Parent Gini is 0.5. Step 2: Split A has zero child impurity, so its gain is 0.5. Step 3: Split B has child impurity 1-(3/4)^2-(1/4)^2=0.375, so its gain is 0.125. A is larger."
+    "explanation": "Step 1: Parent Gini is 0.5. Step 2: Split A has zero child impurity, so its gain is 0.5. Step 3: Split B has child impurity 1-(3/4)²-(1/4)²=0.375, so its gain is 0.125. A is larger."
   },
   {
     "id": "5.2-026",
@@ -430,7 +430,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "A regression-tree leaf predicts one constant c for targets 1,2,6 and minimizes sum_i(y_i-c)^2. What prediction minimizes that loss?",
+    "question": "A regression-tree leaf predicts one constant c for targets 1,2,6 and minimizes Σᵢ(y_i-c)². What prediction minimizes that loss?",
     "code_snippet": null,
     "options": {
       "A": "3",
@@ -439,7 +439,7 @@
       "D": "14"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: Differentiate the loss: -2 sum_i(y_i-c)=0. Step 2: Solve 3c=1+2+6=9, giving c=3. The second derivative is 6>0, so this is the minimum."
+    "explanation": "Step 1: Differentiate the loss: -2 Σᵢ(y_i-c)=0. Step 2: Solve 3c=1+2+6=9, giving c=3. The second derivative is 6>0, so this is the minimum."
   },
   {
     "id": "5.2-027",
@@ -456,7 +456,7 @@
       "D": "3/4"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: Each draw misses that observation with probability 3/4. Step 2: All four draws must miss it, giving (3/4)^4=81/256. This is an exact finite-sample probability, not the large-n approximation exp(-1)."
+    "explanation": "Step 1: Each draw misses that observation with probability 3/4. Step 2: All four draws must miss it, giving (3/4)⁴=81/256. This is an exact finite-sample probability, not the large-n approximation exp(-1)."
   },
   {
     "id": "5.2-028",
@@ -481,7 +481,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "Gradient boosting uses per-observation loss (1/2)(y-F)^2. For targets [3,5] and current predictions [2,2], what are the negative gradients with respect to the predictions?",
+    "question": "Gradient boosting uses per-observation loss (1/2)(y-F)². For targets [3,5] and current predictions [2,2], what are the negative gradients with respect to the predictions?",
     "code_snippet": null,
     "options": {
       "A": "[-1, -3]",
@@ -498,7 +498,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "A gradient-boosted model updates F_new=F_old+eta*h. At one observation F_old=2, tree output h=5, and eta=0.1. What is F_new?",
+    "question": "A gradient-boosted model updates F_new=F_old+η*h. At one observation F_old=2, tree output h=5, and η=0.1. What is F_new?",
     "code_snippet": null,
     "options": {
       "A": "7",
@@ -507,7 +507,7 @@
       "D": "0.7"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: Shrink the new tree contribution: eta*h=0.1(5)=0.5. Step 2: Add it to the existing model: F_new=2+0.5=2.5."
+    "explanation": "Step 1: Shrink the new tree contribution: η*h=0.1(5)=0.5. Step 2: Add it to the existing model: F_new=2+0.5=2.5."
   },
   {
     "id": "5.2-031",
@@ -515,7 +515,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "For loss (1/2)(y-F)^2, a boosting step fits a constant leaf to pseudo-residuals from targets [0,4] and current predictions [1,1]. With learning rate 1, what are the two updated predictions?",
+    "question": "For loss (1/2)(y-F)², a boosting step fits a constant leaf to pseudo-residuals from targets [0,4] and current predictions [1,1]. With learning rate 1, what are the two updated predictions?",
     "code_snippet": null,
     "options": {
       "A": "[1, 3]",
@@ -558,7 +558,7 @@
       "D": "VIF for X3 is 1 because X1 and X2 are independent"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: The exact relation X3-X1-X2=0 makes the three-column design rank-deficient. Step 2: Regressing X3 on X1,X2 gives R^2=1, so 1/(1-R^2) diverges. Step 3: Corr(X1,X3)=Corr(X2,X3)=1/sqrt(2), showing pairwise checks can miss a multivariate dependence."
+    "explanation": "Step 1: The exact relation X3-X1-X2=0 makes the three-column design rank-deficient. Step 2: Regressing X3 on X1,X2 gives R²=1, so 1/(1-R²) diverges. Step 3: Corr(X1,X3)=Corr(X2,X3)=1/√(2), showing pairwise checks can miss a multivariate dependence."
   },
   {
     "id": "5.2-034",
@@ -575,7 +575,7 @@
       "D": "5/2"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: Predictors 2 and 3 are uncorrelated with one another, so the first predictor's auxiliary R^2 is 0.6^2+0.6^2=0.72. Step 2: VIF=1/(1-0.72)=1/0.28=25/7. Using just one pairwise correlation would understate the result."
+    "explanation": "Step 1: Predictors 2 and 3 are uncorrelated with one another, so the first predictor's auxiliary R² is 0.6²+0.6²=0.72. Step 2: VIF=1/(1-0.72)=1/0.28=25/7. Using just one pairwise correlation would understate the result."
   },
   {
     "id": "5.2-035",
@@ -587,12 +587,12 @@
     "code_snippet": null,
     "options": {
       "A": "No fitted values can exist because the coefficient solution is nonunique",
-      "B": "Only beta1=3,beta2=0 is optimal",
+      "B": "Only β₁=3,β₂=0 is optimal",
       "C": "Every coefficient pair is optimal regardless of its sum",
-      "D": "Every pair satisfying beta1+beta2=3 is optimal; coefficients are nonunique but fitted values are unique"
+      "D": "Every pair satisfying β₁+β₂=3 is optimal; coefficients are nonunique but fitted values are unique"
     },
     "correct_answer": "D",
-    "explanation": "Step 1: Predictions equal (beta1+beta2)x. Step 2: RSS=(3-beta1-beta2)^2 sum_i x_i^2, and the sum of squares is positive. Step 3: Minimum zero occurs for every pair with sum 3; all such pairs predict 3x."
+    "explanation": "Step 1: Predictions equal (β₁+β₂)x. Step 2: RSS=(3-β₁-β₂)² Σᵢ x_i², and the sum of squares is positive. Step 3: Minimum zero occurs for every pair with sum 3; all such pairs predict 3x."
   },
   {
     "id": "5.2-036",
@@ -600,7 +600,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Hard",
-    "question": "For one observation with x=2,y=1, let z=w*x, p=sigmoid(z), and L=-[y ln(p)+(1-y)ln(1-p)]. At w=0, what are dL/dw and d^2L/dw^2?",
+    "question": "For one observation with x=2,y=1, let z=w*x, p=sigmoid(z), and L=-[y ln(p)+(1-y)ln(1-p)]. At w=0, what are dL/dw and d^2L/dw²?",
     "code_snippet": null,
     "options": {
       "A": "-1, 1",
@@ -609,7 +609,7 @@
       "D": "-0.5, 0.25"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: At w=0, z=0 and p=0.5. Step 2: Gradient is (p-y)x=(0.5-1)(2)=-1. Step 3: Hessian is p(1-p)x^2=0.5(0.5)(4)=1."
+    "explanation": "Step 1: At w=0, z=0 and p=0.5. Step 2: Gradient is (p-y)x=(0.5-1)(2)=-1. Step 3: Hessian is p(1-p)x²=0.5(0.5)(4)=1."
   },
   {
     "id": "5.2-037",
@@ -651,7 +651,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Hard",
-    "question": "For one fixed XGBoost leaf, the second-order objective contribution, excluding constants, is Q(w)=G*w+(1/2)(H+lambda)*w^2. With G=-6,H=2,lambda=1 and no L1 penalty or leaf-count charge, what are the optimal leaf weight and objective reduction Q(0)-Q(w*)?",
+    "question": "For one fixed XGBoost leaf, the second-order objective contribution, excluding constants, is Q(w)=G*w+(1/2)(H+λ)*w². With G=-6,H=2,λ=1 and no L1 penalty or leaf-count charge, what are the optimal leaf weight and objective reduction Q(0)-Q(w*)?",
     "code_snippet": null,
     "options": {
       "A": "3, 9",
@@ -660,7 +660,7 @@
       "D": "-2, 6"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: Differentiate Q: Q'(w)=G+(H+lambda)w=-6+3w. Step 2: Set it to zero, giving w*=2; curvature 3>0 ensures a minimum. Step 3: Q(2)=-12+6=-6 and Q(0)=0, so the reduction is 6."
+    "explanation": "Step 1: Differentiate Q: Q'(w)=G+(H+λ)w=-6+3w. Step 2: Set it to zero, giving w*=2; curvature 3>0 ensures a minimum. Step 3: Q(2)=-12+6=-6 and Q(0)=0, so the reduction is 6."
   },
   {
     "id": "5.2-040",
@@ -668,7 +668,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Hard",
-    "question": "For an XGBoost candidate split, use Gain=(1/2)[G_L^2/(H_L+lambda)+G_R^2/(H_R+lambda)-(G_L+G_R)^2/(H_L+H_R+lambda)]-gamma. Given G_L=-4,H_L=2,G_R=2,H_R=2,lambda=0,gamma=1, what is Gain?",
+    "question": "For an XGBoost candidate split, use Gain=(1/2)[G_L²/(H_L+λ)+G_R²/(H_R+λ)-(G_L+G_R)²/(H_L+H_R+λ)]-γ. Given G_L=-4,H_L=2,G_R=2,H_R=2,λ=0,γ=1, what is Gain?",
     "code_snippet": null,
     "options": {
       "A": "-3.5",
@@ -677,7 +677,7 @@
       "D": "7"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: Left and right terms are 16/2=8 and 4/2=2. Step 2: The parent term is (-4+2)^2/(2+2)=4/4=1. Step 3: Gain=(1/2)(8+2-1)-1=4.5-1=3.5. The positive result favors this split under the stated objective."
+    "explanation": "Step 1: Left and right terms are 16/2=8 and 4/2=2. Step 2: The parent term is (-4+2)²/(2+2)=4/4=1. Step 3: Gain=(1/2)(8+2-1)-1=4.5-1=3.5. The positive result favors this split under the stated objective."
   },
   {
     "id": "5.2-041",
@@ -807,13 +807,13 @@
     "question": "Which penalty is the conventional squared L2 penalty used in ridge regression?",
     "code_snippet": null,
     "options": {
-      "A": "lambda * number_of_nonzero_coefficients",
-      "B": "lambda * sum_j abs(beta_j)",
-      "C": "lambda * sum_j beta_j^2",
-      "D": "lambda * sum_j sign(beta_j)"
+      "A": "λ * number_of_nonzero_coefficients",
+      "B": "λ * Σⱼ abs(βⱼ)",
+      "C": "λ * Σⱼ βⱼ²",
+      "D": "λ * Σⱼ sign(βⱼ)"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: The squared L2 norm is ||beta||_2^2=sum_j beta_j^2. Step 2: Multiplying by nonnegative lambda penalizes large coefficients smoothly. Intercept treatment must be specified separately in an implementation."
+    "explanation": "Step 1: The squared L2 norm is ||β||_2²=Σⱼ βⱼ². Step 2: Multiplying by nonnegative λ penalizes large coefficients smoothly. Intercept treatment must be specified separately in an implementation."
   },
   {
     "id": "5.2-049",
@@ -873,7 +873,7 @@
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
     "question": "Rows in the shown confusion matrix are actual classes and columns are predicted classes. What are specificity and positive-class recall?",
-    "code_snippet": "                 Predicted negative | Predicted positive\nActual negative: 90                 | 10\nActual positive: 20                 | 30",
+    "code_snippet": "Actual class | Predicted negative | Predicted positive\nNegative     | 90                 | 10\nPositive     | 20                 | 30",
     "options": {
       "A": "0.75, 0.6",
       "B": "0.6, 0.9",
@@ -940,7 +940,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "On a fixed binary dataset containing both classes, a classifier predicts positive whenever score>=threshold. As the threshold is lowered, which rates are guaranteed not to decrease?",
+    "question": "On a fixed binary dataset containing both classes, a classifier predicts positive whenever score≥threshold. As the threshold is lowered, which rates are guaranteed not to decrease?",
     "code_snippet": null,
     "options": {
       "A": "Precision and specificity",
@@ -957,7 +957,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "On a held-out dataset with a nonconstant response, SSE=150 and SST=100, where SST is measured about that evaluation set's response mean. Using R^2=1-SSE/SST, what is R^2?",
+    "question": "On a held-out dataset with a nonconstant response, SSE=150 and SST=100, where SST is measured about that evaluation set's response mean. Using R²=1-SSE/SST, what is R²?",
     "code_snippet": null,
     "options": {
       "A": "0.2",
@@ -966,7 +966,7 @@
       "D": "0.5"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: Compute SSE/SST=150/100=1.5. Step 2: R^2=1-1.5=-0.5. Negative held-out R^2 is possible: these predictions have greater squared error than predicting the evaluation-set response mean."
+    "explanation": "Step 1: Compute SSE/SST=150/100=1.5. Step 2: R²=1-1.5=-0.5. Negative held-out R² is possible: these predictions have greater squared error than predicting the evaluation-set response mean."
   },
   {
     "id": "5.2-058",
@@ -974,7 +974,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "An OLS model has an intercept, n=21 observations, k=2 predictors excluding the intercept, and R^2=0.8. Using adjusted R^2=1-(1-R^2)(n-1)/(n-k-1), what is adjusted R^2?",
+    "question": "An OLS model has an intercept, n=21 observations, k=2 predictors excluding the intercept, and R²=0.8. Using adjusted R²=1-(1-R²)(n-1)/(n-k-1), what is adjusted R²?",
     "code_snippet": null,
     "options": {
       "A": "3/4",
@@ -983,7 +983,7 @@
       "D": "4/5"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: Residual degrees of freedom are 21-2-1=18. Step 2: Adjusted R^2=1-(0.2)(20/18)=1-2/9=7/9. The predictor count excludes the intercept."
+    "explanation": "Step 1: Residual degrees of freedom are 21-2-1=18. Step 2: Adjusted R²=1-(0.2)(20/18)=1-2/9=7/9. The predictor count excludes the intercept."
   },
   {
     "id": "5.2-059",
@@ -994,13 +994,13 @@
     "question": "An unconstrained OLS model with an intercept is refitted on exactly the same observations after adding a predictor. The response is nonconstant, and both residual degrees of freedom remain positive. Which statement is correct?",
     "code_snippet": null,
     "options": {
-      "A": "Training R^2 cannot decrease, but adjusted R^2 can decrease",
-      "B": "A larger training R^2 guarantees a larger test-set R^2",
-      "C": "Both training R^2 and adjusted R^2 must increase strictly",
-      "D": "Training R^2 must decrease because there are more coefficients"
+      "A": "Training R² cannot decrease, but adjusted R² can decrease",
+      "B": "A larger training R² guarantees a larger test-set R²",
+      "C": "Both training R² and adjusted R² must increase strictly",
+      "D": "Training R² must decrease because there are more coefficients"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: The expanded model can reproduce the old fit by setting the new coefficient to zero, so minimized SSE cannot increase. Step 2: With the same SST, training R^2 cannot decrease. Step 3: Adjusted R^2 also penalizes lost degrees of freedom, so a small SSE improvement may not compensate."
+    "explanation": "Step 1: The expanded model can reproduce the old fit by setting the new coefficient to zero, so minimized SSE cannot increase. Step 2: With the same SST, training R² cannot decrease. Step 3: Adjusted R² also penalizes lost degrees of freedom, so a small SSE improvement may not compensate."
   },
   {
     "id": "5.2-060",
@@ -1051,7 +1051,7 @@
       "D": "The L1 constraint permits only positive coefficients"
     },
     "correct_answer": "A",
-    "explanation": "Step 1: |beta1|+|beta2|<=t forms a diamond with corners on the coordinate axes. Step 2: beta1^2+beta2^2<=t forms a disk. Step 3: A loss contour can touch an L1 corner where one coefficient is zero; L2 shrinkage does not have those corners."
+    "explanation": "Step 1: |β₁|+|β₂|≤t forms a diamond with corners on the coordinate axes. Step 2: β₁²+β₂²≤t forms a disk. Step 3: A loss contour can touch an L1 corner where one coefficient is zero; L2 shrinkage does not have those corners."
   },
   {
     "id": "5.2-063",
@@ -1059,7 +1059,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "For scalar beta, minimize (6-beta)^2+2*beta^2. No intercept is present. What is the ridge optimum?",
+    "question": "For scalar β, minimize (6-β)²+2*β². No intercept is present. What is the ridge optimum?",
     "code_snippet": null,
     "options": {
       "A": "4",
@@ -1068,7 +1068,7 @@
       "D": "6"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: Differentiate: 2(beta-6)+4beta=6beta-12. Step 2: Set the derivative to zero, giving beta=2. Step 3: The second derivative is 6>0, so this is the unique minimum."
+    "explanation": "Step 1: Differentiate: 2(β-6)+4beta=6beta-12. Step 2: Set the derivative to zero, giving β=2. Step 3: The second derivative is 6>0, so this is the unique minimum."
   },
   {
     "id": "5.2-064",
@@ -1076,7 +1076,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Medium",
-    "question": "For scalar beta, minimize (1/2)(beta-3)^2+abs(beta). What is the lasso optimum?",
+    "question": "For scalar β, minimize (1/2)(β-3)²+abs(β). What is the lasso optimum?",
     "code_snippet": null,
     "options": {
       "A": "1",
@@ -1085,7 +1085,7 @@
       "D": "0"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: On beta>0 the derivative is beta-3+1=beta-2, giving candidate beta=2. Step 2: The zero-point loss gradient -3 cannot be balanced by the penalty subgradient [-1,1]. Step 3: Convexity establishes beta=2 as the global minimum."
+    "explanation": "Step 1: On β>0 the derivative is β-3+1=β-2, giving candidate β=2. Step 2: The zero-point loss gradient -3 cannot be balanced by the penalty subgradient [-1,1]. Step 3: Convexity establishes β=2 as the global minimum."
   },
   {
     "id": "5.2-065",
@@ -1113,13 +1113,13 @@
     "question": "Two nested OLS models use the same n=20 observations and an intercept. SST=190. The old model has k=2 predictors and SSE=90; the new has k=3 and SSE=86. Predictor counts exclude the intercept. Which change is correct?",
     "code_snippet": null,
     "options": {
-      "A": "Both R^2 and adjusted R^2 increase",
-      "B": "R^2 increases; adjusted R^2 decreases from 8/17 to 37/80",
-      "C": "R^2 decreases; adjusted R^2 increases from 8/17 to 37/80",
-      "D": "Both R^2 and adjusted R^2 stay unchanged"
+      "A": "Both R² and adjusted R² increase",
+      "B": "R² increases; adjusted R² decreases from 8/17 to 37/80",
+      "C": "R² decreases; adjusted R² increases from 8/17 to 37/80",
+      "D": "Both R² and adjusted R² stay unchanged"
     },
     "correct_answer": "B",
-    "explanation": "Step 1: SSE falls with fixed SST, so R^2 increases from 1-90/190 to 1-86/190. Step 2: SST/(n-1)=190/19=10. Step 3: Old adjusted R^2=1-(90/17)/10=8/17, about 0.4706. New adjusted R^2=1-(86/16)/10=37/80=0.4625, which is smaller."
+    "explanation": "Step 1: SSE falls with fixed SST, so R² increases from 1-90/190 to 1-86/190. Step 2: SST/(n-1)=190/19=10. Step 3: Old adjusted R²=1-(90/17)/10=8/17, about 0.4706. New adjusted R²=1-(86/16)/10=37/80=0.4625, which is smaller."
   },
   {
     "id": "5.2-067",
@@ -1127,7 +1127,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Hard",
-    "question": "A no-intercept design satisfies X^T X=I and X^T y=[3,-0.5,2]. Compare lasso objective (1/2)||y-X beta||^2+sum_j abs(beta_j) and ridge objective (1/2)||y-X beta||^2+(1/2)sum_j beta_j^2. What are their coefficient vectors?",
+    "question": "A no-intercept design satisfies Xᵀ X=I and Xᵀ y=[3,-0.5,2]. Compare lasso objective (1/2)||y-X β||^2+Σⱼ abs(βⱼ) and ridge objective (1/2)||y-X β||^2+(1/2)Σⱼ βⱼ². What are their coefficient vectors?",
     "code_snippet": null,
     "options": {
       "A": "Lasso: [1.5,-0.25,1]; ridge: [2,0,1]",
@@ -1136,7 +1136,7 @@
       "D": "Lasso: [2,0,1]; ridge: [1.5,-0.25,1]"
     },
     "correct_answer": "D",
-    "explanation": "Step 1: Orthonormality separates the loss into (1/2)sum_j(beta_j-z_j)^2 plus a constant, with z=X^T y. Step 2: Lasso soft-thresholds each z at 1: sign(z)max(|z|-1,0), giving [2,0,1]. Step 3: Ridge solves beta_j-z_j+beta_j=0, so beta=z/2=[1.5,-0.25,1]."
+    "explanation": "Step 1: Orthonormality separates the loss into (1/2)Σⱼ(βⱼ-z_j)² plus a constant, with z=Xᵀ y. Step 2: Lasso soft-thresholds each z at 1: sign(z)max(|z|-1,0), giving [2,0,1]. Step 3: Ridge solves βⱼ-z_j+βⱼ=0, so β=z/2=[1.5,-0.25,1]."
   },
   {
     "id": "5.2-068",
@@ -1144,7 +1144,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Hard",
-    "question": "A no-intercept ridge problem minimizes ||y-X beta||^2+||beta||^2. Given X^T X=[[2,1],[1,2]] and X^T y=[3,0], what is its coefficient vector?",
+    "question": "A no-intercept ridge problem minimizes ||y-X β||^2+||β||^2. Given Xᵀ X=[[2,1],[1,2]] and Xᵀ y=[3,0], what is its coefficient vector?",
     "code_snippet": null,
     "options": {
       "A": "[1, 0]",
@@ -1153,7 +1153,7 @@
       "D": "[3/4, -1/4]"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: The normal equations are (X^T X+I)beta=X^T y, so [[3,1],[1,3]]beta=[3,0]. Step 2: The inverse is (1/8)[[3,-1],[-1,3]]. Step 3: Multiplying gives beta=[9/8,-3/8]."
+    "explanation": "Step 1: The normal equations are (Xᵀ X+I)β=Xᵀ y, so [[3,1],[1,3]]β=[3,0]. Step 2: The inverse is (1/8)[[3,-1],[-1,3]]. Step 3: Multiplying gives β=[9/8,-3/8]."
   },
   {
     "id": "5.2-069",
@@ -1161,16 +1161,16 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Hard",
-    "question": "Observe Y=theta+epsilon with theta=2, E[epsilon]=0, and Var(epsilon)=1. Estimate theta by beta_hat=Y/(1+lambda), the minimizer of (Y-beta)^2+lambda*beta^2. For lambda>=0, which lambda minimizes E[(beta_hat-theta)^2], and what is that minimum risk?",
+    "question": "Observe Y=θ+ε with θ=2, E[ε]=0, and Var(ε)=1. Estimate θ by β̂=Y/(1+λ), the minimizer of (Y-β)²+λ*β². For λ≥0, which λ minimizes E[(β̂-θ)²], and what is that minimum risk?",
     "code_snippet": null,
     "options": {
-      "A": "lambda=0; risk=0",
-      "B": "lambda=4; risk=1/5",
-      "C": "lambda=1/4; risk=4/5",
-      "D": "lambda=1; risk=1/2"
+      "A": "λ=0; risk=0",
+      "B": "λ=4; risk=1/5",
+      "C": "λ=1/4; risk=4/5",
+      "D": "λ=1; risk=1/2"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: Bias is -2lambda/(1+lambda), and estimator variance is 1/(1+lambda)^2. Step 2: Estimation risk is (4lambda^2+1)/(1+lambda)^2. Step 3: Its derivative is (8lambda-2)/(1+lambda)^3, changing from negative to positive at lambda=1/4. Step 4: Substitution gives risk=0.8=4/5. This estimates theta, not a new noisy response."
+    "explanation": "Step 1: Bias is -2lambda/(1+λ), and estimator variance is 1/(1+λ)². Step 2: Estimation risk is (4lambda²+1)/(1+λ)². Step 3: Its derivative is (8lambda-2)/(1+λ)³, changing from negative to positive at λ=1/4. Step 4: Substitution gives risk=0.8=4/5. This estimates θ, not a new noisy response."
   },
   {
     "id": "5.2-070",
@@ -1178,7 +1178,7 @@
     "subpart_id": "5.2",
     "subpart_name": "Machine Learning",
     "difficulty": "Hard",
-    "question": "Two identical nonzero design columns equal x, with ||x||^2=1 and y=3x; there is no intercept. Compare ridge loss ||y-X beta||^2+beta1^2+beta2^2 with lasso loss ||y-X beta||^2+2(abs(beta1)+abs(beta2)). Which minimizers are correct?",
+    "question": "Two identical nonzero design columns equal x, with ||x||^2=1 and y=3x; there is no intercept. Compare ridge loss ||y-X β||^2+β₁²+β₂² with lasso loss ||y-X β||^2+2(abs(β₁)+abs(β₂)). Which minimizers are correct?",
     "code_snippet": null,
     "options": {
       "A": "Both methods uniquely give (1,1)",
@@ -1187,6 +1187,6 @@
       "D": "Ridge permits every pair with sum 3; lasso has no minimizer"
     },
     "correct_answer": "C",
-    "explanation": "Step 1: Write s=beta1+beta2; RSS=(3-s)^2. Step 2: For a fixed s, ridge minimizes beta1^2+beta2^2 at beta1=beta2=s/2. Its reduced loss is (3-s)^2+s^2/2, minimized at s=2, giving (1,1). Step 3: Lasso has penalty at least 2|s|, attained by any nonnegative pair when s>=0. Minimizing (3-s)^2+2|s| gives s=2, leaving all nonnegative decompositions optimal."
+    "explanation": "Step 1: Write s=β₁+β₂; RSS=(3-s)². Step 2: For a fixed s, ridge minimizes β₁²+β₂² at β₁=β₂=s/2. Its reduced loss is (3-s)²+s²/2, minimized at s=2, giving (1,1). Step 3: Lasso has penalty at least 2|s|, attained by any nonnegative pair when s≥0. Minimizing (3-s)²+2|s| gives s=2, leaving all nonnegative decompositions optimal."
   }
 ]

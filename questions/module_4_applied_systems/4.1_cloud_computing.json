@@ -422,7 +422,7 @@
       "D": "4 instances per zone, 12 instances total"
     },
     "correct_answer": "C",
-    "explanation": "With k instances per zone, two surviving zones supply 200k requests/second. 200k>=450 requires k=3; k=2 supplies only 400."
+    "explanation": "With k instances per zone, two surviving zones supply 200k requests/second. 200k≥450 requires k=3; k=2 supplies only 400."
   },
   {
     "id": "4.1-026",
@@ -473,7 +473,7 @@
       "D": "99.99%"
     },
     "correct_answer": "B",
-    "explanation": "The application tier availability is 1-(0.01)^2=0.9999. Multiplying by 0.999 for the required database gives 0.9989001, or 99.89001%."
+    "explanation": "The application tier availability is 1-(0.01)²=0.9999. Multiplying by 0.999 for the required database gives 0.9989001, or 99.89001%."
   },
   {
     "id": "4.1-029",
@@ -490,7 +490,7 @@
       "D": "9 warm instances, 3 per zone"
     },
     "correct_answer": "D",
-    "explanation": "If k warm instances occupy each zone, loss of one leaves 2k*150 capacity. Meeting 900 requires k>=3. Slow scale-out cannot supply capacity immediately."
+    "explanation": "If k warm instances occupy each zone, loss of one leaves 2k*150 capacity. Meeting 900 requires k≥3. Slow scale-out cannot supply capacity immediately."
   },
   {
     "id": "4.1-030",

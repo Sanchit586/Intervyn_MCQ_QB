@@ -6,7 +6,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? None represents an empty child.",
-    "code_snippet": "t={4:(2,6),2:(1,3),1:(None,None),3:(None,None),6:(None,7),7:(None,None)}\ndef inorder(v):\n    return [] if v is None else inorder(t[v][0])+[v]+inorder(t[v][1])\nprint(inorder(4))",
+    "code_snippet": "t = {\n    4: (2, 6),\n    2: (1, 3),\n    1: (None, None),\n    3: (None, None),\n    6: (None, 7),\n    7: (None, None),\n}\n\n\ndef inorder(v):\n    return [] if v is None else inorder(t[v][0]) + [v] + inorder(t[v][1])\n\n\nprint(inorder(4))",
     "options": {
       "A": "[4, 2, 1, 3, 6, 7]",
       "B": "[1, 3, 2, 7, 6, 4]",
@@ -23,7 +23,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? None represents an empty child.",
-    "code_snippet": "t={\"A\":(\"B\",\"C\"),\"B\":(\"D\",None),\"C\":(\"E\",\"F\"),\"D\":(None,None),\"E\":(None,None),\"F\":(None,None)}\ndef preorder(v):\n    return [] if v is None else [v]+preorder(t[v][0])+preorder(t[v][1])\nprint(\" \".join(preorder(\"A\")))",
+    "code_snippet": "t = {\n    \"A\": (\"B\", \"C\"),\n    \"B\": (\"D\", None),\n    \"C\": (\"E\", \"F\"),\n    \"D\": (None, None),\n    \"E\": (None, None),\n    \"F\": (None, None),\n}\n\n\ndef preorder(v):\n    return [] if v is None else [v] + preorder(t[v][0]) + preorder(t[v][1])\n\n\nprint(\" \".join(preorder(\"A\")))",
     "options": {
       "A": "D B A E C F",
       "B": "D B E F C A",
@@ -40,7 +40,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? None represents an empty child.",
-    "code_snippet": "t={10:(5,15),5:(None,None),15:(12,20),12:(None,None),20:(None,None)}\ndef postorder(v):\n    return [] if v is None else postorder(t[v][0])+postorder(t[v][1])+[v]\nprint(postorder(10))",
+    "code_snippet": "t = {10: (5, 15), 5: (None, None), 15: (12, 20), 12: (None, None), 20: (None, None)}\n\n\ndef postorder(v):\n    return [] if v is None else postorder(t[v][0]) + postorder(t[v][1]) + [v]\n\n\nprint(postorder(10))",
     "options": {
       "A": "[10, 5, 15, 12, 20]",
       "B": "[5, 20, 12, 15, 10]",
@@ -57,7 +57,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? None represents an empty child.",
-    "code_snippet": "from collections import deque\nt={1:(2,3),2:(4,None),3:(5,6),4:(None,None),5:(None,None),6:(None,None)}\nq=deque([1])\nout=[]\nwhile q:\n    v=q.popleft()\n    out.append(v)\n    q.extend(x for x in t[v] if x is not None)\nprint(out)",
+    "code_snippet": "from collections import deque\n\nt = {\n    1: (2, 3),\n    2: (4, None),\n    3: (5, 6),\n    4: (None, None),\n    5: (None, None),\n    6: (None, None),\n}\nq = deque([1])\nout = []\nwhile q:\n    v = q.popleft()\n    out.append(v)\n    q.extend(x for x in t[v] if x is not None)\nprint(out)",
     "options": {
       "A": "[1, 2, 3, 4, 5, 6]",
       "B": "[1, 2, 4, 3, 5, 6]",
@@ -142,7 +142,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? None represents an empty child.",
-    "code_snippet": "t={20:(10,30),10:(None,None),30:(25,40),25:(None,None),40:(None,None)}\nv=20\npath=[]\nwhile v is not None:\n    path.append(v)\n    if v==25:\n        break\n    v=t[v][0] if 25<v else t[v][1]\nprint(path)",
+    "code_snippet": "t = {20: (10, 30), 10: (None, None), 30: (25, 40), 25: (None, None), 40: (None, None)}\nv = 20\npath = []\nwhile v is not None:\n    path.append(v)\n    if v == 25:\n        break\n    v = t[v][0] if 25 < v else t[v][1]\nprint(path)",
     "options": {
       "A": "[20, 30, 25]",
       "B": "[20, 25]",
@@ -167,7 +167,7 @@
       "D": "10"
     },
     "correct_answer": "D",
-    "explanation": "The minimum is reached by following left children until no left child remains, here 50->20->10."
+    "explanation": "The minimum is reached by following left children until no left child remains, here 50 → 20 → 10."
   },
   {
     "id": "2.3-011",
@@ -195,10 +195,10 @@
     "question": "A plain unbalanced BST is built by inserting n increasing distinct keys. What is the tight worst-case search time after construction?",
     "code_snippet": null,
     "options": {
-      "A": "Theta(n log n)",
-      "B": "Theta(log n)",
-      "C": "Theta(n)",
-      "D": "Theta(1)"
+      "A": "Θ(n log n)",
+      "B": "Θ(log n)",
+      "C": "Θ(n)",
+      "D": "Θ(1)"
     },
     "correct_answer": "C",
     "explanation": "The insertion order creates a rightward chain. A search for its deepest key or a larger absent key traverses linearly many nodes."
@@ -473,7 +473,7 @@
       "D": "15"
     },
     "correct_answer": "A",
-    "explanation": "There can be at most 2^4 nodes at depth four. A perfect binary tree attains sixteen leaves, and no shallower leaf arrangement can exceed that count."
+    "explanation": "There can be at most 2⁴ nodes at depth four. A perfect binary tree attains sixteen leaves, and no shallower leaf arrangement can exceed that count."
   },
   {
     "id": "2.3-029",
@@ -490,7 +490,7 @@
       "D": "(2,5)"
     },
     "correct_answer": "C",
-    "explanation": "The nodes occupy zero-based indices 0..9, giving floor(log2 10)=3 height. Nodes at indices 5..9 have no children, so five are leaves."
+    "explanation": "The nodes occupy zero-based indices 0..9, giving floor(log₂ 10)=3 height. Nodes at indices 5..9 have no children, so five are leaves."
   },
   {
     "id": "2.3-030",
@@ -507,7 +507,7 @@
       "D": "(16,8)"
     },
     "correct_answer": "A",
-    "explanation": "Levels 0..4 contain 2^5-1=31 nodes, and the last level contains 2^4=16 leaves."
+    "explanation": "Levels 0..4 contain 2⁵-1=31 nodes, and the last level contains 2⁴=16 leaves."
   },
   {
     "id": "2.3-031",
@@ -898,7 +898,7 @@
       "D": "42"
     },
     "correct_answer": "C",
-    "explanation": "These opposite orders force a chain. Each of its four parent-child links may independently be left or right, so 2^4=16 shapes have those traversals."
+    "explanation": "These opposite orders force a chain. Each of its four parent-child links may independently be left or right, so 2⁴=16 shapes have those traversals."
   },
   {
     "id": "2.3-054",
@@ -1017,7 +1017,7 @@
       "D": "(3,8)"
     },
     "correct_answer": "B",
-    "explanation": "At least ceil(log2 9)=4 edges are needed; splitting one leaf of an eight-leaf perfect tree attains four. A full comb with eight internal nodes attains height eight; each internal level must also supply a side leaf."
+    "explanation": "At least ceil(log₂ 9)=4 edges are needed; splitting one leaf of an eight-leaf perfect tree attains four. A full comb with eight internal nodes attains height eight; each internal level must also supply a side leaf."
   },
   {
     "id": "2.3-061",
@@ -1128,7 +1128,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "import heapq\na=[2,5,4]\nheapq.heappush(a,1)\nprint(a)",
+    "code_snippet": "import heapq\n\na = [2, 5, 4]\nheapq.heappush(a, 1)\nprint(a)",
     "options": {
       "A": "[2, 1, 4, 5]",
       "B": "[1, 2, 4, 5]",
@@ -1145,7 +1145,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "import heapq\na=[1,3,2,7,6,4]\nx=heapq.heappop(a)\nprint(x,a)",
+    "code_snippet": "import heapq\n\na = [1, 3, 2, 7, 6, 4]\nx = heapq.heappop(a)\nprint(x, a)",
     "options": {
       "A": "1 [3, 4, 2, 7, 6]",
       "B": "1 [2, 3, 4, 7, 6]",
@@ -1164,10 +1164,10 @@
     "question": "A binary min-heap stores n arbitrary keys and has no auxiliary maximum index. What is the tight worst-case time to find its maximum key?",
     "code_snippet": null,
     "options": {
-      "A": "Theta(n)",
-      "B": "Theta(log n)",
-      "C": "Theta(n log n)",
-      "D": "Theta(1)"
+      "A": "Θ(n)",
+      "B": "Θ(log n)",
+      "C": "Θ(n log n)",
+      "D": "Θ(1)"
     },
     "correct_answer": "A",
     "explanation": "The maximum can be among linearly many leaves. Min order does not sort those leaves or identify a unique last-array position as maximum."
@@ -1178,7 +1178,7 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
-    "question": "An ordinary hash table currently contains 12 live keys across 20 buckets. Using load factor alpha=n/m, what is alpha?",
+    "question": "An ordinary hash table currently contains 12 live keys across 20 buckets. Using load factor α=n/m, what is α?",
     "code_snippet": null,
     "options": {
       "A": "1.6667",
@@ -1233,9 +1233,9 @@
     "code_snippet": null,
     "options": {
       "A": "Exactly five keys must be discarded",
-      "B": "Alpha is 0.6667 because buckets divide keys",
-      "C": "Alpha is 1.5, which is allowed with chaining",
-      "D": "Alpha cannot exceed 1 under any collision scheme"
+      "B": "α is 0.6667 because buckets divide keys",
+      "C": "α is 1.5, which is allowed with chaining",
+      "D": "α cannot exceed 1 under any collision scheme"
     },
     "correct_answer": "C",
     "explanation": "Chains may hold multiple keys per bucket, so n/m can exceed one without exhausting a one-entry-per-slot limit."
@@ -1246,13 +1246,13 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
-    "question": "For a binary min-heap with n>=2, what are the tight worst-case bounds for (peek minimum, insert a key)?",
+    "question": "For a binary min-heap with n≥2, what are the tight worst-case bounds for (peek minimum, insert a key)?",
     "code_snippet": null,
     "options": {
-      "A": "(Theta(1),Theta(n log n))",
-      "B": "(Theta(n),Theta(n))",
-      "C": "(Theta(1),Theta(log n))",
-      "D": "(Theta(log n),Theta(1))"
+      "A": "(Θ(1),Θ(n log n))",
+      "B": "(Θ(n),Θ(n))",
+      "C": "(Θ(1),Θ(log n))",
+      "D": "(Θ(log n),Θ(1))"
     },
     "correct_answer": "C",
     "explanation": "The minimum is at the root. Insertion may move along one root-to-leaf path whose length is logarithmic."
@@ -1264,7 +1264,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "def down(a,i,size):\n    while 2*i+1<size:\n        c=2*i+1\n        if c+1<size and a[c+1]<a[c]:\n            c+=1\n        if a[i]<=a[c]:\n            break\n        a[i],a[c]=a[c],a[i]\n        i=c\na=[9,5,6,2,3]\nfor i in range(len(a)//2-1,-1,-1):\n    down(a,i,len(a))\nprint(a)",
+    "code_snippet": "def down(a, i, size):\n    while 2 * i + 1 < size:\n        c = 2 * i + 1\n        if c + 1 < size and a[c + 1] < a[c]:\n            c += 1\n        if a[i] <= a[c]:\n            break\n        a[i], a[c] = a[c], a[i]\n        i = c\n\n\na = [9, 5, 6, 2, 3]\nfor i in range(len(a) // 2 - 1, -1, -1):\n    down(a, i, len(a))\nprint(a)",
     "options": {
       "A": "[2, 3, 6, 5, 9]",
       "B": "[2, 3, 6, 9, 5]",
@@ -1281,7 +1281,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "import heapq\na=[]\nfor x in [9,5,6,2,3]:\n    heapq.heappush(a,x)\nprint(a)",
+    "code_snippet": "import heapq\n\na = []\nfor x in [9, 5, 6, 2, 3]:\n    heapq.heappush(a, x)\nprint(a)",
     "options": {
       "A": "[2, 3, 6, 5, 9]",
       "B": "[3, 2, 6, 9, 5]",
@@ -1298,7 +1298,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "def down(a,i,size):\n    while 2*i+1<size:\n        c=2*i+1\n        if c+1<size and a[c+1]<a[c]:\n            c+=1\n        if a[i]<=a[c]:\n            break\n        a[i],a[c]=a[c],a[i]\n        i=c\na=[1,3,2,7,6,4,5]\na[1]=10\ndown(a,1,len(a))\nprint(a)",
+    "code_snippet": "def down(a, i, size):\n    while 2 * i + 1 < size:\n        c = 2 * i + 1\n        if c + 1 < size and a[c + 1] < a[c]:\n            c += 1\n        if a[i] <= a[c]:\n            break\n        a[i], a[c] = a[c], a[i]\n        i = c\n\n\na = [1, 3, 2, 7, 6, 4, 5]\na[1] = 10\ndown(a, 1, len(a))\nprint(a)",
     "options": {
       "A": "[1, 6, 2, 7, 10, 4, 5]",
       "B": "[1, 7, 2, 10, 6, 4, 5]",
@@ -1315,7 +1315,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "a=[1,4,3,8,5,12,7]\ni=5\na[i]=0\nwhile i>0 and a[(i-1)//2]>a[i]:\n    p=(i-1)//2\n    a[i],a[p]=a[p],a[i]\n    i=p\nprint(a)",
+    "code_snippet": "a = [1, 4, 3, 8, 5, 12, 7]\ni = 5\na[i] = 0\nwhile i > 0 and a[(i - 1) // 2] > a[i]:\n    p = (i - 1) // 2\n    a[i], a[p] = a[p], a[i]\n    i = p\nprint(a)",
     "options": {
       "A": "[0, 1, 3, 8, 5, 4, 7]",
       "B": "[0, 4, 3, 8, 5, 1, 7]",
@@ -1332,7 +1332,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "import heapq\na=[7,2,9,1,5]\nheapq.heapify(a)\nfor _ in range(3):\n    x=heapq.heappop(a)\nprint(x)",
+    "code_snippet": "import heapq\n\na = [7, 2, 9, 1, 5]\nheapq.heapify(a)\nfor _ in range(3):\n    x = heapq.heappop(a)\nprint(x)",
     "options": {
       "A": "9",
       "B": "2",
@@ -1349,7 +1349,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "import heapq\nh=[]\nfor x in [5,1,9,3,7]:\n    if len(h)<3:\n        heapq.heappush(h,x)\n    elif x>h[0]:\n        heapq.heapreplace(h,x)\nprint(sorted(h))",
+    "code_snippet": "import heapq\n\nh = []\nfor x in [5, 1, 9, 3, 7]:\n    if len(h) < 3:\n        heapq.heappush(h, x)\n    elif x > h[0]:\n        heapq.heapreplace(h, x)\nprint(sorted(h))",
     "options": {
       "A": "[3, 7, 9]",
       "B": "[1, 3, 5]",
@@ -1366,7 +1366,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "a=[9,7,8,3,5,2]\na[0],a[-1]=a[-1],a[0]\nsize=len(a)-1\ni=0\nwhile 2*i+1<size:\n    c=2*i+1\n    if c+1<size and a[c+1]>a[c]:\n        c+=1\n    if a[i]>=a[c]:\n        break\n    a[i],a[c]=a[c],a[i]\n    i=c\nprint(a)",
+    "code_snippet": "a = [9, 7, 8, 3, 5, 2]\na[0], a[-1] = a[-1], a[0]\nsize = len(a) - 1\ni = 0\nwhile 2 * i + 1 < size:\n    c = 2 * i + 1\n    if c + 1 < size and a[c + 1] > a[c]:\n        c += 1\n    if a[i] >= a[c]:\n        break\n    a[i], a[c] = a[c], a[i]\n    i = c\nprint(a)",
     "options": {
       "A": "[8, 7, 2, 3, 5, 9]",
       "B": "[8, 7, 9, 3, 5, 2]",
@@ -1385,10 +1385,10 @@
     "question": "For n arbitrary keys, compare worst-case construction using bottom-up binary heapify with construction by n repeated binary-heap insertions. Which tight pair is correct?",
     "code_snippet": null,
     "options": {
-      "A": "(Theta(n),Theta(n log n))",
-      "B": "(Theta(n),Theta(n))",
-      "C": "(Theta(n^2),Theta(n log n))",
-      "D": "(Theta(n log n),Theta(n))"
+      "A": "(Θ(n),Θ(n log n))",
+      "B": "(Θ(n),Θ(n))",
+      "C": "(Θ(n²),Θ(n log n))",
+      "D": "(Θ(n log n),Θ(n))"
     },
     "correct_answer": "A",
     "explanation": "Most heapify nodes are near leaves and require little work, giving a linear height-weighted sum. Repeated insertion has inputs where each key rises through logarithmically many levels."
@@ -1425,7 +1425,7 @@
       "D": "7"
     },
     "correct_answer": "A",
-    "explanation": "Height is floor(log2 n). Since 64<=100<128, the deepest occupied level is 6."
+    "explanation": "Height is floor(log₂ n). Since 64≤100<128, the deepest occupied level is 6."
   },
   {
     "id": "2.3-085",
@@ -1434,7 +1434,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "m=7\nt=[None]*m\nfor k in [10,17,24,31]:\n    i=k%m\n    while t[i] is not None:\n        i=(i+1)%m\n    t[i]=k\ni=31%m\nprobes=1\nwhile t[i]!=31:\n    i=(i+1)%m\n    probes+=1\nprint(i,probes)",
+    "code_snippet": "m = 7\nt = [None] * m\nfor k in [10, 17, 24, 31]:\n    i = k % m\n    while t[i] is not None:\n        i = (i + 1) % m\n    t[i] = k\ni = 31 % m\nprobes = 1\nwhile t[i] != 31:\n    i = (i + 1) % m\n    probes += 1\nprint(i, probes)",
     "options": {
       "A": "6 3",
       "B": "6 4",
@@ -1451,7 +1451,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "m=5\nt=[None]*m\nfor k in [4,9,14,3]:\n    i=k%m\n    while t[i] is not None:\n        i=(i+1)%m\n    t[i]=k\ni=19%m\nprobes=1\nwhile t[i] is not None:\n    i=(i+1)%m\n    probes+=1\nprint(probes)",
+    "code_snippet": "m = 5\nt = [None] * m\nfor k in [4, 9, 14, 3]:\n    i = k % m\n    while t[i] is not None:\n        i = (i + 1) % m\n    t[i] = k\ni = 19 % m\nprobes = 1\nwhile t[i] is not None:\n    i = (i + 1) % m\n    probes += 1\nprint(probes)",
     "options": {
       "A": "4",
       "B": "5",
@@ -1468,7 +1468,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "t=[0,\"D\",14,None,None,None,None]\ni=14%7\nprobes=1\nwhile t[i] is not None and t[i]!=14:\n    i=(i+1)%7\n    probes+=1\nprint(i,probes)",
+    "code_snippet": "t = [0, \"D\", 14, None, None, None, None]\ni = 14 % 7\nprobes = 1\nwhile t[i] is not None and t[i] != 14:\n    i = (i + 1) % 7\n    probes += 1\nprint(i, probes)",
     "options": {
       "A": "2 3",
       "B": "1 2",
@@ -1485,7 +1485,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "t=[0,\"D\",14,None,None,None,None]\nk=14\nfirst_deleted=None\nfor step in range(7):\n    i=(k%7+step)%7\n    if t[i]==k:\n        break\n    if t[i]==\"D\" and first_deleted is None:\n        first_deleted=i\n    if t[i] is None:\n        t[first_deleted if first_deleted is not None else i]=k\n        break\nprint(t[1],t[2],sum(x not in (None,\"D\") for x in t))",
+    "code_snippet": "t = [0, \"D\", 14, None, None, None, None]\nk = 14\nfirst_deleted = None\nfor step in range(7):\n    i = (k % 7 + step) % 7\n    if t[i] == k:\n        break\n    if t[i] == \"D\" and first_deleted is None:\n        first_deleted = i\n    if t[i] is None:\n        t[first_deleted if first_deleted is not None else i] = k\n        break\nprint(t[1], t[2], sum(x not in (None, \"D\") for x in t))",
     "options": {
       "A": "14 14 3",
       "B": "14 None 2",
@@ -1502,7 +1502,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "m=11\nt=[None]*m\nslots=[]\nfor k in [22,33,44,55]:\n    for i in range(m):\n        slot=(k%m+i*i)%m\n        if t[slot] is None:\n            t[slot]=k\n            slots.append(slot)\n            break\nprint(slots)",
+    "code_snippet": "m = 11\nt = [None] * m\nslots = []\nfor k in [22, 33, 44, 55]:\n    for i in range(m):\n        slot = (k % m + i * i) % m\n        if t[slot] is None:\n            t[slot] = k\n            slots.append(slot)\n            break\nprint(slots)",
     "options": {
       "A": "[0, 1, 4, 5]",
       "B": "[0, 1, 2, 3]",
@@ -1510,7 +1510,7 @@
       "D": "[0, 1, 3, 6]"
     },
     "correct_answer": "C",
-    "explanation": "All keys have home zero. Quadratic offsets i^2 give first distinct probe locations 0,1,4,9, each taken by the next key."
+    "explanation": "All keys have home zero. Quadratic offsets i² give first distinct probe locations 0,1,4,9, each taken by the next key."
   },
   {
     "id": "2.3-090",
@@ -1518,7 +1518,7 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
-    "question": "Quadratic probing uses slot(i)=(8+i^2) mod 11, starting i=0. What are its first five probe positions?",
+    "question": "Quadratic probing uses slot(i)=(8+i²) mod 11, starting i=0. What are its first five probe positions?",
     "code_snippet": null,
     "options": {
       "A": "8,9,10,0,1",
@@ -1536,7 +1536,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "m=11\nt=[None]*m\nplaced=[]\nfor k in [22,33,44]:\n    step=1+k%10\n    for j in range(m):\n        i=(k%m+j*step)%m\n        if t[i] is None:\n            t[i]=k\n            placed.append(i)\n            break\nprint(placed)",
+    "code_snippet": "m = 11\nt = [None] * m\nplaced = []\nfor k in [22, 33, 44]:\n    step = 1 + k % 10\n    for j in range(m):\n        i = (k % m + j * step) % m\n        if t[i] is None:\n            t[i] = k\n            placed.append(i)\n            break\nprint(placed)",
     "options": {
       "A": "[0, 3, 6]",
       "B": "[0, 1, 2]",
@@ -1570,7 +1570,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "buckets=[[] for _ in range(5)]\nfor k in [10,15,3,8]:\n    buckets[k%5].append(k)\nbuckets[0].remove(10)\nprint(buckets[0],buckets[3])",
+    "code_snippet": "buckets = [[] for _ in range(5)]\nfor k in [10, 15, 3, 8]:\n    buckets[k % 5].append(k)\nbuckets[0].remove(10)\nprint(buckets[0], buckets[3])",
     "options": {
       "A": "[15] [3, 8]",
       "B": "[15] [8, 3]",
@@ -1604,7 +1604,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "keys=set()\nfor k in [1,11,1,21,11]:\n    keys.add(k)\nprint(len(keys)/10)",
+    "code_snippet": "keys = set()\nfor k in [1, 11, 1, 21, 11]:\n    keys.add(k)\nprint(len(keys) / 10)",
     "options": {
       "A": "0.3",
       "B": "0.1",
@@ -1637,7 +1637,7 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
-    "question": "A size-11 table uses quadratic probes (i^2 mod 11) for a home-zero key, i=0,1,... . If all reachable slots are occupied, what is the pair (number of reachable slots,can insertion fail while other slots remain empty)?",
+    "question": "A size-11 table uses quadratic probes (i² mod 11) for a home-zero key, i=0,1,... . If all reachable slots are occupied, what is the pair (number of reachable slots,can insertion fail while other slots remain empty)?",
     "code_snippet": null,
     "options": {
       "A": "(11,No)",
@@ -1714,7 +1714,7 @@
       "D": "34"
     },
     "correct_answer": "D",
-    "explanation": "Every new key is the new minimum and rises from its insertion depth to the root. Sum floor(log2 i), i=1..15, equals 2*1+4*2+8*3=34."
+    "explanation": "Every new key is the new minimum and rises from its insertion depth to the root. Sum floor(log₂ i), i=1..15, equals 2*1+4*2+8*3=34."
   },
   {
     "id": "2.3-102",
@@ -1722,13 +1722,13 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
-    "question": "Merge k>=2 nonempty sorted streams containing n items in total using a binary min-heap of current stream heads. Exclude input and output storage, assume adversarial distinct keys, and maintain one head per nonexhausted stream. What are tight worst-case time and auxiliary-space bounds?",
+    "question": "Merge k≥2 nonempty sorted streams containing n items in total using a binary min-heap of current stream heads. Exclude input and output storage, assume adversarial distinct keys, and maintain one head per nonexhausted stream. What are tight worst-case time and auxiliary-space bounds?",
     "code_snippet": null,
     "options": {
-      "A": "Time Theta(n), space Theta(n)",
-      "B": "Time Theta(k log n), space Theta(n)",
-      "C": "Time Theta(n log k), space Theta(k)",
-      "D": "Time Theta(nk), space Theta(1)"
+      "A": "Time Θ(n), space Θ(n)",
+      "B": "Time Θ(k log n), space Θ(n)",
+      "C": "Time Θ(n log k), space Θ(k)",
+      "D": "Time Θ(nk), space Θ(1)"
     },
     "correct_answer": "C",
     "explanation": "Each output chooses the minimum head and replaces/removes one heap entry in logarithmic k time. The heap stores at most one current head per stream, and worst-case interleaving keeps many streams active."
@@ -1740,7 +1740,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "m=7\nt=[6,13,None,None,None,5,12]\nhole=5\nt[hole]=None\nscan=(hole+1)%m\nwhile t[scan] is not None:\n    k=t[scan]\n    home=k%m\n    if (hole-home)%m < (scan-home)%m:\n        t[hole]=k\n        t[scan]=None\n        hole=scan\n    scan=(scan+1)%m\nprint(t.index(12),t.index(6),t.index(13))",
+    "code_snippet": "m = 7\nt = [6, 13, None, None, None, 5, 12]\nhole = 5\nt[hole] = None\nscan = (hole + 1) % m\nwhile t[scan] is not None:\n    k = t[scan]\n    home = k % m\n    if (hole - home) % m < (scan - home) % m:\n        t[hole] = k\n        t[scan] = None\n        hole = scan\n    scan = (scan + 1) % m\nprint(t.index(12), t.index(6), t.index(13))",
     "options": {
       "A": "5 0 1",
       "B": "6 0 1",
@@ -1774,7 +1774,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? Heap arrays are zero-based; hash tables do not resize unless shown. None denotes a never-used empty slot.",
-    "code_snippet": "import heapq\nh=[]\nfor counter,(priority,label) in enumerate([(2,\"Z\"),(2,\"A\"),(1,\"M\")]):\n    heapq.heappush(h,(priority,counter,label))\nprint(\" \".join(heapq.heappop(h)[2] for _ in range(len(h))))",
+    "code_snippet": "import heapq\n\nh = []\nfor counter, (priority, label) in enumerate([(2, \"Z\"), (2, \"A\"), (1, \"M\")]):\n    heapq.heappush(h, (priority, counter, label))\nprint(\" \".join(heapq.heappop(h)[2] for _ in range(len(h))))",
     "options": {
       "A": "Z A M",
       "B": "A Z M",
@@ -1827,10 +1827,10 @@
     "question": "Compare testing for directed edge (u,v) using an adjacency matrix versus a plain unsorted adjacency list for u. No auxiliary hash index is stored. What are tight worst-case costs, expressed using degree deg(u)?",
     "code_snippet": null,
     "options": {
-      "A": "Matrix Theta(V^2); list Theta(V^2)",
-      "B": "Matrix Theta(1); list Theta(log(1+deg(u)))",
-      "C": "Matrix Theta(V); list Theta(1)",
-      "D": "Matrix Theta(1); list Theta(1+deg(u))"
+      "A": "Matrix Θ(V²); list Θ(V²)",
+      "B": "Matrix Θ(1); list Θ(log(1+deg(u)))",
+      "C": "Matrix Θ(V); list Θ(1)",
+      "D": "Matrix Θ(1); list Θ(1+deg(u))"
     },
     "correct_answer": "D",
     "explanation": "The matrix directly indexes one cell. The unsorted list may require scanning all of u's neighbors, with constant overhead even for an empty list."
@@ -1859,7 +1859,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "g={\"A\":[\"B\",\"C\"],\"B\":[\"D\"],\"C\":[\"D\"],\"D\":[]}\nseen=set()\nout=[]\ndef dfs(v):\n    seen.add(v)\n    out.append(v)\n    for u in g[v]:\n        if u not in seen:\n            dfs(u)\ndfs(\"A\")\nprint(\" \".join(out))",
+    "code_snippet": "g = {\"A\": [\"B\", \"C\"], \"B\": [\"D\"], \"C\": [\"D\"], \"D\": []}\nseen = set()\nout = []\n\n\ndef dfs(v):\n    seen.add(v)\n    out.append(v)\n    for u in g[v]:\n        if u not in seen:\n            dfs(u)\n\n\ndfs(\"A\")\nprint(\" \".join(out))",
     "options": {
       "A": "A B D C",
       "B": "A C D B",
@@ -1876,7 +1876,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Easy",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "from collections import deque\ng={\"A\":[\"B\",\"C\"],\"B\":[\"D\"],\"C\":[\"D\"],\"D\":[]}\nq=deque([\"A\"])\nseen={\"A\"}\nout=[]\nwhile q:\n    v=q.popleft()\n    out.append(v)\n    for u in g[v]:\n        if u not in seen:\n            seen.add(u)\n            q.append(u)\nprint(\" \".join(out))",
+    "code_snippet": "from collections import deque\n\ng = {\"A\": [\"B\", \"C\"], \"B\": [\"D\"], \"C\": [\"D\"], \"D\": []}\nq = deque([\"A\"])\nseen = {\"A\"}\nout = []\nwhile q:\n    v = q.popleft()\n    out.append(v)\n    for u in g[v]:\n        if u not in seen:\n            seen.add(u)\n            q.append(u)\nprint(\" \".join(out))",
     "options": {
       "A": "A C B D",
       "B": "A B C D",
@@ -1946,7 +1946,7 @@
     "question": "Bellman-Ford performs complete relaxation passes from one source. If there is no reachable negative-weight cycle, how many passes suffice in the worst case for V vertices?",
     "code_snippet": null,
     "options": {
-      "A": "V^2",
+      "A": "V²",
       "B": "E-1",
       "C": "V-1",
       "D": "1"
@@ -1963,10 +1963,10 @@
     "question": "Floyd-Warshall updates a V-by-V distance matrix in place over all intermediate vertices. Including that matrix, what are the standard time and storage bounds?",
     "code_snippet": null,
     "options": {
-      "A": "Time Theta(V^2), storage Theta(V)",
-      "B": "Time Theta(VE), storage Theta(E)",
-      "C": "Time Theta(V log V), storage Theta(V^3)",
-      "D": "Time Theta(V^3), storage Theta(V^2)"
+      "A": "Time Θ(V²), storage Θ(V)",
+      "B": "Time Θ(VE), storage Θ(E)",
+      "C": "Time Θ(V log V), storage Θ(V³)",
+      "D": "Time Θ(V³), storage Θ(V²)"
     },
     "correct_answer": "D",
     "explanation": "The three nested vertex loops perform cubic work and retain one quadratic matrix. This storage statement includes the required distance matrix rather than asking only for extra scalar workspace."
@@ -2012,7 +2012,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "from collections import deque\ng={\"A\":[\"B\",\"C\"],\"B\":[\"A\",\"D\"],\"C\":[\"A\",\"E\"],\"D\":[\"B\",\"F\"],\"E\":[\"C\",\"F\"],\"F\":[\"D\",\"E\"]}\nd={\"A\":0}\nq=deque([\"A\"])\nwhile q:\n    v=q.popleft()\n    for u in g[v]:\n        if u not in d:\n            d[u]=d[v]+1\n            q.append(u)\nprint(d[\"F\"])",
+    "code_snippet": "from collections import deque\n\ng = {\n    \"A\": [\"B\", \"C\"],\n    \"B\": [\"A\", \"D\"],\n    \"C\": [\"A\", \"E\"],\n    \"D\": [\"B\", \"F\"],\n    \"E\": [\"C\", \"F\"],\n    \"F\": [\"D\", \"E\"],\n}\nd = {\"A\": 0}\nq = deque([\"A\"])\nwhile q:\n    v = q.popleft()\n    for u in g[v]:\n        if u not in d:\n            d[u] = d[v] + 1\n            q.append(u)\nprint(d[\"F\"])",
     "options": {
       "A": "4",
       "B": "2",
@@ -2029,7 +2029,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "from collections import deque\ng={\"A\":[\"B\",\"C\"],\"B\":[\"D\",\"E\"],\"C\":[\"F\"],\"D\":[],\"E\":[],\"F\":[]}\nq=deque([\"A\"])\nseen={\"A\"}\nfor _ in range(2):\n    v=q.popleft()\n    for u in g[v]:\n        if u not in seen:\n            seen.add(u)\n            q.append(u)\nprint(list(q))",
+    "code_snippet": "from collections import deque\n\ng = {\"A\": [\"B\", \"C\"], \"B\": [\"D\", \"E\"], \"C\": [\"F\"], \"D\": [], \"E\": [], \"F\": []}\nq = deque([\"A\"])\nseen = {\"A\"}\nfor _ in range(2):\n    v = q.popleft()\n    for u in g[v]:\n        if u not in seen:\n            seen.add(u)\n            q.append(u)\nprint(list(q))",
     "options": {
       "A": "['C', 'F', 'D', 'E']",
       "B": "['D', 'E', 'C']",
@@ -2046,7 +2046,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "g={\"A\":[\"B\",\"C\"],\"B\":[\"D\"],\"C\":[\"D\"],\"D\":[]}\nseen=set()\nfinished=[]\ndef dfs(v):\n    seen.add(v)\n    for u in g[v]:\n        if u not in seen:\n            dfs(u)\n    finished.append(v)\ndfs(\"A\")\nprint(\" \".join(finished))",
+    "code_snippet": "g = {\"A\": [\"B\", \"C\"], \"B\": [\"D\"], \"C\": [\"D\"], \"D\": []}\nseen = set()\nfinished = []\n\n\ndef dfs(v):\n    seen.add(v)\n    for u in g[v]:\n        if u not in seen:\n            dfs(u)\n    finished.append(v)\n\n\ndfs(\"A\")\nprint(\" \".join(finished))",
     "options": {
       "A": "A B D C",
       "B": "D B C A",
@@ -2063,7 +2063,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "g={1:[2],2:[1],3:[4],4:[3],5:[]}\nseen=set()\ndef dfs(v):\n    seen.add(v)\n    for u in g[v]:\n        if u not in seen:\n            dfs(u)\nroots=0\nfor v in sorted(g):\n    if v not in seen:\n        roots+=1\n        dfs(v)\nprint(roots)",
+    "code_snippet": "g = {1: [2], 2: [1], 3: [4], 4: [3], 5: []}\nseen = set()\n\n\ndef dfs(v):\n    seen.add(v)\n    for u in g[v]:\n        if u not in seen:\n            dfs(u)\n\n\nroots = 0\nfor v in sorted(g):\n    if v not in seen:\n        roots += 1\n        dfs(v)\nprint(roots)",
     "options": {
       "A": "2",
       "B": "5",
@@ -2080,7 +2080,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "a=[[0,1,1],[0,0,1],[1,0,0]]\nprint([sum(a[u][v] for u in range(3)) for v in range(3)])",
+    "code_snippet": "a = [[0, 1, 1], [0, 0, 1], [1, 0, 0]]\nprint([sum(a[u][v] for u in range(3)) for v in range(3)])",
     "options": {
       "A": "[1, 2, 1]",
       "B": "[2, 1, 1]",
@@ -2116,13 +2116,13 @@
     "question": "For an asymptotic family of graphs with V vertices and E=3V edges, compare adjacency-list storage with an ordinary full adjacency matrix. Ignore constant-size weights per entry. Which tight pair is correct?",
     "code_snippet": null,
     "options": {
-      "A": "Both Theta(V^2)",
-      "B": "Both Theta(V)",
-      "C": "List Theta(V^2), matrix Theta(V)",
-      "D": "List Theta(V), matrix Theta(V^2)"
+      "A": "Both Θ(V²)",
+      "B": "Both Θ(V)",
+      "C": "List Θ(V²), matrix Θ(V)",
+      "D": "List Θ(V), matrix Θ(V²)"
     },
     "correct_answer": "D",
-    "explanation": "Lists take Theta(V+E)=Theta(V) for this sparse family. A full matrix allocates V^2 cells regardless of sparsity."
+    "explanation": "Lists take Θ(V+E)=Θ(V) for this sparse family. A full matrix allocates V² cells regardless of sparsity."
   },
   {
     "id": "2.3-126",
@@ -2131,7 +2131,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "import heapq\ng={1:[3],2:[3,4],3:[5],4:[5],5:[]}\ndegree={v:0 for v in g}\nfor neighbors in g.values():\n    for u in neighbors:\n        degree[u]+=1\nh=[v for v in g if degree[v]==0]\nheapq.heapify(h)\nout=[]\nwhile h:\n    v=heapq.heappop(h)\n    out.append(v)\n    for u in g[v]:\n        degree[u]-=1\n        if degree[u]==0:\n            heapq.heappush(h,u)\nprint(out)",
+    "code_snippet": "import heapq\n\ng = {1: [3], 2: [3, 4], 3: [5], 4: [5], 5: []}\ndegree = {v: 0 for v in g}\nfor neighbors in g.values():\n    for u in neighbors:\n        degree[u] += 1\nh = [v for v in g if degree[v] == 0]\nheapq.heapify(h)\nout = []\nwhile h:\n    v = heapq.heappop(h)\n    out.append(v)\n    for u in g[v]:\n        degree[u] -= 1\n        if degree[u] == 0:\n            heapq.heappush(h, u)\nprint(out)",
     "options": {
       "A": "[1, 3, 2, 4, 5]",
       "B": "[1, 2, 3, 4, 5]",
@@ -2147,7 +2147,7 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
-    "question": "A directed graph has vertices 1,2,3 and only edges 1->3 and 2->3. How many topological orders exist?",
+    "question": "A directed graph has vertices 1,2,3 and only edges 1 → 3 and 2 → 3. How many topological orders exist?",
     "code_snippet": null,
     "options": {
       "A": "6",
@@ -2164,7 +2164,7 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
-    "question": "A DAG has edges A->B,A->C,B->D,C->D. What does Kahn's algorithm reveal about uniqueness of its topological order?",
+    "question": "A DAG has edges A → B,A → C,B → D,C → D. What does Kahn's algorithm reveal about uniqueness of its topological order?",
     "code_snippet": null,
     "options": {
       "A": "It is unique because A is the only initial zero-indegree vertex",
@@ -2182,7 +2182,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "g={\"A\":[\"B\"],\"B\":[\"C\"],\"C\":[\"A\"]}\ncolor={v:0 for v in g}\ndef cycle(v):\n    color[v]=1\n    for u in g[v]:\n        if color[u]==1 or (color[u]==0 and cycle(u)):\n            return True\n    color[v]=2\n    return False\nprint(cycle(\"A\"))",
+    "code_snippet": "g = {\"A\": [\"B\"], \"B\": [\"C\"], \"C\": [\"A\"]}\ncolor = {v: 0 for v in g}\n\n\ndef cycle(v):\n    color[v] = 1\n    for u in g[v]:\n        if color[u] == 1 or (color[u] == 0 and cycle(u)):\n            return True\n    color[v] = 2\n    return False\n\n\nprint(cycle(\"A\"))",
     "options": {
       "A": "False",
       "B": "Compilation error",
@@ -2190,7 +2190,7 @@
       "D": "None"
     },
     "correct_answer": "C",
-    "explanation": "An edge to a gray vertex still on the recursion path is a directed back edge. C->A reaches gray A and identifies the cycle."
+    "explanation": "An edge to a gray vertex still on the recursion path is a directed back edge. C → A reaches gray A and identifies the cycle."
   },
   {
     "id": "2.3-130",
@@ -2199,7 +2199,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "import heapq,math\ng={\"S\":[(\"A\",5),(\"B\",2)],\"B\":[(\"A\",1),(\"T\",8)],\"A\":[(\"T\",2)],\"T\":[]}\nd={v:math.inf for v in g}\nd[\"S\"]=0\nh=[(0,\"S\")]\nwhile h:\n    cost,v=heapq.heappop(h)\n    if cost!=d[v]:\n        continue\n    for u,w in g[v]:\n        if cost+w<d[u]:\n            d[u]=cost+w\n            heapq.heappush(h,(d[u],u))\nprint(d[\"A\"],d[\"T\"])",
+    "code_snippet": "import heapq, math\n\ng = {\"S\": [(\"A\", 5), (\"B\", 2)], \"B\": [(\"A\", 1), (\"T\", 8)], \"A\": [(\"T\", 2)], \"T\": []}\nd = {v: math.inf for v in g}\nd[\"S\"] = 0\nh = [(0, \"S\")]\nwhile h:\n    cost, v = heapq.heappop(h)\n    if cost != d[v]:\n        continue\n    for u, w in g[v]:\n        if cost + w < d[u]:\n            d[u] = cost + w\n            heapq.heappush(h, (d[u], u))\nprint(d[\"A\"], d[\"T\"])",
     "options": {
       "A": "3 5",
       "B": "3 10",
@@ -2216,7 +2216,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "import heapq,math\ng={\"S\":[(\"A\",10),(\"B\",1)],\"B\":[(\"A\",1)],\"A\":[]}\nd={v:math.inf for v in g}\nd[\"S\"]=0\nh=[(0,\"S\")]\nout=[]\nwhile h:\n    cost,v=heapq.heappop(h)\n    if cost!=d[v]:\n        continue\n    out.append(v)\n    for u,w in g[v]:\n        if cost+w<d[u]:\n            d[u]=cost+w\n            heapq.heappush(h,(d[u],u))\nprint(\" \".join(out))",
+    "code_snippet": "import heapq, math\n\ng = {\"S\": [(\"A\", 10), (\"B\", 1)], \"B\": [(\"A\", 1)], \"A\": []}\nd = {v: math.inf for v in g}\nd[\"S\"] = 0\nh = [(0, \"S\")]\nout = []\nwhile h:\n    cost, v = heapq.heappop(h)\n    if cost != d[v]:\n        continue\n    out.append(v)\n    for u, w in g[v]:\n        if cost + w < d[u]:\n            d[u] = cost + w\n            heapq.heappush(h, (d[u], u))\nprint(\" \".join(out))",
     "options": {
       "A": "S A B",
       "B": "S B A",
@@ -2232,7 +2232,7 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
-    "question": "A directed graph has S->A weight 0, A->T weight 2, and S->T weight 5. Which shortest-path statement is correct?",
+    "question": "A directed graph has S → A weight 0, A → T weight 2, and S → T weight 5. Which shortest-path statement is correct?",
     "code_snippet": null,
     "options": {
       "A": "Dijkstra is valid here and finds distance 2 from S to T",
@@ -2250,7 +2250,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "import math\nedges=[(\"B\",\"C\",1),(\"A\",\"B\",1),(\"S\",\"A\",1)]\nd={\"S\":0,\"A\":math.inf,\"B\":math.inf,\"C\":math.inf}\nfor _ in range(2):\n    for u,v,w in edges:\n        if d[u]!=math.inf and d[u]+w<d[v]:\n            d[v]=d[u]+w\nprint(d[\"B\"],d[\"C\"])",
+    "code_snippet": "import math\n\nedges = [(\"B\", \"C\", 1), (\"A\", \"B\", 1), (\"S\", \"A\", 1)]\nd = {\"S\": 0, \"A\": math.inf, \"B\": math.inf, \"C\": math.inf}\nfor _ in range(2):\n    for u, v, w in edges:\n        if d[u] != math.inf and d[u] + w < d[v]:\n            d[v] = d[u] + w\nprint(d[\"B\"], d[\"C\"])",
     "options": {
       "A": "1 2",
       "B": "inf inf",
@@ -2267,7 +2267,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Bellman-Ford starts at S in the directed graph below. What does an additional relaxation test after V-1 passes establish?",
-    "code_snippet": "Edges: S->A(1), A->B(-2), B->A(1)",
+    "code_snippet": "Edges: S → A(1), A → B(-2), B → A(1)",
     "options": {
       "A": "Every vertex has a finite shortest-path distance",
       "B": "Only an unreachable negative cycle exists",
@@ -2275,7 +2275,7 @@
       "D": "A negative cycle reachable from S exists"
     },
     "correct_answer": "D",
-    "explanation": "A-B-A costs -1 and is reachable through S->A. Its repeated improvement remains detectable after the normal path-length passes."
+    "explanation": "A-B-A costs -1 and is reachable through S → A. Its repeated improvement remains detectable after the normal path-length passes."
   },
   {
     "id": "2.3-135",
@@ -2284,7 +2284,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "import math\nd=[[0,3,10],[math.inf,0,4],[math.inf,math.inf,0]]\nk=1\nfor i in range(3):\n    for j in range(3):\n        d[i][j]=min(d[i][j],d[i][k]+d[k][j])\nprint(d[0][2])",
+    "code_snippet": "import math\n\nd = [[0, 3, 10], [math.inf, 0, 4], [math.inf, math.inf, 0]]\nk = 1\nfor i in range(3):\n    for j in range(3):\n        d[i][j] = min(d[i][j], d[i][k] + d[k][j])\nprint(d[0][2])",
     "options": {
       "A": "3",
       "B": "10",
@@ -2292,7 +2292,7 @@
       "D": "7"
     },
     "correct_answer": "D",
-    "explanation": "Allowing vertex 1 as an intermediate improves 0->2 to 0->1->2 with cost 3+4=7."
+    "explanation": "Allowing vertex 1 as an intermediate improves 0 → 2 to 0 → 1 → 2 with cost 3+4=7."
   },
   {
     "id": "2.3-136",
@@ -2301,7 +2301,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "import math\nd=[[0,4,5],[math.inf,0,-2],[math.inf,math.inf,0]]\nfor k in range(3):\n    for i in range(3):\n        for j in range(3):\n            d[i][j]=min(d[i][j],d[i][k]+d[k][j])\nprint(d[0][2])",
+    "code_snippet": "import math\n\nd = [[0, 4, 5], [math.inf, 0, -2], [math.inf, math.inf, 0]]\nfor k in range(3):\n    for i in range(3):\n        for j in range(3):\n            d[i][j] = min(d[i][j], d[i][k] + d[k][j])\nprint(d[0][2])",
     "options": {
       "A": "2",
       "B": "The graph has a negative cycle",
@@ -2309,7 +2309,7 @@
       "D": "-2"
     },
     "correct_answer": "A",
-    "explanation": "Floyd-Warshall can use the negative edge without a negative cycle. The path 0->1->2 improves cost 5 to 4-2=2."
+    "explanation": "Floyd-Warshall can use the negative edge without a negative cycle. The path 0 → 1 → 2 improves cost 5 to 4-2=2."
   },
   {
     "id": "2.3-137",
@@ -2335,7 +2335,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "edges=[(1,\"A\",\"B\"),(2,\"B\",\"C\"),(3,\"A\",\"C\"),(4,\"C\",\"D\"),(5,\"B\",\"D\")]\np={v:v for v in \"ABCD\"}\ndef find(x):\n    while p[x]!=x:\n        x=p[x]\n    return x\nchosen=[]\ntotal=0\nfor w,a,b in sorted(edges):\n    x,y=find(a),find(b)\n    if x!=y:\n        p[x]=y\n        chosen.append(a+b)\n        total+=w\nprint(total,\" \".join(chosen))",
+    "code_snippet": "edges = [(1, \"A\", \"B\"), (2, \"B\", \"C\"), (3, \"A\", \"C\"), (4, \"C\", \"D\"), (5, \"B\", \"D\")]\np = {v: v for v in \"ABCD\"}\n\n\ndef find(x):\n    while p[x] != x:\n        x = p[x]\n    return x\n\n\nchosen = []\ntotal = 0\nfor w, a, b in sorted(edges):\n    x, y = find(a), find(b)\n    if x != y:\n        p[x] = y\n        chosen.append(a + b)\n        total += w\nprint(total, \" \".join(chosen))",
     "options": {
       "A": "7 AB BC CD",
       "B": "10 AB CD BD",
@@ -2352,7 +2352,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Medium",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "p={x:x for x in range(1,6)}\ndef find(x):\n    if p[x]!=x:\n        p[x]=find(p[x])\n    return p[x]\ndef union(a,b):\n    a,b=find(a),find(b)\n    if a!=b:\n        p[a]=b\nunion(1,2)\nunion(2,3)\nunion(4,5)\nprint(find(1)==find(3),find(1)==find(4))",
+    "code_snippet": "p = {x: x for x in range(1, 6)}\n\n\ndef find(x):\n    if p[x] != x:\n        p[x] = find(p[x])\n    return p[x]\n\n\ndef union(a, b):\n    a, b = find(a), find(b)\n    if a != b:\n        p[a] = b\n\n\nunion(1, 2)\nunion(2, 3)\nunion(4, 5)\nprint(find(1) == find(3), find(1) == find(4))",
     "options": {
       "A": "True False",
       "B": "False True",
@@ -2403,7 +2403,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
     "question": "Python 3. What is printed? Adjacency entries are processed in their displayed list order; vertices are marked when discovered unless the code explicitly does otherwise.",
-    "code_snippet": "import heapq,math\ng={\"S\":[(\"A\",2),(\"B\",5)],\"A\":[(\"T\",2)],\"B\":[(\"A\",-4),(\"T\",10)],\"T\":[]}\nd={v:math.inf for v in g}\nd[\"S\"]=0\nh=[(0,\"S\")]\ndone=set()\nwhile h:\n    cost,v=heapq.heappop(h)\n    if v in done:\n        continue\n    done.add(v)\n    for u,w in g[v]:\n        if u not in done and cost+w<d[u]:\n            d[u]=cost+w\n            heapq.heappush(h,(d[u],u))\nb={v:math.inf for v in g}\nb[\"S\"]=0\nfor _ in range(len(g)-1):\n    for v in g:\n        for u,w in g[v]:\n            if b[v]+w<b[u]:\n                b[u]=b[v]+w\nprint(d[\"T\"],b[\"T\"])",
+    "code_snippet": "import heapq, math\n\ng = {\"S\": [(\"A\", 2), (\"B\", 5)], \"A\": [(\"T\", 2)], \"B\": [(\"A\", -4), (\"T\", 10)], \"T\": []}\nd = {v: math.inf for v in g}\nd[\"S\"] = 0\nh = [(0, \"S\")]\ndone = set()\nwhile h:\n    cost, v = heapq.heappop(h)\n    if v in done:\n        continue\n    done.add(v)\n    for u, w in g[v]:\n        if u not in done and cost + w < d[u]:\n            d[u] = cost + w\n            heapq.heappush(h, (d[u], u))\nb = {v: math.inf for v in g}\nb[\"S\"] = 0\nfor _ in range(len(g) - 1):\n    for v in g:\n        for u, w in g[v]:\n            if b[v] + w < b[u]:\n                b[u] = b[v] + w\nprint(d[\"T\"], b[\"T\"])",
     "options": {
       "A": "3 3",
       "B": "4 3",
@@ -2419,7 +2419,7 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
-    "question": "A directed graph contains S->A(2), A->B(1), X->Y(-2), and Y->X(1), with no other edges. Bellman-Ford initializes only S to zero and others to infinity. Compare its reachable-negative-cycle test with an all-pairs Floyd-Warshall negative-diagonal test.",
+    "question": "A directed graph contains S → A(2), A → B(1), X → Y(-2), and Y → X(1), with no other edges. Bellman-Ford initializes only S to zero and others to infinity. Compare its reachable-negative-cycle test with an all-pairs Floyd-Warshall negative-diagonal test.",
     "code_snippet": null,
     "options": {
       "A": "Bellman-Ford must report X-Y as reachable from S",
@@ -2437,7 +2437,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
     "question": "Shortest-walk distances allow repeated edges. In the directed graph below, which listed source-target pair has no finite minimum because a reachable negative cycle can also reach the target?",
-    "code_snippet": "Edges: E->A(4), A->B(1), B->C(-3), C->B(1), C->D(2)",
+    "code_snippet": "Edges: E → A(4), A → B(1), B → C(-3), C → B(1), C → D(2)",
     "options": {
       "A": "(A,A)",
       "B": "(D,D)",
@@ -2454,7 +2454,7 @@
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
     "question": "How many topological orders exist for vertices A,B,C,D,E and exactly these directed edges?",
-    "code_snippet": "A->D\nB->D\nB->E\nC->E",
+    "code_snippet": "A → D\nB → D\nB → E\nC → E",
     "options": {
       "A": "20",
       "B": "16",
@@ -2538,13 +2538,13 @@
     "subpart_id": "2.3",
     "subpart_name": "Non-linear Data Structures & Hashing",
     "difficulty": "Hard",
-    "question": "A perfect binary tree has V nodes and height Theta(log V). Compare BFS queue space with recursive DFS call-stack space. The tree is known acyclic, so no visited array is used; exclude input storage and output. What is the tight pair of peak traversal-state bounds?",
+    "question": "A perfect binary tree has V nodes and height Θ(log V). Compare BFS queue space with recursive DFS call-stack space. The tree is known acyclic, so no visited array is used; exclude input storage and output. What is the tight pair of peak traversal-state bounds?",
     "code_snippet": null,
     "options": {
-      "A": "BFS Theta(V), DFS Theta(log V)",
-      "B": "Both Theta(V)",
-      "C": "Both Theta(log V)",
-      "D": "BFS Theta(log V), DFS Theta(V)"
+      "A": "BFS Θ(V), DFS Θ(log V)",
+      "B": "Both Θ(V)",
+      "C": "Both Θ(log V)",
+      "D": "BFS Θ(log V), DFS Θ(V)"
     },
     "correct_answer": "A",
     "explanation": "The BFS queue reaches a leaf frontier containing a constant fraction of all vertices. Recursive DFS retains one root-to-leaf path; the explicitly excluded visited array must not be added to its stack bound."

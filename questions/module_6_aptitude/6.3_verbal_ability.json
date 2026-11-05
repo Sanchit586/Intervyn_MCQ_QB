@@ -312,7 +312,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Easy",
     "question": "Passage A: Which statement best expresses the central idea?",
-    "code_snippet": "A support team found that many incoming tickets asked the same setup questions. It published a searchable guide for those questions while retaining direct support for unusual cases. Routine tickets then declined, and specialists spent more time on complex problems. The team reviews the guide every month so that outdated instructions can be corrected.",
+    "code_snippet": "A support team found that many incoming tickets asked the same setup questions. It\npublished a searchable guide for those questions while retaining direct support for\nunusual cases. Routine tickets then declined, and specialists spent more time on complex\nproblems. The team reviews the guide every month so that outdated instructions can be\ncorrected.",
     "options": {
       "A": "A maintained guide can handle common questions while specialists address unusual cases.",
       "B": "The team stopped updating its setup instructions.",
@@ -329,7 +329,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Easy",
     "question": "Passage A: How often does the team review the guide?",
-    "code_snippet": "A support team found that many incoming tickets asked the same setup questions. It published a searchable guide for those questions while retaining direct support for unusual cases. Routine tickets then declined, and specialists spent more time on complex problems. The team reviews the guide every month so that outdated instructions can be corrected.",
+    "code_snippet": "A support team found that many incoming tickets asked the same setup questions. It\npublished a searchable guide for those questions while retaining direct support for\nunusual cases. Routine tickets then declined, and specialists spent more time on complex\nproblems. The team reviews the guide every month so that outdated instructions can be\ncorrected.",
     "options": {
       "A": "Never after publication",
       "B": "Every month",
@@ -346,7 +346,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Easy",
     "question": "Passage A: Which description best matches the passage's tone?",
-    "code_snippet": "A support team found that many incoming tickets asked the same setup questions. It published a searchable guide for those questions while retaining direct support for unusual cases. Routine tickets then declined, and specialists spent more time on complex problems. The team reviews the guide every month so that outdated instructions can be corrected.",
+    "code_snippet": "A support team found that many incoming tickets asked the same setup questions. It\npublished a searchable guide for those questions while retaining direct support for\nunusual cases. Routine tickets then declined, and specialists spent more time on complex\nproblems. The team reviews the guide every month so that outdated instructions can be\ncorrected.",
     "options": {
       "A": "Unqualified celebration of eliminating human support",
       "B": "Angry and accusatory",
@@ -839,7 +839,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Medium",
     "question": "Passage B: Which conclusion is justified by the reported measurements?",
-    "code_snippet": "After a release, a service's mean response time fell from 200 milliseconds to 150 milliseconds. However, response times for the slowest one percent of requests became longer. The team retained both the mean and a tail-latency measure in its report. It wanted readers to see the broad improvement without overlooking the experience of the slowest requests.",
+    "code_snippet": "After a release, a service's mean response time fell from 200 milliseconds to 150\nmilliseconds. However, response times for the slowest one percent of requests became\nlonger. The team retained both the mean and a tail-latency measure in its report. It\nwanted readers to see the broad improvement without overlooking the experience of the\nslowest requests.",
     "options": {
       "A": "The mean improved, but the slowest requests did not improve.",
       "B": "Every request became faster.",
@@ -856,7 +856,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Medium",
     "question": "Passage B: Why did the team retain both measures?",
-    "code_snippet": "After a release, a service's mean response time fell from 200 milliseconds to 150 milliseconds. However, response times for the slowest one percent of requests became longer. The team retained both the mean and a tail-latency measure in its report. It wanted readers to see the broad improvement without overlooking the experience of the slowest requests.",
+    "code_snippet": "After a release, a service's mean response time fell from 200 milliseconds to 150\nmilliseconds. However, response times for the slowest one percent of requests became\nlonger. The team retained both the mean and a tail-latency measure in its report. It\nwanted readers to see the broad improvement without overlooking the experience of the\nslowest requests.",
     "options": {
       "A": "To prove that the release helped every user equally",
       "B": "To replace all performance evidence with one favorable number",
@@ -873,7 +873,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Medium",
     "question": "Passage B: Which statement is NOT supported?",
-    "code_snippet": "After a release, a service's mean response time fell from 200 milliseconds to 150 milliseconds. However, response times for the slowest one percent of requests became longer. The team retained both the mean and a tail-latency measure in its report. It wanted readers to see the broad improvement without overlooking the experience of the slowest requests.",
+    "code_snippet": "After a release, a service's mean response time fell from 200 milliseconds to 150\nmilliseconds. However, response times for the slowest one percent of requests became\nlonger. The team retained both the mean and a tail-latency measure in its report. It\nwanted readers to see the broad improvement without overlooking the experience of the\nslowest requests.",
     "options": {
       "A": "The slowest one percent of requests had longer response times.",
       "B": "The reported mean response time decreased.",
@@ -890,7 +890,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Medium",
     "question": "Passage C: What can reasonably explain a department's absence from the dashboard?",
-    "code_snippet": "A company publishes departmental survey summaries only when at least ten employees in a department respond. The threshold reduces the chance that an individual response can be identified. As a result, some departments are absent from the dashboard even though employees there participated. The report explains this limitation rather than treating missing departmental summaries as evidence of no participation.",
+    "code_snippet": "A company publishes departmental survey summaries only when at least ten employees in a\ndepartment respond. The threshold reduces the chance that an individual response can be\nidentified. As a result, some departments are absent from the dashboard even though\nemployees there participated. The report explains this limitation rather than treating\nmissing departmental summaries as evidence of no participation.",
     "options": {
       "A": "Its employees must all have rejected the survey.",
       "B": "It must have had no respondents.",
@@ -907,7 +907,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Medium",
     "question": "Passage C: What trade-off does the publication threshold create?",
-    "code_snippet": "A company publishes departmental survey summaries only when at least ten employees in a department respond. The threshold reduces the chance that an individual response can be identified. As a result, some departments are absent from the dashboard even though employees there participated. The report explains this limitation rather than treating missing departmental summaries as evidence of no participation.",
+    "code_snippet": "A company publishes departmental survey summaries only when at least ten employees in a\ndepartment respond. The threshold reduces the chance that an individual response can be\nidentified. As a result, some departments are absent from the dashboard even though\nemployees there participated. The report explains this limitation rather than treating\nmissing departmental summaries as evidence of no participation.",
     "options": {
       "A": "Proof that unpublished departments do not matter",
       "B": "Guaranteed complete coverage with no privacy concern",
@@ -924,7 +924,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Medium",
     "question": "Passage D: Which claim best respects the report's stated limitation?",
-    "code_snippet": "New employees received both revised training videos and scheduled mentoring sessions during the same quarter. Their average time to complete onboarding decreased. The coordinator welcomed the change but noted that the two interventions were introduced together. The report therefore described an improvement in the combined program, without assigning the entire benefit to either videos or mentoring alone.",
+    "code_snippet": "New employees received both revised training videos and scheduled mentoring sessions\nduring the same quarter. Their average time to complete onboarding decreased. The\ncoordinator welcomed the change but noted that the two interventions were introduced\ntogether. The report therefore described an improvement in the combined program, without\nassigning the entire benefit to either videos or mentoring alone.",
     "options": {
       "A": "Neither change could have contributed to the improvement.",
       "B": "The videos alone caused the entire improvement.",
@@ -941,7 +941,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Medium",
     "question": "Passage D: Which description best fits the coordinator's attitude?",
-    "code_snippet": "New employees received both revised training videos and scheduled mentoring sessions during the same quarter. Their average time to complete onboarding decreased. The coordinator welcomed the change but noted that the two interventions were introduced together. The report therefore described an improvement in the combined program, without assigning the entire benefit to either videos or mentoring alone.",
+    "code_snippet": "New employees received both revised training videos and scheduled mentoring sessions\nduring the same quarter. Their average time to complete onboarding decreased. The\ncoordinator welcomed the change but noted that the two interventions were introduced\ntogether. The report therefore described an improvement in the combined program, without\nassigning the entire benefit to either videos or mentoring alone.",
     "options": {
       "A": "Encouraged by the result but cautious about attribution",
       "B": "Certain that mentoring was useless",
@@ -1026,7 +1026,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage E: Which inference is best supported?",
-    "code_snippet": "Three teams volunteered to pilot a review assistant. Their median review time fell during the pilot, but they also added experienced reviewers and handled fewer urgent changes than in the preceding month. The evaluation described the results as promising rather than conclusive. It proposed a further comparison with similar workloads and staffing, while monitoring whether faster reviews missed important defects.",
+    "code_snippet": "Three teams volunteered to pilot a review assistant. Their median review time fell\nduring the pilot, but they also added experienced reviewers and handled fewer urgent\nchanges than in the preceding month. The evaluation described the results as promising\nrather than conclusive. It proposed a further comparison with similar workloads and\nstaffing, while monitoring whether faster reviews missed important defects.",
     "options": {
       "A": "The observed improvement is compatible with a useful assistant, but the assistant's separate causal effect has not been established.",
       "B": "The assistant certainly had no effect because other factors changed.",
@@ -1043,7 +1043,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage E: Which assumption would a claim that the assistant alone explains the faster reviews most need to justify?",
-    "code_snippet": "Three teams volunteered to pilot a review assistant. Their median review time fell during the pilot, but they also added experienced reviewers and handled fewer urgent changes than in the preceding month. The evaluation described the results as promising rather than conclusive. It proposed a further comparison with similar workloads and staffing, while monitoring whether faster reviews missed important defects.",
+    "code_snippet": "Three teams volunteered to pilot a review assistant. Their median review time fell\nduring the pilot, but they also added experienced reviewers and handled fewer urgent\nchanges than in the preceding month. The evaluation described the results as promising\nrather than conclusive. It proposed a further comparison with similar workloads and\nstaffing, while monitoring whether faster reviews missed important defects.",
     "options": {
       "A": "That review speed is unrelated to any team activity",
       "B": "That every future review will involve no urgent changes",
@@ -1060,7 +1060,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage E: Why monitor missed defects in the proposed follow-up?",
-    "code_snippet": "Three teams volunteered to pilot a review assistant. Their median review time fell during the pilot, but they also added experienced reviewers and handled fewer urgent changes than in the preceding month. The evaluation described the results as promising rather than conclusive. It proposed a further comparison with similar workloads and staffing, while monitoring whether faster reviews missed important defects.",
+    "code_snippet": "Three teams volunteered to pilot a review assistant. Their median review time fell\nduring the pilot, but they also added experienced reviewers and handled fewer urgent\nchanges than in the preceding month. The evaluation described the results as promising\nrather than conclusive. It proposed a further comparison with similar workloads and\nstaffing, while monitoring whether faster reviews missed important defects.",
     "options": {
       "A": "Defect detection is already proven identical across all teams.",
       "B": "Faster reviews logically guarantee more missed defects.",
@@ -1077,7 +1077,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage F: What is the engineer's central objection?",
-    "code_snippet": "A monitoring change reduced the number of alerts displayed each week. The change also excluded several categories of low-severity events. Managers initially described the quieter dashboard as evidence of a more reliable service. An engineer objected that alert counts depended on the new filtering rules as well as on actual incidents. She asked for an independent review of known incidents and missed detections before accepting the reliability claim.",
+    "code_snippet": "A monitoring change reduced the number of alerts displayed each week. The change also\nexcluded several categories of low-severity events. Managers initially described the\nquieter dashboard as evidence of a more reliable service. An engineer objected that\nalert counts depended on the new filtering rules as well as on actual incidents. She\nasked for an independent review of known incidents and missed detections before\naccepting the reliability claim.",
     "options": {
       "A": "The dashboard cannot display any useful information.",
       "B": "Every excluded low-severity event must cause a service outage.",
@@ -1094,7 +1094,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage F: Which additional finding would most directly strengthen the managers' reliability claim?",
-    "code_snippet": "A monitoring change reduced the number of alerts displayed each week. The change also excluded several categories of low-severity events. Managers initially described the quieter dashboard as evidence of a more reliable service. An engineer objected that alert counts depended on the new filtering rules as well as on actual incidents. She asked for an independent review of known incidents and missed detections before accepting the reliability claim.",
+    "code_snippet": "A monitoring change reduced the number of alerts displayed each week. The change also\nexcluded several categories of low-severity events. Managers initially described the\nquieter dashboard as evidence of a more reliable service. An engineer objected that\nalert counts depended on the new filtering rules as well as on actual incidents. She\nasked for an independent review of known incidents and missed detections before\naccepting the reliability claim.",
     "options": {
       "A": "The filters suppressed twice as many event categories.",
       "B": "The dashboard used a more attractive color scheme.",
@@ -1111,7 +1111,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage F: Which interpretation of the engineer's request is most accurate?",
-    "code_snippet": "A monitoring change reduced the number of alerts displayed each week. The change also excluded several categories of low-severity events. Managers initially described the quieter dashboard as evidence of a more reliable service. An engineer objected that alert counts depended on the new filtering rules as well as on actual incidents. She asked for an independent review of known incidents and missed detections before accepting the reliability claim.",
+    "code_snippet": "A monitoring change reduced the number of alerts displayed each week. The change also\nexcluded several categories of low-severity events. Managers initially described the\nquieter dashboard as evidence of a more reliable service. An engineer objected that\nalert counts depended on the new filtering rules as well as on actual incidents. She\nasked for an independent review of known incidents and missed detections before\naccepting the reliability claim.",
     "options": {
       "A": "She wants evidence that distinguishes a reporting change from a change in service reliability.",
       "B": "She has already proved that reliability deteriorated.",
@@ -1128,7 +1128,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage G: What general conclusion is supported by this case?",
-    "code_snippet": "An automation project halved the time analysts spent extracting fields from requests. Yet the average end-to-end completion time barely changed because completed forms still waited several days for approval. The project lead called the extraction improvement real but local. Before funding another extraction upgrade, she proposed examining the approval queue that now occupied most of the total cycle.",
+    "code_snippet": "An automation project halved the time analysts spent extracting fields from requests.\nYet the average end-to-end completion time barely changed because completed forms still\nwaited several days for approval. The project lead called the extraction improvement\nreal but local. Before funding another extraction upgrade, she proposed examining the\napproval queue that now occupied most of the total cycle.",
     "options": {
       "A": "The extraction automation did not save analyst time.",
       "B": "Approval delays are irrelevant to end-to-end performance.",
@@ -1145,7 +1145,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage G: Which action best follows the project lead's stated reasoning?",
-    "code_snippet": "An automation project halved the time analysts spent extracting fields from requests. Yet the average end-to-end completion time barely changed because completed forms still waited several days for approval. The project lead called the extraction improvement real but local. Before funding another extraction upgrade, she proposed examining the approval queue that now occupied most of the total cycle.",
+    "code_snippet": "An automation project halved the time analysts spent extracting fields from requests.\nYet the average end-to-end completion time barely changed because completed forms still\nwaited several days for approval. The project lead called the extraction improvement\nreal but local. Before funding another extraction upgrade, she proposed examining the\napproval queue that now occupied most of the total cycle.",
     "options": {
       "A": "Discard the automation because local improvements have no value.",
       "B": "Investigate approval delays before assuming another extraction upgrade will shorten the whole cycle.",
@@ -1162,7 +1162,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage H: Which principle best captures the team's decision?",
-    "code_snippet": "A replacement interface library passed the team's functional compatibility tests. Separate checks nevertheless found that several common tasks could not be completed using a keyboard alone. The release was postponed until those tasks could be corrected and retested. The team did not reject the migration; it rejected the idea that passing one test category was sufficient evidence of readiness for every user.",
+    "code_snippet": "A replacement interface library passed the team's functional compatibility tests.\nSeparate checks nevertheless found that several common tasks could not be completed\nusing a keyboard alone. The release was postponed until those tasks could be corrected\nand retested. The team did not reject the migration; it rejected the idea that passing\none test category was sufficient evidence of readiness for every user.",
     "options": {
       "A": "Any keyboard defect makes every future migration impossible.",
       "B": "Evidence of functional compatibility does not by itself establish readiness across other required dimensions.",
@@ -1179,7 +1179,7 @@
     "subpart_name": "Verbal Ability",
     "difficulty": "Hard",
     "question": "Passage H: Which claim is least justified by the passage?",
-    "code_snippet": "A replacement interface library passed the team's functional compatibility tests. Separate checks nevertheless found that several common tasks could not be completed using a keyboard alone. The release was postponed until those tasks could be corrected and retested. The team did not reject the migration; it rejected the idea that passing one test category was sufficient evidence of readiness for every user.",
+    "code_snippet": "A replacement interface library passed the team's functional compatibility tests.\nSeparate checks nevertheless found that several common tasks could not be completed\nusing a keyboard alone. The release was postponed until those tasks could be corrected\nand retested. The team did not reject the migration; it rejected the idea that passing\none test category was sufficient evidence of readiness for every user.",
     "options": {
       "A": "The library's functional-test success proves that every user can complete every common task.",
       "B": "The postponement did not amount to rejecting the migration altogether.",

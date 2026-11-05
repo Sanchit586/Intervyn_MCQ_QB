@@ -6,7 +6,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Easy",
     "question": "For the relation instance below, which listed functional dependency is violated? Attribute values are atomic and non-NULL.",
-    "code_snippet": "Employee | Department | Head\nE1       | D1         | H1\nE2       | D1         | H2\nE3       | D2         | H3",
+    "code_snippet": "Employee | Department | Head\nE1       | D1         | H₁\nE2       | D1         | H2\nE3       | D2         | H3",
     "options": {
       "A": "Head -> Employee",
       "B": "Head -> Department",
@@ -23,7 +23,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Easy",
     "question": "For the schema and complete FD set below, what is the attribute closure A+?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->C",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → C",
     "options": {
       "A": "{A,B,C}",
       "B": "{A,B}",
@@ -31,7 +31,7 @@
       "D": "{A,C}"
     },
     "correct_answer": "A",
-    "explanation": "Start with A, obtain B using A->B, then C using B->C. No dependency derives D, so the closure is exactly {A,B,C}."
+    "explanation": "Start with A, obtain B using A → B, then C using B → C. No dependency derives D, so the closure is exactly {A,B,C}."
   },
   {
     "id": "1.2.1-003",
@@ -40,7 +40,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Easy",
     "question": "For the atomic relation below, which option lists all candidate keys? Assume the given FDs and their logical consequences are the only constraints relevant to keys.",
-    "code_snippet": "R(A,B,C)\nFDs: A->B; A->C",
+    "code_snippet": "R(A,B,C)\nFDs: A → B; A → C",
     "options": {
       "A": "{A}, {A,B}, and {A,C}",
       "B": "{B,C}",
@@ -57,7 +57,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Easy",
     "question": "Which listed attribute set is a superkey but is not a candidate key under exactly the FDs below?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->C",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → C",
     "options": {
       "A": "{A,B,D}",
       "B": "{B,C}",
@@ -110,13 +110,13 @@
     "question": "For R(A,B,C), which FD is trivial solely by the definition of a trivial dependency, without using any additional constraints?",
     "code_snippet": null,
     "options": {
-      "A": "A->B",
-      "B": "AC->B",
-      "C": "AB->A",
-      "D": "B->C"
+      "A": "A → B",
+      "B": "AC → B",
+      "C": "AB → A",
+      "D": "B → C"
     },
     "correct_answer": "C",
-    "explanation": "An FD X->Y is trivial when Y is a subset of X. A is already contained in AB; each other option places an attribute on the right that is absent from its left side."
+    "explanation": "An FD X → Y is trivial when Y is a subset of X. A is already contained in AB; each other option places an attribute on the right that is absent from its left side."
   },
   {
     "id": "1.2.1-008",
@@ -125,7 +125,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Easy",
     "question": "All values are atomic, and the following are the complete FD constraints. What is the highest normal form of R?",
-    "code_snippet": "R(A,B)\nFDs: A->B; B->A",
+    "code_snippet": "R(A,B)\nFDs: A → B; B → A",
     "options": {
       "A": "2NF",
       "B": "1NF",
@@ -142,7 +142,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Easy",
     "question": "All values are atomic. EmployeeID is the only candidate key, and the complete nontrivial FD basis is shown. What is the highest normal form?",
-    "code_snippet": "R(EmployeeID,Department,Manager)\nFDs: EmployeeID->Department; Department->Manager",
+    "code_snippet": "R(EmployeeID,Department,Manager)\nFDs: EmployeeID → Department; Department->Manager",
     "options": {
       "A": "3NF",
       "B": "1NF",
@@ -159,7 +159,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "For the complete FD basis below, what is A+? Apply dependencies until no additional attributes can be derived.",
-    "code_snippet": "R(A,B,C,D,E,F)\nFDs: A->BC; C->D; BD->E; E->F",
+    "code_snippet": "R(A,B,C,D,E,F)\nFDs: A → BC; C → D; BD → E; E → F",
     "options": {
       "A": "{A,C,D,E,F}",
       "B": "{A,B,C,D,E}",
@@ -167,7 +167,7 @@
       "D": "{A,B,C,D,E,F}"
     },
     "correct_answer": "D",
-    "explanation": "A supplies B and C. C supplies D, making both B and D available for BD->E. E then supplies F. Thus every attribute belongs to A+."
+    "explanation": "A supplies B and C. C supplies D, making both B and D available for BD → E. E then supplies F. Thus every attribute belongs to A+."
   },
   {
     "id": "1.2.1-011",
@@ -176,7 +176,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "For R below, which option lists exactly all candidate keys?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->A; C->D",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → A; C → D",
     "options": {
       "A": "{A,C} and {B,C}",
       "B": "{A,C}, {B,C}, and {A,B,C}",
@@ -193,7 +193,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "How many distinct superkeys, counting different attribute subsets separately, does this schema have?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->A; C->D",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → A; C → D",
     "options": {
       "A": "4",
       "B": "2",
@@ -210,7 +210,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "An attribute is prime if it occurs in at least one candidate key. Which option lists exactly the prime attributes of this schema?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->A; C->D",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → A; C → D",
     "options": {
       "A": "{A,B,C}",
       "B": "{A,B}",
@@ -227,7 +227,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "All values are atomic. Under exactly the FDs below, what is the highest normal form of R?",
-    "code_snippet": "R(A,B,C)\nFDs: AB->C; C->B",
+    "code_snippet": "R(A,B,C)\nFDs: AB → C; C → B",
     "options": {
       "A": "2NF",
       "B": "3NF",
@@ -235,7 +235,7 @@
       "D": "1NF"
     },
     "correct_answer": "B",
-    "explanation": "The candidate keys are AB and AC, making all three attributes prime. C->B is allowed by 3NF because B is prime, but it violates BCNF because C+ = {B,C}, so C is not a superkey."
+    "explanation": "The candidate keys are AB and AC, making all three attributes prime. C → B is allowed by 3NF because B is prime, but it violates BCNF because C+ = {B,C}, so C is not a superkey."
   },
   {
     "id": "1.2.1-015",
@@ -244,7 +244,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "All values are atomic. Determine the highest normal form under the complete FD basis below; no candidate key is supplied in advance.",
-    "code_snippet": "R(A,B,C,D)\nFDs: AB->C; B->C; C->D",
+    "code_snippet": "R(A,B,C,D)\nFDs: AB → C; B → C; C → D",
     "options": {
       "A": "2NF",
       "B": "3NF",
@@ -261,15 +261,15 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "Which listed dependency demonstrates a BCNF violation in the following schema? Consider all FDs implied by the given basis.",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->C; C->D",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → C; C → D",
     "options": {
-      "A": "CD->C",
-      "B": "B->C",
-      "C": "AB->D",
-      "D": "A->BC"
+      "A": "CD → C",
+      "B": "B → C",
+      "C": "AB → D",
+      "D": "A → BC"
     },
     "correct_answer": "B",
-    "explanation": "B+ = {B,C,D}, which lacks A, so B is not a superkey; B->C is nontrivial and violates BCNF. A and AB are superkeys, while CD->C is trivial."
+    "explanation": "B+ = {B,C,D}, which lacks A, so B is not a superkey; B → C is nontrivial and violates BCNF. A and AB are superkeys, while CD → C is trivial."
   },
   {
     "id": "1.2.1-017",
@@ -278,7 +278,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "For the complete FD basis below, classify the decomposition into AB and AC. Lossless means every legal original relation equals the join of its projections; dependency preservation means the projected FDs jointly imply the original FDs.",
-    "code_snippet": "R(A,B,C)\nFDs: A->B\nDecomposition: R1(A,B), R2(A,C)",
+    "code_snippet": "R(A,B,C)\nFDs: A → B\nDecomposition: R1(A,B), R2(A,C)",
     "options": {
       "A": "Lossy but dependency-preserving",
       "B": "Lossless and dependency-preserving",
@@ -286,7 +286,7 @@
       "D": "Lossy and not dependency-preserving"
     },
     "correct_answer": "B",
-    "explanation": "The intersection is A, and A->AB, so the binary decomposition is lossless. A->B can be enforced within AB, preserving the complete FD basis."
+    "explanation": "The intersection is A, and A → AB, so the binary decomposition is lossless. A → B can be enforced within AB, preserving the complete FD basis."
   },
   {
     "id": "1.2.1-018",
@@ -294,8 +294,8 @@
     "subpart_id": "1.2.1",
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
-    "question": "Under exactly F = {A->B}, classify the decomposition of R(A,B,C) into AB and BC.",
-    "code_snippet": "R(A,B,C)\nFDs: A->B\nDecomposition: R1(A,B), R2(B,C)",
+    "question": "Under exactly F = {A → B}, classify the decomposition of R(A,B,C) into AB and BC.",
+    "code_snippet": "R(A,B,C)\nFDs: A → B\nDecomposition: R1(A,B), R2(B,C)",
     "options": {
       "A": "Lossless but not dependency-preserving",
       "B": "Lossy but dependency-preserving",
@@ -303,7 +303,7 @@
       "D": "Lossless and dependency-preserving"
     },
     "correct_answer": "B",
-    "explanation": "The intersection B determines neither AB nor BC, so the binary lossless-join criterion fails. The original A->B remains enforceable in AB, so the decomposition nevertheless preserves dependencies."
+    "explanation": "The intersection B determines neither AB nor BC, so the binary lossless-join criterion fails. The original A → B remains enforceable in AB, so the decomposition nevertheless preserves dependencies."
   },
   {
     "id": "1.2.1-019",
@@ -312,7 +312,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "Under exactly the FDs below, classify the decomposition into AC and BC.",
-    "code_snippet": "R(A,B,C)\nFDs: AB->C; C->B\nDecomposition: R1(A,C), R2(B,C)",
+    "code_snippet": "R(A,B,C)\nFDs: AB → C; C → B\nDecomposition: R1(A,C), R2(B,C)",
     "options": {
       "A": "Lossy but dependency-preserving",
       "B": "Lossless but not dependency-preserving",
@@ -320,7 +320,7 @@
       "D": "Lossless and dependency-preserving"
     },
     "correct_answer": "B",
-    "explanation": "The intersection C determines BC, establishing losslessness. The nontrivial projected constraint is C->B in BC; AC has no nontrivial FD. Their union cannot derive AB->C, so dependency preservation fails."
+    "explanation": "The intersection C determines BC, establishing losslessness. The nontrivial projected constraint is C → B in BC; AC has no nontrivial FD. Their union cannot derive AB → C, so dependency preservation fails."
   },
   {
     "id": "1.2.1-020",
@@ -328,16 +328,16 @@
     "subpart_id": "1.2.1",
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
-    "question": "A decomposition produces AB, BC, and CD under the FDs below. Can enforcing the projected FDs within these tables guarantee the original consequence A->D, without a cross-table FD check?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->C; C->D\nDecomposition: R1(A,B), R2(B,C), R3(C,D)",
+    "question": "A decomposition produces AB, BC, and CD under the FDs below. Can enforcing the projected FDs within these tables guarantee the original consequence A → D, without a cross-table FD check?",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → C; C → D\nDecomposition: R1(A,B), R2(B,C), R3(C,D)",
     "options": {
       "A": "No; transitivity cannot be used across projected FD sets",
-      "B": "Yes; the locally enforced chain A->B, B->C, C->D implies A->D",
+      "B": "Yes; the locally enforced chain A → B, B → C, C → D implies A → D",
       "C": "No; A and D must occur together in one component",
       "D": "Yes, but only if every component uses A as its primary key"
     },
     "correct_answer": "B",
-    "explanation": "Dependency preservation uses the logical closure of the union of projected FDs. The three local dependencies imply A->D by transitivity, even though A and D never appear together in a component."
+    "explanation": "Dependency preservation uses the logical closure of the union of projected FDs. The three local dependencies imply A → D by transitivity, even though A and D never appear together in a component."
   },
   {
     "id": "1.2.1-021",
@@ -346,15 +346,15 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "Which option is an equivalent minimal cover with singleton right-hand sides for the FD set below? Minimal means no FD or left-side attribute can be removed while preserving equivalence.",
-    "code_snippet": "R(A,B,C)\nFDs: A->BC; B->C; A->B; AB->C",
+    "code_snippet": "R(A,B,C)\nFDs: A → BC; B → C; A → B; AB → C",
     "options": {
-      "A": "{A->C, B->C}",
-      "B": "{A->B, A->C, B->C}",
-      "C": "{A->B, B->C}",
-      "D": "{A->B, B->A}"
+      "A": "{A → C, B → C}",
+      "B": "{A → B, A → C, B → C}",
+      "C": "{A → B, B → C}",
+      "D": "{A → B, B → A}"
     },
     "correct_answer": "C",
-    "explanation": "Split A->BC into A->B and A->C. A->C and AB->C follow from A->B and B->C, so they are redundant. Neither remaining dependency can be removed or have its singleton determinant reduced."
+    "explanation": "Split A → BC into A → B and A → C. A → C and AB → C follow from A → B and B → C, so they are redundant. Neither remaining dependency can be removed or have its singleton determinant reduced."
   },
   {
     "id": "1.2.1-022",
@@ -363,15 +363,15 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "Which single FD can be removed from this basis without changing its closure?",
-    "code_snippet": "R(A,B,C,D,E)\nFDs: A->B; B->C; A->C; CD->E",
+    "code_snippet": "R(A,B,C,D,E)\nFDs: A → B; B → C; A → C; CD → E",
     "options": {
-      "A": "A->C",
-      "B": "CD->E",
-      "C": "B->C",
-      "D": "A->B"
+      "A": "A → C",
+      "B": "CD → E",
+      "C": "B → C",
+      "D": "A → B"
     },
     "correct_answer": "A",
-    "explanation": "A->C follows from A->B and B->C. Removing any of the other three loses a consequence: A could no longer derive B, B could no longer derive C, or CD could no longer derive E, respectively."
+    "explanation": "A → C follows from A → B and B → C. Removing any of the other three loses a consequence: A could no longer derive B, B could no longer derive C, or CD could no longer derive E, respectively."
   },
   {
     "id": "1.2.1-023",
@@ -380,7 +380,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "A standard dependency-preserving 3NF synthesis has produced AB and CD from the FD basis below. Neither component contains a candidate key of the original schema. Which listed relation should be added in the synthesis key-containment step?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->A; C->D\nCurrent components: R1(A,B), R2(C,D)",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → A; C → D\nCurrent components: R1(A,B), R2(C,D)",
     "options": {
       "A": "R3(A,C)",
       "B": "No additional relation is needed for the key-containment step",
@@ -397,15 +397,15 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Medium",
     "question": "Project the full FD closure of the original schema onto attributes {A,C,D}. Which listed nontrivial FD must hold in that projection?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->C\nProjected schema: S(A,C,D)",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → C\nProjected schema: S(A,C,D)",
     "options": {
-      "A": "CD->A",
-      "B": "D->A",
-      "C": "C->A",
-      "D": "A->C"
+      "A": "CD → A",
+      "B": "D → A",
+      "C": "C → A",
+      "D": "A → C"
     },
     "correct_answer": "D",
-    "explanation": "A->C is implied by A->B and B->C, and both A and C survive projection. Projection includes implied dependencies, not just the syntactically listed FDs whose attributes all remain. No listed FD can derive A from C or D."
+    "explanation": "A → C is implied by A → B and B → C, and both A and C survive projection. Projection includes implied dependencies, not just the syntactically listed FDs whose attributes all remain. No listed FD can derive A from C or D."
   },
   {
     "id": "1.2.1-025",
@@ -414,7 +414,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Hard",
     "question": "Under exactly the FDs below, how many candidate keys does R have? Count minimal keys only.",
-    "code_snippet": "R(A,B,C,D,E)\nFDs: AB->C; C->A; BC->D; D->E; E->B",
+    "code_snippet": "R(A,B,C,D,E)\nFDs: AB → C; C → A; BC → D; D → E; E → B",
     "options": {
       "A": "3",
       "B": "6",
@@ -431,7 +431,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Hard",
     "question": "All values are atomic. What is the highest normal form under this complete FD basis?",
-    "code_snippet": "R(A,B,C,D)\nFDs: AB->C; C->D; D->A",
+    "code_snippet": "R(A,B,C,D)\nFDs: AB → C; C → D; D → A",
     "options": {
       "A": "3NF",
       "B": "1NF",
@@ -439,7 +439,7 @@
       "D": "2NF"
     },
     "correct_answer": "A",
-    "explanation": "The candidate keys are AB, BC, and BD, so every attribute is prime. Consequently every implied singleton-right-side nontrivial FD satisfies 3NF. C and D are not superkeys because neither derives B, so C->D and D->A prevent BCNF."
+    "explanation": "The candidate keys are AB, BC, and BD, so every attribute is prime. Consequently every implied singleton-right-side nontrivial FD satisfies 3NF. C and D are not superkeys because neither derives B, so C → D and D → A prevent BCNF."
   },
   {
     "id": "1.2.1-027",
@@ -465,7 +465,7 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Hard",
     "question": "Classify the three-component decomposition below under the complete FD basis, considering projected dependencies and losslessness of the entire decomposition.",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->C; CD->A\nDecomposition: R1(A,B), R2(B,C), R3(A,D)",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → C; CD → A\nDecomposition: R1(A,B), R2(B,C), R3(A,D)",
     "options": {
       "A": "Lossless and dependency-preserving",
       "B": "Lossy but dependency-preserving",
@@ -473,7 +473,7 @@
       "D": "Lossy and not dependency-preserving"
     },
     "correct_answer": "C",
-    "explanation": "AB and BC reconstruct the ABC projection losslessly because B->C. Combining ABC with AD is lossless because their intersection A determines ABC. However, the projected FDs are generated by A->B and B->C; AD has no nontrivial projected FD. They cannot derive CD->A, so that dependency is not preserved."
+    "explanation": "AB and BC reconstruct the ABC projection losslessly because B → C. Combining ABC with AD is lossless because their intersection A determines ABC. However, the projected FDs are generated by A → B and B → C; AD has no nontrivial projected FD. They cannot derive CD → A, so that dependency is not preserved."
   },
   {
     "id": "1.2.1-029",
@@ -482,15 +482,15 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Hard",
     "question": "Compare the two decompositions below under the full FD closure. Which statement is correct?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->C; C->D\nD1: AB, BC, CD\nD2: AB, AC, AD",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → C; C → D\nD1: AB, BC, CD\nD2: AB, AC, AD",
     "options": {
       "A": "Both are lossless BCNF decompositions and both preserve all original dependencies",
-      "B": "D2 preserves all dependencies, but D1 loses A->D",
+      "B": "D2 preserves all dependencies, but D1 loses A → D",
       "C": "Both are lossless BCNF decompositions, but only D1 preserves all original dependencies",
       "D": "D1 is lossless, but D2 is lossy because its components share only A"
     },
     "correct_answer": "C",
-    "explanation": "Every component has a key determinant, so both decompositions are in BCNF. D1 is lossless by the dependency chain and preserves each original FD locally. D2 is lossless because A determines all attributes and is shared across its components, but its projected A->B, A->C, and A->D do not imply B->C or C->D."
+    "explanation": "Every component has a key determinant, so both decompositions are in BCNF. D1 is lossless by the dependency chain and preserves each original FD locally. D2 is lossless because A determines all attributes and is shared across its components, but its projected A → B, A → C, and A → D do not imply B → C or C → D."
   },
   {
     "id": "1.2.1-030",
@@ -499,14 +499,14 @@
     "subpart_name": "Relational Schema Design & Normalization",
     "difficulty": "Hard",
     "question": "When testing dependency preservation for the decomposition below, which conclusion correctly uses the full projected FD sets rather than only the explicitly written FDs?",
-    "code_snippet": "R(A,B,C,D)\nFDs: A->B; B->C; C->A; C->D\nDecomposition: R1(A,B), R2(B,C), R3(A,D)",
+    "code_snippet": "R(A,B,C,D)\nFDs: A → B; B → C; C → A; C → D\nDecomposition: R1(A,B), R2(B,C), R3(A,D)",
     "options": {
       "A": "The decomposition preserves dependencies only after adding a separate CD relation",
-      "B": "C->D is lost because no component contains both C and D",
-      "C": "All original FDs are preserved; projected C->B, B->A, and A->D imply C->D",
-      "D": "C->A is lost because no component contains both C and A"
+      "B": "C → D is lost because no component contains both C and D",
+      "C": "All original FDs are preserved; projected C → B, B → A, and A → D imply C → D",
+      "D": "C → A is lost because no component contains both C and A"
     },
     "correct_answer": "C",
-    "explanation": "A, B, and C determine each other under the original basis. Projection therefore includes B->A in AB and C->B in BC, as well as A->D in AD. Their union recovers the cycle A->B->C->A and derives C->D via C->B->A->D, preserving the entire original basis."
+    "explanation": "A, B, and C determine each other under the original basis. Projection therefore includes B → A in AB and C → B in BC, as well as A → D in AD. Their union recovers the cycle A → B → C → A and derives C → D via C → B → A → D, preserving the entire original basis."
   }
 ]

@@ -6,7 +6,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH A(id) AS (VALUES (1),(2)),\nB(aid,label) AS (VALUES (1,'x'),(1,'y'),(3,'z'))\nSELECT A.id,B.label FROM A JOIN B ON A.id=B.aid\nORDER BY A.id,B.label;",
+    "code_snippet": "WITH\n    A (id) AS (\n        VALUES\n            (1),\n            (2)\n    ),\n    B (aid, label) AS (\n        VALUES\n            (1, 'x'),\n            (1, 'y'),\n            (3, 'z')\n    )\nSELECT\n    A.id,\n    B.label\nFROM\n    A\n    JOIN B ON A.id = B.aid\nORDER BY\n    A.id,\n    B.label;",
     "options": {
       "A": "[[1,\"x\"],[1,\"y\"],[3,\"z\"]]",
       "B": "[[1,\"x\"],[2,null]]",
@@ -23,7 +23,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH A(id) AS (VALUES (1),(2)),\nB(aid,label) AS (VALUES (1,'x'))\nSELECT A.id,B.label FROM A LEFT JOIN B ON A.id=B.aid\nORDER BY A.id;",
+    "code_snippet": "WITH\n    A (id) AS (\n        VALUES\n            (1),\n            (2)\n    ),\n    B (aid, label) AS (\n        VALUES\n            (1, 'x')\n    )\nSELECT\n    A.id,\n    B.label\nFROM\n    A\n    LEFT JOIN B ON A.id = B.aid\nORDER BY\n    A.id;",
     "options": {
       "A": "[[1,\"x\"],[2,null]]",
       "B": "[[1,\"x\"],[2,\"\"]]",
@@ -40,7 +40,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(v) AS (VALUES (10),(NULL),(20))\nSELECT COUNT(*),COUNT(v) FROM T;",
+    "code_snippet": "WITH\n    T (v) AS (\n        VALUES\n            (10),\n            (NULL),\n            (20)\n    )\nSELECT\n    COUNT(*),\n    COUNT(v)\nFROM\n    T;",
     "options": {
       "A": "[[2,2]]",
       "B": "[[2,3]]",
@@ -57,7 +57,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,v) AS (VALUES (1,NULL),(2,0),(3,NULL))\nSELECT id FROM T WHERE v=NULL ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, v) AS (\n        VALUES\n            (1, NULL),\n            (2, 0),\n            (3, NULL)\n    )\nSELECT\n    id\nFROM\n    T\nWHERE\n    v = NULL\nORDER BY\n    id;",
     "options": {
       "A": "[]",
       "B": "[[1],[2],[3]]",
@@ -74,7 +74,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,a,b) AS (VALUES (1,NULL,5),(2,0,7),(3,NULL,NULL))\nSELECT id,COALESCE(a,b,99) AS v FROM T ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, a, b) AS (\n        VALUES\n            (1, NULL, 5),\n            (2, 0, 7),\n            (3, NULL, NULL)\n    )\nSELECT\n    id,\n    COALESCE(a, b, 99) AS v\nFROM\n    T\nORDER BY\n    id;",
     "options": {
       "A": "[[1,null],[2,0],[3,null]]",
       "B": "[[1,99],[2,0],[3,99]]",
@@ -91,7 +91,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,a,b) AS (VALUES (1,4,4),(2,4,5),(3,NULL,4))\nSELECT id,NULLIF(a,b) AS v FROM T ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, a, b) AS (\n        VALUES\n            (1, 4, 4),\n            (2, 4, 5),\n            (3, NULL, 4)\n    )\nSELECT\n    id,\n    NULLIF(a, b) AS v\nFROM\n    T\nORDER BY\n    id;",
     "options": {
       "A": "[[1,4],[2,4],[3,null]]",
       "B": "[[1,null],[2,null],[3,null]]",
@@ -108,7 +108,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH Sales(g,qty) AS (VALUES ('A',2),('A',3),('B',4),('C',1))\nSELECT g,SUM(qty) AS total FROM Sales\nGROUP BY g HAVING SUM(qty)>=5 ORDER BY g;",
+    "code_snippet": "WITH\n    Sales (g, qty) AS (\n        VALUES\n            ('A', 2),\n            ('A', 3),\n            ('B', 4),\n            ('C', 1)\n    )\nSELECT\n    g,\n    SUM(qty) AS total\nFROM\n    Sales\nGROUP BY\n    g\nHAVING\n    SUM(qty) >= 5\nORDER BY\n    g;",
     "options": {
       "A": "[[\"B\",4]]",
       "B": "[[\"A\",5]]",
@@ -125,7 +125,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,score) AS (VALUES (1,5),(2,9),(3,9))\nSELECT id,ROW_NUMBER() OVER (ORDER BY score DESC,id ASC) AS rn\nFROM T ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, score) AS (\n        VALUES\n            (1, 5),\n            (2, 9),\n            (3, 9)\n    )\nSELECT\n    id,\n    ROW_NUMBER() OVER (\n        ORDER BY\n            score DESC,\n            id ASC\n    ) AS rn\nFROM\n    T\nORDER BY\n    id;",
     "options": {
       "A": "[[1,3],[2,1],[3,2]]",
       "B": "[[1,1],[2,1],[3,1]]",
@@ -142,7 +142,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,score) AS (VALUES (1,100),(2,100),(3,90))\nSELECT id,RANK() OVER (ORDER BY score DESC) AS r,\nDENSE_RANK() OVER (ORDER BY score DESC) AS d\nFROM T ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, score) AS (\n        VALUES\n            (1, 100),\n            (2, 100),\n            (3, 90)\n    )\nSELECT\n    id,\n    RANK() OVER (\n        ORDER BY\n            score DESC\n    ) AS r,\n    DENSE_RANK() OVER (\n        ORDER BY\n            score DESC\n    ) AS d\nFROM\n    T\nORDER BY\n    id;",
     "options": {
       "A": "[[1,1,1],[2,1,1],[3,2,3]]",
       "B": "[[1,1,1],[2,2,2],[3,3,3]]",
@@ -159,7 +159,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Easy",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH E(id,salary) AS (VALUES (1,10),(2,20),(3,30))\nSELECT id FROM E WHERE salary>(SELECT AVG(salary) FROM E) ORDER BY id;",
+    "code_snippet": "WITH\n    E (id, salary) AS (\n        VALUES\n            (1, 10),\n            (2, 20),\n            (3, 30)\n    )\nSELECT\n    id\nFROM\n    E\nWHERE\n    salary > (\n        SELECT\n            AVG(salary)\n        FROM\n            E\n    )\nORDER BY\n    id;",
     "options": {
       "A": "[[2],[3]]",
       "B": "[[1]]",
@@ -176,7 +176,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH C(id) AS (VALUES (1),(2)),\nO(id,cid) AS (VALUES (10,1),(11,1),(12,2)),\nI(oid,qty) AS (VALUES (10,2),(10,3),(10,1),(12,4))\nSELECT C.id,COUNT(*) AS joined_rows,SUM(I.qty) AS qty\nFROM C JOIN O ON O.cid=C.id JOIN I ON I.oid=O.id\nGROUP BY C.id ORDER BY C.id;",
+    "code_snippet": "WITH\n    C (id) AS (\n        VALUES\n            (1),\n            (2)\n    ),\n    O (id, cid) AS (\n        VALUES\n            (10, 1),\n            (11, 1),\n            (12, 2)\n    ),\n    I (oid, qty) AS (\n        VALUES\n            (10, 2),\n            (10, 3),\n            (10, 1),\n            (12, 4)\n    )\nSELECT\n    C.id,\n    COUNT(*) AS joined_rows,\n    SUM(I.qty) AS qty\nFROM\n    C\n    JOIN O ON O.cid = C.id\n    JOIN I ON I.oid = O.id\nGROUP BY\n    C.id\nORDER BY\n    C.id;",
     "options": {
       "A": "[[1,2,6],[2,1,4]]",
       "B": "[[1,4,6],[2,1,4]]",
@@ -193,7 +193,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH D(id) AS (VALUES (1),(2)),\nE(id,did,active) AS (VALUES (1,1,0),(2,1,1))\nSELECT D.id,E.id FROM D LEFT JOIN E ON E.did=D.id\nWHERE E.active=1 ORDER BY D.id,E.id;",
+    "code_snippet": "WITH\n    D (id) AS (\n        VALUES\n            (1),\n            (2)\n    ),\n    E (id, did, active) AS (\n        VALUES\n            (1, 1, 0),\n            (2, 1, 1)\n    )\nSELECT\n    D.id,\n    E.id\nFROM\n    D\n    LEFT JOIN E ON E.did = D.id\nWHERE\n    E.active = 1\nORDER BY\n    D.id,\n    E.id;",
     "options": {
       "A": "[[1,2]]",
       "B": "[[1,2],[2,null]]",
@@ -210,7 +210,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH D(id) AS (VALUES (1),(2)),\nE(id,did,active) AS (VALUES (1,1,0),(2,1,1))\nSELECT D.id,E.id FROM D\nLEFT JOIN E ON E.did=D.id AND E.active=1\nORDER BY D.id,E.id;",
+    "code_snippet": "WITH\n    D (id) AS (\n        VALUES\n            (1),\n            (2)\n    ),\n    E (id, did, active) AS (\n        VALUES\n            (1, 1, 0),\n            (2, 1, 1)\n    )\nSELECT\n    D.id,\n    E.id\nFROM\n    D\n    LEFT JOIN E ON E.did = D.id\n    AND E.active = 1\nORDER BY\n    D.id,\n    E.id;",
     "options": {
       "A": "[[1,1],[1,2],[2,null]]",
       "B": "[[1,null],[2,null]]",
@@ -227,7 +227,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH P(id) AS (VALUES (1),(2)),\nC(id,pid) AS (VALUES (10,1),(11,1))\nSELECT P.id,COUNT(*) AS rows_in_group,COUNT(C.id) AS children\nFROM P LEFT JOIN C ON C.pid=P.id\nGROUP BY P.id ORDER BY P.id;",
+    "code_snippet": "WITH\n    P (id) AS (\n        VALUES\n            (1),\n            (2)\n    ),\n    C (id, pid) AS (\n        VALUES\n            (10, 1),\n            (11, 1)\n    )\nSELECT\n    P.id,\n    COUNT(*) AS rows_in_group,\n    COUNT(C.id) AS children\nFROM\n    P\n    LEFT JOIN C ON C.pid = P.id\nGROUP BY\n    P.id\nORDER BY\n    P.id;",
     "options": {
       "A": "[[1,2,2],[2,1,1]]",
       "B": "[[1,1,2],[2,1,0]]",
@@ -244,7 +244,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH S(g,amount) AS (VALUES ('A',2),('A',8),('B',6),('B',7),('C',4))\nSELECT g,SUM(amount) AS total FROM S WHERE amount>=5\nGROUP BY g HAVING COUNT(*)>=2 ORDER BY g;",
+    "code_snippet": "WITH\n    S (g, amount) AS (\n        VALUES\n            ('A', 2),\n            ('A', 8),\n            ('B', 6),\n            ('B', 7),\n            ('C', 4)\n    )\nSELECT\n    g,\n    SUM(amount) AS total\nFROM\n    S\nWHERE\n    amount >= 5\nGROUP BY\n    g\nHAVING\n    COUNT(*) >= 2\nORDER BY\n    g;",
     "options": {
       "A": "[[\"A\",8],[\"B\",13]]",
       "B": "[[\"A\",10]]",
@@ -252,7 +252,7 @@
       "D": "[[\"B\",13]]"
     },
     "correct_answer": "D",
-    "explanation": "WHERE first removes A's 2 and C's 4. A then has only one surviving row and fails HAVING COUNT(*)>=2. B retains two rows, 6 and 7, and returns total 13."
+    "explanation": "WHERE first removes A's 2 and C's 4. A then has only one surviving row and fails HAVING COUNT(*)≥2. B retains two rows, 6 and 7, and returns total 13."
   },
   {
     "id": "1.2.4-016",
@@ -261,7 +261,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(g,v) AS (VALUES ('A',10),('A',NULL),('A',20),('B',NULL),('B',NULL))\nSELECT g,AVG(v),SUM(v),COUNT(v) FROM T GROUP BY g ORDER BY g;",
+    "code_snippet": "WITH\n    T (g, v) AS (\n        VALUES\n            ('A', 10),\n            ('A', NULL),\n            ('A', 20),\n            ('B', NULL),\n            ('B', NULL)\n    )\nSELECT\n    g,\n    AVG(v),\n    SUM(v),\n    COUNT(v)\nFROM\n    T\nGROUP BY\n    g\nORDER BY\n    g;",
     "options": {
       "A": "[[\"A\",15.0,30,2],[\"B\",0.0,0,0]]",
       "B": "[[\"A\",10.0,30,3],[\"B\",0.0,0,2]]",
@@ -278,7 +278,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH P(id) AS (VALUES (1),(2),(3)),\nB(id) AS (VALUES (2),(NULL))\nSELECT id FROM P WHERE id NOT IN (SELECT id FROM B) ORDER BY id;",
+    "code_snippet": "WITH\n    P (id) AS (\n        VALUES\n            (1),\n            (2),\n            (3)\n    ),\n    B (id) AS (\n        VALUES\n            (2),\n            (NULL)\n    )\nSELECT\n    id\nFROM\n    P\nWHERE\n    id NOT IN (\n        SELECT\n            id\n        FROM\n            B\n    )\nORDER BY\n    id;",
     "options": {
       "A": "[]",
       "B": "[[1],[3]]",
@@ -295,7 +295,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH P(id) AS (VALUES (1),(2),(3)),\nB(id) AS (VALUES (2),(NULL))\nSELECT P.id FROM P\nWHERE NOT EXISTS (SELECT 1 FROM B WHERE B.id=P.id) ORDER BY P.id;",
+    "code_snippet": "WITH\n    P (id) AS (\n        VALUES\n            (1),\n            (2),\n            (3)\n    ),\n    B (id) AS (\n        VALUES\n            (2),\n            (NULL)\n    )\nSELECT\n    P.id\nFROM\n    P\nWHERE\n    NOT EXISTS (\n        SELECT\n            1\n        FROM\n            B\n        WHERE\n            B.id = P.id\n    )\nORDER BY\n    P.id;",
     "options": {
       "A": "[[1],[2],[3]]",
       "B": "[[1],[3]]",
@@ -312,7 +312,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH E(id,dept,salary) AS (VALUES (1,'A',10),(2,'A',30),(3,'B',20),(4,'B',20))\nSELECT e.id FROM E e\nWHERE e.salary>(SELECT AVG(x.salary) FROM E x WHERE x.dept=e.dept)\nORDER BY e.id;",
+    "code_snippet": "WITH\n    E (id, dept, salary) AS (\n        VALUES\n            (1, 'A', 10),\n            (2, 'A', 30),\n            (3, 'B', 20),\n            (4, 'B', 20)\n    )\nSELECT\n    e.id\nFROM\n    E e\nWHERE\n    e.salary > (\n        SELECT\n            AVG(x.salary)\n        FROM\n            E x\n        WHERE\n            x.dept = e.dept\n    )\nORDER BY\n    e.id;",
     "options": {
       "A": "[[3],[4]]",
       "B": "[[1],[2]]",
@@ -329,7 +329,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH O(id,amount) AS (VALUES (1,100),(2,50)),\nTag(oid,tag) AS (VALUES (1,'a'),(1,'b'),(2,'a'))\nSELECT SUM(O.amount),COUNT(DISTINCT O.id)\nFROM O JOIN Tag ON Tag.oid=O.id;",
+    "code_snippet": "WITH\n    O (id, amount) AS (\n        VALUES\n            (1, 100),\n            (2, 50)\n    ),\n    Tag (oid, tag) AS (\n        VALUES\n            (1, 'a'),\n            (1, 'b'),\n            (2, 'a')\n    )\nSELECT\n    SUM(O.amount),\n    COUNT(DISTINCT O.id)\nFROM\n    O\n    JOIN Tag ON Tag.oid = O.id;",
     "options": {
       "A": "[[250,3]]",
       "B": "[[150,2]]",
@@ -346,7 +346,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH E(id,dept,score) AS (VALUES (1,'A',90),(2,'A',90),(3,'A',80),(4,'B',70)),\nW AS (SELECT id,dept,ROW_NUMBER() OVER (PARTITION BY dept ORDER BY score DESC,id) AS rn FROM E)\nSELECT dept,id,rn FROM W WHERE rn<=2 ORDER BY dept,rn;",
+    "code_snippet": "WITH\n    E (id, dept, score) AS (\n        VALUES\n            (1, 'A', 90),\n            (2, 'A', 90),\n            (3, 'A', 80),\n            (4, 'B', 70)\n    ),\n    W AS (\n        SELECT\n            id,\n            dept,\n            ROW_NUMBER() OVER (\n                PARTITION BY\n                    dept\n                ORDER BY\n                    score DESC,\n                    id\n            ) AS rn\n        FROM\n            E\n    )\nSELECT\n    dept,\n    id,\n    rn\nFROM\n    W\nWHERE\n    rn <= 2\nORDER BY\n    dept,\n    rn;",
     "options": {
       "A": "[[\"A\",1,1],[\"A\",2,2]]",
       "B": "[[\"A\",1,1],[\"A\",2,1],[\"B\",4,1]]",
@@ -363,7 +363,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH E(id,salary) AS (VALUES (1,100),(2,100),(3,90),(4,80)),\nW AS (SELECT id,salary,DENSE_RANK() OVER (ORDER BY salary DESC) AS dr FROM E)\nSELECT id,salary FROM W WHERE dr=2 ORDER BY id;",
+    "code_snippet": "WITH\n    E (id, salary) AS (\n        VALUES\n            (1, 100),\n            (2, 100),\n            (3, 90),\n            (4, 80)\n    ),\n    W AS (\n        SELECT\n            id,\n            salary,\n            DENSE_RANK() OVER (\n                ORDER BY\n                    salary DESC\n            ) AS dr\n        FROM\n            E\n    )\nSELECT\n    id,\n    salary\nFROM\n    W\nWHERE\n    dr = 2\nORDER BY\n    id;",
     "options": {
       "A": "[[4,80]]",
       "B": "[[2,100]]",
@@ -380,7 +380,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,v) AS (VALUES (1,10),(2,NULL),(3,30))\nSELECT id,LAG(v,1,99) OVER (ORDER BY id) AS prev,\nCOALESCE(LAG(v,1,99) OVER (ORDER BY id),77) AS normalized_prev\nFROM T ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, v) AS (\n        VALUES\n            (1, 10),\n            (2, NULL),\n            (3, 30)\n    )\nSELECT\n    id,\n    LAG(v, 1, 99) OVER (\n        ORDER BY\n            id\n    ) AS prev,\n    COALESCE(\n        LAG(v, 1, 99) OVER (\n            ORDER BY\n                id\n        ),\n        77\n    ) AS normalized_prev\nFROM\n    T\nORDER BY\n    id;",
     "options": {
       "A": "[[1,null,77],[2,10,10],[3,null,77]]",
       "B": "[[1,99,99],[2,10,10],[3,null,77]]",
@@ -397,7 +397,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,g,v) AS (VALUES (1,'A',10),(2,'A',20),(3,'B',30))\nSELECT id,LEAD(v,1,-1) OVER (PARTITION BY g ORDER BY id) AS nxt\nFROM T ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, g, v) AS (\n        VALUES\n            (1, 'A', 10),\n            (2, 'A', 20),\n            (3, 'B', 30)\n    )\nSELECT\n    id,\n    LEAD(v, 1, -1) OVER (\n        PARTITION BY\n            g\n        ORDER BY\n            id\n    ) AS nxt\nFROM\n    T\nORDER BY\n    id;",
     "options": {
       "A": "[[1,20],[2,-1],[3,-1]]",
       "B": "[[1,20],[2,30],[3,-1]]",
@@ -414,7 +414,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,k,v) AS (VALUES (1,1,10),(2,1,20),(3,2,5))\nSELECT id,\nSUM(v) OVER (ORDER BY k RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS range_total,\nSUM(v) OVER (ORDER BY k,id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS rows_total\nFROM T ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, k, v) AS (\n        VALUES\n            (1, 1, 10),\n            (2, 1, 20),\n            (3, 2, 5)\n    )\nSELECT\n    id,\n    SUM(v) OVER (\n        ORDER BY\n            k RANGE BETWEEN UNBOUNDED PRECEDING\n            AND CURRENT ROW\n    ) AS range_total,\n    SUM(v) OVER (\n        ORDER BY\n            k,\n            id ROWS BETWEEN UNBOUNDED PRECEDING\n            AND CURRENT ROW\n    ) AS rows_total\nFROM\n    T\nORDER BY\n    id;",
     "options": {
       "A": "[[1,10,10],[2,30,30],[3,35,35]]",
       "B": "[[1,30,10],[2,30,30],[3,35,35]]",
@@ -431,7 +431,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH A(id) AS (VALUES (1),(2),(3)),\nB(id,v) AS (VALUES (1,NULL),(2,5))\nSELECT A.id FROM A LEFT JOIN B ON B.id=A.id\nWHERE B.v IS NULL ORDER BY A.id;",
+    "code_snippet": "WITH\n    A (id) AS (\n        VALUES\n            (1),\n            (2),\n            (3)\n    ),\n    B (id, v) AS (\n        VALUES\n            (1, NULL),\n            (2, 5)\n    )\nSELECT\n    A.id\nFROM\n    A\n    LEFT JOIN B ON B.id = A.id\nWHERE\n    B.v IS NULL\nORDER BY\n    A.id;",
     "options": {
       "A": "[[1],[2],[3]]",
       "B": "[[1]]",
@@ -448,7 +448,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,a,b) AS (VALUES (1,10,2),(2,10,0),(3,NULL,2))\nSELECT id,COALESCE(1.0*a/NULLIF(b,0),-1) AS ratio FROM T ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, a, b) AS (\n        VALUES\n            (1, 10, 2),\n            (2, 10, 0),\n            (3, NULL, 2)\n    )\nSELECT\n    id,\n    COALESCE(1.0 * a / NULLIF(b, 0), -1) AS ratio\nFROM\n    T\nORDER BY\n    id;",
     "options": {
       "A": "[[1,5.0],[2,0],[3,-1]]",
       "B": "[[1,5.0],[2,-1],[3,-1]]",
@@ -465,7 +465,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Medium",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id) AS (VALUES (1),(2),(3)),\nR(id) AS (VALUES (2),(2),(NULL))\nSELECT id FROM T WHERE id IN (SELECT id FROM R) ORDER BY id;",
+    "code_snippet": "WITH\n    T (id) AS (\n        VALUES\n            (1),\n            (2),\n            (3)\n    ),\n    R (id) AS (\n        VALUES\n            (2),\n            (2),\n            (NULL)\n    )\nSELECT\n    id\nFROM\n    T\nWHERE\n    id IN (\n        SELECT\n            id\n        FROM\n            R\n    )\nORDER BY\n    id;",
     "options": {
       "A": "[[1],[3]]",
       "B": "[[2]]",
@@ -482,7 +482,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Hard",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH O(id,cid,amount) AS (VALUES (1,1,100),(2,1,50)),\nP(oid,amount) AS (VALUES (1,40),(1,60),(2,50)),\nS(oid,sid) AS (VALUES (1,10),(1,11),(2,12))\nSELECT SUM(P.amount),SUM(O.amount),COUNT(*)\nFROM O JOIN P ON P.oid=O.id JOIN S ON S.oid=O.id;",
+    "code_snippet": "WITH\n    O (id, cid, amount) AS (\n        VALUES\n            (1, 1, 100),\n            (2, 1, 50)\n    ),\n    P (oid, amount) AS (\n        VALUES\n            (1, 40),\n            (1, 60),\n            (2, 50)\n    ),\n    S (oid, sid) AS (\n        VALUES\n            (1, 10),\n            (1, 11),\n            (2, 12)\n    )\nSELECT\n    SUM(P.amount),\n    SUM(O.amount),\n    COUNT(*)\nFROM\n    O\n    JOIN P ON P.oid = O.id\n    JOIN S ON S.oid = O.id;",
     "options": {
       "A": "[[250,150,5]]",
       "B": "[[250,450,5]]",
@@ -499,7 +499,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Hard",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(acct,day,amount) AS (VALUES ('A',1,10),('A',1,20),('A',2,5),('A',3,7),('A',3,8),('B',1,NULL),('B',2,4)),\nW AS (SELECT *,DENSE_RANK() OVER (PARTITION BY acct ORDER BY day DESC) AS dr FROM T)\nSELECT acct,SUM(amount),COUNT(*),COUNT(amount) FROM W WHERE dr<=2\nGROUP BY acct HAVING SUM(amount)>=4 ORDER BY acct;",
+    "code_snippet": "WITH\n    T (acct, day, amount) AS (\n        VALUES\n            ('A', 1, 10),\n            ('A', 1, 20),\n            ('A', 2, 5),\n            ('A', 3, 7),\n            ('A', 3, 8),\n            ('B', 1, NULL),\n            ('B', 2, 4)\n    ),\n    W AS (\n        SELECT\n            *,\n            DENSE_RANK() OVER (\n                PARTITION BY\n                    acct\n                ORDER BY\n                    day DESC\n            ) AS dr\n        FROM\n            T\n    )\nSELECT\n    acct,\n    SUM(amount),\n    COUNT(*),\n    COUNT(amount)\nFROM\n    W\nWHERE\n    dr <= 2\nGROUP BY\n    acct\nHAVING\n    SUM(amount) >= 4\nORDER BY\n    acct;",
     "options": {
       "A": "[[\"A\",20,3,3],[\"B\",4,2,1]]",
       "B": "[[\"A\",15,2,2],[\"B\",4,2,1]]",
@@ -516,7 +516,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Hard",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(day) AS (VALUES (1),(2),(4),(5),(6),(10)),\nW AS (SELECT day,day-ROW_NUMBER() OVER (ORDER BY day) AS island FROM T)\nSELECT MIN(day) AS lo,MAX(day) AS hi,COUNT(*) AS n FROM W\nGROUP BY island HAVING COUNT(*)>=2 ORDER BY lo;",
+    "code_snippet": "WITH\n    T (day) AS (\n        VALUES\n            (1),\n            (2),\n            (4),\n            (5),\n            (6),\n            (10)\n    ),\n    W AS (\n        SELECT\n            day,\n            day - ROW_NUMBER() OVER (\n                ORDER BY\n                    day\n            ) AS island\n        FROM\n            T\n    )\nSELECT\n    MIN(day) AS lo,\n    MAX(day) AS hi,\n    COUNT(*) AS n\nFROM\n    W\nGROUP BY\n    island\nHAVING\n    COUNT(*) >= 2\nORDER BY\n    lo;",
     "options": {
       "A": "[[1,2,2],[4,6,3],[10,10,1]]",
       "B": "[[1,2,2],[4,6,3]]",
@@ -533,7 +533,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Hard",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH Student(id) AS (VALUES (1),(2),(3)),\nRequired(course) AS (VALUES (10),(20)),\nPassed(sid,course) AS (VALUES (1,10),(1,20),(2,10),(3,10),(3,20),(3,20))\nSELECT s.id FROM Student s\nWHERE NOT EXISTS (SELECT 1 FROM Required r\n WHERE NOT EXISTS (SELECT 1 FROM Passed p WHERE p.sid=s.id AND p.course=r.course))\nORDER BY s.id;",
+    "code_snippet": "WITH\n    Student (id) AS (\n        VALUES\n            (1),\n            (2),\n            (3)\n    ),\n    Required (course) AS (\n        VALUES\n            (10),\n            (20)\n    ),\n    Passed (sid, course) AS (\n        VALUES\n            (1, 10),\n            (1, 20),\n            (2, 10),\n            (3, 10),\n            (3, 20),\n            (3, 20)\n    )\nSELECT\n    s.id\nFROM\n    Student s\nWHERE\n    NOT EXISTS (\n        SELECT\n            1\n        FROM\n            Required r\n        WHERE\n            NOT EXISTS (\n                SELECT\n                    1\n                FROM\n                    Passed p\n                WHERE\n                    p.sid = s.id\n                    AND p.course = r.course\n            )\n    )\nORDER BY\n    s.id;",
     "options": {
       "A": "[[2]]",
       "B": "[[1]]",
@@ -550,7 +550,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Hard",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH T(id,g,v) AS (VALUES (1,'A',10),(2,'A',NULL),(3,'A',30),(4,'A',40),(5,'B',50),(6,'B',60)),\nW AS (SELECT id,g,v,LAG(v,1,-1) OVER (PARTITION BY g ORDER BY id) AS prev,\nLEAD(v,1,-1) OVER (PARTITION BY g ORDER BY id) AS nxt FROM T)\nSELECT id,prev,nxt FROM W WHERE v>=30 AND COALESCE(prev,-1)<30 ORDER BY id;",
+    "code_snippet": "WITH\n    T (id, g, v) AS (\n        VALUES\n            (1, 'A', 10),\n            (2, 'A', NULL),\n            (3, 'A', 30),\n            (4, 'A', 40),\n            (5, 'B', 50),\n            (6, 'B', 60)\n    ),\n    W AS (\n        SELECT\n            id,\n            g,\n            v,\n            LAG(v, 1, -1) OVER (\n                PARTITION BY\n                    g\n                ORDER BY\n                    id\n            ) AS prev,\n            LEAD(v, 1, -1) OVER (\n                PARTITION BY\n                    g\n                ORDER BY\n                    id\n            ) AS nxt\n        FROM\n            T\n    )\nSELECT\n    id,\n    prev,\n    nxt\nFROM\n    W\nWHERE\n    v >= 30\n    AND COALESCE(prev, -1) < 30\nORDER BY\n    id;",
     "options": {
       "A": "[[3,10,40],[5,-1,60]]",
       "B": "[[3,-1,40],[5,-1,60]]",
@@ -567,7 +567,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Hard",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH C(id) AS (VALUES (1),(2),(3)),\nO(id,cid,total) AS (VALUES (10,1,100),(11,1,NULL),(12,2,50)),\nR(oid,amount) AS (VALUES (10,100),(10,20),(12,NULL))\nSELECT C.id,SUM(COALESCE(O.total,0)-COALESCE(R.amount,0)) AS net,\nCOUNT(DISTINCT O.id) AS orders,COUNT(R.oid) AS refund_rows\nFROM C LEFT JOIN O ON O.cid=C.id LEFT JOIN R ON R.oid=O.id\nGROUP BY C.id\nHAVING COUNT(R.oid)=0 OR SUM(COALESCE(O.total,0)-COALESCE(R.amount,0))>=50\nORDER BY C.id;",
+    "code_snippet": "WITH\n    C (id) AS (\n        VALUES\n            (1),\n            (2),\n            (3)\n    ),\n    O (id, cid, total) AS (\n        VALUES\n            (10, 1, 100),\n            (11, 1, NULL),\n            (12, 2, 50)\n    ),\n    R (oid, amount) AS (\n        VALUES\n            (10, 100),\n            (10, 20),\n            (12, NULL)\n    )\nSELECT\n    C.id,\n    SUM(COALESCE(O.total, 0) - COALESCE(R.amount, 0)) AS net,\n    COUNT(DISTINCT O.id) AS orders,\n    COUNT(R.oid) AS refund_rows\nFROM\n    C\n    LEFT JOIN O ON O.cid = C.id\n    LEFT JOIN R ON R.oid = O.id\nGROUP BY\n    C.id\nHAVING\n    COUNT(R.oid) = 0\n    OR SUM(COALESCE(O.total, 0) - COALESCE(R.amount, 0)) >= 50\nORDER BY\n    C.id;",
     "options": {
       "A": "[[1,80,2,2],[2,50,1,1],[3,0,0,0]]",
       "B": "[[1,-20,2,2],[2,50,1,1],[3,null,0,0]]",
@@ -584,7 +584,7 @@
     "subpart_name": "SQL Queries & Output Prediction",
     "difficulty": "Hard",
     "question": "Using SQLite SQL, what complete ordered result does this self-contained query return? Each inner JSON array is one output row in SELECT-column order; null denotes SQL NULL.",
-    "code_snippet": "WITH E(id,dept,salary) AS (VALUES (1,'A',100),(2,'A',90),(3,'A',90),(4,'A',80),(5,'B',50),(6,'B',50),(7,'B',NULL),(8,'C',NULL))\nSELECT e.id,e.dept,e.salary FROM E e\nWHERE 1=(SELECT COUNT(DISTINCT x.salary) FROM E x\n WHERE x.dept=e.dept AND x.salary>e.salary)\nORDER BY e.dept,e.id;",
+    "code_snippet": "WITH\n    E (id, dept, salary) AS (\n        VALUES\n            (1, 'A', 100),\n            (2, 'A', 90),\n            (3, 'A', 90),\n            (4, 'A', 80),\n            (5, 'B', 50),\n            (6, 'B', 50),\n            (7, 'B', NULL),\n            (8, 'C', NULL)\n    )\nSELECT\n    e.id,\n    e.dept,\n    e.salary\nFROM\n    E e\nWHERE\n    1 = (\n        SELECT\n            COUNT(DISTINCT x.salary)\n        FROM\n            E x\n        WHERE\n            x.dept = e.dept\n            AND x.salary > e.salary\n    )\nORDER BY\n    e.dept,\n    e.id;",
     "options": {
       "A": "[[4,\"A\",80]]",
       "B": "[[2,\"A\",90],[3,\"A\",90]]",
